@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -231,13 +232,71 @@
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About Company Page</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+      <h2>About CLIPCO</h2><br>
+      <h4>CLIPCO is the non-profit fundraising organization that supports the programs in CLIP that are not funded by normal school district funds. This includes Mandarin curriculum development, Mandarin classrooom teaching materials, instructional aides in the classrooms, classroom equipment (PCs & Mandarin software) and Chinese cultural and enrichment activities.</h4><br>
+      <p>CLIPCO is ran entirely by parents volunteers. We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Contact us today for more information about volunteering or providing a donation!</p>
+      <br><button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();" >Contact Us</button>
+         </div>
+        <div class="col-sm-4">
+            <p><img src="911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;"></p>
+    </div>
+  </div>
+</div>
+<div id="contacts" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+    <p>There are still open positions available. Please contact us to join our team!<br>
+	President&emsp;Jon Campbell&emsp;jon.campbell@cusdclipco.org<br>
+	<br>
+	Vice President&emsp;Open	 <br>
+	<br>
+	Secretary&emsp;Heather Simonovich&emsp;heather.simonovich@cusdclipco.org<br>
+	<br>
+	Co-Treasurer&emsp;Bin Liao&emsp;bin.liao@cusdclipco.org<br>
+	<br>
+	Co-Treasurer&emsp;Sammi Hsu&emsp;sammi.hsu@cusdclipco.org<br>
+ 	<br>
+	Kindergarten&emsp;Alan Fong	&emsp;alan.fong@cusdclipco.org<br>
+ 	Jasmine Wu&emsp;jasmine.wu@cusdclipco.org<br>
+ 	<br>
+	1st Grade&emsp;Rachel Heller Turkal&emsp;rachel.heller.turkal@cusdclipco.org<br>
+ 	Open	 <br>
+ 	<br>
+	2nd Grade&emsp;Ted Fong&emsp;ted.fong@cusdclipco.org<br>
+ 	Wei Chen&emsp;wei.chen@cusdclipco.org<br>
+ 	<br>
+	3rd Grade&emsp;Nikki Tan&emsp;nikki.tan@cusdclipco.org<br>
+ 	Grace Tsang&emsp;grace.tsang@cusdclipco.org<br>
+ 	<br>
+	4th Grade&emsp;Julie Wann&emsp;julie.wann@cusdclipco.org<br>
+ 	Aileen Lai&emsp;aileen.lai@cusdclipco.org<br>
+ 	<br>
+	5th Grade&emsp;Ivy Lau&emsp;ivy.lau@cusdclipco.org<br>
+ 	Helen Lin&emsp;helen.lin@cusdclipco.org<br>
+ 	<br>
+	6th Grade&emsp;Lijuan Wang&emsp;lijuan.wang@cusdclipco.org<br>
+ 	David Liu&emsp;david.liu@cusdclipco.org<br>
+ 	<br>
+	7th Grade&emsp;Ann Ruckstuhl&emsp;ann.ruckstuhl@cusdclipco.org<br>
+ 	Open	 <br>
+ 	<br>
+	8th Grade&emsp;Jack Zhu&emsp;jack.zhu@cusdclipco.org<br>
+ 	Joyce Luo&emsp;joyce.luo@cusdclipco.org</p>
+      
+<script>
+var x = document.getElementById('contacts');
+x.style.display = 'none';
+function doFunction() {
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>      
+
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
     </div>
   </div>
 </div>
@@ -434,7 +493,7 @@
     <div class="col-sm-5">
       <p>Contact us and we'll get back to you within 24 hours.</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-phone"></span> 00 1515151515</p>
       <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
     </div>
     <div class="col-sm-7 slideanim">
@@ -482,7 +541,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 
 <script>
 $(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
+  // Add smooth scrolling to all links in navbar  footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
@@ -509,7 +568,7 @@ $(document).ready(function(){
       var pos = $(this).offset().top;
 
       var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
+        if (pos < winTop  600) {
           $(this).addClass("slide");
         }
     });
