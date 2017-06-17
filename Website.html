@@ -300,19 +300,6 @@
           <br> 6th Grade&emsp;Lijuan Wang&emsp;lijuan.wang@cusdclipco.org<br> David Liu&emsp;david.liu@cusdclipco.org<br>
           <br> 7th Grade&emsp;Ann Ruckstuhl&emsp;ann.ruckstuhl@cusdclipco.org<br> Open <br>
           <br> 8th Grade&emsp;Jack Zhu&emsp;jack.zhu@cusdclipco.org<br> Joyce Luo&emsp;joyce.luo@cusdclipco.org</p>
-        <script>
-          var x = document.getElementById('contacts');
-          x.style.display = 'none';
-
-          function doFunction() {
-            if (x.style.display === 'none') {
-              x.style.display = 'block';
-            } else {
-              x.style.display = 'none';
-            }
-          }
-        </script>
-
       </div>
       <div class="col-sm-4">
       </div>
@@ -596,13 +583,27 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
         $(".slideanim").each(function() {
           var pos = $(this).offset().top;
           var winTop = $(window).scrollTop();
-          if (pos < winTop 600) {
+          if (pos < winTop + 600) {
             $(this).addClass("slide");
           }
         });
       });
     })
   </script>
+
+  <script>
+    var x = document.getElementById('contacts');
+    x.style.display = 'none';
+
+    function doFunction() {
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+
 
 </body>
 
