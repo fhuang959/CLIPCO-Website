@@ -299,6 +299,18 @@
       background-color: rgba(0,0,0,0.1);
     }
 
+    .thumbnail:hover{
+      box-shadow: 1px 1px 50px 1px #888888;
+    }
+
+    .thumbnail{
+      /*border: 1px solid rgb(150,150,150);*/
+    }
+
+    .news-image{
+       border: 1px solid rgb(150,150,150);
+    }
+
 </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -317,7 +329,7 @@
 	        <ul class="nav navbar-nav navbar-right">
 	          </li><li><a href="#news">NEWS</a></li>
 	          <li><a href="#programs">PROGRAMS</a></li>
-	          <li><a href="#about">ABOUT</a>
+	          <li><a href="#about">ABOUT</a></li>
 	          <li> <a href="#budget">BUDGET</a><li>
 	          <li><a href="#donate">DONATE</a></li>
 	          <li><a href="#contact">CONTACT</a></li>
@@ -338,27 +350,28 @@
         <div class="row slideanim">
           <div class="col-sm-4">
             <div class="thumbnail">
-              <img src="images/placeholder1.png" alt="Paris" width="400" height="300">
+              <img class ="news-image" src="images/placeholder1.jpg" alt="Paris" width="400" height="300">
               <p><strong>Paris</strong></p>
               <p>Yes, we built Paris</p>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="thumbnail">
-              <img src="images/placeholder2.png" alt="New York" width="400" height="300">
+              <img class ="news-image" src="images/placeholder2.jpg" alt="New York" width="400" height="300">
               <p><strong>New York</strong></p>
               <p>We built New York</p>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="thumbnail">
-              <img src="images/placeholder3.png" alt="San Francisco" width="400" height="300">
+              <img class ="news-image" src="images/placeholder3.jpg" alt="San Francisco" width="400" height="300">
               <p><strong>San Francisco</strong></p>
               <p>Yes, San Fran is ours</p>
             </div>
           </div>
         </div>
-      </div><br>
+      </div>
+    </div>
 
   	<div id="about" class="container-fluid">
   	  <div class="row">
@@ -373,8 +386,6 @@
   	      <p><img src="images/911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;"></p>
   	    </div>
   	  </div>
-  	
-
     <!-- image carousel-->
     <div class="row">
           <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
@@ -413,6 +424,8 @@
 
       <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Contact Us</button>
     </div>
+
+
   	<div id="contacts" class="container-fluid">
   	  <div class="row">
   	    <div class="col-sm-8">
