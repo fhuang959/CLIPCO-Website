@@ -18,6 +18,10 @@
   		    parallax()+20;
   		});
   	</script>
+    <script type="text/javascript">
+      var color = #7be2f2; //color var
+    </script>
+
 <style>
 
   body {
@@ -54,32 +58,34 @@
 	}
 
 	.bg {
-	  background: url('images/header.gif') repeat left center;
+	  background: url('images/miller-rainbow.jpg') no-repeat left center;
 	  position: fixed;
-	  width: 100%;
-	  height: 350px; /*same height as jumbotron */
+	  width: 500em;
 	  top:50px;
-	  left:0;
+	  left:0 ;
 	  z-index: -1;
 	}
 
  	.jumbotron {
-      margin-bottom: 0px;
-	  height: 350px;
+    margin-bottom: 0px;
 	  color: #fff;	
 	  text-shadow: black 0.3em 0.3em 0.3em;
 	  background: transparent;
 	  padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
+    font-family: Montserrat, sans-serif;
+    }
+
+  .bg, .jumbotrong{
+       height: 350px;
     }
 
   .logo-small {
-      color: #f4511e;
+      /*color: #f4511e;*/
       font-size: 50px;
     }
 
     .logo {
-      color: #f4511e;
+      /*color: #f4511e;*/
       font-size: 200px;
     }
 
@@ -98,7 +104,7 @@
     .carousel-control.right,
     .carousel-control.left {
       background-image: none;
-      color: #f4511e;
+      /*color: #f4511e;*/
     }
 
     .carousel-indicators li {
@@ -106,7 +112,7 @@
     }
 
     .carousel-indicators li.active {
-      background-color: #f4511e;
+      /*background-color: #f4511e;*/
     }
 
     .item h4 {
@@ -122,7 +128,7 @@
     }
 
     .panel {
-      border: 1px solid #f4511e;
+      /*border: 1px solid #f4511e;*/
       border-radius: 0 !important;
       transition: box-shadow 0.5s;
     }
@@ -132,14 +138,14 @@
     }
 
     .panel-footer .btn:hover {
-      border: 1px solid #f4511e;
+      /*border: 1px solid #f4511e;*/
       background-color: #fff !important;
-      color: #f4511e;
+      /*color: #f4511e;*/
     }
 
     .panel-heading {
       color: #fff !important;
-      background-color: #f4511e !important;
+      /*background-color: #f4511e !important;*/
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
@@ -163,13 +169,13 @@
 
     .panel-footer .btn {
       margin: 15px 0;
-      background-color: #f4511e;
+      /*background-color: #f4511e;*/
       color: #fff;
     }
 
  	.navbar {
       margin-bottom: 0;
-      background-color: #f4511e;
+      /*background-color: #f4511e;*/
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -186,7 +192,7 @@
 
     .navbar-nav li a:hover,
     .navbar-nav li.active a {
-      color: #f4511e !important;
+      /*color: #f4511e !important;*/
       background-color: #fff !important;
     }
 
@@ -202,8 +208,35 @@
     footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #f4511e;
+      /*color: #f4511e;*/
     }
+
+
+    /*set the color theme here*/  
+    footer .glyphicon,
+    .navbar-nav li a:hover,
+    .navbar-nav li.active a,
+    .logo-small,
+    .logo,
+    .carousel-control.right,
+    .carousel-control.left,
+    .panel-footer .btn:hover{
+      color: red !important; 
+    }
+
+    .carousel-indicators li.active,
+    .panel-heading,
+    .panel-footer .btn,
+    .navbar{
+      background-color: red !important;
+    }
+    
+    .panel,
+    .panel-footer .btn:hover{
+      border: 1px solid red !important;
+    }
+
+
 
     .slideanim {
       visibility: hidden;
@@ -256,6 +289,15 @@
       }
     }
 
+    table, th, td{
+      border: 1px solid rgb(150,150,150);
+      border-collapse: collapse;
+      padding: 7px;
+    }
+
+    th:hover, td:hover{
+      background-color: rgba(0,0,0,0.1);
+    }
 
 </style>
 </head>
@@ -273,23 +315,50 @@
 	      </div>
 	      <div class="collapse navbar-collapse" id="myNavbar">
 	        <ul class="nav navbar-nav navbar-right">
-	          <li><a href="#about">ABOUT</a></li>
+	          </li><li><a href="#news">NEWS</a></li>
 	          <li><a href="#programs">PROGRAMS</a></li>
-	          <li><a href="#portfolio">PORTFOLIO</a></li>
+	          <li><a href="#about">ABOUT</a>
 	          <li> <a href="#budget">BUDGET</a><li>
 	          <li><a href="#donate">DONATE</a></li>
 	          <li><a href="#contact">CONTACT</a></li>
 	        </ul>
 	      </div>
 	    </div>
-	  </nav>
-
+	</nav>
 	<div class="bg"></div>
-
 	<div class="jumbotron text-center">
     	<h1>CLIPCO</h1>
     	<p>Cupertino Language Immersion Program</p>
-  	</div>
+  </div>
+
+  <div id="news" class="container-fluid text-center bg-grey">
+      <h2>News</h2><br>
+      <h4>What we have created</h4>
+      <div class="row text-center">
+        <div class="row slideanim">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="images/placeholder1.png" alt="Paris" width="400" height="300">
+              <p><strong>Paris</strong></p>
+              <p>Yes, we built Paris</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="images/placeholder2.png" alt="New York" width="400" height="300">
+              <p><strong>New York</strong></p>
+              <p>We built New York</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="images/placeholder3.png" alt="San Francisco" width="400" height="300">
+              <p><strong>San Francisco</strong></p>
+              <p>Yes, San Fran is ours</p>
+            </div>
+          </div>
+        </div>
+      </div><br>
 
   	<div id="about" class="container-fluid">
   	  <div class="row">
@@ -298,32 +367,173 @@
   	      <h4>CLIPCO is the non-profit fundraising organization that supports the programs in CLIP that are not funded by normal school district funds. This includes Mandarin curriculum development, Mandarin classrooom teaching materials, instructional aides in the classrooms, classroom equipment (PCs & Mandarin software) and Chinese cultural and enrichment activities.</h4><br>
   	      <p>CLIPCO is ran entirely by parents volunteers. We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Contact us today for more information about
   	        volunteering or providing a donation!</p>
-  	      <br><button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Contact Us</button>
+  	      <br>
   	    </div>
   	    <div class="col-sm-4">
   	      <p><img src="images/911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;"></p>
   	    </div>
   	  </div>
-  	</div>
+  	
 
+    <!-- image carousel-->
+    <div class="row">
+          <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <p><a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG"></a><br>By
+                  Diego Delso, <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">Link</a></p>
+              </div>
+
+              <div class="item">
+                <p><a href="https://commons.wikimedia.org/wiki/File:H%C3%A4ktet_i_Delsbo.jpg#/media/File:H%C3%A4ktet_i_Delsbo.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H%C3%A4ktet_i_Delsbo.jpg/1200px-H%C3%A4ktet_i_Delsbo.jpg" alt="Häktet i Delsbo.jpg"></a><br>By
+                  <a href="//commons.wikimedia.org/wiki/User:Einarspetz" title="User:Einarspetz">Einarspetz</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>,
+                  <a href="https://commons.wikimedia.org/w/index.php?curid=35203980">Link</a></p>
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+          </div>
+        </div>
+
+      <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Contact Us</button>
+    </div>
   	<div id="contacts" class="container-fluid">
   	  <div class="row">
   	    <div class="col-sm-8">
   	      <p>There are still open positions available. Please contact us to join our team!<br>
-  	        <br> President&emsp;Jon Campbell&emsp;jon.campbell@cusdclipco.org <br>
-  	        <br> Vice President&emsp;Open <br>
-  	        <br> Secretary&emsp;Heather Simonovich&emsp;heather.simonovich@cusdclipco.org<br>
-  	        <br> Co-Treasurer&emsp;Bin Liao&emsp;bin.liao@cusdclipco.org<br>
-  	        <br> Co-Treasurer&emsp;Sammi Hsu&emsp;sammi.hsu@cusdclipco.org<br>
-  	        <br> Kindergarten&emsp;Alan Fong &emsp;alan.fong@cusdclipco.org<br> Jasmine Wu&emsp;jasmine.wu@cusdclipco.org<br>
-  	        <br> 1st Grade&emsp;Rachel Heller Turkal&emsp;rachel.heller.turkal@cusdclipco.org<br> Open <br>
-  	        <br> 2nd Grade&emsp;Ted Fong&emsp;ted.fong@cusdclipco.org<br> Wei Chen&emsp;wei.chen@cusdclipco.org<br>
-  	        <br> 3rd Grade&emsp;Nikki Tan&emsp;nikki.tan@cusdclipco.org<br> Grace Tsang&emsp;grace.tsang@cusdclipco.org<br>
-  	        <br> 4th Grade&emsp;Julie Wann&emsp;julie.wann@cusdclipco.org<br> Aileen Lai&emsp;aileen.lai@cusdclipco.org<br>
-  	        <br> 5th Grade&emsp;Ivy Lau&emsp;ivy.lau@cusdclipco.org<br> Helen Lin&emsp;helen.lin@cusdclipco.org<br>
-  	        <br> 6th Grade&emsp;Lijuan Wang&emsp;lijuan.wang@cusdclipco.org<br> David Liu&emsp;david.liu@cusdclipco.org<br>
-  	        <br> 7th Grade&emsp;Ann Ruckstuhl&emsp;ann.ruckstuhl@cusdclipco.org<br> Open <br>
-  	        <br> 8th Grade&emsp;Jack Zhu&emsp;jack.zhu@cusdclipco.org<br> Joyce Luo&emsp;joyce.luo@cusdclipco.org</p>
+          <table>
+            <thead>
+              <th>
+                Position
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Email
+              </th>
+            </thead>
+            <tbody>
+            <tr>
+              <td>President</td>
+              <td>Jon Campbell</td>
+              <td>jon.campbell@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Vice President</td>
+              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+            </tr>
+            <tr>
+              <td>Secretary</td>
+              <td>Heather Simonovich</td>
+              <td>heather.simonovich@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Co-Treasurers</td>
+              <td>Bin Liao</td>
+              <td>bin.liao@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Sammi Hsu</td>
+              <td>sammi.hsu@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Kindergarten</td>
+              <td>Alan Fong</td>
+              <td>alan.fong@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Jasmine Wu</td>
+              <td>jasmine.wu@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">1st Grade</td>
+              <td>Rachel Heller Turkal</td>
+              <td>rachel.heller.turkal@cusdclipco.org</td>
+            </tr>
+             <tr>
+              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+            </tr>
+            <tr>
+              <td rowspan="2">2nd Grade</td>
+              <td>Ted Fong</td>
+              <td>ted.fong@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Wei Chen</td>
+              <td>wei.chen@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">3rd Grade</td>
+              <td>Nikki Tan</td>
+              <td>nikki.tan@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Grace Tsang</td>
+              <td>grace.tsang@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">4th Grade</td>
+              <td>Julie Wann</td>
+              <td>julie.wann@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Aileen Lai</td>
+              <td>aileen.lai@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">5th Grade</td>
+              <td>Ivy Lau</td>
+              <td>ivy.lau@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Helen Lin</td>
+              <td>helen.lin@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">6th Grade</td>
+              <td>Lijuan Wang</td>
+              <td>lijuan.wang@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>David Liu</td>
+              <td>david.liu@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">7th Grade</td>
+              <td>Ann Ruckstuhl</td>
+              <td>ann.ruckstuhl@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+            </tr>
+            <tr>
+              <td rowspan="2">8th Grade</td>
+              <td>Jack Zhu</td>
+              <td>jack.zhu@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Joyce Luo</td>
+              <td>joyce.luo@cusdclipco.org</td>
+            </tr>
+            </tbody>
+          </table>
   	    </div>
   	    <div class="col-sm-4">
   	    </div>
@@ -362,109 +572,13 @@
   	        <button class="btn-default btn-lg">Donate</button>
   	      </div>
   	    </div>
-  	    <div class="row">
-  	      <h2>Volunteers!</h2>
-  	      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-  	        <!-- Indicators -->
-  	        <ol class="carousel-indicators">
-  	          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-  	          <li data-target="#myCarousel" data-slide-to="1"></li>
-  	          <li data-target="#myCarousel" data-slide-to="2"></li>
-  	        </ol>
-
-  	        <!-- Wrapper for slides -->
-  	        <div class="carousel-inner" role="listbox">
-  	          <div class="item active">
-  	            <p><a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG"></a><br>By
-  	              Diego Delso, <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">Link</a></p>
-  	          </div>
-
-  	          <div class="item">
-  	            <p><a href="https://commons.wikimedia.org/wiki/File:H%C3%A4ktet_i_Delsbo.jpg#/media/File:H%C3%A4ktet_i_Delsbo.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H%C3%A4ktet_i_Delsbo.jpg/1200px-H%C3%A4ktet_i_Delsbo.jpg" alt="Häktet i Delsbo.jpg"></a><br>By
-  	              <a href="//commons.wikimedia.org/wiki/User:Einarspetz" title="User:Einarspetz">Einarspetz</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>,
-  	              <a href="https://commons.wikimedia.org/w/index.php?curid=35203980">Link</a></p>
-  	          </div>
-  	        </div>
-
-  	        <!-- Left and right controls -->
-  	        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-  	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  	      <span class="sr-only">Previous</span>
-  	    </a>
-  	        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-  	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  	      <span class="sr-only">Next</span>
-  	    </a>
-  	      </div>
-  	    </div>
   	  </div>
 
-  	  <div id="portfolio" class="container-fluid text-center bg-grey">
-  	      <h2>Portfolio</h2><br>
-  	      <h4>What we have created</h4>
-  	      <div class="row text-center">
-  	        <div class="row slideanim">
-  	          <div class="col-sm-4">
-  	            <div class="thumbnail">
-  	              <img src="images/placeholder1.png" alt="Paris" width="400" height="300">
-  	              <p><strong>Paris</strong></p>
-  	              <p>Yes, we built Paris</p>
-  	            </div>
-  	          </div>
-  	          <div class="col-sm-4">
-  	            <div class="thumbnail">
-  	              <img src="images/placeholder2.png" alt="New York" width="400" height="300">
-  	              <p><strong>New York</strong></p>
-  	              <p>We built New York</p>
-  	            </div>
-  	          </div>
-  	          <div class="col-sm-4">
-  	            <div class="thumbnail">
-  	              <img src="images/placeholder3.png" alt="San Francisco" width="400" height="300">
-  	              <p><strong>San Francisco</strong></p>
-  	              <p>Yes, San Fran is ours</p>
-  	            </div>
-  	          </div>
-  	        </div>
-  	      </div><br>
-
-  	      <h2>What our customers say</h2>
-  	      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-  	        <!-- Indicators -->
-  	        <ol class="carousel-indicators">
-  	          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-  	          <li data-target="#myCarousel" data-slide-to="1"></li>
-  	          <li data-target="#myCarousel" data-slide-to="2"></li>
-  	        </ol>
-
-  	        <!-- Wrapper for slides -->
-  	        <div class="carousel-inner" role="listbox">
-  	          <div class="item active">
-  	            <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
-  	          </div>
-  	          <div class="item">
-  	            <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
-  	          </div>
-  	          <div class="item">
-  	            <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
-  	          </div>
-  	        </div>
-
-  	        <!-- Left and right controls -->
-  	        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-  	        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  	        <span class="sr-only">Previous</span>
-  	      </a>
-  	        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-  	        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  	        <span class="sr-only">Next</span>
-  	      </a>
-  	      </div>
-  	    </div>
+  	  
 
   	    <div id="budget" class="container-fluid">
   	      <div class = "text-center">
-  	        <h2>CLIP Advisory Commitee & Budget</h2><br>
+  	        <h2>CLIP Advisory Committee amp& Budget</h2><br>
   	      </div>
   	      <div class="col-sm-6">
   	        <h4>The CLIP Advisory Committee (CAC) was set up by the district to help make
@@ -480,9 +594,9 @@
   	      <div class="col-sm-4">
   	        <div class="text-center">
   	          <p><a href="http://www.cusdclipco.org/documents/2016to2017/Back%20to%20School%20Night/16-17%20Approved%20CLIPCO%20Budget.pdf">
-  	            <h4>Approved 2016 - 2017 CLIP Curriculum Budget</p>
+  	            <h4>Approved 2016 - 2017 CLIP Curriculum Budget</h4></a></p>
   	        </div>
-  	        <img src = "images/16-17 CLIPCO Budget.jpg" alt="Budget" width="640" height="360">
+  	        <img src = "images/clipcobudget.gif" alt="Budget" width="640" height="360">
   	      </div>
   	    </div>
 
@@ -491,55 +605,56 @@
             <h2>Donations</h2>
             <h4> 2016 - 2017 Direct Give Contest</h4>
           </div>
-          <!-- div class="row slideanim" -->
-          <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-              <div class="panel-heading">
-                <h1>Prizes</h1>
+          <div class="row slideanim">
+            <div class="col-sm-4 col-xs-12">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h1>Prizes</h1>
+                </div>
+                <div class="panel-body">
+                  <p>
+                    <h4>Individual Prize</h4></p>
+                  <p><img src="images/vinyl-school-pouch-62125-red.jpg" alt="Pencil Pouch" style="width:165px;height:165px;"></p>
+                  <p>Pencil Pouch</p>
+                  <p>
+                    <h4>Class Prize</h4></p>
+                  <p><img src="images/Rooster-tshirt.png" alt="T-Shirt" style="width:165px;height:189px;"></p>
+                  <p>TShirt</p>
+                  <p>
+                    <h4>Grand Prize</h4></p>
+                  <p><img src="images/bpk22-orange.jpg" alt="Backback" style="width:115px;height:168px;"></p>
+                  <p>Backpack</p>
+                </div>
               </div>
-              <div class="panel-body">
-                <p>
-                  <h4>Individual Prize</h4></p>
-                <p><img src="images/vinyl-school-pouch-62125-red.jpg" alt="Pencil Pouch" style="width:165px;height:165px;"></p>
-                <p>Pencil Pouch</p>
-                <p>
-                  <h4>Class Prize</h4></p>
-                <p><img src="images/Rooster-tshirt.png" alt="T-Shirt" style="width:165px;height:189px;"></p>
-                <p>TShirt</p>
-                <p>
-                  <h4>Grand Prize</h4></p>
-                <p><img src="images/bpk22-orange.jpg" alt="Backback" style="width:115px;height:168px;"></p>
-                <p>Backpack</p>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h1>Donate Now</h1>
+                </div>
+                <div class="panel-body">
+                  <p><a href="donations.html"><h4>Donate On line</h4></a></p>
+                  <p>PayPal, Debit, or Credit Card</p>
+                  <p><a href="pledgeform.html"><h4>Donate by check</h4></a></p>
+                  <p>Download the Pledge Form</p>
+                  <p><a href="donateFAQ.html"><h4>FAQ</h4></a></p>
+                  <p>Frequently Asked Questions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h1>Something Else</h1>
+                </div>
+                <div class="panel-body">
+                  <p>
+                    <h3>Information can go here</h3>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-              <div class="panel-heading">
-                <h1>Donate Now</h1>
-              </div>
-              <div class="panel-body">
-                <p><a href="donations.html"><h4>Donate Online</h4></a></p>
-                <p>PayPal, Debit, or Credit Card</p>
-                <p><a href="pledgeform.html"><h4>Donate by check</h4></a></p>
-                <p>Download the Pledge Form</p>
-                <p><a href="donateFAQ.html"><h4>FAQ</h4></a></p>
-                <p>Frequently Asked Questions.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-              <div class="panel-heading">
-                <h1>Something Else</h1>
-              </div>
-              <div class="panel-body">
-                <p>
-                  <h3>Information can go here</h3></p>
-              </div>
-            </div>
-          </div>
-          <!-- /div -->
         </div>
 
         <!-- Container (Contact Section) -->
@@ -622,6 +737,43 @@
       }
     }
   </script> 
+
+  <!-- Carousel incase we need it later -->
+      <!--
+      <h2>What our customers say</h2>
+      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators --> <!--
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides --> <!--
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+          </div>
+          <div class="item">
+            <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+          </div>
+          <div class="item">
+            <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+          </div>
+        </div>
+
+        <!-- Left and right controls --> <!--
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      </div>
+    </div>
+    -->
 
  
 </body>
