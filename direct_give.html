@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+  <title>CLIPCO - Direct Give</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+      var jumboHeight = $('.jumbotron').outerHeight();
+      function parallax(){
+          var scrolled = $(window).scrollTop();
+          $('.bg').css('height', (jumboHeight-(scrolled-450)) +'px');
+      }
+      $(window).scroll(function(e){
+          parallax()+20;
+      });
+    </script>
+
+  <style type="text/css">
+
+    .prize-image{
+      width: 75%;
+    }
+
+    #prizes{
+      background-color: rgba(0,0,0,0.05);
+    }
+
+    td{
+      font-weight: bold;
+      color: rgb(75,75,75);
+    }
+
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="website.html">Home</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="programs.html">PROGRAMS</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="budget.html">BUDGET</a><li>
+            <li><a href="donations.html">DONATE</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+
+  <div class="bg"></div>
+
+  <div class="jumbotron text-center">
+      <h1>Direct Give Competition</h1>
+      <p>Funding CLIPCO</p>
+    </div>
+
+   
+  <div id="info" class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+          <h2>Information &nbsp;&amp;&nbsp; Rules</h2>
+        </div>
+        <div class="col-sm-8">
+        <h4>This year CLIPCO is asking CLIP families to donate $450 for each child in Kindergarten to 6th grade, and $225 for each child in 7th to 8th grade to cover their share of CLIP educational expenses.
+        <br><br>
+        <p><strong>Contest Rules:</strong>
+        <ol>
+          <li> Donations must be received by midnight, November 15, 2016 in order to be counted.</li>
+          <li>Only donations of $225 or more will count towards the contest.</li>
+          <li>Target dollar amount is determined by the total number of students per home room (or grade if Miller students) multiplied by the requested donation amount.</li>
+          <li>Donors to be recognized in a future publication with an option to remain anonymous.</li>
+          <li>Corporate matching amounts do not count towards the Direct Give Contest.</li>
+        </ol>
+        </p>
+        </h4>
+        <br><button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Call to Action!</button>
+      </div>
+      <div class="col-sm-4">
+        <p><img src="images/image.png" alt="image.png" width="400"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="prizes" class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+          <h2>Prizes</h2>
+        </div>
+        <div class="col-sm-12">
+        <center><h4>As with last years, CLIPCO is offering three different prizes to encourage a friendly contest.</h4>
+        <br><br>
+        <p><h4>Prizes:</h4></p>
+        </center>
+        <table>
+          <thead>
+            <th>Individual Prize</th>
+            <th>Class Prize</th>
+            <th>Grand Prize</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img class="prize-image" src="images/vinyl-school-pouch-62125-red.jpg" alt="penicl pouch">
+              </td>
+              <td>
+                <img class="prize-image" src="images/Rooster-tshirt.png" alt="rooster shirt">
+              </td>
+              <td>
+                <img class="prize-image" src="images/bpk22-orange.jpg" alt="orange backback">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Pencil Pouch
+              </td>
+              <td>
+                Rooster Shirt
+              </td>
+              <td>
+                Orange Backpack
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+
+ 
+</body>
+
+
+
+</html>

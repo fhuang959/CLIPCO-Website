@@ -1,157 +1,230 @@
 <!DOCTYPE html>
 <head>
-	<title>CLIPCO - Contact</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<script type='text/javascript'>
-  		var jumboHeight = $('.jumbotron').outerHeight();
-  		function parallax(){
-  		    var scrolled = $(window).scrollTop();
-  		    $('.bg').css('height', (jumboHeight-(scrolled-350)) +'px');
-  		}
-  		$(window).scroll(function(e){
-  		    parallax()+20;
-  		});
-  	</script>
-<style>
+  <title>CLIPCO - Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+      var jumboHeight = $('.jumbotron').outerHeight();
+      function parallax(){
+          var scrolled = $(window).scrollTop();
+          $('.bg').css('height', (jumboHeight-(scrolled-450)) +'px');
+      }
+      $(window).scroll(function(e){
+          parallax()+20;
+      });
+    </script>
 
-	.container-fluid {
-      padding: 60px 50px;
-    }
-    h1 {
-    	font-size: 36px;
-	  text-transform: uppercase;
-	  color: #000000;
-	  font-weight: 600;
-	  margin-bottom: 30px;
-    }
-
-	h2 {
-	  font-size: 24px;
-	  text-transform: uppercase;
-	  color: #303030;
-	  font-weight: 600;
-	  margin-bottom: 30px;
-	}
-
-	h4 {
-	  font-size: 19px;
-	  line-height: 1.375em;
-	  color: #303030;
-	  font-weight: 400;
-	  margin-bottom: 30px;
-	}
-
-	.bg {
-	  background: url('images/header.gif') repeat left center;
-	  position: fixed;
-	  width: 100%;
-	  height: 350px; /*same height as jumbotron */
-	  top:50px;
-	  left:0;
-	  z-index: -1;
-	}
-
- 	.jumbotron {
-      margin-bottom: 0px;
-	  height: 350px;
-	  color: #1234ff;	
-	  text-shadow: black 0.3em 0.3em 0.3em;
-	  background: transparent;
-	  padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
-    }
-
- 	.navbar {
-      margin-bottom: 0;
-      background-color: #f4511e;
-      z-index: 9999;
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-    }
-
-    .navbar li a,
-    .navbar .navbar-brand {
-      color: #fff !important;
-    }
-
-    .navbar-nav li a:hover,
-    .navbar-nav li.active a {
-      color: #f4511e !important;
-      background-color: #fff !important;
-    }
-
-    .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-    }
-
-    .bg-grey {
-      background-color: #f6f6f6;
-    }
-
-
-</style>
+  <style type="text/css">
+  </style>
 </head>
 <body>
-	
-	<nav class="navbar navbar-default navbar-fixed-top">
-	    <div class="container">
-	      <div class="navbar-header">
-	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	        <a class="navbar-brand" href="website.html">Home</a>
-	      </div>
-	      <div class="collapse navbar-collapse" id="myNavbar">
-	        <ul class="nav navbar-nav navbar-left">
-	          <li><a href="about.html">ABOUT</a></li>
-	          <li><a href="programs.html">PROGRAMS</a></li>
-	          <li><a href="portfolio.html">PORTFOLIO</a></li>
-	          <li><a href="budget.html">BUDGET</a><li>
-	          <li><a href="donations.html">DONATE</a></li>
-	          <li><a href="contact.html">CONTACT</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	</nav>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="website.html">Home</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="programs.html">PROGRAMS</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="budget.html">BUDGET</a><li>
+            <li><a href="donations.html">DONATE</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+  </nav>
 
-	<div class="bg"></div>
+  <div class="bg"></div>
 
-	<div class="jumbotron text-center">
-    	<h1>Contact Us</h1>
-    	<p>A subtitle for the page</p>
-  	</div>
+  <div class="jumbotron text-center">
+      <h1>Contact Us</h1>
+      <p>Apply for Volunteer Oppertunities</p>
+    </div>
 
-	
-	<div class="container-fluid">
-		<div class="row">
-		  <div class="col-sm-8">
-		    <h2>Another title thing idk</h2>
-		    <h4>A bunch of text that is pretty big, but not as big as the title can go here. It's like a little paragraph explaining what the page is about. I like trees because they are green. green is a nice color. Except for cars. Cars should not be green. The green cars are always the evil ones. Don't do drugs.</h4>
-		    <br>
-		    <p>Some more text can go here. It's smaller than the paragraph before. Still important though. He may not be as big an showey as the other paragraph but he's trying his hardest. AAAAAAAHHHHHHHH. Why am i alife? 一個星期過，我功課多，我還沒有做我的生詞合約，我被老師罵，我想自殺，名字又有九個叉。那是你的問題。</p>
-		    <br><button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Call to Action!</button>
-		  </div>
-		  <div class="col-sm-4">
-		    <p><img src="images/image.png" alt="image.png" style="width:400px;height:700px;"></p>
-		  </div>
-		</div>
-	</div>
-
-
- 
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Volunteer</h2>
+        <h4>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. In addition, your employer may have a volunteer reimbursement program.  Please fill the form below to volunteer for some of our exciting events and committees.</h4>
+        <br>
+        <p></p>
+        <div>
+        <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#demo">Volenteer Form</button>
+          <div id="demo" class="collapse">
+          </br> 
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          </div>
+      </div>
+      <h2>Additional Contacts</h2>
+      <div>
+          <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#contacts">Board of Directors</button>
+        </div>
+            <div id="contacts" class="collapse">
+              <div class="row">
+                <div class="col-sm-8">
+                  <p>There are still open positions available. Please contact us to join our team!<br>
+                  <table>
+                    <thead>
+                      <th>
+                        Position
+                      </th>
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                        Email
+                      </th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>President</td>
+                      <td>Jon Campbell</td>
+                      <td>jon.campbell@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>Vice President</td>
+                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+                    </tr>
+                    <tr>
+                      <td>Secretary</td>
+                      <td>Heather Simonovich</td>
+                      <td>heather.simonovich@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">Co-Treasurers</td>
+                      <td>Bin Liao</td>
+                      <td>bin.liao@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>Sammi Hsu</td>
+                      <td>sammi.hsu@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">Kindergarten</td>
+                      <td>Alan Fong</td>
+                      <td>alan.fong@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>Jasmine Wu</td>
+                      <td>jasmine.wu@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">1st Grade</td>
+                      <td>Rachel Heller Turkal</td>
+                      <td>rachel.heller.turkal@cusdclipco.org</td>
+                    </tr>
+                     <tr>
+                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">2nd Grade</td>
+                      <td>Ted Fong</td>
+                      <td>ted.fong@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>Wei Chen</td>
+                      <td>wei.chen@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">3rd Grade</td>
+                      <td>Nikki Tan</td>
+                      <td>nikki.tan@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>Grace Tsang</td>
+                      <td>grace.tsang@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">4th Grade</td>
+                      <td>Julie Wann</td>
+                      <td>julie.wann@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>Aileen Lai</td>
+                      <td>aileen.lai@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">5th Grade</td>
+                      <td>Ivy Lau</td>
+                      <td>ivy.lau@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>Helen Lin</td>
+                      <td>helen.lin@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">6th Grade</td>
+                      <td>Lijuan Wang</td>
+                      <td>lijuan.wang@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>David Liu</td>
+                      <td>david.liu@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">7th Grade</td>
+                      <td>Ann Ruckstuhl</td>
+                      <td>ann.ruckstuhl@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">8th Grade</td>
+                      <td>Jack Zhu</td>
+                      <td>jack.zhu@cusdclipco.org</td>
+                    </tr>
+                    <tr>
+                      <td>Joyce Luo</td>
+                      <td>joyce.luo@cusdclipco.org</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-sm-4">
+                </div>
+              </div>
+            </div>
+            <p> </br> </p>
+      <div>
+          <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#schools">CLIPCO Schools</button>
+          </div>
+            <div id="schools" class="collapse">
+            <a href="http://www.edline.net/pages/meyerholz_elementary_school">Meyerholz Elementry School</a>
+            </br>
+            <a href="https://www.cusdk8.org/miller">Miller Middle School</a>
+        </div>
+        <p> </br> </p>
+        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcusdclipco%2F&width=112&layout=button_count&action=like&size=small&show_faces=true&share=true&height=46&appId" width="112" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <div class="fb-like" data-href="https://www.facebook.com/cusdclipco/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+      </div>
+        <div class="col-sm-4">
+        <p><img src="images/volunteers_needed.jpg" alt="Volunteers Needed" style="width:395px;height:347px;"></p>
+      </div>
+    </div>
+  </div>
 </body>
 
 
