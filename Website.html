@@ -1,126 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Bootstrap Theme Company Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
+	<title>CLIPCO - Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type='text/javascript'>
+  		var jumboHeight = $('.jumbotron').outerHeight();
+  		function parallax(){
+  		    var scrolled = $(window).scrollTop();
+  		    $('.bg').css('height', (jumboHeight-(scrolled-350)) +'px');
+  		}
+  		$(window).scroll(function(e){
+  		    parallax()+20;
+  		});
+  	</script>
+    <script type="text/javascript">
+      var color = #7be2f2; //color var
+    </script>
+
+<style>
+
   body {
-      font: 400 15px Lato, sans-serif;
-      line-height: 1.8;
-      color: #818181;
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
   }
-  h2 {
-      font-size: 24px;
-      text-transform: uppercase;
-      color: #303030;
-      font-weight: 600;
-      margin-bottom: 30px;
-  }
-  h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      color: #303030;
-      font-weight: 400;
-      margin-bottom: 30px;
-  }
-  .jumbotron {
-      background-color: #f4511e;
-      color: #fff;
-      padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
-  }
+
   .container-fluid {
       padding: 60px 50px;
   }
-  .bg-grey {
-      background-color: #f6f6f6;
+  h1 {
+  	font-size: 36px;
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 30px;
   }
+
+	h2 {
+	  font-size: 24px;
+	  text-transform: uppercase;
+	  color: #303030;
+	  font-weight: 600;
+	  margin-bottom: 30px;
+	}
+
+	h4 {
+	  font-size: 19px;
+	  line-height: 1.375em;
+	  color: #303030;
+	  font-weight: 400;
+	  margin-bottom: 30px;
+	}
+
+	.bg {
+	  background: url('images/miller-rainbow.jpg') no-repeat left center;
+	  position: fixed;
+	  width: 500em;
+	  top:50px;
+	  left:0 ;
+	  z-index: -1;
+	}
+
+ 	.jumbotron {
+    margin-bottom: 0px;
+	  color: #fff;
+	  text-shadow: black 0.3em 0.3em 0.3em;
+	  background: transparent;
+	  padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    }
+
+  .bg, .jumbotrong{
+       height: 350px;
+    }
+
   .logo-small {
-      color: #f4511e;
+      /*color: #f4511e;*/
       font-size: 50px;
-  }
-  .logo {
-      color: #f4511e;
+    }
+
+    .logo {
+      /*color: #f4511e;*/
       font-size: 200px;
-  }
-  .thumbnail {
+    }
+
+    .thumbnail {
       padding: 0 0 15px 0;
       border: none;
       border-radius: 0;
-  }
-  .thumbnail img {
+    }
+
+    .thumbnail img {
       width: 100%;
       height: 100%;
       margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
+    }
+
+    .carousel-control.right,
+    .carousel-control.left {
       background-image: none;
-      color: #f4511e;
-  }
-  .carousel-indicators li {
+      /*color: #f4511e;*/
+    }
+
+    .carousel-indicators li {
       border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-      background-color: #f4511e;
-  }
-  .item h4 {
+    }
+
+    .carousel-indicators li.active {
+      /*background-color: #f4511e;*/
+    }
+
+    .item h4 {
       font-size: 19px;
       line-height: 1.375em;
       font-weight: 400;
       font-style: italic;
       margin: 70px 0;
-  }
-  .item span {
+    }
+
+    .item span {
       font-style: normal;
-  }
-  .panel {
-      border: 1px solid #f4511e;
-      border-radius:0 !important;
+    }
+
+    .panel {
+      /*border: 1px solid #f4511e;*/
+      border-radius: 0 !important;
       transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-      border: 1px solid #f4511e;
+    }
+
+    .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+    }
+
+    .panel-footer .btn:hover {
+      /*border: 1px solid #f4511e;*/
       background-color: #fff !important;
-      color: #f4511e;
-  }
-  .panel-heading {
+      /*color: #f4511e;*/
+    }
+
+    .panel-heading {
       color: #fff !important;
-      background-color: #f4511e !important;
+      /*background-color: #f4511e !important;*/
       padding: 25px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 0px;
       border-top-right-radius: 0px;
       border-bottom-left-radius: 0px;
       border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
+    }
+
+    .panel-footer {
       background-color: white !important;
-  }
-  .panel-footer h3 {
+    }
+
+    .panel-footer h3 {
       font-size: 32px;
-  }
-  .panel-footer h4 {
+    }
+
+    .panel-footer h4 {
       color: #aaa;
       font-size: 14px;
-  }
-  .panel-footer .btn {
+    }
+
+    .panel-footer .btn {
       margin: 15px 0;
-      background-color: #f4511e;
+      /*background-color: #f4511e;*/
       color: #fff;
-  }
-  .navbar {
+    }
+
+ 	.navbar {
       margin-bottom: 0;
-      background-color: #f4511e;
+      /*background-color: #f4511e;*/
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -128,420 +183,601 @@
       letter-spacing: 4px;
       border-radius: 0;
       font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
+    }
+
+    .navbar li a,
+    .navbar .navbar-brand {
       color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #f4511e !important;
+    }
+
+    .navbar-nav li a:hover,
+    .navbar-nav li.active a {
+      /*color: #f4511e !important;*/
       background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
+    }
+
+    .navbar-default .navbar-toggle {
       border-color: transparent;
       color: #fff !important;
-  }
-  footer .glyphicon {
+    }
+
+    .bg-grey {
+      background-color: #f6f6f6;
+    }
+
+    footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #f4511e;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
+      /*color: #f4511e;*/
+    }
+
+
+    /*set the color theme here*/
+    footer .glyphicon,
+    .navbar-nav li a:hover,
+    .navbar-nav li.active a,
+    .logo-small,
+    .logo,
+    .carousel-control.right,
+    .carousel-control.left,
+    .panel-footer .btn:hover{
+      color: red !important;
+    }
+
+    .carousel-indicators li.active,
+    .panel-heading,
+    .panel-footer .btn,
+    .navbar{
+      background-color: red !important;
+    }
+
+    .panel,
+    .panel-footer .btn:hover{
+      border: 1px solid red !important;
+    }
+
+
+
+    .slideanim {
+      visibility: hidden;
+    }
+
+    .slide {
       animation-name: slide;
       -webkit-animation-name: slide;
       animation-duration: 1s;
       -webkit-animation-duration: 1s;
       visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
+
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translateY(70%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
     }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
+
+    @-webkit-keyframes slide {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+      }
     }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
+
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+      .btn-lg {
         width: 100%;
         margin-bottom: 35px;
+      }
     }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
+
+    @media screen and (max-width: 480px) {
+      .logo {
         font-size: 150px;
+      }
     }
-  }
-  </style>
+
+    table, th, td{
+      border: 1px solid rgb(150,150,150);
+      border-collapse: collapse;
+      padding: 7px;
+    }
+
+    th:hover, td:hover{
+      background-color: rgba(0,0,0,0.1);
+    }
+
+</style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#progams">SERVICES</a></li>
-        <li><a href="#budget">BUDGET</a><li>
-        <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#pricing">PRICING</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+	    <div class="container">
+	      <div class="navbar-header">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	        <a class="navbar-brand" href="#myPage">Logo</a>
+	      </div>
+	      <div class="collapse navbar-collapse" id="myNavbar">
+	        <ul class="nav navbar-nav navbar-right">
+	          </li><li><a href="#news">NEWS</a></li>
+	          <li><a href="#programs">PROGRAMS</a></li>
+	          <li><a href="#about">ABOUT</a>
+	          <li> <a href="#budget">BUDGET</a><li>
+	          <li><a href="#donate">DONATE</a></li>
+	          <li><a href="#contact">CONTACT</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	</nav>
+	<div class="bg"></div>
+	<div class="jumbotron text-center">
+    	<h1>CLIPCO</h1>
+    	<p>Cupertino Language Immersion Program</p>
   </div>
-</nav>
 
-<div class="jumbotron text-center">
-  <h1>Company</h1>
-  <p>We specialize in blablabla</p>
-  <form>
-    <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button>
-      </div>
-    </div>
-  </form>
-</div>
+  <div id="news" class="container-fluid text-center bg-grey">
+      <h2>News</h2><br>
+      <h4>What we have created</h4>
+      <div class="row text-center">
+        <div class="row slideanim">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="images/placeholder1.png" alt="Paris" width="400" height="300">
+              <p><strong>Paris</strong></p>
+              <p>Yes, we built Paris</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="images/placeholder2.png" alt="New York" width="400" height="300">
+              <p><strong>New York</strong></p>
+              <p>We built New York</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="images/placeholder3.png" alt="San Francisco" width="400" height="300">
+              <p><strong>San Francisco</strong></p>
+              <p>Yes, San Fran is ours</p>
+            </div>
+          </div>
+        </div>
+      </div><br>
 
-<!-- Container (About Section) -->
-<div id="about" class="container-fluid">
-  <div class="row">
-    <div class="col-sm-8">
-      <h2>CLIP Advisory Committee & Budget</h2><br>
-      <h4>(Description of what the commitee) </h4><br>
-      <h4>(Budget Usage)</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
-    </div>
-  </div>
-</div>
+  	<div id="about" class="container-fluid">
+  	  <div class="row">
+  	    <div class="col-sm-8">
+  	      <h2>About CLIPCO</h2><br>
+  	      <h4>CLIPCO is the non-profit fundraising organization that supports the programs in CLIP that are not funded by normal school district funds. This includes Mandarin curriculum development, Mandarin classrooom teaching materials, instructional aides in the classrooms, classroom equipment (PCs & Mandarin software) and Chinese cultural and enrichment activities.</h4><br>
+  	      <p>CLIPCO is ran entirely by parents volunteers. We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Contact us today for more information about
+  	        volunteering or providing a donation!</p>
+  	      <br>
+  	    </div>
+  	    <div class="col-sm-4">
+  	      <p><img src="images/911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;"></p>
+  	    </div>
+  	  </div>
 
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>Our Values</h2><br>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-</div>
 
-<!-- Container (Services Section) -->
-<div id="progams" class="container-fluid text-center">
-  <h2>SERVICES</h2>
-  <h4>What we offer</h4>
-  <br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-</div>
+    <!-- image carousel-->
+    <div class="row">
+          <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-<div id="budget" class="container-fluid">
-  <div class = "text-center">
-    <h2>CLIP Advisory Commitee & Budget</h2><br>
-  </div>
-  <div class="col-sm-6">
-    <h4>The CLIP Advisory Committee (CAC) was set up by the district to help make
-      curriculum decisions with parent and teacher involvement.  CAC and CLIPCO work
-      hand in hand each year.  The CAC board is composed of teachers, parents, principals,
-      and the director of our program.  They present funding needs to CLIPCO, which in turn
-      raises the money to cover those needs.</h4>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <p><a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG"></a><br>By
+                  Diego Delso, <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">Link</a></p>
+              </div>
+
+              <div class="item">
+                <p><a href="https://commons.wikimedia.org/wiki/File:H%C3%A4ktet_i_Delsbo.jpg#/media/File:H%C3%A4ktet_i_Delsbo.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H%C3%A4ktet_i_Delsbo.jpg/1200px-H%C3%A4ktet_i_Delsbo.jpg" alt="Häktet i Delsbo.jpg"></a><br>By
+                  <a href="//commons.wikimedia.org/wiki/User:Einarspetz" title="User:Einarspetz">Einarspetz</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>,
+                  <a href="https://commons.wikimedia.org/w/index.php?curid=35203980">Link</a></p>
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+          </div>
+        </div>
+
+      <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Contact Us</button>
+    </div>
+  	<div id="contacts" class="container-fluid">
+  	  <div class="row">
+  	    <div class="col-sm-8">
+  	      <p>There are still open positions available. Please contact us to join our team!<br>
+          <table>
+            <thead>
+              <th>
+                Position
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Email
+              </th>
+            </thead>
+            <tbody>
+            <tr>
+              <td>President</td>
+              <td>Jon Campbell</td>
+              <td>jon.campbell@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Vice President</td>
+              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+            </tr>
+            <tr>
+              <td>Secretary</td>
+              <td>Heather Simonovich</td>
+              <td>heather.simonovich@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Co-Treasurers</td>
+              <td>Bin Liao</td>
+              <td>bin.liao@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Sammi Hsu</td>
+              <td>sammi.hsu@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Kindergarten</td>
+              <td>Alan Fong</td>
+              <td>alan.fong@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Jasmine Wu</td>
+              <td>jasmine.wu@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">1st Grade</td>
+              <td>Rachel Heller Turkal</td>
+              <td>rachel.heller.turkal@cusdclipco.org</td>
+            </tr>
+             <tr>
+              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+            </tr>
+            <tr>
+              <td rowspan="2">2nd Grade</td>
+              <td>Ted Fong</td>
+              <td>ted.fong@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Wei Chen</td>
+              <td>wei.chen@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">3rd Grade</td>
+              <td>Nikki Tan</td>
+              <td>nikki.tan@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Grace Tsang</td>
+              <td>grace.tsang@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">4th Grade</td>
+              <td>Julie Wann</td>
+              <td>julie.wann@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Aileen Lai</td>
+              <td>aileen.lai@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">5th Grade</td>
+              <td>Ivy Lau</td>
+              <td>ivy.lau@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Helen Lin</td>
+              <td>helen.lin@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">6th Grade</td>
+              <td>Lijuan Wang</td>
+              <td>lijuan.wang@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>David Liu</td>
+              <td>david.liu@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td rowspan="2">7th Grade</td>
+              <td>Ann Ruckstuhl</td>
+              <td>ann.ruckstuhl@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+            </tr>
+            <tr>
+              <td rowspan="2">8th Grade</td>
+              <td>Jack Zhu</td>
+              <td>jack.zhu@cusdclipco.org</td>
+            </tr>
+            <tr>
+              <td>Joyce Luo</td>
+              <td>joyce.luo@cusdclipco.org</td>
+            </tr>
+            </tbody>
+          </table>
+  	    </div>
+  	    <div class="col-sm-4">
+  	    </div>
+  	  </div>
+  	</div>
+
+  	<div class="container-fluid bg-grey">
+  	  <div class="row">
+  	    <div class="col-sm-4">
+  	      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+  	    </div>
+  	    <div class="col-sm-8">
+  	      <h2>Our Values</h2><br>
+  	      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+  	      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+  	        ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  	        consequat.</p>
+  	    </div>
+  	  </div>
+  	</div>
+
+
+  	<!-- Container (Programs Section) -->
+  	<div id="programs" class="container-fluid">
+  	    <div class="text-center">
+  	      <h2>Programs</h2>
+  	      <h4>Programs and Commitees</h4>
+  	    </div>
+  	    <div class="row">
+  	      <div class="col-sm-8">
+  	        <h2>CLIP programs</h2><br>
+  	        <h4>CLIPCO funds Chinese cultural and enrichment activities for our CLIP students through fundraising events. These programs are not funded by the Direct Give donations.</h4><br>
+  	        <p>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Visit our <a href="http://www.cusdclipco.org/volunteer.html" volunteer>volunteer</a> page
+  	          today for more information about volunteering or providing a <a href="http://www.cusdclipco.org/contributions.html">donation</a>!</p>
+  	        <br><button class="btn btn-default btn-lg">Volunteer</button>
+  	        <button class="btn-default btn-lg">Donate</button>
+  	      </div>
+  	    </div>
+  	  </div>
+
+
+
+  	    <div id="budget" class="container-fluid">
+  	      <div class = "text-center">
+  	        <h2>CLIP Advisory Committee amp& Budget</h2><br>
+  	      </div>
+  	      <div class="col-sm-6">
+  	        <h4>The CLIP Advisory Committee (CAC) was set up by the district to help make
+  	          curriculum decisions with parent and teacher involvement.  CAC and CLIPCO work
+  	          hand in hand each year.  The CAC board is composed of teachers, parents, principals,
+  	          and the director of our program.  They present funding needs to CLIPCO, which in turn
+  	          raises the money to cover those needs.</h4>
+  	          <!--
+  	          <h4>More information can be found at the </h4>
+  	          <a href="http://www.edline.net/pages/CLIP"><h4>Distric CLIP website</h4></a>
+  	        -->
+  	      </div>
+  	      <div class="col-sm-4">
+  	        <div class="text-center">
+  	          <p><a href="http://www.cusdclipco.org/documents/2016to2017/Back%20to%20School%20Night/16-17%20Approved%20CLIPCO%20Budget.pdf">
+  	            <h4>Approved 2016 - 2017 CLIP Curriculum Budget</h4></a></p>
+  	        </div>
+  	        <img src = "images/clipcobudget.gif" alt="Budget" width="640" height="360">
+  	      </div>
+  	    </div>
+
+        <div id="donate" class="container-fluid bg-grey">
+          <div class="text-center">
+            <h2>Donations</h2>
+            <h4> 2016 - 2017 Direct Give Contest</h4>
+          </div>
+          <div class="row slideanim">
+            <div class="col-sm-4 col-xs-12">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h1>Prizes</h1>
+                </div>
+                <div class="panel-body">
+                  <p>
+                    <h4>Individual Prize</h4></p>
+                  <p><img src="images/vinyl-school-pouch-62125-red.jpg" alt="Pencil Pouch" style="width:165px;height:165px;"></p>
+                  <p>Pencil Pouch</p>
+                  <p>
+                    <h4>Class Prize</h4></p>
+                  <p><img src="images/Rooster-tshirt.png" alt="T-Shirt" style="width:165px;height:189px;"></p>
+                  <p>TShirt</p>
+                  <p>
+                    <h4>Grand Prize</h4></p>
+                  <p><img src="images/bpk22-orange.jpg" alt="Backback" style="width:115px;height:168px;"></p>
+                  <p>Backpack</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h1>Donate Now</h1>
+                </div>
+                <div class="panel-body">
+                  <p><a href="donations.html"><h4>Donate On line</h4></a></p>
+                  <p>PayPal, Debit, or Credit Card</p>
+                  <p><a href="pledgeform.html"><h4>Donate by check</h4></a></p>
+                  <p>Download the Pledge Form</p>
+                  <p><a href="donateFAQ.html"><h4>FAQ</h4></a></p>
+                  <p>Frequently Asked Questions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                  <h1>Something Else</h1>
+                </div>
+                <div class="panel-body">
+                  <p>
+                    <h3>Information can go here</h3>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Container (Contact Section) -->
+        <div id="contact" class="container-fluid">
+          <h2 class="text-center">CONTACT</h2>
+          <div class="row">
+            <div class="col-sm-5">
+              <p>Contact us and we'll get back to you within 24 hours.</p>
+              <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+              <p><span class="glyphicon glyphicon-phone"></span> 00 1515151515</p>
+              <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+            </div>
+            <div class="col-sm-7 slideanim">
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+              </div>
+              <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+              <div class="row">
+                <div class="col-sm-12 form-group">
+                  <button class="btn btn-default pull-right" type="submit">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="container-fluid text-center">
+          <a href="#myPage" title="To Top">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+          <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+        </footer>
+
+	<script>
+	  $(document).ready(function() {
+	    // Add smooth scrolling to all links in navbar  footer link
+	    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+	      // Make sure this.hash has a value before overriding default behavior
+	      if (this.hash !== "") {
+	        // Prevent default anchor click behavior
+	        event.preventDefault();
+	        // Store hash
+	        var hash = this.hash;
+	        // Using jQuery's animate() method to add smooth page scroll
+	        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+	        $('html, body').animate({
+	          scrollTop: $(hash).offset().top
+	        }, 900, function() {
+	          // Add hash (#) to URL when done scrolling (default click behavior)
+	          window.location.hash = hash;
+	        });
+	      } // End if
+	    });
+	    $(window).scroll(function() {
+	      $(".slideanim").each(function() {
+	        var pos = $(this).offset().top;
+	        var winTop = $(window).scrollTop();
+	        if (pos < winTop + 600) {
+	          $(this).addClass("slide");
+	        }
+	      });
+	    });
+	  })
+	</script>
+
+  <script>
+    var x = document.getElementById('contacts');
+    x.style.display = 'none';
+
+    function doFunction() {
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
+
+  <!-- Carousel incase we need it later -->
       <!--
-      <h4>More information can be found at the </h4>
-      <a href="http://www.edline.net/pages/CLIP"><h4>Distric CLIP website</h4></a>
+      <h2>What our customers say</h2>
+      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators --> <!--
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides --> <!--
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+          </div>
+          <div class="item">
+            <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+          </div>
+          <div class="item">
+            <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+          </div>
+        </div>
+
+        <!-- Left and right controls --> <!--
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      </div>
+    </div>
     -->
-  </div>
-  <div class="col-sm-4">
-    <div class="text-center">
-      <p><a href="http://www.cusdclipco.org/documents/2016to2017/Back%20to%20School%20Night/16-17%20Approved%20CLIPCO%20Budget.pdf">
-        <h4>Approved 2016 - 2017 CLIP Curricukum Budget</p>
-    </div>
-    <img src = "images/16-17 CLIPCO Budget.jpg" alt="Budget" width="640" height="360">
-  </div>
-</div>
 
-<!-- Container (Portfolio Section) -->
-<div id="portfolio" class="container-fluid text-center">
-  <h2>Portfolio</h2><br>
-  <h4>What we have created</h4>
-  <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="paris.jpg" alt="Paris" width="400" height="300">
-        <p><strong>Paris</strong></p>
-        <p>Yes, we built Paris</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="newyork.jpg" alt="New York" width="400" height="300">
-        <p><strong>New York</strong></p>
-        <p>We built New York</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-        <p><strong>San Francisco</strong></p>
-        <p>Yes, San Fran is ours</p>
-      </div>
-    </div>
-  </div><br>
-
-  <h2>What our customers say</h2>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
-      </div>
-      <div class="item">
-        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
-      </div>
-      <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
-<!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid bg-grey">
-  <div class="text-center">
-    <h2>Pricing</h2>
-    <h4>Choose a payment plan that works for you</h4>
-  </div>
-  <div class="row slideanim">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Basic</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Pro</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>50</strong> Lorem</p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$29</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Premium</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>100</strong> Lorem</p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Add Google Maps -->
-<div id="googleMap" style="height:400px;width:100%;"></div>
-<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
-<footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
-</footer>
-
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-})
-</script>
 
 </body>
+
+
+
 </html>
