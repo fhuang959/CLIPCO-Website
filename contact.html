@@ -2,7 +2,7 @@
 <head>
 	<title>CLIPCO - Contact</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -18,6 +18,7 @@
   		    parallax()+20;
   		});
   	</script>
+
 <style>
 
 	.container-fluid {
@@ -64,7 +65,7 @@
 	  text-shadow: black 0.3em 0.3em 0.3em;
 	  background: transparent;
 	  padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
+      font-family: Montserrat, sans-serif !important;
     }
 
  	.navbar {
@@ -76,7 +77,7 @@
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
       border-radius: 0;
-      font-family: Montserrat, sans-serif;
+      font-family: Montserrat, sans-serif !important;
     }
 
     .navbar li a,
@@ -98,12 +99,23 @@
     .bg-grey {
       background-color: #f6f6f6;
     }
-
+    table, th, td{
+      border: 1px solid rgb(150,150,150);
+      border-collapse: collapse;
+      padding: 7px;
+    }
 
 </style>
 </head>
 <body>
-	
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+  		var js, fjs = d.getElementsByTagName(s)[0];
+  		if (d.getElementById(id)) return;
+  		js = d.createElement(s); js.id = id;
+  		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 	<nav class="navbar navbar-default navbar-fixed-top">
 	    <div class="container">
 	      <div class="navbar-header">
@@ -131,26 +143,171 @@
 
 	<div class="jumbotron text-center">
     	<h1>Contact Us</h1>
-    	<p>A subtitle for the page</p>
+    	<p>Apply for Volunteer Oppertunities</p>
   	</div>
 
 	
 	<div class="container-fluid">
 		<div class="row">
 		  <div class="col-sm-8">
-		    <h2>Another title thing idk</h2>
-		    <h4>A bunch of text that is pretty big, but not as big as the title can go here. It's like a little paragraph explaining what the page is about. I like trees because they are green. green is a nice color. Except for cars. Cars should not be green. The green cars are always the evil ones. Don't do drugs.</h4>
+		    <h2>Volunteer</h2>
+		    <h4>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. In addition, your employer may have a volunteer reimbursement program.  Please fill the form below to volunteer for some of our exciting events and committees.</h4>
 		    <br>
-		    <p>Some more text can go here. It's smaller than the paragraph before. Still important though. He may not be as big an showey as the other paragraph but he's trying his hardest. AAAAAAAHHHHHHHH. Why am i alife? 一個星期過，我功課多，我還沒有做我的生詞合約，我被老師罵，我想自殺，名字又有九個叉。那是你的問題。</p>
-		    <br><button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Call to Action!</button>
-		  </div>
-		  <div class="col-sm-4">
+		    <p></p>
+		    <div class="container">
+ 				<button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#demo">Volenteer Form</button>
+  				<div id="demo" class="collapse">
+  				</br> 
+ 				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  				</div>
+			</div>
+			<h2>Additional Contacts</h2>
+			<div class="container">
+		      <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#contacts">Board of Directors</button>
+				</div>
+				  	<div id="contacts" class="collapse">
+				  	  <div class="row">
+				  	    <div class="col-sm-8">
+				  	      <p>There are still open positions available. Please contact us to join our team!<br>
+				          <table>
+				            <thead>
+				              <th>
+				                Position
+				              </th>
+				              <th>
+				                Name
+				              </th>
+				              <th>
+				                Email
+				              </th>
+				            </thead>
+				            <tbody>
+				            <tr>
+				              <td>President</td>
+				              <td>Jon Campbell</td>
+				              <td>jon.campbell@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>Vice President</td>
+				              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+				            </tr>
+				            <tr>
+				              <td>Secretary</td>
+				              <td>Heather Simonovich</td>
+				              <td>heather.simonovich@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">Co-Treasurers</td>
+				              <td>Bin Liao</td>
+				              <td>bin.liao@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>Sammi Hsu</td>
+				              <td>sammi.hsu@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">Kindergarten</td>
+				              <td>Alan Fong</td>
+				              <td>alan.fong@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>Jasmine Wu</td>
+				              <td>jasmine.wu@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">1st Grade</td>
+				              <td>Rachel Heller Turkal</td>
+				              <td>rachel.heller.turkal@cusdclipco.org</td>
+				            </tr>
+				             <tr>
+				              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">2nd Grade</td>
+				              <td>Ted Fong</td>
+				              <td>ted.fong@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>Wei Chen</td>
+				              <td>wei.chen@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">3rd Grade</td>
+				              <td>Nikki Tan</td>
+				              <td>nikki.tan@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>Grace Tsang</td>
+				              <td>grace.tsang@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">4th Grade</td>
+				              <td>Julie Wann</td>
+				              <td>julie.wann@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>Aileen Lai</td>
+				              <td>aileen.lai@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">5th Grade</td>
+				              <td>Ivy Lau</td>
+				              <td>ivy.lau@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>Helen Lin</td>
+				              <td>helen.lin@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">6th Grade</td>
+				              <td>Lijuan Wang</td>
+				              <td>lijuan.wang@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>David Liu</td>
+				              <td>david.liu@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">7th Grade</td>
+				              <td>Ann Ruckstuhl</td>
+				              <td>ann.ruckstuhl@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
+				            </tr>
+				            <tr>
+				              <td rowspan="2">8th Grade</td>
+				              <td>Jack Zhu</td>
+				              <td>jack.zhu@cusdclipco.org</td>
+				            </tr>
+				            <tr>
+				              <td>Joyce Luo</td>
+				              <td>joyce.luo@cusdclipco.org</td>
+				            </tr>
+				            </tbody>
+				          </table>
+				  	    </div>
+				  	    <div class="col-sm-4">
+				  	    </div>
+				  	  </div>
+				  	</div>
+				  	<h2> </br> </h2>
+			<div class="container">
+		      <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#schools">CLIPCO Schools</button>
+		  		</div>
+				  	<div id="schools" class="collapse">
+				  	<a href="http://www.edline.net/pages/meyerholz_elementary_school">Meyerholz Elementry School</a>
+				  	</br>
+				  	<a href="https://www.cusdk8.org/miller">Miller Middle School</a>
+				</div>
+			</div>
+		  	<div class="col-sm-4">
 		    <p><img src="images/image.png" alt="image.png" style="width:400px;height:700px;"></p>
 		  </div>
 		</div>
 	</div>
 
-
+<div class="fb-like" data-href="https://www.facebook.com/cusdclipco/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
  
 </body>
 
