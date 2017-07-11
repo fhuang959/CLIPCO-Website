@@ -22,7 +22,18 @@
 
   <style type="text/css">
 
-  
+    .prize-image{
+      width: 75%;
+    }
+
+    #prizes{
+      background-color: rgba(0,0,0,0.05);
+    }
+
+    td{
+      font-weight: bold;
+      color: rgb(75,75,75);
+    }
 
   </style>
 </head>
@@ -60,17 +71,75 @@
     </div>
 
    
-  <div class="container-fluid">
+  <div id="info" class="container-fluid">
     <div class="row">
-      <div class="col-sm-8">
-        <h2>Another title thing idk</h2>
-        <h4>A bunch of text that is pretty big, but not as big as the title can go here. It's like a little paragraph explaining what the page is about. I like trees because they are green. green is a nice color. Except for cars. Cars should not be green. The green cars are always the evil ones. Don't do drugs.</h4>
-        <br>
-        <p>Some more text can go here. It's smaller than the paragraph before. Still important though. He may not be as big an showey as the other paragraph but he's trying his hardest. AAAAAAAHHHHHHHH. Why am i alife? 一個星期過，我功課多，我還沒有做我的生詞合約，我被老師罵，我想自殺，名字又有九個叉。那是你的問題。</p>
+        <div class="text-center">
+          <h2>Information &nbsp;&amp;&nbsp; Rules</h2>
+        </div>
+        <div class="col-sm-8">
+        <h4>This year CLIPCO is asking CLIP families to donate $450 for each child in Kindergarten to 6th grade, and $225 for each child in 7th to 8th grade to cover their share of CLIP educational expenses.
+        <br><br>
+        <p><strong>Contest Rules:</strong>
+        <ol>
+          <li> Donations must be received by midnight, November 15, 2016 in order to be counted.</li>
+          <li>Only donations of $225 or more will count towards the contest.</li>
+          <li>Target dollar amount is determined by the total number of students per home room (or grade if Miller students) multiplied by the requested donation amount.</li>
+          <li>Donors to be recognized in a future publication with an option to remain anonymous.</li>
+          <li>Corporate matching amounts do not count towards the Direct Give Contest.</li>
+        </ol>
+        </p>
+        </h4>
         <br><button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Call to Action!</button>
       </div>
       <div class="col-sm-4">
-        <p><img src="images/image.png" alt="image.png" style="width:400px;height:700px;"></p>
+        <p><img src="images/image.png" alt="image.png" width="400"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="prizes" class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+          <h2>Prizes</h2>
+        </div>
+        <div class="col-sm-12">
+        <center><h4>As with last years, CLIPCO is offering three different prizes to encourage a friendly contest.</h4>
+        <br><br>
+        <p><h4>Prizes:</h4></p>
+        </center>
+        <table>
+          <thead>
+            <th>Individual Prize</th>
+            <th>Class Prize</th>
+            <th>Grand Prize</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img class="prize-image" src="images/vinyl-school-pouch-62125-red.jpg" alt="penicl pouch">
+              </td>
+              <td>
+                <img class="prize-image" src="images/Rooster-tshirt.png" alt="rooster shirt">
+              </td>
+              <td>
+                <img class="prize-image" src="images/bpk22-orange.jpg" alt="orange backback">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Pencil Pouch
+              </td>
+              <td>
+                Rooster Shirt
+              </td>
+              <td>
+                Orange Backpack
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </h4>
       </div>
     </div>
   </div>

@@ -264,15 +264,6 @@
       }
     }
 
-    table, th, td{
-      border: 1px solid rgb(150,150,150);
-      border-collapse: collapse;
-      padding: 7px;
-    }
-
-    th:hover, td:hover{
-      background-color: rgba(0,0,0,0.1);
-    }
 
     .thumbnail:hover{
       box-shadow: 1px 1px 50px 1px #888888;
