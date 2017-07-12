@@ -1,230 +1,215 @@
 <!DOCTYPE html>
-
 <head>
-	<title>CLIPCO - Spotlight</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type='text/javascript'>
-		var jumboHeight = $('.jumbotron').outerHeight();
+  <title>CLIPCO - Spotlight</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+      var jumboHeight = $('.jumbotron').outerHeight();
+      function parallax(){
+          var scrolled = $(window).scrollTop();
+          $('.bg').css('height', (jumboHeight-(scrolled-450)) +'px');
+      }
+      $(window).scroll(function(e){
+          parallax()+20;
+      });
+    </script>
 
-		function parallax() {
-			var scrolled = $(window).scrollTop();
-			$('.bg').css('height', (jumboHeight - (scrolled - 350)) + 'px');
-		}
-		$(window).scroll(function(e) {
-			parallax() + 20;
-		});
-	</script>
-	<style>
-		.container-fluid {
-			padding: 60px 50px;
-		}
+  <style type="text/css">
 
-		h1 {
-			font-size: 36px;
-			text-transform: uppercase;
-			color: #000000;
-			font-weight: 600;
-			margin-bottom: 30px;
-		}
 
-		h2 {
-			font-size: 24px;
-			text-transform: uppercase;
-			color: #303030;
-			font-weight: 600;
-			margin-bottom: 30px;
-		}
 
-		h4 {
-			font-size: 19px;
-			line-height: 1.375em;
-			color: #303030;
-			font-weight: 400;
-			margin-bottom: 30px;
-		}
-
-		.bg {
-			background: url('images/header.gif') repeat left center;
-			position: fixed;
-			width: 100%;
-			height: 350px;
-			/*same height as jumbotron */
-			top: 50px;
-			left: 0;
-			z-index: -1;
-		}
-
-		.jumbotron {
-			margin-bottom: 0px;
-			height: 350px;
-			color: #000000;
-			/*text-shadow: black 0.3em 0.3em 0.3em;*/
-			background: transparent;
-			padding: 100px 25px;
-			font-family: Montserrat, sans-serif;
-		}
-
-		.navbar {
-			margin-bottom: 0;
-			background-color: #f4511e;
-			z-index: 9999;
-			border: 0;
-			font-size: 12px !important;
-			line-height: 1.42857143 !important;
-			letter-spacing: 4px;
-			border-radius: 0;
-			font-family: Montserrat, sans-serif;
-		}
-
-		.navbar li a,
-		.navbar .navbar-brand {
-			color: #fff !important;
-		}
-
-		.navbar-nav li a:hover,
-		.navbar-nav li.active a {
-			color: #f4511e !important;
-			background-color: #fff !important;
-		}
-
-		.navbar-default .navbar-toggle {
-			border-color: transparent;
-			color: #fff !important;
-		}
-
-		.bg-grey {
-			background-color: #f6f6f6;
-		}
-	</style>
+  </style>
 </head>
-
 <body>
 
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-				<a class="navbar-brand" href="website.html">Home</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-left">
-					<li><a href="about.html">ABOUT</a></li>
-					<li><a href="programs.html">PROGRAMS</a></li>
-					<li><a href="NEWS.html">NEWS</a></li>
-					<li><a href="budget.html">BUDGET</a>
-						<li>
-							<li><a href="donations.html">DONATE</a></li>
-							<li><a href="contact.html">CONTACT</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="website.html">Home</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="programs.html">PROGRAMS</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="budget.html">BUDGET</a><li>
+            <li><a href="donations.html">DONATE</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+  </nav>
 
-	<div class="bg"></div>
-	<div class="jumbotron text-center bg-grey">
-		<h1>Spotlight</h1>
-		<p>Featuring CLIP teachers and alumni</p>
-	</div>
 
-	<div class="container-fluid">
-		<div class="row text-center">
-			<h2>Teachers</h2>
-		</div>
-		<div class="row">
-			<div class="col-sm-4">
-				<p><img src="images/image.jpg" alt="Teacher Picture" style="width:500px;height:600px;"></p>
-				<div class = "text-center">
-					<h3>Teacher Name </h3>
-				</div>
-			</div>
-			<div class="col-sm-8">
-				<h3>Q:Insert question here</h3>
-				<h4>Teacher: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Teacher: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Teacher: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Teacher: Insert answer </h4>
-			</div>
-		</div>
-	</div>
+  <div class="bg"></div>
 
-	<div class="container-fluid bg-grey">
-		<div class="row text-right">
-			<div class="col-sm-8">
-				<h3>Q:Insert question here</h3>
-				<h4>Teacher: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Teacher: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Teacher: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Teacher: Insert answer </h4>
-			</div>
-			<div class="col-sm-4">
-				<p><img src="images/image.jpg" alt="Teacher Picture" style="width:500px;height:600px;"></p>
-				<div class = "text-center">
-					<h3>Teacher Name </h3>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="jumbotron text-center">
+      <h1>Spotlight</h1>
+      <p>Featuring CLIP teachers and alumni</p>
+    </div>
 
-	<div class="container-fluid">
-		<div class="row text-center">
-			<h2>Alumni</h2>
-		</div>
-		<div class="row">
-			<div class="col-sm-4">
-				<p><img src="images/image.jpg" alt="Alumni Picture" style="width:500px;height:600px;"></p>
-				<div class = "text-center">
-					<h3>Alumni Name</h3>
-				</div>
-			</div>
-			<div class="col-sm-8">
-				<h3>Q:Insert question here</h3>
-				<h4>Alumni: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Alumni: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Alumni: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Alumni: Insert answer </h4>
-			</div>
-		</div>
-	</div>
 
-	<div class="container-fluid bg-grey">
-		<div class="row text-right">
-			<div class="col-sm-8">
-				<h3>Q:Insert question here</h3>
-				<h4>Alumni: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Alumni: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Alumni: Insert answer </h4>
-				<h3>Q:Insert question here</h3>
-				<h4>Alumni: Insert answer </h4>
-			</div>
-			<div class="col-sm-4">
-				<p><img src="images/image.jpg" alt="Alumni Picture" style="width:500px;height:600px;"></p>
-				<div class = "text-center">
-					<h3>Alumni Name </h3>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container-fluid">
+  		<div class="row text-center">
+  			<h2>Teachers</h2>
+  		</div>
+  		<div class="row">
+  			<div class="col-sm-4">
+  				<p><img src="images/image.jpg" alt="Teacher Picture" style="width:500px;height:600px;"></p>
+  				<div class = "text-center">
+  					<h3>Teacher Name </h3>
+  				</div>
+  			</div>
+  			<div class="col-sm-8">
+  				<h3>Q:Insert question here</h3>
+  				<h4>Teacher: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Teacher: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Teacher: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Teacher: Insert answer </h4>
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="container-fluid bg-grey">
+  		<div class="row text-right">
+  			<div class="col-sm-8">
+  				<h3>Q:Insert question here</h3>
+  				<h4>Teacher: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Teacher: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Teacher: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Teacher: Insert answer </h4>
+  			</div>
+  			<div class="col-sm-4">
+  				<p><img src="images/image.jpg" alt="Teacher Picture" style="width:500px;height:600px;"></p>
+  				<div class = "text-center">
+  					<h3>Teacher Name </h3>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+		<div class="container-fluid">
+  		<div class="row text-center">
+  			<h2>Students</h2>
+  		</div>
+  		<div class="row">
+  			<div class="col-sm-4">
+  				<p><img src="images/image.jpg" alt="Student Picture" style="width:500px;height:600px;"></p>
+  				<div class = "text-center">
+  					<h3>Mina Chao</h3>
+  				</div>
+  			</div>
+  			<div class="col-sm-8">
+  				<h3>Q:Who are you?</h3>
+  				<h4>Mina: My name is Mina Chao (趙立鳴) and I am in 7th grade.</h4>
+  				<h3>Q:How long have you been in the CLIP program?</h3>
+  				<h4>Mina: I have been in CLIP for 8 years (including this year).</h4>
+  				<h3>Q:What are some of your hobbies or special interests?</h3>
+  				<h4>Mina: Some of my hobbies include volleyball, art, and playing cards with my friends.</h4>
+  				<h3>Q:What's your favorite after-school activity?</h3>
+  				<h4>Mina: My favorite after school activities include after-school sports at Miller.  I was part of the volleyball, softball, and track and field teams.
+					 <br> The coaches are super-supportive and always do their best to help you become awesome at your sport.</h4>
+					<h3>Q: Tell us about one special activity from CLIP that you enjoyed.<h3>
+					<h4> One special activity from CLIP that I enjoy is participating in the San Francisco Chinese New Year parade. I've done it since I was
+						<br> in kindergarten and I love it so much. Not only do we get to go to San Francisco and perform for thousands of people, we get to learn
+						<br>cool dance moves and other skills. Sometimes, if we get lucky, we get to be broadcast on television! All the instructors are very
+						<br> nice and encouraging, and make the experience way more fun.</h4>
+					<h3>Q: What do you love about CLIP?</h3>
+					<h4>One reason that I love CLIP is that you get to do a lot of special things, like learn more about Chinese culture in CLIP Art and
+						<br> have long Chinese New Year celebrations. Also, if you're in CLIP you get to participate in cool ASEP classes like baking, which is super
+						<br> fun because you get to bake all sorts of yummy treats for yourself and your family.</h4>
+
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="container-fluid bg-grey">
+  		<div class="row text-right">
+  			<div class="col-sm-8">
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  			</div>
+  			<div class="col-sm-4">
+  				<p><img src="images/image.jpg" alt="Student Picture" style="width:500px;height:600px;"></p>
+  				<div class = "text-center">
+  					<h3>Alumni Name </h3>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="container-fluid">
+  		<div class="row text-center">
+  			<h2>Alumni</h2>
+  		</div>
+  		<div class="row">
+  			<div class="col-sm-4">
+  				<p><img src="images/image.jpg" alt="Alumni Picture" style="width:500px;height:600px;"></p>
+  				<div class = "text-center">
+  					<h3>Alumni Name</h3>
+  				</div>
+  			</div>
+  			<div class="col-sm-8">
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  			</div>
+  		</div>
+  	</div>
+
+  	<div class="container-fluid bg-grey">
+  		<div class="row text-right">
+  			<div class="col-sm-8">
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  				<h3>Q:Insert question here</h3>
+  				<h4>Alumni: Insert answer </h4>
+  			</div>
+  			<div class="col-sm-4">
+  				<p><img src="images/image.jpg" alt="Alumni Picture" style="width:500px;height:600px;"></p>
+  				<div class = "text-center">
+  					<h3>Alumni Name </h3>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+
+
 </body>
+
+
 
 </html>
