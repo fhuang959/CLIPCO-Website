@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head>
+<head lang="en">
   <title>CLIPCO - CLIPCO Honor Roll</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,17 +28,19 @@
 
     .grade-header{
       font-size: 1.5em;
-      line-height: 1.5;
     }
 
     .family-name{
-      font-size: 0.75em;
-      line-height: 0.25em;
+      font-size: 1em;
+    }
+
+    .grade-header, .family-name{
+      color:black;
     }
 
   </style>
 </head>
-<body>
+<body id="top">
   
   <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -63,51 +65,49 @@
       </div>
   </nav>
 
-
   <div class="bg"></div>
 
   <div class="jumbotron text-center">
       <h1>Honor Roll</h1>
-      <p>A Thank You to All the Families Who Donated</p>
-    </div>
+      <p>Thank You to All the Families Who Donated</p>
+  </div>
 
-  <div class="container-fluid" id="top">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-sm-8">
         <h2>K-6 Families</h2>
-        <h4>
           <div class="panel-group" id="accordion">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span class="donation-level-title">Platinum</span><span class="donation-level-range">&nbsp;(dontation of $950 or more)</a>
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><span class="donation-level-title">Platinum</span><span class="donation-level-range">&nbsp;(dontation of $950 or more)</span></a>
                 </h4>
               </div>
               <div id="collapse1" class="panel-collapse collapse">
                 <div class="panel-body">
                   <span class="grade-header">Kinder</span><br>
                   <span class="family-name">The Family of Madelyn Tom</span><br>
-                  <span class="family-name">2 Anonymous Families</span><br>
+                  <span class="family-name">2 Anonymous Families</span><br><br>
                   <span class="grade-header">1st Grade</span><br>
                   <span class="family-name">The Family of Andrea Wong</span><br>
                   <span class="family-name">The Family of Evelyn Tom</span><br>
                   <span class="family-name">The Family of Everett Jou</span><br>
                   <span class="family-name">The Family of Lucas Thornson</span><br>
-                  <span class="family-name">2 Anonymous Families</span><br>
+                  <span class="family-name">2 Anonymous Families</span><br><br>
                   <span class="grade-header">2nd Grade</span><br>
                   <span class="family-name">The Family of Alexander Jong</span><br>
                   <span class="family-name">The Family of Francsca Yang</span><br>
                   <span class="family-name">The Family of Leia Kandl-Zhang</span><br>
-                  <span class="family-name">1 Anonymous Family</span><br>
+                  <span class="family-name">1 Anonymous Family</span><br><br>
                   <span class="grade-header">3rd Grade</span><br>
                   <span class="family-name">The Family of Keira Lahiff</span><br>
-                  <span class="family-name">2 Anonymous Families</span><br>
+                  <span class="family-name">2 Anonymous Families</span><br><br>
                   <span class="grade-header">4th Grade</span><br>
                   <span class="family-name">The Family of Benjamin Callahan</span><br>
                   <span class="family-name">The Family of Marley Thornson</span><br>
                   <span class="family-name">The Family of Yamani Huang</span><br>
                   <span class="family-name">2 Anonymous Families</span><br>
-                  <span class="grade-header">5th Grade</span><br>
+                  <span class="grade-header">5th Grade</span><br><br>
                   <span class="family-name">2 Anonymous Families</span><br>
                 </div>
               </div>
@@ -115,7 +115,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span class="donation-level-title">Gold</span><span class="donation-level-range">&nbsp;(dontation of $700 - $949)</a>
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span class="donation-level-title">Gold</span><span class="donation-level-range">&nbsp;(dontation of $700 - $949)</span></a>
                 </h4>
               </div>
               <div id="collapse2" class="panel-collapse collapse">
@@ -123,14 +123,14 @@
                   <span class="grade-header">Kinder</span><br>
                   <span class="family-name">The Family of Oscar Yu</span><br>
                   <span class="family-name">The Family of Ryan Lee</span><br>
-                  <span class="family-name">The Family of Serena Au</span><br>
+                  <span class="family-name">The Family of Serena Au</span><br><br>
                   <span class="grade-header">1st Grade</span><br>
                   <span class="family-name">The Family of Ashley Oki</span><br>
                   <span class="family-name">The Family of Hailey Hwang</span><br>
-                  <span class="family-name">The Family of Olivia Ford</span><br>
+                  <span class="family-name">The Family of Olivia Ford</span><br><br>
                   <span class="grade-header">2nd Grade</span><br>
                   <span class="family-name">The Family of Beatrice Iwashita</span><br>
-                  <span class="family-name">The Family of Quincy Wu</span><br>
+                  <span class="family-name">The Family of Quincy Wu</span><br><br>
                   <span class="grade-header">3rd Grade</span><br>
                   <span class="family-name">The Family of Koby Yu</span><br>
                   <span class="family-name">The Family of Valerie Au</span><br>
@@ -140,7 +140,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><span class="donation-level-title">Silver</span><span class="donation-level-range">&nbsp;(dontation of $450 - $699)</a>
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><span class="donation-level-title">Silver</span><span class="donation-level-range">&nbsp;(dontation of $450 - $699)</span></a>
                 </h4>
               </div>
               <div id="collapse3" class="panel-collapse collapse">
@@ -201,7 +201,7 @@
                   <span class="family-name">The Family of Yuguan Zhen</span><br>
                   <span class="family-name">The Family of Zachary Chang</span><br>
                   <span class="family-name">The Family of Zachary P Young</span><br>
-                  <span class="family-name">5 Anonymous Families</span><br>
+                  <span class="family-name">5 Anonymous Families</span><br><br>
                   <span class="grade-header">1st Grade</span><br>
                   <span class="family-name">The Family of Aerik Turkal</span><br>
                   <span class="family-name">The Family of Alexis Dong</span><br>
@@ -256,7 +256,7 @@
                   <span class="family-name">The Family of Verity Rediawan</span><br>
                   <span class="family-name">The Family of Wendi Sun</span><br>
                   <span class="family-name">The Family of Yuwei Ma</span><br>
-                  <span class="family-name">2 Anonymous Families</span><br>
+                  <span class="family-name">2 Anonymous Families</span><br><br>
                   <span class="grade-header">2nd Grade</span><br>
                   <span class="family-name">The Family of Alan Yang</span><br>
                   <span class="family-name">The Family of Alexander Tran</span><br>
@@ -308,7 +308,7 @@
                   <span class="family-name">The Family of Ryan Zhao</span><br>
                   <span class="family-name">The Family of Sophie Wang</span><br>
                   <span class="family-name">The Family of Violet Davis</span><br>
-                  <span class="family-name">7 Anonymous Families</span><br>
+                  <span class="family-name">7 Anonymous Families</span><br><br>
                   <span class="grade-header">3rd Grade</span><br>
                   <span class="family-name">The Family of Emma Vincent</span><br>
                   <span class="family-name">The Family of Alexander Lai</span><br>
@@ -364,7 +364,7 @@
                   <span class="family-name">The Family of Wyatt Wong</span><br>
                   <span class="family-name">The Family of Yilun Gao</span><br>
                   <span class="family-name">The Family of Yvonne Wang</span><br>
-                  <span class="family-name">4 Anonymous Families</span><br>
+                  <span class="family-name">4 Anonymous Families</span><br><br>
                   <span class="grade-header">4th Grade</span><br>
                   <span class="family-name">The Family of Aaron Cu</span><br>
                   <span class="family-name">The Family of Annie Peng</span><br>
@@ -404,7 +404,7 @@
                   <span class="family-name">The Family of Zandra Dong</span><br>
                   <span class="family-name">The Family of Zhen Xuan Koh</span><br>
                   <span class="family-name">The Family of Zoey Lim</span><br>
-                  <span class="family-name">7 Anonymous Families</span><br>
+                  <span class="family-name">7 Anonymous Families</span><br><br>
                   <span class="grade-header">5th Grade</span><br>
                   <span class="family-name">The Family of Aaron Shih</span><br>
                   <span class="family-name">The Family of Aimee Tran</span><br>
@@ -457,7 +457,7 @@
                   <span class="family-name">The Family of Valerie Eng</span><br>
                   <span class="family-name">The Family of Zachary Leong</span><br>
                   <span class="family-name">The Family of Zixuan Lu</span><br>
-                  <span class="family-name">3 Anonymous Families</span><br>
+                  <span class="family-name">3 Anonymous Families</span><br><br>
                   <span class="grade-header">6th Grade</span><br>
                   <span class="family-name">The Family of Aaron Yan</span><br>
                   <span class="family-name">The Family of Alexander Liu</span><br>
@@ -509,7 +509,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><span class="donation-level-title">Bronze</span><span class="donation-level-range">&nbsp;(dontation of $225 - $449)</a>
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><span class="donation-level-title">Bronze</span><span class="donation-level-range">&nbsp;(dontation of $225 - $449)</span></a>
                 </h4>
               </div>
               <div id="collapse4" class="panel-collapse collapse">
@@ -518,13 +518,13 @@
                   <span class="family-name">The Family of Hanson L Li</span><br>
                   <span class="family-name">The Family of Saket Sharma</span><br>
                   <span class="family-name">The Family of Thomas Wykoff</span><br>
-                  <span class="family-name">2 Anonymous Families</span><br>
+                  <span class="family-name">2 Anonymous Families</span><br><br>
                   <span class="grade-header">1st Grade</span><br>
                   <span class="family-name">The Family of Amelia Syu</span><br>
                   <span class="family-name">The Family of Ethan Lin</span><br>
                   <span class="family-name">The Family of Ivan Hon</span><br>
                   <span class="family-name">The Family of Luke Mu</span><br>
-                  <span class="family-name">2 Anonymous Families</span><br>
+                  <span class="family-name">2 Anonymous Families</span><br><br>
                   <span class="grade-header">2nd Grade</span><br>
                   <span class="family-name">The Family of Christopher Yin</span><br>
                   <span class="family-name">The Family of Evan Chen</span><br>
@@ -532,12 +532,12 @@
                   <span class="family-name">The Family of Huiwen Zhang</span><br>
                   <span class="family-name">The Family of Nicolas Cheng</span><br>
                   <span class="family-name">The Family of Wayne Hsieh</span><br>
-                  <span class="family-name">1 Anonymous Family</span><br>
+                  <span class="family-name">1 Anonymous Family</span><br><br>
                   <span class="grade-header">3rd Grade</span><br>
                   <span class="family-name">The Family of Caitlin Yang</span><br>
                   <span class="family-name">The Family of Jason Huang</span><br>
                   <span class="family-name">The Family of Megan Kellogg</span><br>
-                  <span class="family-name">1 Anonymous Family</span><br>
+                  <span class="family-name">1 Anonymous Family</span><br><br>
                   <span class="grade-header">4th Grade</span><br>
                   <span class="family-name">The Family of Aidan Phattanaphibul</span><br>
                   <span class="family-name">The Family of Allison Hsieh</span><br>
@@ -547,14 +547,14 @@
                   <span class="family-name">The Family of Leo Mu</span><br>
                   <span class="family-name">The Family of Nathan Hon</span><br>
                   <span class="family-name">The Family of Nathan Mai</span><br>
-                  <span class="family-name">2 Anonymous Families</span><br>
+                  <span class="family-name">2 Anonymous Families</span><br><br>
                   <span class="grade-header">5th Grade</span><br>
                   <span class="family-name">The Family of Danica Novotny</span><br>
                   <span class="family-name">The Family of Jacey Shuieh</span><br>
                   <span class="family-name">The Family of Riley Yang</span><br>
                   <span class="family-name">The Family of Vera Chu</span><br>
                   <span class="family-name">The Family of Yuwen Zhang</span><br>
-                  <span class="family-name">3 Anonymous Families</span><br>
+                  <span class="family-name">3 Anonymous Families</span><br><br>
                   <span class="grade-header">6th Grade</span><br>
                   <span class="family-name">The Family of Elizabeth Park</span><br>
                   <span class="family-name">The Family of ISAYA CHOU</span><br>
@@ -568,20 +568,19 @@
               </div>
             </div>
           </div>
-        </h4>
         <h2>7-8 Families</h2>
-          <div class="panel-group" id="accordion">
+          <div class="panel-group" id="accordion2">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"><span class="donation-level-title">Platimun</span><span class="donation-level-range">&nbsp;(Donation of $475 or more)</span></a>
+                  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse5"><span class="donation-level-title">Platimun</span><span class="donation-level-range">&nbsp;(Donation of $475 or more)</span></a>
                 </h4>
               </div>
               <div id="collapse5" class="panel-collapse collapse">
                 <div class="panel-body">
                        <span class="grade-header">7th Grade</span><br>
                        <span class="family-name">The Family of Colin Newton</span><br>
-                       <span class="family-name">The Family of Lauren Ruckstuhl</span><br>
+                       <span class="family-name">The Family of Lauren Ruckstuhl</span><br><br>
                        <span class="grade-header">8th Grade</span><br>
                        <span class="family-name">The Family of Gavin Wong</span><br>
                        <span class="family-name">The Family of Jason Lee</span><br>
@@ -592,7 +591,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse6"><span class="donation-level-title">Gold</span><span class="donation-level-range">&nbsp;(Donation of $350 - $474)</span></a>
+                  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse6"><span class="donation-level-title">Gold</span><span class="donation-level-range">&nbsp;(Donation of $350 - $474)</span></a>
                 </h4>
               </div>
               <div id="collapse6" class="panel-collapse collapse">
@@ -600,7 +599,7 @@
                      <span class="grade-header">7th Grade</span><br>
                      <span class="family-name">The Family of James Vincent</span><br>
                      <span class="family-name">The Family of Katy Hedrick</span><br>
-                     <span class="family-name">The Family of Kyle Wyatt</span><br>
+                     <span class="family-name">The Family of Kyle Wyatt</span><br><br>
                      <span class="grade-header">8th Grade</span><br>
                      <span class="family-name">The Family of Ethan Israel</span><br>
                      <span class="family-name">The Family of Richard Cao</span><br>
@@ -611,7 +610,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse7"><span class="donation-level-title">Silver</span><span class="donation-level-range">&nbsp;(Donation of $226 - $349)</span></a>
+                  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse7"><span class="donation-level-title">Silver</span><span class="donation-level-range">&nbsp;(Donation of $226 - $349)</span></a>
                 </h4>
               </div>
               <div id="collapse7" class="panel-collapse collapse">
@@ -627,7 +626,7 @@
                      <span class="family-name">The Family of Nathan Chiu</span><br>
                      <span class="family-name">The Family of Nicholas Perez</span><br>
                      <span class="family-name">The Family of Ryan Hsieh</span><br>
-                     <span class="family-name">1 Anonymous Family</span><br>
+                     <span class="family-name">1 Anonymous Family</span><br><br>
                      <span class="grade-header">8th Grade</span><br>
                      <span class="family-name">The Family of Alexzander C. Cheong</span><br>
                      <span class="family-name">The Family of Arielle Leong</span><br>
@@ -649,7 +648,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse8"><span class="donation-level-title">Bronze</span><span class="donation-level-range">&nbsp;(Donation of $225)</span></a>
+                  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse8"><span class="donation-level-title">Bronze</span><span class="donation-level-range">&nbsp;(Donation of $225)</span></a>
                 </h4>
               </div>
               <div id="collapse8" class="panel-collapse collapse">
@@ -693,7 +692,7 @@
                      <span class="family-name">The Family of William Huang</span><br>
                      <span class="family-name">The Family of Yi Ning Sun</span><br>
                      <span class="family-name">The Family of Youqi Huang</span><br>
-                     <span class="family-name">6 Anonymous Families</span><br>
+                     <span class="family-name">6 Anonymous Families</span><br><br>
                      <span class="grade-header">8th Grade</span><br>
                      <span class="family-name">The Family of Adrienne Liang</span><br>
                      <span class="family-name">The Family of Alden Gu</span><br>
@@ -739,6 +738,7 @@
       </div>
     </div>
   </div>
+  
 
   <footer class="container-fluid text-center">
     <a href="#top" title="To Top">

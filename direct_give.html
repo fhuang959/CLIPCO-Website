@@ -23,21 +23,51 @@
   <style type="text/css">
 
     .prize-image{
-      width: 75%;
+      width: 75%
     }
 
     #prizes{
       background-color: rgba(0,0,0,0.05);
     }
 
-    td{
+    table, th, td{
+      border: 1px solid rgb(150,150,150);
+      border-collapse: collapse;
+      padding: 7px;
+    }
+
+    td, th{
       font-weight: bold;
       color: rgb(75,75,75);
+      text-align: center;
     }
+
+    .donation-level-range{
+      font-weight: normal;
+    }
+
+    #plantimun{
+      color: blue;
+    }
+
+    #gold{
+      color: orange;
+    }
+
+    #silver{
+      color: green;
+    }
+
+    #bronze{
+      color: brown;
+    }
+
+
+
 
   </style>
 </head>
-<body>
+<body id="top">
   
   <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -89,7 +119,67 @@
         </ol>
         </p>
         </h4>
-        <br><button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Call to Action!</button>
+        <br>
+        <p><h4><strong>Donation Levels:</strong></h4></p>
+        <table id="donation-level-table">
+          <thead>
+            <th>
+              <!--blank-->
+            </th>
+            <th>
+              Kindergarten - 6th grade
+            </th>
+            <th>
+              7th grade - 8th grade
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img class="medal-image" src="images/platinum-medal.png" alt="platinum medal"><span id="platimun" class="medal-label">Platinum</span>
+              </td>
+              <td class="donation-level-range">
+                <p>donation of $950 or more</p>
+              </td>
+              <td class="donation-level-range">
+                <p>donation of $475 or more</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img class="medal-image" src="images/gold-medal.png" alt="gold medal"><span id="gold" class="medal-label">Gold</span>
+              </td>
+              <td class="donation-level-range">
+                <p>donation of  $700 - $949</p>
+              </td>
+              <td class="donation-level-range">
+                <p>donation of $350 to $474</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img class="medal-image" src="images/silver-medal.png" alt="silver medal"><span id="silver" class="medal-label">Silver</span>
+              </td>
+              <td class="donation-level-range">
+                <p>donation of $450 to $699</p>
+              </td>
+              <td class="donation-level-range">
+                <p>donation of $226 to $349</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img class="medal-image" src="images/bronze-medal.png" alt="bronze medal"><span id="bronze" class="medal-label">Bronze</span>
+              </td>
+              <td class="donation-level-range">
+                <p>donation of $225 to $449</p>
+              </td>
+              <td class="donation-level-range">
+                <p>donation of $225</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="col-sm-4">
         <p><img src="images/image.png" alt="image.png" width="400"></p>
@@ -107,7 +197,8 @@
         <br><br>
         <p><h4>Prizes:</h4></p>
         </center>
-        <table>
+        
+           <table>
           <thead>
             <th>Individual Prize</th>
             <th>Class Prize</th>
@@ -138,8 +229,6 @@
             </tr>
           </tbody>
         </table>
-        </p>
-        </h4>
       </div>
     </div>
   </div>
@@ -147,7 +236,7 @@
 <script>
     $(document).ready(function() {
       // Add smooth scrolling to all links in navbar  footer link
-      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+      $(".navbar a, footer a[href='#top']").on('click', function(event) {
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
           // Prevent default anchor click behavior
