@@ -1,159 +1,57 @@
 <!DOCTYPE html>
-<head>
-	<title>CLIPCO - Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<script type='text/javascript'>
-  		var jumboHeight = $('.jumbotron').outerHeight();
-  		function parallax(){
-  		    var scrolled = $(window).scrollTop();
-  		    $('.bg').css('height', (jumboHeight-(scrolled-350)) +'px');
-  		}
-  		$(window).scroll(function(e){
-  		    parallax()+20;
-  		});
-  	</script>
-<style>
+  <head>
+    <title>CLIPCO - subpage title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+      var jumboHeight = $('.jumbotron').outerHeight();
+      function parallax(){
+          var scrolled = $(window).scrollTop();
+          $('.bg').css('height', (jumboHeight-(scrolled-450)) +'px');
+      }
+      $(window).scroll(function(e){
+          parallax()+20;
+      });
+    </script>
+    <style type="text/css">
+      /* some css can go here */
+    </style>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <script>
+      $(function(){
+        $("#navbar-placeholder").load("subpage_navbar.html");
+      });
+    </script>
+    <div class="bg"></div>
 
-	.container-fluid {
-      padding: 60px 50px;
-    }
-    h1 {
-    	font-size: 36px;
-	  text-transform: uppercase;
-	  color: #000000;
-	  font-weight: 600;
-	  margin-bottom: 30px;
-    }
-
-	h2 {
-	  font-size: 24px;
-	  text-transform: uppercase;
-	  color: #303030;
-	  font-weight: 600;
-	  margin-bottom: 30px;
-	}
-
-	h4 {
-	  font-size: 19px;
-	  line-height: 1.375em;
-	  color: #303030;
-	  font-weight: 400;
-	  margin-bottom: 30px;
-	}
-
-	.bg {
-	  background: url('images/header.gif') repeat left center;
-	  position: fixed;
-	  width: 100%;
-	  height: 350px; /*same height as jumbotron */
-	  top:50px;
-	  left:0;
-	  z-index: -1;
-	}
-
- 	.jumbotron {
-      margin-bottom: 0px;
-	  height: 350px;
-	  color: #1234ff;	
-	  text-shadow: black 0.3em 0.3em 0.3em;
-	  background: transparent;
-	  padding: 100px 25px;
-      font-family: Montserrat, sans-serif;
-    }
-
- 	.navbar {
-      margin-bottom: 0;
-      background-color: #f4511e;
-      z-index: 9999;
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-    }
-
-    .navbar li a,
-    .navbar .navbar-brand {
-      color: #fff !important;
-    }
-
-    .navbar-nav li a:hover,
-    .navbar-nav li.active a {
-      color: #f4511e !important;
-      background-color: #fff !important;
-    }
-
-    .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-    }
-
-    .bg-grey {
-      background-color: #f6f6f6;
-    }
-
-
-</style>
-</head>
-<body>
-	
-	<nav class="navbar navbar-default navbar-fixed-top">
-	    <div class="container">
-	      <div class="navbar-header">
-	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	        <a class="navbar-brand" href="website.html">Home</a>
-	      </div>
-	      <div class="collapse navbar-collapse" id="myNavbar">
-	        <ul class="nav navbar-nav navbar-left">
-	          <li><a href="about.html">ABOUT</a></li>
-	          <li><a href="programs.html">PROGRAMS</a></li>
-	          <li><a href="portfolio.html">PORTFOLIO</a></li>
-	          <li><a href="budget.html">BUDGET</a><li>
-	          <li><a href="donations.html">DONATE</a></li>
-	          <li><a href="contact.html">CONTACT</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	</nav>
-
-	<div class="bg"></div>
-
-	<div class="jumbotron text-center">
-    	<h1>CLIPCO Portfolio</h1>
-    	<p>A subtitle for the page</p>
-  	</div>
-
-	
-	<div class="container-fluid">
-		<div class="row">
-		  <div class="col-sm-8">
-		    <h2>Another title thing idk</h2>
-		    <h4>A bunch of text that is pretty big, but not as big as the title can go here. It's like a little paragraph explaining what the page is about. I like trees because they are green. green is a nice color. Except for cars. Cars should not be green. The green cars are always the evil ones. Don't do drugs.</h4>
-		    <br>
-		    <p>Some more text can go here. It's smaller than the paragraph before. Still important though. He may not be as big an showey as the other paragraph but he's trying his hardest. AAAAAAAHHHHHHHH. Why am i alife? 一個星期過，我功課多，我還沒有做我的生詞合約，我被老師罵，我想自殺，名字又有九個叉。那是你的問題。</p>
-		    <br><button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Call to Action!</button>
-		  </div>
-		  <div class="col-sm-4">
-		    <p><img src="images/image.png" alt="image.png" style="width:400px;height:700px;"></p>
-		  </div>
-		</div>
-	</div>
-
-
- 
-</body>
-
-
-
+    <div class="jumbotron text-center">
+        <h1>Page Title</h1>
+        <p>A subtitle for the page</p>
+    </div>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>Another title thing idk</h2>
+          <h4>A bunch of text that is pretty big, but not as big as the title can go here. It's like a little paragraph explaining what the page is about. I like trees because they are green. green is a nice color. Except for cars. Cars should not be green. The green cars are always the evil ones. Don't do drugs.</h4>
+          <br>
+          <p>Some more text can go here. It's smaller than the paragraph before. Still important though. He may not be as big an showey as the other paragraph but he's trying his hardest. AAAAAAAHHHHHHHH. Why am i alife? 一個星期過，我功課多，我還沒有做我的生詞合約，我被老師罵，我想自殺，名字又有九個叉。那是你的問題。</p>
+          <br>
+          <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Call to Action!</button>
+        </div>
+        <div class="col-sm-4">
+          <p><img src="images/image.png" alt="image.png" style="width:400px;height:700px;"></p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

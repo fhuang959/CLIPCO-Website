@@ -31,6 +31,19 @@
       background-color: rgba(0,0,0,0.1);
     }
 
+    .blog-container{
+      width: 100%;
+      height: 50%;
+      max-height: 500px;
+      white-space: pre-wrap;
+      overflow: scroll;
+      padding: 1px;
+    }
+
+    a .thumbnail:hover{
+      text-decoration: none;
+    }
+
 
 </style>
 </head>
@@ -48,7 +61,7 @@
 	      </div>
 	      <div class="collapse navbar-collapse" id="myNavbar">
 	        <ul class="nav navbar-nav navbar-right">
-	          </li><li><a href="#news">NEWS</a></li>
+	          <li><a href="#news">NEWS</a></li>
 	          <li><a href="#about">ABOUT</a></li>
             <li><a href="#programs">PROGRAMS</a></li>
 	          <li> <a href="#budget">BUDGET</a><li>
@@ -71,14 +84,14 @@
         <div class="row slideanim">
           <div class="col-sm-4">
             <div class="thumbnail">
-              <img class ="news-image" src="images/placeholder1.jpg" alt="Paris" width="400" height="300">
+              <a href="blog.html"><div class="blog-container" id="blog-container-1"></div></a>
               <p><strong>Paris</strong></p>
               <p>Yes, we built Paris</p>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="thumbnail">
-              <img class ="news-image" src="images/placeholder2.jpg" alt="New York" width="400" height="300">
+              <a href="blog.html"><div class="blog-container" id="blog-container-2"></div></a>
               <p><strong>New York</strong></p>
               <p>We built New York</p>
             </div>
@@ -300,7 +313,7 @@
   	      <div class="col-sm-8">
   	        <h2>CLIP programs</h2><br>
   	        <h4>CLIPCO funds Chinese cultural and enrichment activities for our CLIP students through fundraising events. These programs are not funded by the Direct Give donations.</h4><br>
-  	        <p>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Visit our <a href="http://www.cusdclipco.org/volunteer.html" volunteer>volunteer</a> page
+  	        <p>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Visit our <a href="http://www.cusdclipco.org/volunteer.html">volunteer</a> page
   	          today for more information about volunteering or providing a <a href="http://www.cusdclipco.org/contributions.html">donation</a>!</p>
   	        <br><button class="btn btn-default btn-lg">Volunteer</button>
   	        <button class="btn-default btn-lg">Donate</button>
@@ -328,7 +341,7 @@
   	      <div class="col-sm-4">
   	        <div class="text-center">
   	          <p><a href="http://www.cusdclipco.org/documents/2016to2017/Back%20to%20School%20Night/16-17%20Approved%20CLIPCO%20Budget.pdf">
-  	            <h4>Approved 2016 - 2017 CLIP Curriculum Budget</h4></a></p>
+  	             <h4>Approved 2016 - 2017 CLIP Curriculum Budget</h4></a></p>
   	        </div>
   	        <img src = "images/clipcobudget.gif" alt="Budget" width="640" height="360">
   	      </div>
@@ -393,9 +406,10 @@
           <div class="row">
             <div class="col-sm-5">
               <p>Contact us and we'll get back to you within 24 hours.</p>
-              <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+              <p><span class="glyphicon glyphicon-map-marker"></span>Cupertino, CA</p>
               <p><span class="glyphicon glyphicon-phone"></span> 00 1515151515</p>
               <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+              <div id="googleMap" class="slideanim" style="height:400px;width:100%;"></div>
             </div>
             <div class="col-sm-7 slideanim">
               <div class="row">
@@ -422,6 +436,18 @@
         </a>
           <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
         </footer>
+        <!-- Add Google Maps -->
+        
+  <script>
+    function myMap() {
+    var myCenter = new google.maps.LatLng(37.3064945,-122.028764);
+    var mapProp = {center:myCenter, zoom:13, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker = new google.maps.Marker({position:myCenter});
+    marker.setMap(map);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxINNoF49mS6coXAnMzUxwAEoNEi1TWFY&callback=myMap"></script>
 
 	<script>
 	  $(document).ready(function() {
@@ -467,6 +493,19 @@
       }
     }
   </script> 
+
+  <script>
+    function handleResponse(response) {
+      document.getElementById("blog-container-2").innerHTML += "<h1>" + response.title + "</h1>" + response.content;
+    }
+  </script>
+  <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts/7017491576395294369?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
+  <script>
+    function handleResponse(response) {
+      document.getElementById("blog-container-1").innerHTML += "<h1>" + response.title + "</h1>" + response.content;
+    }
+  </script>
+  <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts/8140414366596486809?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
 
   <!-- Carousel incase we need it later -->
       <!--

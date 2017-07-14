@@ -23,7 +23,17 @@
   <style type="text/css">
 
     .faq-question{
+      color: rgba(0,0,0,0.75);
+      font-size: 1.25em;
+    }
 
+    .faq-answer{
+      color: rgba(0,0,0,0.75);
+      font-size: 1em;
+    }
+
+    .footer{
+      text-align: center;
     }
   
 
@@ -31,28 +41,12 @@
 </head>
 <body>
   
-  <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-          <a class="navbar-brand" href="website.html">Home</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-left">
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="programs.html">PROGRAMS</a></li>
-            <li><a href="portfolio.html">PORTFOLIO</a></li>
-            <li><a href="budget.html">BUDGET</a><li>
-            <li><a href="donations.html">DONATE</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-          </ul>
-        </div>
-      </div>
-  </nav>
+  <div id="navbar-placeholder"></div>
+    <script>
+      $(function(){
+        $("#navbar-placeholder").load("subpage_navbar.html");
+      });
+    </script>
 
 
   <div class="bg"></div>
@@ -66,12 +60,11 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-8">
-        <h2>Another title thing idk</h2>
-        <h4>
+        <h2>Frequently aksed Questions</h2>
           <p><strong class="faq-question"> What is CLIPCO? </strong></p>
           <p class="faq-answer"> The Cupertino Union School District (CUSD) does not fund the Mandarin portion of the Cupertino Language Immersion Program (CLIP).  When CLIP was initially established, the parents of the first students created CLIPCO, a non-profit 501(c)(3) support organization, as an easy way for parents to donate money to the program. </p>
           <p><strong class="faq-question"> How is CLIP different from CLIPCO? </strong></p>
-          <p class="faq-answer"> CLIP is the name of our program</p>
+          <p class="faq-answer"> CLIP is the name of our program: Cupertino Language Immersion Program. CLIPCO is the non-profit support organization. CLIPCO stands for Cupertino Language Immersion Program Community Organization.  CLIPCO consists of parent volunteers who are tasked with raising money to support CLIP.</p>
           <p><strong class="faq-question"> What does my donation pay for? </strong></p>
           <p class="faq-answer"> Your donation pays for Mandarin texts, development of curriculum, duplication of curriculum, instructional aides, Mandarin books for the Library, and anything that pertains to the Mandarin portion of our program.  Please go to the CAC &amp; Budget page for more detailed budget information.</p>
           <p><strong class="faq-question"> What does CLIPCO do? </strong></p>
@@ -101,18 +94,14 @@
           <p><strong class="faq-question"> I can't seem to make a monetary donation this year.  How can I help otherwise? </strong></p>
           <p class="faq-answer"> Please consdier making a smaller donation that fits your budget and/or utilizing our monthly credit card installments by visiting on Donation page. </p>
           <p><strong class="faq-question"> How can your employer help CLIP?</strong></p>
-          <p class="faq-answer"> Many companies provide charitable matching programs. In addition, some companies offer other giving and volunteer program that are equally important. 
-          <ul>
+          <p class="faq-answer"> Many companies provide charitable matching programs. In addition, some companies offer other giving and volunteer program that are equally important.</p>
+          <ul class="faq-answer">
             <li>HP has a charitable giving program where parents may make an in-kind donation of much needed equipment at a significantly reduced cost.</li>
             <li> Applied Materials will give a $250 Grant to CLIP and Intel will donate $10/hour to CLIP if an employee volunteers a minimum of 20 hours a year.</li>
             <li> Yahoo! will provide 8-hours of company paid Community Service time a year for employee volunteers</li>
           </ul>  
           <br>
-          Please check with your HR department for available programs.  Send this information to info@cusdclipco.org and CLIPCO will spread the word to other parents to take advantage of these Corporate Community Programs.</p>
-
-
-
-        </h4>
+          <p class="faq-answer">Please check with your HR department for available programs.  Send this information to info@cusdclipco.org and CLIPCO will spread the word to other parents to take advantage of these Corporate Community Programs.</p>
       </div>
       <div class="col-sm-4">
         <p><img src="images/image.png" alt="image.png" style="width:400px;height:700px;"></p>
