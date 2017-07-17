@@ -1,107 +1,98 @@
 <!DOCTYPE html>
-<head>
-	<title>CLIPCO - Home</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type='text/javascript'>
-		var jumboHeight = $('.jumbotron').outerHeight();
-		function parallax(){
-		    var scrolled = $(window).scrollTop();
-		    $('.bg').css('height', (jumboHeight-(scrolled-450)) +'px');
-		}
-		$(window).scroll(function(e){
-		    parallax()+20;
-		});
-	</script>
-<style>
+  <head>
+  	<title>CLIPCO - Home</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type='text/javascript'>
+  		var jumboHeight = $('.jumbotron').outerHeight();
+  		function parallax(){
+  		    var scrolled = $(window).scrollTop();
+  		    $('.bg').css('height', (jumboHeight-(scrolled-450)) +'px');
+  		}
+  		$(window).scroll(function(e){
+  		    parallax()+20;
+  		});
+  	</script>
+    <style>
+      table, th, td{
+        border: 1px solid rgb(150,150,150);
+        border-collapse: collapse;
+        padding: 7px;
+      }
 
-    table, th, td{
-      border: 1px solid rgb(150,150,150);
-      border-collapse: collapse;
-      padding: 7px;
-    }
+      th:hover, td:hover{
+        background-color: rgba(0,0,0,0.1);
+      }
 
-    th:hover, td:hover{
-      background-color: rgba(0,0,0,0.1);
-    }
+      .blog-container{
+        width: 100%;
+        height: 50%;
+        max-height: 500px;
+        white-space: pre-wrap;
+        overflow: hidden;
+        padding: 1px;
+      }
 
-    .blog-container{
-      width: 100%;
-      height: 50%;
-      max-height: 500px;
-      white-space: pre-wrap;
-      overflow: scroll;
-      padding: 1px;
-    }
+      a .thumbnail:hover{
+        text-decoration: none;
+      }
 
-    a .thumbnail:hover{
-      text-decoration: none;
-    }
+      #clipcobudgetgif{
+        max-width: 498px;
+        max-height: 280px;
+      }
+    </style>
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  	
+  	<nav class="navbar navbar-default navbar-fixed-top">
+  	    <div class="container">
+  	      <div class="navbar-header">
+  	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  	        <span class="icon-bar"></span>
+  	        <span class="icon-bar"></span>
+  	        <span class="icon-bar"></span>
+  	      </button>
+  	        <a class="navbar-brand" href="#myPage">Logo</a>
+  	      </div>
+  	      <div class="collapse navbar-collapse" id="myNavbar">
+  	        <ul class="nav navbar-nav navbar-right">
+  	          <li><a href="#news">NEWS</a></li>
+  	          <li><a href="#about">ABOUT</a></li>
+              <li><a href="#programs">PROGRAMS</a></li>
+  	          <li> <a href="#budget">BUDGET</a><li>
+  	          <li><a href="#donate">DONATE</a></li>
+  	          <li><a href="#contact">CONTACT</a></li>
+  	        </ul>
+  	      </div>
+  	    </div>
+  	</nav>
+  	<div class="bg"></div>
+  	<div class="jumbotron text-center">
+      	<h1>CLIPCO</h1>
+      	<p>Cupertino Language Immersion Program</p>
+    </div>
 
-
-</style>
-</head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-	
-	<nav class="navbar navbar-default navbar-fixed-top">
-	    <div class="container">
-	      <div class="navbar-header">
-	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	        <a class="navbar-brand" href="#myPage">Logo</a>
-	      </div>
-	      <div class="collapse navbar-collapse" id="myNavbar">
-	        <ul class="nav navbar-nav navbar-right">
-	          <li><a href="#news">NEWS</a></li>
-	          <li><a href="#about">ABOUT</a></li>
-            <li><a href="#programs">PROGRAMS</a></li>
-	          <li> <a href="#budget">BUDGET</a><li>
-	          <li><a href="#donate">DONATE</a></li>
-	          <li><a href="#contact">CONTACT</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	</nav>
-	<div class="bg"></div>
-	<div class="jumbotron text-center">
-    	<h1>CLIPCO</h1>
-    	<p>Cupertino Language Immersion Program</p>
-  </div>
-
-  <div id="news" class="container-fluid text-center bg-grey">
-      <h2>News</h2><br>
-      <h4>What we have created</h4>
+    <div id="news" class="container-fluid text-center bg-grey">
+      <a href="blog.html"><h2>News</h2></a>
+      <br>
+      <h4>The latest activity from CLIPCO</h4>
       <div class="row text-center">
         <div class="row slideanim">
           <div class="col-sm-4">
-            <div class="thumbnail">
-              <a href="blog.html"><div class="blog-container" id="blog-container-1"></div></a>
-              <p><strong>Paris</strong></p>
-              <p>Yes, we built Paris</p>
-            </div>
+            <div class="thumbnail" id="blog-container-0"></div>
           </div>
           <div class="col-sm-4">
-            <div class="thumbnail">
-              <a href="blog.html"><div class="blog-container" id="blog-container-2"></div></a>
-              <p><strong>New York</strong></p>
-              <p>We built New York</p>
-            </div>
+            <div class="thumbnail" id="blog-container-1"> </div>
           </div>
           <div class="col-sm-4">
-            <div class="thumbnail">
-              <img class ="news-image" src="images/placeholder3.jpg" alt="San Francisco" width="400" height="300">
-              <p><strong>San Francisco</strong></p>
-              <p>Yes, San Fran is ours</p>
-            </div>
+            <div class="thumbnail" id="blog-container-2"></div>
           </div>
         </div>
       </div>
@@ -120,45 +111,42 @@
   	      <p><img src="images/911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;"></p>
   	    </div>
   	  </div>
-    <!-- image carousel-->
-    <div class="row">
-          <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+      <!-- image carousel-->
+      <div class="row">
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <p><a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG"></a><br>By
-                  Diego Delso, <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">Link</a></p>
-              </div>
-
-              <div class="item">
-                <p><a href="https://commons.wikimedia.org/wiki/File:H%C3%A4ktet_i_Delsbo.jpg#/media/File:H%C3%A4ktet_i_Delsbo.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H%C3%A4ktet_i_Delsbo.jpg/1200px-H%C3%A4ktet_i_Delsbo.jpg" alt="Häktet i Delsbo.jpg"></a><br>By
-                  <a href="//commons.wikimedia.org/wiki/User:Einarspetz" title="User:Einarspetz">Einarspetz</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>,
-                  <a href="https://commons.wikimedia.org/w/index.php?curid=35203980">Link</a></p>
-              </div>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <p><a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG"></a><br>By
+                Diego Delso, <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">Link</a></p>
             </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+            <div class="item">
+              <p><a href="https://commons.wikimedia.org/wiki/File:H%C3%A4ktet_i_Delsbo.jpg#/media/File:H%C3%A4ktet_i_Delsbo.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H%C3%A4ktet_i_Delsbo.jpg/1200px-H%C3%A4ktet_i_Delsbo.jpg" alt="Häktet i Delsbo.jpg"></a><br>By
+                <a href="//commons.wikimedia.org/wiki/User:Einarspetz" title="User:Einarspetz">Einarspetz</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>,
+                <a href="https://commons.wikimedia.org/w/index.php?curid=35203980">Link</a></p>
+            </div>
           </div>
-        </div>
 
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
       <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Contact Us</button>
     </div>
-
 
   	<div id="contacts" class="container-fluid">
   	  <div class="row">
@@ -287,266 +275,245 @@
   	  </div>
   	</div>
 
-  	<div class="container-fluid bg-grey">
-  	  <div class="row">
-  	    <div class="col-sm-4">
-  	      <span class="glyphicon glyphicon-globe logo slideanim"></span>
-  	    </div>
-  	    <div class="col-sm-8">
-  	      <h2>Our Values</h2><br>
-  	      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-  	      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-  	        ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  	        consequat.</p>
-  	    </div>
-  	  </div>
+    	<!-- Container (Programs Section) -->
+  	<div id="programs" class="container-fluid">
+      <div class="text-center">
+        <h2>Programs</h2>
+        <h4>Programs and Commitees</h4>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>CLIP programs</h2><br>
+          <h4>CLIPCO funds Chinese cultural and enrichment activities for our CLIP students through fundraising events. These programs are not funded by the Direct Give donations.</h4><br>
+          <p>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Visit our <a href="http://www.cusdclipco.org/volunteer.html">volunteer</a> page
+            today for more information about volunteering or providing a <a href="http://www.cusdclipco.org/contributions.html">donation</a>!</p>
+          <br><button class="btn btn-default btn-lg">Volunteer</button>
+          <button class="btn-default btn-lg">Donate</button>
+        </div>
+      </div>
   	</div>
 
-
-  	<!-- Container (Programs Section) -->
-  	<div id="programs" class="container-fluid">
-  	    <div class="text-center">
-  	      <h2>Programs</h2>
-  	      <h4>Programs and Commitees</h4>
-  	    </div>
-  	    <div class="row">
-  	      <div class="col-sm-8">
-  	        <h2>CLIP programs</h2><br>
-  	        <h4>CLIPCO funds Chinese cultural and enrichment activities for our CLIP students through fundraising events. These programs are not funded by the Direct Give donations.</h4><br>
-  	        <p>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Visit our <a href="http://www.cusdclipco.org/volunteer.html">volunteer</a> page
-  	          today for more information about volunteering or providing a <a href="http://www.cusdclipco.org/contributions.html">donation</a>!</p>
-  	        <br><button class="btn btn-default btn-lg">Volunteer</button>
-  	        <button class="btn-default btn-lg">Donate</button>
-  	      </div>
-  	    </div>
-  	  </div>
-
-  	  
-
-  	    <div id="budget" class="container-fluid">
-  	      <div class = "text-center">
-  	        <h2>CLIP Advisory Committee &nbsp;&amp;&nbsp; Budget</h2><br>
-  	      </div>
-  	      <div class="col-sm-6">
-  	        <h4>The CLIP Advisory Committee (CAC) was set up by the district to help make
-  	          curriculum decisions with parent and teacher involvement.  CAC and CLIPCO work
-  	          hand in hand each year.  The CAC board is composed of teachers, parents, principals,
-  	          and the director of our program.  They present funding needs to CLIPCO, which in turn
-  	          raises the money to cover those needs.</h4>
-  	          <!--
-  	          <h4>More information can be found at the </h4>
-  	          <a href="http://www.edline.net/pages/CLIP"><h4>Distric CLIP website</h4></a>
-  	        -->
-  	      </div>
-  	      <div class="col-sm-4">
-  	        <div class="text-center">
-  	          <p><a href="http://www.cusdclipco.org/documents/2016to2017/Back%20to%20School%20Night/16-17%20Approved%20CLIPCO%20Budget.pdf">
-  	             <h4>Approved 2016 - 2017 CLIP Curriculum Budget</h4></a></p>
-  	        </div>
-  	        <img src = "images/clipcobudget.gif" alt="Budget" width="640" height="360">
-  	      </div>
-  	    </div>
-
-        <div id="donate" class="container-fluid bg-grey">
-          <div class="text-center">
-            <h2>Donations</h2>
-          </div>
-          <div class="row slideanim">
-            <div class="col-sm-4 col-xs-12">
-              <div class="panel panel-default text-center">
-                <a href="direct_give.html">
-                  <div class="panel-heading">
-                    <h1>Direct Give Competition</h1>
-                  </div>
-                </a>
-                <div class="panel-body">
-                    <p><a href="direct_give.html#info"><h3>Competition Info</h3></a></p>
-                    <p>Find out more about the competition</p>
-                    <p><a href="direct_give.html#prizes"><h3>Prizes</h3></a></p>
-                    <p>Individual, class, and Grand prize</p>
-                  </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-              <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                  <h1>Donate Now</h1>
-                </div>
-                <div class="panel-body">
-                  <p><a href="http://www.cusdclipco.org/donate.html"><h4>Donate Online</h4></a></p>
-                  <p>PayPal, Debit, or Credit Card</p>
-                  <p><a href="pledgeform.html"><h4>Donate by check</h4></a></p>
-                  <p>Download the Pledge Form</p>
-                  <p><a href="donateFAQ.html"><h4>FAQ</h4></a></p>
-                  <p>Frequently Asked Questions.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-              <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                  <h1>Hall Of Fame</h1>
-                </div>
-                <div class="panel-body">
-                  <p>
-                    <h3><a href="honor_roll.html">Honor Roll</a></h3>
-                  </p>
-                  <p>
-                  Recognize the Families that gave the most
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div id="budget" class="container-fluid">
+      <div class = "text-center">
+        <h2>CLIP Advisory Committee &nbsp;&amp;&nbsp; Budget</h2><br>
+      </div>
+      <div class="col-sm-6">
+        <h4>The CLIP Advisory Committee (CAC) was set up by the district to help make
+          curriculum decisions with parent and teacher involvement.  CAC and CLIPCO work
+          hand in hand each year.  The CAC board is composed of teachers, parents, principals,
+          and the director of our program.  They present funding needs to CLIPCO, which in turn
+          raises the money to cover those needs.
+          </h4>
+          <!--
+          <h4>More information can be found at the </h4>
+          <a href="http://www.edline.net/pages/CLIP"><h4>Distric CLIP website</h4></a>
+        -->
+      </div>
+      <div class="col-sm-4">
+        <div class="text-center">
+          <p>
+            <a href="http://www.cusdclipco.org/documents/2016to2017/Back%20to%20School%20Night/16-17%20Approved%20CLIPCO%20Budget.pdf">
+             <h4>Approved 2016 - 2017 CLIP Curriculum Budget</h4>
+            </a>
+          </p>
         </div>
-
-        <!-- Container (Contact Section) -->
-        <div id="contact" class="container-fluid">
-          <h2 class="text-center">CONTACT</h2>
-          <div class="row">
-            <div class="col-sm-5">
-              <p>Contact us and we'll get back to you within 24 hours.</p>
-              <p><span class="glyphicon glyphicon-map-marker"></span>Cupertino, CA</p>
-              <p><span class="glyphicon glyphicon-phone"></span> 00 1515151515</p>
-              <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
-              <div id="googleMap" class="slideanim" style="height:400px;width:100%;"></div>
-            </div>
-            <div class="col-sm-7 slideanim">
-              <div class="row">
-                <div class="col-sm-6 form-group">
-                  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                </div>
-                <div class="col-sm-6 form-group">
-                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                </div>
-              </div>
-              <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-              <div class="row">
-                <div class="col-sm-12 form-group">
-                  <button class="btn btn-default pull-right" type="submit">Send</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <footer class="container-fluid text-center">
-          <a href="#myPage" title="To Top">
-          <span class="glyphicon glyphicon-chevron-up"></span>
-        </a>
-          <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
-        </footer>
-        <!-- Add Google Maps -->
-        
-  <script>
-    function myMap() {
-    var myCenter = new google.maps.LatLng(37.3064945,-122.028764);
-    var mapProp = {center:myCenter, zoom:13, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    var marker = new google.maps.Marker({position:myCenter});
-    marker.setMap(map);
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxINNoF49mS6coXAnMzUxwAEoNEi1TWFY&callback=myMap"></script>
-
-	<script>
-	  $(document).ready(function() {
-	    // Add smooth scrolling to all links in navbar  footer link
-	    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-	      // Make sure this.hash has a value before overriding default behavior
-	      if (this.hash !== "") {
-	        // Prevent default anchor click behavior
-	        event.preventDefault();
-	        // Store hash
-	        var hash = this.hash;
-	        // Using jQuery's animate() method to add smooth page scroll
-	        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-	        $('html, body').animate({
-	          scrollTop: $(hash).offset().top
-	        }, 900, function() {
-	          // Add hash (#) to URL when done scrolling (default click behavior)
-	          window.location.hash = hash;
-	        });
-	      } // End if
-	    });
-	    $(window).scroll(function() {
-	      $(".slideanim").each(function() {
-	        var pos = $(this).offset().top;
-	        var winTop = $(window).scrollTop();
-	        if (pos < winTop + 600) {
-	          $(this).addClass("slide");
-	        }
-	      });
-	    });
-	  })
-	</script>
-
-  <script>
-    var x = document.getElementById('contacts');
-    x.style.display = 'none';
-
-    function doFunction() {
-      if (x.style.display === 'none') {
-        x.style.display = 'block';
-      } else {
-        x.style.display = 'none';
-      }
-    }
-  </script> 
-
-  <script>
-    function handleResponse(response) {
-      document.getElementById("blog-container-2").innerHTML += "<h1>" + response.title + "</h1>" + response.content;
-    }
-  </script>
-  <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts/7017491576395294369?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
-  <script>
-    function handleResponse(response) {
-      document.getElementById("blog-container-1").innerHTML += "<h1>" + response.title + "</h1>" + response.content;
-    }
-  </script>
-  <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts/8140414366596486809?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
-
-  <!-- Carousel incase we need it later -->
-      <!--
-      <h2>What our customers say</h2>
-      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-        <!-- Indicators --> <!--
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides --> <!--
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
-          </div>
-          <div class="item">
-            <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
-          </div>
-          <div class="item">
-            <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
-          </div>
-        </div>
-
-        <!-- Left and right controls --> <!--
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <img src = "images/clipcobudget.gif" alt="Budget" id="clipcobudgetgif">
       </div>
     </div>
-    -->
 
- 
-</body>
+    <div id="donate" class="container-fluid bg-grey">
+      <div class="text-center">
+        <h2>Donations</h2>
+      </div>
+      <div class="row slideanim">
+        <div class="col-sm-4 col-xs-12">
+          <div class="panel panel-default text-center">
+            <a href="direct_give.html">
+              <div class="panel-heading">
+                <h1>Direct Give Competition</h1>
+              </div>
+            </a>
+            <div class="panel-body">
+                <p><a href="direct_give.html#info"><h3>Competition Info</h3></a></p>
+                <p>Find out more about the competition</p>
+                <p><a href="direct_give.html#prizes"><h3>Prizes</h3></a></p>
+                <p>Individual, class, and Grand prize</p>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>Donate Now</h1>
+            </div>
+            <div class="panel-body">
+              <p><a href="http://www.cusdclipco.org/donate.html"><h4>Donate Online</h4></a></p>
+              <p>PayPal, Debit, or Credit Card</p>
+              <p><a href="documents/17-18pledgeform.pdf"><h4>Donate by check</h4></a></p>
+              <p>Download the Pledge Form</p>
+              <p><a href="donateFAQ.html"><h4>FAQ</h4></a></p>
+              <p>Frequently Asked Questions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>Hall Of Fame</h1>
+            </div>
+            <div class="panel-body">
+              <p>
+                <h3><a href="honor_roll.html">Honor Roll</a></h3>
+              </p>
+              <p>
+              Recognize the Families that gave the most
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Container (Contact Section) -->
+    <div id="contact" class="container-fluid">
+      <h2 class="text-center">CONTACT</h2>
+      <div class="row">
+        <div class="col-sm-5">
+          <p>Contact us and we'll get back to you within 24 hours.</p>
+          <p><span class="glyphicon glyphicon-map-marker"></span>Cupertino, CA</p>
+          <p><span class="glyphicon glyphicon-phone"></span> 00 1515151515</p>
+          <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+          <div id="googleMap" class="slideanim" style="height:400px;width:100%;"></div>
+        </div>
+        <div class="col-sm-7 slideanim">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            </div>
+          </div>
+          <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <button class="btn btn-default pull-right" type="submit">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+    </footer>
+          <!-- Add Google Maps -->
+          
+    <script>
+      function myMap() {
+      var myCenter = new google.maps.LatLng(37.3064945,-122.028764);
+      var mapProp = {center:myCenter, zoom:13, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      var marker = new google.maps.Marker({position:myCenter});
+      marker.setMap(map);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxINNoF49mS6coXAnMzUxwAEoNEi1TWFY&callback=myMap"></script>
 
+  	<script>
+  	  $(document).ready(function() {
+  	    // Add smooth scrolling to all links in navbar  footer link
+  	    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+  	      // Make sure this.hash has a value before overriding default behavior
+  	      if (this.hash !== "") {
+  	        // Prevent default anchor click behavior
+  	        event.preventDefault();
+  	        // Store hash
+  	        var hash = this.hash;
+  	        // Using jQuery's animate() method to add smooth page scroll
+  	        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+  	        $('html, body').animate({
+  	          scrollTop: $(hash).offset().top
+  	        }, 900, function() {
+  	          // Add hash (#) to URL when done scrolling (default click behavior)
+  	          window.location.hash = hash;
+  	        });
+  	      } // End if
+  	    });
+  	    $(window).scroll(function() {
+  	      $(".slideanim").each(function() {
+  	        var pos = $(this).offset().top;
+  	        var winTop = $(window).scrollTop();
+  	        if (pos < winTop + 600) {
+  	          $(this).addClass("slide");
+  	        }
+  	      });
+  	    });
+  	  })
+  	</script>
+
+    <script>
+      var x = document.getElementById('contacts');
+      x.style.display = 'none';
+
+      function doFunction() {
+        if (x.style.display === 'none') {
+          x.style.display = 'block';
+        } else {
+          x.style.display = 'none';
+        }
+      }
+    </script> 
+
+    <script type="text/javascript">
+      function handleResponse(response) {
+       for( i = 0; i < response.items.length && i < 3; i++){
+          document.getElementById("blog-container-"+i).innerHTML += "<div class=\"blog-container\">" + response.items[i].content + "</div>";
+          document.getElementById("blog-container-"+i).innerHTML += "<a href=\"blog.html#content-" + i + "\"><p><h3>" + response.items[i].title + "</h3></p></a>";
+
+       }
+      }
+    </script>
+    <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
+
+    <!-- Carousel incase we need it later -->
+        <!--
+        <h2>What our customers say</h2>
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+          <!-- Indicators --> <!--
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides --> <!--
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+            </div>
+            <div class="item">
+              <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+            </div>
+            <div class="item">
+              <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+            </div>
+          </div>
+
+          <!-- Left and right controls --> <!--
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
+      </div>
+      -->
+  </body>
 </html>

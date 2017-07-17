@@ -23,7 +23,7 @@
     <style type="text/css">
       
     .blogpost{
-      padding-bottom: 150px;
+      padding-bottom: 100px;
       padding-top: 50px;
     }
 
@@ -62,9 +62,8 @@
           <a class="navbar-brand" href="Website.html">Home</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#content-1">CLIPCO GRADUATION CELEBRATION</a></li> <!-- Should be dynamically linked in the future-->
-            <li><a href="#content-2">STUDENT SPOTLIGHT - MINA CHAO</a></li> <!-- Should be dynamically linked in the future-->
+          <ul class="nav navbar-nav navbar-right" id="navbar-list">
+            <!-- yaay java script is going to do the loading here!-->
           </ul>
         </div>
       </div>
@@ -73,26 +72,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
-          <div class="blogpost" id="content-1"></div>
-          <div class="container-fluid text-center">
-            <a href="#blog-page" title="To Top">
-              <span class="glyphicon glyphicon-chevron-up"></span>
-            </a>
-          </div>
-          <div class="blogpost" id="content-2"></div>
-          <script>
-              function handleResponse(response) {
-                document.getElementById("content-1").innerHTML += "<h1>" + response.items[0].title + "</h1>" + response.items[0].content;
-            }
-          </script>
-          <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
-          <script>
-              function handleResponse(response) {
-                document.getElementById("content-2").innerHTML += "<h1>" + response.items[1].title + "</h1>" + response.items[1].content;
-            }
-          </script>
-           <!--<script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts/8140414366596486809?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>-->
-         <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
+          <div id="blog-container"></div>
         </div>
       </div>
     </div>
@@ -103,6 +83,8 @@
       </a>
     </footer>
 
+<!-- script stuff -->
+<!-- smooth scrolling script -->
     <script>
     $(document).ready(function() {
       // Add smooth scrolling to all links in navbar  footer link
@@ -134,6 +116,34 @@
       });
     })
   </script>
+
+<!-- blog content loading script -->
+  <script type="text/javascript">
+    function handleResponse(response) {
+     for( i = 0; i < response.items.length; i++){
+        document.getElementById("blog-container").innerHTML += "<div class=\"blogpost\" id=\"content-" + i + "\"></div>" + "<br>";
+        document.getElementById("content-"+i).innerHTML += "<h1>" + response.items[i].title + "</h1>" + response.items[i].content;
+        document.getElementById("blog-container").innerHTML += "<footer class=\"container-fluid text-center\">";
+        document.getElementById("blog-container").innerHTML += "<a href=\"#blog-page\" title=\"To Top\">";
+        document.getElementById("blog-container").innerHTML += "<span class=\"glyphicon glyphicon-chevron-up\"></span>";
+        document.getElementById("blog-container").innerHTML += "</a></footer>";
+        
+     }
+    }
+  </script>
+  <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
+
+<!-- navbar elements loading script-->
+  <script type="text/javascript">
+    function handleResponse(response) {
+     for( i = 0; i < response.items.length; i++){
+        document.getElementById("navbar-list").innerHTML +=  "<li><a href=\"#content-" + i +" \">" + response.items[i].title + "</a></li>";
+        
+        
+     }
+    }
+  </script>
+  <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
 
 
   </body>
