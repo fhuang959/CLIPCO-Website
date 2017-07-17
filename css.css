@@ -50,7 +50,7 @@
     }
 
   .bg, .jumbotron{
-       height: 450px; /*change in the javascript too*/
+       height: 350px; /*change in the paralax.js too!*/
     }
 
   .logo-small {

@@ -9,16 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	<script type='text/javascript'>
-  		var jumboHeight = $('.jumbotron').outerHeight();
-  		function parallax(){
-  		    var scrolled = $(window).scrollTop();
-  		    $('.bg').css('height', (jumboHeight-(scrolled-450)) +'px');
-  		}
-  		$(window).scroll(function(e){
-  		    parallax()+20;
-  		});
-  	</script>
+  	<script src="paralax.js"></script>
+ 
     <style>
       table, th, td{
         border: 1px solid rgb(150,150,150);
@@ -480,7 +472,7 @@
     <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
 
     <!-- Carousel incase we need it later -->
-        <!--
+      <!--
         <h2>What our customers say</h2>
         <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
           <!-- Indicators --> <!--
@@ -507,13 +499,14 @@
           <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
-        </a>
+          </a>
           <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
-        </a>
+         </a>
         </div>
       </div>
-      -->
+    -->
+
   </body>
 </html>
