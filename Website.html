@@ -23,19 +23,20 @@
       }
 
       .blog-container{
-        width: 100%;
+        width: 75%;
         height: 50%;
         max-height: 500px;
         white-space: pre-wrap;
         overflow: hidden;
         padding: 1px;
       }
-
-      a .thumbnail:hover{
+      /*a .thumbnail:hover{
         text-decoration: none;
-      }
+      }*/
 
       #clipcobudgetgif{
+        width: 50%
+        border: solid black 10px;
         max-width: 498px;
         max-height: 280px;
       }
@@ -75,20 +76,30 @@
       <a href="blog.html"><h2>News</h2></a>
       <br>
       <h4>The latest activity from CLIPCO</h4>
-      <div class="row text-center">
-        <div class="row slideanim">
-          <div class="col-sm-4">
-            <div class="thumbnail" id="blog-container-0"></div>
-          </div>
-          <div class="col-sm-4">
-            <div class="thumbnail" id="blog-container-1"> </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="thumbnail" id="blog-container-2"></div>
-          </div>
+      <div id="newsCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators --> 
+        <ol class="carousel-indicators" id="news-carousel-list">
+          <!-- the script will fill this in-->
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox" id="news-carousel-wrapper">
+          <!-- the script will fill this in-->
         </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#newsCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#newsCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
+
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </footer>
 
   	<div id="about" class="container-fluid">
   	  <div class="row">
@@ -103,47 +114,13 @@
   	      <p><img src="images/911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;"></p>
   	    </div>
   	  </div>
-      <!-- image carousel-->
-      <div class="row">
-        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <p><a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG"></a><br>By
-                Diego Delso, <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">Link</a></p>
-            </div>
-            <div class="item">
-              <p><a href="https://commons.wikimedia.org/wiki/File:H%C3%A4ktet_i_Delsbo.jpg#/media/File:H%C3%A4ktet_i_Delsbo.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H%C3%A4ktet_i_Delsbo.jpg/1200px-H%C3%A4ktet_i_Delsbo.jpg" alt="Häktet i Delsbo.jpg"></a><br>By
-                <a href="//commons.wikimedia.org/wiki/User:Einarspetz" title="User:Einarspetz">Einarspetz</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>,
-                <a href="https://commons.wikimedia.org/w/index.php?curid=35203980">Link</a></p>
-            </div>
-          </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
       <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Contact Us</button>
     </div>
 
-  	<div id="contacts" class="container-fluid">
-  	  <div class="row">
-  	    <div class="col-sm-8">
-  	      <p>There are still open positions available. Please contact us to join our team!<br>
+    <div id="contacts" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          <p>There are still open positions available. Please contact us to join our team!<br>
           <table>
             <thead>
               <th>
@@ -261,14 +238,18 @@
             </tr>
             </tbody>
           </table>
-  	    </div>
-  	    <div class="col-sm-4">
-  	    </div>
-  	  </div>
-  	</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </footer>
+
+  
 
     	<!-- Container (Programs Section) -->
-  	<div id="programs" class="container-fluid">
+  	<div id="programs" class="container-fluid bg-grey">
       <div class="text-center">
         <h2>Programs</h2>
         <h4>Programs and Commitees</h4>
@@ -284,6 +265,10 @@
         </div>
       </div>
   	</div>
+
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </footer>
 
     <div id="budget" class="container-fluid">
       <div class = "text-center">
@@ -312,6 +297,10 @@
         <img src = "images/clipcobudget.gif" alt="Budget" id="clipcobudgetgif">
       </div>
     </div>
+
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </footer>
 
     <div id="donate" class="container-fluid bg-grey">
       <div class="text-center">
@@ -366,6 +355,10 @@
       </div>
     </div>
 
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </footer>
+
     <!-- Container (Contact Section) -->
     <div id="contact" class="container-fluid">
       <h2 class="text-center">CONTACT</h2>
@@ -403,7 +396,8 @@
       <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
     </footer>
           <!-- Add Google Maps -->
-          
+    
+    <!-- map script -->    
     <script>
       function myMap() {
       var myCenter = new google.maps.LatLng(37.3064945,-122.028764);
@@ -415,6 +409,7 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxINNoF49mS6coXAnMzUxwAEoNEi1TWFY&callback=myMap"></script>
 
+    <!--scroll script-->
   	<script>
   	  $(document).ready(function() {
   	    // Add smooth scrolling to all links in navbar  footer link
@@ -447,6 +442,7 @@
   	  })
   	</script>
 
+    <!-- contacts reveal script-->
     <script>
       var x = document.getElementById('contacts');
       x.style.display = 'none';
@@ -460,16 +456,24 @@
       }
     </script> 
 
+    <!-- blog loading script-->
     <script type="text/javascript">
-      function handleResponse(response) {
-       for( i = 0; i < response.items.length && i < 3; i++){
-          document.getElementById("blog-container-"+i).innerHTML += "<div class=\"blog-container\">" + response.items[i].content + "</div>";
-          document.getElementById("blog-container-"+i).innerHTML += "<a href=\"blog.html#content-" + i + "\"><p><h3>" + response.items[i].title + "</h3></p></a>";
-
-       }
-      }
+        function handleResponse(response) {
+          //when i == 0;
+          //list
+          document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
+          //wrapper
+          document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active\"><div class=\"blog-container thumbnail\">" + response.items[0].content + "</div><a href=\"blog.html#content-0\"><p><h3>" + response.items[0].title + "</h3></p></a></div>";
+          for( i = 1; i < response.items.length && i < 5; i++){
+            // update the carousel indicators list
+            document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"" + i + "\"></li>";
+            //now update the actual content
+            document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item\"><div class=\"blog-container thumbnail\">" + response.items[i].content + "</div><a href=\"blog.html#content-" + i + "\"><p><h3>" + response.items[i].title + "</h3></p></a></div>";
+         }
+        }
     </script>
-    <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
+    <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA">
+    </script>
 
     <!-- Carousel incase we need it later -->
       <!--
@@ -507,6 +511,50 @@
         </div>
       </div>
     -->
+    <!-- carousel 2 -->
+      <!--
+       <!-- image carousel--> <!--
+      <div class="row">
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+          <!-- Indicators --> <!--
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides --> <!--
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <p>
+                <a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG">  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG">
+                </a>
+                <br>
+                By Diego Delso, 
+                <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">
+                  Link
+                </a>
+              </p>
+            </div>
+            <div class="item">
+              <p><a href="https://commons.wikimedia.org/wiki/File:H%C3%A4ktet_i_Delsbo.jpg#/media/File:H%C3%A4ktet_i_Delsbo.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H%C3%A4ktet_i_Delsbo.jpg/1200px-H%C3%A4ktet_i_Delsbo.jpg" alt="Häktet i Delsbo.jpg"></a><br>By
+                <a href="//commons.wikimedia.org/wiki/User:Einarspetz" title="User:Einarspetz">Einarspetz</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>,
+                <a href="https://commons.wikimedia.org/w/index.php?curid=35203980">Link</a></p>
+            </div>
+          </div>
+
+          <!-- Left and right controls --> <!--
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      -->
 
   </body>
 </html>

@@ -265,12 +265,14 @@
     }
 
 
-    .thumbnail:hover{
+    /*.thumbnail:hover{
       box-shadow: 1px 1px 50px 1px #888888;
-    }
+    }*/
 
     .thumbnail{
-      /*border: 1px solid rgb(150,150,150);*/
+      align-items: center;
+      align-content: center;
+      align-self: center;
     }
 
     .news-image{
