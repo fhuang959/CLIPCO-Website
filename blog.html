@@ -14,7 +14,7 @@
     <style type="text/css">
       
     .blogpost{
-      padding-bottom: 100px;
+      padding-bottom: 50px;
       padding-top: 50px;
     }
 
@@ -22,17 +22,12 @@
     </style>
   </head>
   <body id="blog-page">
-    <div id="navbar-placeholder"></div>
+    <!--<div id="navbar-placeholder"></div>
     <script>
       $(function(){
         $("#navbar-placeholder").load("subpage_navbar.html");
       });
-    </script>
-
-
-
-    
-
+    </script>-->
 
     <div class="bg"></div>
 
@@ -60,82 +55,59 @@
       </div>
     </nav>
     
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="blog-container"></div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="container-fluid text-center">
-      <a href="#blog-page" title="To Top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-      </a>
-    </footer>
+    <!-- java script wil add the rest of the body of the page about here -->
 
 <!-- script stuff -->
 <!-- smooth scrolling script -->
     <script>
-    $(document).ready(function() {
-      // Add smooth scrolling to all links in navbar  footer link
-      $(".navbar a, footer a[href='#blog-page']").on('click', function(event) {
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-          // Store hash
-          var hash = this.hash;
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 900, function() {
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-      $(window).scroll(function() {
-        $(".slideanim").each(function() {
-          var pos = $(this).offset().top;
-          var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
-            $(this).addClass("slide");
-          }
+      $(document).ready(function() {
+        // Add smooth scrolling to all links in navbar  footer link
+        $(".navbar a, footer a[href='#blog-page']").on('click', function(event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+            // Store hash
+            var hash = this.hash;
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 900, function() {
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
         });
-      });
-    })
-  </script>
+        $(window).scroll(function() {
+          $(".slideanim").each(function() {
+            var pos = $(this).offset().top;
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+          });
+        });
+      })
+    </script>
 
 <!-- blog content loading script -->
-  <script type="text/javascript">
-    function handleResponse(response) {
-     for( i = 0; i < response.items.length; i++){
-        document.getElementById("blog-container").innerHTML += "<div class=\"blogpost\" id=\"content-" + i + "\"></div>" + "<br>";
-        document.getElementById("content-"+i).innerHTML += "<h1>" + response.items[i].title + "</h1>" + response.items[i].content;
-        document.getElementById("blog-container").innerHTML += "<footer class=\"container-fluid text-center\">";
-        document.getElementById("blog-container").innerHTML += "<a href=\"#blog-page\" title=\"To Top\">";
-        document.getElementById("blog-container").innerHTML += "<span class=\"glyphicon glyphicon-chevron-up\"></span>";
-        document.getElementById("blog-container").innerHTML += "</a></footer>";
-        
-     }
-    }
-  </script>
-  <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
-
-<!-- navbar elements loading script-->
-  <script type="text/javascript">
-    function handleResponse(response) {
-     for( i = 0; i < response.items.length; i++){
-        document.getElementById("navbar-list").innerHTML +=  "<li><a href=\"#content-" + i +" \">" + response.items[i].title + "</a></li>";
-        
-        
-     }
-    }
-  </script>
-  <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA"></script>
-
+    <script type="text/javascript">
+      function handleResponse(response) {
+       for( i = 0; i < response.items.length; i++){
+        document.getElementById("navbar-list").innerHTML +=  "<li><a href=\"#content-" + i +" \">" + response.items[i].title + "</a></li>"; 
+        document.getElementById("blog-page").innerHTML += "<div class=\"blogpost container-fluid row\" id=\"content-" + i + "\"></div>" + "<br>";
+        document.getElementById("content-"+i).innerHTML += "<h1 class=\"text-center\">" + response.items[i].title + "</h1>" + response.items[i].content;
+        document.getElementById("blog-page").innerHTML += "<footer class=\"container-fluid text-center\"><a href=\"#blog-page\" title=\"To Top\"><span class=\"glyphicon glyphicon-chevron-up\"></span></a></footer>";
+       }
+      }
+    </script>
+    <span id="blog-script"></span>
+    <script>
+      $(function(){
+        $("#blog-script").load("blog_script.html");
+      });
+    </script>
 
   </body>
 </html>

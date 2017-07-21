@@ -23,12 +23,14 @@
       }
 
       .blog-container{
-        width: 75%;
+        width: 82%;
         height: 50%;
         max-height: 500px;
         white-space: pre-wrap;
         overflow: hidden;
         padding: 1px;
+        margin: auto;
+        background-color: white;
       }
       /*a .thumbnail:hover{
         text-decoration: none;
@@ -40,6 +42,12 @@
         max-width: 498px;
         max-height: 280px;
       }
+
+      #newsCarousel{
+        float: right;
+        width: 70%;
+      }
+
     </style>
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -76,6 +84,10 @@
       <a href="blog.html"><h2>News</h2></a>
       <br>
       <h4>The latest activity from CLIPCO</h4>
+      <div class="col-sm-4" id="news-list">
+        <ul id="news-sidebar-list">
+        </ul>
+      </div>
       <div id="newsCarousel" class="carousel slide text-center" data-ride="carousel">
         <!-- Indicators --> 
         <ol class="carousel-indicators" id="news-carousel-list">
@@ -328,7 +340,7 @@
               <h1>Donate Now</h1>
             </div>
             <div class="panel-body">
-              <p><a href="http://www.cusdclipco.org/donate.html"><h4>Donate Online</h4></a></p>
+              <p><a href="donations.html"><h4>Donate Online</h4></a></p>
               <p>PayPal, Debit, or Credit Card</p>
               <p><a href="documents/17-18pledgeform.pdf"><h4>Donate by check</h4></a></p>
               <p>Download the Pledge Form</p>
@@ -370,22 +382,24 @@
           <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
           <div id="googleMap" class="slideanim" style="height:400px;width:100%;"></div>
         </div>
-        <div class="col-sm-7 slideanim">
-          <div class="row">
-            <div class="col-sm-6 form-group">
-              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        <form action="contact.php" method="post">
+          <div class="col-sm-7 slideanim">
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+              </div>
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+              </div>
             </div>
-            <div class="col-sm-6 form-group">
-              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+            <div class="row">
+              <div class="col-sm-12 form-group">
+                <button class="btn btn-default pull-right" type="submit">Send</button>
+              </div>
             </div>
           </div>
-          <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-          <div class="row">
-            <div class="col-sm-12 form-group">
-              <button class="btn btn-default pull-right" type="submit">Send</button>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
 
@@ -400,7 +414,7 @@
     <!-- map script -->    
     <script>
       function myMap() {
-      var myCenter = new google.maps.LatLng(37.3064945,-122.028764);
+      var myCenter = new google.maps.LatLng(37.306688,-122.025898);
       var mapProp = {center:myCenter, zoom:13, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
       var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
       var marker = new google.maps.Marker({position:myCenter});
@@ -460,19 +474,27 @@
     <script type="text/javascript">
         function handleResponse(response) {
           //when i == 0;
-          //list
+          //side list
+          document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"blog.html#content-0\">" + response.items[0].title + "</a></li>";
+          //indicator list
           document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
           //wrapper
-          document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active\"><div class=\"blog-container thumbnail\">" + response.items[0].content + "</div><a href=\"blog.html#content-0\"><p><h3>" + response.items[0].title + "</h3></p></a></div>";
+          document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active\"><div class=\"blog-container thumbnail text-center bg-grey\">" + response.items[0].content + "</div><a href=\"blog.html#content-0\"><p><h3>" + response.items[0].title + "</h3></p></a></div>";
           for( i = 1; i < response.items.length && i < 5; i++){
+            //update the sidebar list
+            document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"content-" + i + "\">" + response.items[i].title + "</a></li>";
             // update the carousel indicators list
             document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"" + i + "\"></li>";
             //now update the actual content
-            document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item\"><div class=\"blog-container thumbnail\">" + response.items[i].content + "</div><a href=\"blog.html#content-" + i + "\"><p><h3>" + response.items[i].title + "</h3></p></a></div>";
+            document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item\"><div class=\"blog-container thumbnail text-center bg-grey\">" + response.items[i].content + "</div><a href=\"blog.html#content-" + i + "\"><p><h3>" + response.items[i].title + "</h3></p></a></div>";
          }
         }
     </script>
-    <script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA">
+    <div id="blog-script"></div>
+    <script>
+      $(function(){
+        $("#blog-script").load("blog_script.html");
+      });
     </script>
 
     <!-- Carousel incase we need it later -->
