@@ -162,7 +162,7 @@
 
   .navbar li a,
   .navbar .navbar-brand {
-    color: #fff !important;
+    color: #000 !important;
   }
 
   .navbar-nav li a:hover,

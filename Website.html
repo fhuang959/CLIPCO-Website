@@ -10,7 +10,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script src="paralax.js"></script>
- 
+
     <style>
       table, th, td{
         border: 1px solid rgb(150,150,150);
@@ -51,7 +51,7 @@
     </style>
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-  	
+
   	<nav class="navbar navbar-default navbar-fixed-top">
   	    <div class="container">
   	      <div class="navbar-header">
@@ -64,12 +64,58 @@
   	      </div>
   	      <div class="collapse navbar-collapse" id="myNavbar">
   	        <ul class="nav navbar-nav navbar-right">
-  	          <li><a href="#news">NEWS</a></li>
-  	          <li><a href="#about">ABOUT</a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NEWS<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                <li><a href="blog.html">CLIPCO Blog</a></li>
+                <li><a href="#">Link 2</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ABOUT<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Link 1</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PROGRAMS<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                <li><a href="programs.html">Programs</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BUDGET<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Link 1</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DONATE<span class="caret"></span></a>
+                  <ul class="dropdown-menu color" role="menu">
+                <li><a href="#">Link 1</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CONTACT<span class="caret"></span></a>
+                  <ul class="dropdown-menu color" role="menu">
+                <li><a href="#">Link 1</a></li>
+                  </ul>
+              </li>
+<!--
+              <li><a href="#news">NEWS</a></li>
+              <li><a href="#about">ABOUT</a></li>
               <li><a href="#programs">PROGRAMS</a></li>
-  	          <li> <a href="#budget">BUDGET</a><li>
-  	          <li><a href="#donate">DONATE</a></li>
-  	          <li><a href="#contact">CONTACT</a></li>
+              <li> <a href="#budget">BUDGET</a><li>
+              <li><a href="#donate">DONATE</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+-->
+
   	        </ul>
   	      </div>
   	    </div>
@@ -89,7 +135,7 @@
         </ul>
       </div>
       <div id="newsCarousel" class="carousel slide text-center" data-ride="carousel">
-        <!-- Indicators --> 
+        <!-- Indicators -->
         <ol class="carousel-indicators" id="news-carousel-list">
           <!-- the script will fill this in-->
         </ol>
@@ -258,7 +304,7 @@
       <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
     </footer>
 
-  
+
 
     	<!-- Container (Programs Section) -->
   	<div id="programs" class="container-fluid bg-grey">
@@ -410,8 +456,8 @@
       <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
     </footer>
           <!-- Add Google Maps -->
-    
-    <!-- map script -->    
+
+    <!-- map script -->
     <script>
       function myMap() {
       var myCenter = new google.maps.LatLng(37.306688,-122.025898);
@@ -468,7 +514,7 @@
           x.style.display = 'none';
         }
       }
-    </script> 
+    </script>
 
     <!-- blog loading script-->
     <script type="text/javascript">
@@ -552,7 +598,7 @@
                 <a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG">  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG">
                 </a>
                 <br>
-                By Diego Delso, 
+                By Diego Delso,
                 <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">
                   Link
                 </a>
