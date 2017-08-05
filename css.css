@@ -32,8 +32,8 @@
   }
 
   .bg {
-  background: url('images/miller-rainbow.jpg') no-repeat center center;
-  background-size: cover;
+  /*background: url('images/miller-rainbow.jpg') no-repeat center center;
+  background-size: cover;*/
   position: fixed;
   width: 100%;
   top:0px;
@@ -43,14 +43,14 @@
 
   .jumbotron {
   margin-bottom: 0px;  
-  text-shadow: black 0.3em 0.3em 0.3em;
+  text-shadow: black 0.1em 0.1em 0.1em;
   background: transparent;
   padding: 100px 25px;
   font-family: Montserrat, sans-serif;
   }
 
   .bg, .jumbotron{
-     height: 350px; /*change in the paralax.js too!*/
+     height: 250px; /*change in the paralax.js too!*/
   }
 
   .logo-small {
