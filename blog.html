@@ -15,13 +15,13 @@
       
     .blogpost{
       padding-bottom: 50px;
-      padding-top: 50px;
+      padding-top: 35px;
     }
 
     
     </style>
   </head>
-  <body id="blog-page">
+  <body id="blog-page" data-spy="scroll" data-target=".navbar" data-offset="100">
     <!--<div id="navbar-placeholder"></div>
     <script>
       $(function(){
@@ -58,7 +58,25 @@
     <!-- java script wil add the rest of the body of the page about here -->
 
 <!-- script stuff -->
-<!-- smooth scrolling script -->
+
+<!-- blog content loading script -->
+    <script type="text/javascript">
+      function handleResponse(response) {
+       for( i = 0; i < response.items.length; i++){
+        document.getElementById("navbar-list").innerHTML +=  "<li><a href=\"#content-" + i +" \">" + response.items[i].title + "</a></li>"; 
+        document.getElementById("blog-page").innerHTML += "<div class=\"blogpost container-fluid row\" id=\"content-" + i + "\"></div>" + "<br>";
+        document.getElementById("content-"+i).innerHTML += "<h1 class=\"text-center\">" + response.items[i].title + "</h1>" + response.items[i].content;
+        document.getElementById("blog-page").innerHTML += "<footer class=\"container-fluid text-center\"><a href=\"#blog-page\" title=\"To Top\"><span class=\"glyphicon glyphicon-chevron-up\"></span></a></footer>";
+       }
+      }
+    </script>
+    <span id="blog-script"></span>
+    <script>
+      $(function(){
+        $("#blog-script").load("blog_script.html");
+      });
+    </script>
+    <!-- smooth scrolling script -->
     <script>
       $(document).ready(function() {
         // Add smooth scrolling to all links in navbar  footer link
@@ -91,23 +109,6 @@
       })
     </script>
 
-<!-- blog content loading script -->
-    <script type="text/javascript">
-      function handleResponse(response) {
-       for( i = 0; i < response.items.length; i++){
-        document.getElementById("navbar-list").innerHTML +=  "<li><a href=\"#content-" + i +" \">" + response.items[i].title + "</a></li>"; 
-        document.getElementById("blog-page").innerHTML += "<div class=\"blogpost container-fluid row\" id=\"content-" + i + "\"></div>" + "<br>";
-        document.getElementById("content-"+i).innerHTML += "<h1 class=\"text-center\">" + response.items[i].title + "</h1>" + response.items[i].content;
-        document.getElementById("blog-page").innerHTML += "<footer class=\"container-fluid text-center\"><a href=\"#blog-page\" title=\"To Top\"><span class=\"glyphicon glyphicon-chevron-up\"></span></a></footer>";
-       }
-      }
-    </script>
-    <span id="blog-script"></span>
-    <script>
-      $(function(){
-        $("#blog-script").load("blog_script.html");
-      });
-    </script>
 
   </body>
 </html>
