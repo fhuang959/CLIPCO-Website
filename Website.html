@@ -10,7 +10,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script src="paralax.js"></script>
- 
+
     <style>
       table, th, td{
         border: 1px solid rgb(150,150,150);
@@ -51,7 +51,7 @@
     </style>
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-  	
+
   	<nav class="navbar navbar-default navbar-fixed-top">
   	    <div class="container">
   	      <div class="navbar-header">
@@ -64,12 +64,60 @@
   	      </div>
   	      <div class="collapse navbar-collapse" id="myNavbar">
   	        <ul class="nav navbar-nav navbar-right">
-  	          <li><a href="#news">NEWS</a></li>
-  	          <li><a href="#about">ABOUT</a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NEWS<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="blog.html">CLIPCO Blog</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ABOUT<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                <li><a href="about.html">About Us</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PROGRAMS<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="Apply.html">Transfer Enrollment</a></li>
+                  <li><a href="ASEP.html">ASEP</a></li>
+                  <li><a href="CLIP%20Art.html">Clip Art</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BUDGET<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                <li><a href="budget.html">Budget</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DONATE<span class="caret"></span></a>
+                  <ul class="dropdown-menu color" role="menu">
+                <li><a href="direct_give.html">Direct Give</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CONTACT<span class="caret"></span></a>
+                  <ul class="dropdown-menu color" role="menu">
+                <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+              </li>
+<!--
+              <li><a href="#news">NEWS</a></li>
+              <li><a href="#about">ABOUT</a></li>
               <li><a href="#programs">PROGRAMS</a></li>
-  	          <li> <a href="#budget">BUDGET</a><li>
-  	          <li><a href="#donate">DONATE</a></li>
-  	          <li><a href="#contact">CONTACT</a></li>
+              <li> <a href="#budget">BUDGET</a><li>
+              <li><a href="#donate">DONATE</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+-->
+
   	        </ul>
   	      </div>
   	    </div>
@@ -81,14 +129,24 @@
     </div>
 
     <div id="news" class="container-fluid text-center bg-grey">
-      <a href="blog.html"><h2>News</h2></a>
+      <!--<a href="blog.html"><h2>News</h2></a>-->
       <br>
-      <h4>The latest activity from CLIPCO</h4>
+<!--
       <div class="col-sm-4" id="news-list">
         <ul id="news-sidebar-list">
         </ul>
       </div>
+<<<<<<< HEAD
       <div id="newsCarousel" class="carousel slide text-center col-sm-8" data-ride="carousel">
+=======
+-->
+      <div id="newsCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" id="news-carousel-list">
+          <!-- the script will fill this in-->
+        </ol>
+
+>>>>>>> 55a4fbb73f481471f59086fbb0f70eba3be75f26
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox" id="news-carousel-wrapper">
           <!-- the script will fill this in-->
@@ -126,139 +184,16 @@
   	      <p><img src="images/911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;"></p>
   	    </div>
   	  </div>
-      <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Contact Us</button>
+      <a href="contact.html" class="btn btn-default btn-lg" role="button">Contact Us</a>
     </div>
 
-    <div id="contacts" class="container-fluid">
-      <div class="row">
-        <div class="col-sm-8">
-          <p>There are still open positions available. Please contact us to join our team!<br>
-          <table>
-            <thead>
-              <th>
-                Position
-              </th>
-              <th>
-                Name
-              </th>
-              <th>
-                Email
-              </th>
-            </thead>
-            <tbody>
-            <tr>
-              <td>President</td>
-              <td>Jon Campbell</td>
-              <td>jon.campbell@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>Vice President</td>
-              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-            </tr>
-            <tr>
-              <td>Secretary</td>
-              <td>Heather Simonovich</td>
-              <td>heather.simonovich@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td rowspan="2">Co-Treasurers</td>
-              <td>Bin Liao</td>
-              <td>bin.liao@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>Sammi Hsu</td>
-              <td>sammi.hsu@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td rowspan="2">Kindergarten</td>
-              <td>Alan Fong</td>
-              <td>alan.fong@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>Jasmine Wu</td>
-              <td>jasmine.wu@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td rowspan="2">1st Grade</td>
-              <td>Rachel Heller Turkal</td>
-              <td>rachel.heller.turkal@cusdclipco.org</td>
-            </tr>
-             <tr>
-              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-            </tr>
-            <tr>
-              <td rowspan="2">2nd Grade</td>
-              <td>Ted Fong</td>
-              <td>ted.fong@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>Wei Chen</td>
-              <td>wei.chen@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td rowspan="2">3rd Grade</td>
-              <td>Nikki Tan</td>
-              <td>nikki.tan@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>Grace Tsang</td>
-              <td>grace.tsang@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td rowspan="2">4th Grade</td>
-              <td>Julie Wann</td>
-              <td>julie.wann@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>Aileen Lai</td>
-              <td>aileen.lai@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td rowspan="2">5th Grade</td>
-              <td>Ivy Lau</td>
-              <td>ivy.lau@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>Helen Lin</td>
-              <td>helen.lin@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td rowspan="2">6th Grade</td>
-              <td>Lijuan Wang</td>
-              <td>lijuan.wang@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>David Liu</td>
-              <td>david.liu@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td rowspan="2">7th Grade</td>
-              <td>Ann Ruckstuhl</td>
-              <td>ann.ruckstuhl@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-            </tr>
-            <tr>
-              <td rowspan="2">8th Grade</td>
-              <td>Jack Zhu</td>
-              <td>jack.zhu@cusdclipco.org</td>
-            </tr>
-            <tr>
-              <td>Joyce Luo</td>
-              <td>joyce.luo@cusdclipco.org</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+
 
     <footer class="container-fluid text-center">
       <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
     </footer>
 
-  
+
 
     	<!-- Container (Programs Section) -->
   	<div id="programs" class="container-fluid bg-grey">
@@ -270,10 +205,10 @@
         <div class="col-sm-8">
           <h2>CLIP programs</h2><br>
           <h4>CLIPCO funds Chinese cultural and enrichment activities for our CLIP students through fundraising events. These programs are not funded by the Direct Give donations.</h4><br>
-          <p>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Visit our <a href="http://www.cusdclipco.org/volunteer.html">volunteer</a> page
-            today for more information about volunteering or providing a <a href="http://www.cusdclipco.org/contributions.html">donation</a>!</p>
-          <br><button class="btn btn-default btn-lg">Volunteer</button>
-          <button class="btn-default btn-lg">Donate</button>
+          <p>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Visit our <a href="contact.html">volunteer</a> page
+            today for more information about volunteering or providing a <a href="donations.html">donation</a>!</p>
+          <br><a href="contact.html" class="btn btn-default btn-lg" role="button">Volunteer</a>
+          <a href="donations.html" class="btn btn-default btn-lg" role="button">Donate</a>
         </div>
       </div>
   	</div>
@@ -412,8 +347,8 @@
       <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
     </footer>
           <!-- Add Google Maps -->
-    
-    <!-- map script -->    
+
+    <!-- map script -->
     <script>
       function myMap() {
       var myCenter = new google.maps.LatLng(37.306688,-122.025898);
@@ -470,21 +405,21 @@
           x.style.display = 'none';
         }
       }
-    </script> 
+    </script>
 
     <!-- blog loading script-->
     <script type="text/javascript">
         function handleResponse(response) {
           //when i == 0;
           //side list
-          document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"blog.html#content-0\">" + response.items[0].title + "</a></li>";
+  //        document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"blog.html#content-0\">" + response.items[0].title + "</a></li>";
           //indicator list
           document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
           //wrapper
           document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active\"><div class=\"blog-container thumbnail text-center bg-grey\">" + response.items[0].content + "</div><a href=\"blog.html#content-0\"><p><h3>" + response.items[0].title + "</h3></p></a></div>";
           for( i = 1; i < response.items.length && i < 5; i++){
             //update the sidebar list
-            document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"content-" + i + "\">" + response.items[i].title + "</a></li>";
+  //          document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"content-" + i + "\">" + response.items[i].title + "</a></li>";
             // update the carousel indicators list
             document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"" + i + "\"></li>";
             //now update the actual content
@@ -554,7 +489,7 @@
                 <a href="https://commons.wikimedia.org/wiki/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG#/media/File:Paisajes_cerca_de_Calama,_Chile,_2016-02-01,_DD_84.JPG">  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG/1200px-Paisajes_cerca_de_Calama%2C_Chile%2C_2016-02-01%2C_DD_84.JPG" alt="Paisajes cerca de Calama, Chile, 2016-02-01, DD 84.JPG">
                 </a>
                 <br>
-                By Diego Delso, 
+                By Diego Delso,
                 <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=48561284">
                   Link
                 </a>
