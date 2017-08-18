@@ -48,6 +48,16 @@
         width: 70%;
       }
 
+      .dropdown-menu{
+        display: none;
+      }
+
+      .dropdown:hover .dropdown-menu{
+        background-color: white;
+        color: red;
+        display: block;
+      }
+
     </style>
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -66,21 +76,21 @@
   	        <ul class="nav navbar-nav navbar-right">
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NEWS<span class="caret"></span></a>
+                <a href="#news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NEWS<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="blog.html">CLIPCO Blog</a></li>
                   </ul>
               </li>
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ABOUT<span class="caret"></span></a>
+                <a href="#about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ABOUT<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                 <li><a href="about.html">About Us</a></li>
                   </ul>
               </li>
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PROGRAMS<span class="caret"></span></a>
+                <a href="#programs" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PROGRAMS<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="Apply.html">Transfer Enrollment</a></li>
                   <li><a href="ASEP.html">ASEP</a></li>
@@ -89,14 +99,14 @@
               </li>
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BUDGET<span class="caret"></span></a>
+                <a href="#budget" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BUDGET<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                 <li><a href="budget.html">Budget</a></li>
                   </ul>
               </li>
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DONATE<span class="caret"></span></a>
+                <a href="#donate" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DONATE<span class="caret"></span></a>
                   <ul class="dropdown-menu color" role="menu">
                 <li><a href="direct_give.html">Direct Give</a></li>
                     <li><a href="donations.html">Donations</a></li>
@@ -104,7 +114,7 @@
               </li>
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CONTACT<span class="caret"></span></a>
+                <a href="#contact" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CONTACT<span class="caret"></span></a>
                   <ul class="dropdown-menu color" role="menu">
                 <li><a href="contact.html">Contact Us</a></li>
                   </ul>
@@ -146,16 +156,11 @@
           <!-- the script will fill this in-->
         </ol>
 
->>>>>>> 55a4fbb73f481471f59086fbb0f70eba3be75f26
+        <!-- ">>>>>>>" 55a4fbb73f481471f59086fbb0f70eba3be75f26-->
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox" id="news-carousel-wrapper">
           <!-- the script will fill this in-->
         </div>
-         <!-- Indicators --> 
-        <ol class="carousel-indicators" id="news-carousel-list">
-          <!-- the script will fill this in-->
-        </ol>
-        <!-- Left and right controls -->
         <a class="left carousel-control" href="#newsCarousel" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -417,7 +422,7 @@
           document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
           //wrapper
           document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active\"><div class=\"blog-container thumbnail text-center bg-grey\">" + response.items[0].content + "</div><a href=\"blog.html#content-0\"><p><h3>" + response.items[0].title + "</h3></p></a></div>";
-          for( i = 1; i < response.items.length && i < 5; i++){
+          for( i = 1; i < response.items.length && i < 3; i++){
             //update the sidebar list
   //          document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"content-" + i + "\">" + response.items[i].title + "</a></li>";
             // update the carousel indicators list
