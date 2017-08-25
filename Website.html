@@ -45,7 +45,7 @@
 
       #newsCarousel{
         float: right;
-        width: 70%;
+        width: 100%;
       }
 
       .dropdown-menu{
@@ -57,6 +57,8 @@
         color: red;
         display: block;
       }
+
+
 
     </style>
   </head>
@@ -70,7 +72,7 @@
   	        <span class="icon-bar"></span>
   	        <span class="icon-bar"></span>
   	      </button>
-  	        <a class="navbar-brand" href="#myPage">Logo</a>
+  	        <a class="navbar-brand" href="#myPage">Home</a>
   	      </div>
   	      <div class="collapse navbar-collapse" id="myNavbar">
   	        <ul class="nav navbar-nav navbar-right">
@@ -78,7 +80,7 @@
               <li class="dropdown">
                 <a href="#news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NEWS<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="blog.html">CLIPCO Blog</a></li>
+                    <li><a href="http://cusdclipco.blogspot.com">CLIPCO Blog</a></li>
                   </ul>
               </li>
 
@@ -139,24 +141,13 @@
     </div>
 
     <div id="news" class="container-fluid text-center bg-grey">
-      <!--<a href="blog.html"><h2>News</h2></a>-->
+      <a href="blog.html"><h2>News</h2></a>
       <br>
-<!--
-      <div class="col-sm-4" id="news-list">
-        <ul id="news-sidebar-list">
-        </ul>
-      </div>
-<<<<<<< HEAD
-      <div id="newsCarousel" class="carousel slide text-center col-sm-8" data-ride="carousel">
-=======
--->
       <div id="newsCarousel" class="carousel slide text-center" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators" id="news-carousel-list">
           <!-- the script will fill this in-->
         </ol>
-
-        <!-- ">>>>>>>" 55a4fbb73f481471f59086fbb0f70eba3be75f26-->
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox" id="news-carousel-wrapper">
           <!-- the script will fill this in-->
@@ -179,14 +170,15 @@
   	<div id="about" class="container-fluid">
   	  <div class="row">
   	    <div class="col-sm-8">
-  	      <h2>About CLIPCO</h2><br>
-  	      <h4>CLIPCO is the non-profit fundraising organization that supports the programs in CLIP that are not funded by normal school district funds. This includes Mandarin curriculum development, Mandarin classrooom teaching materials, instructional aides in the classrooms, classroom equipment (PCs & Mandarin software) and Chinese cultural and enrichment activities.</h4><br>
+  	      <h2><a href="About.html">about CLIPCO</a></h2><br>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/WMOPfMAkuyE" frameborder="0" allowfullscreen></iframe>
+  	      <h4>CLIPCO is the non-profit fundraising organization that supports the programs in CLIP that are not funded by normal school district funds. This includes Mandarin curriculum development, Mandarin classrooom teaching materials, instructional aides in the classrooms, classroom equipment (PCs &nbsp;&amp;&nbsp; Mandarin software) and Chinese cultural and enrichment activities.</h4><br>
   	      <p>CLIPCO is ran entirely by parents volunteers. We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. Contact us today for more information about
   	        volunteering or providing a donation!</p>
   	      <br>
   	    </div>
   	    <div class="col-sm-4">
-  	      <p><img src="images/911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;"></p>
+  	      <p><img src="images/911fb966d6.jpg" alt="Chinese Calligraphy" style="width:250px;height:396px;float:center"></p>
   	    </div>
   	  </div>
       <a href="contact.html" class="btn btn-default btn-lg" role="button">Contact Us</a>
@@ -203,7 +195,7 @@
     	<!-- Container (Programs Section) -->
   	<div id="programs" class="container-fluid bg-grey">
       <div class="text-center">
-        <h2>Programs</h2>
+        <h2><a href="programs.html">Programs</a></h2>
         <h4>Programs and Commitees</h4>
       </div>
       <div class="row">
@@ -224,7 +216,7 @@
 
     <div id="budget" class="container-fluid">
       <div class = "text-center">
-        <h2>CLIP Advisory Committee &nbsp;&amp;&nbsp; Budget</h2><br>
+        <h2><a href="budget.html">CLIP Advisory Committee &nbsp;&amp;&nbsp; Budget<a></h2><br>
       </div>
       <div class="col-sm-6">
         <h4>The CLIP Advisory Committee (CAC) was set up by the district to help make
@@ -258,7 +250,7 @@
 
     <div id="donate" class="container-fluid bg-grey">
       <div class="text-center">
-        <h2>Donations</h2>
+        <h2><a href="donate.html">Donations</a></h2>
       </div>
       <div class="row slideanim">
         <div class="col-sm-4 col-xs-12">
@@ -315,7 +307,7 @@
 
     <!-- Container (Contact Section) -->
     <div id="contact" class="container-fluid">
-      <h2 class="text-center">CONTACT</h2>
+      <h2 class="text-center"><a href="contact.html">CONTACT</a></h2>
       <div class="row">
         <div class="col-sm-5">
           <p>Contact us and we'll get back to you within 24 hours.</p>
@@ -417,18 +409,18 @@
         function handleResponse(response) {
           //when i == 0;
           //side list
-  //        document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"blog.html#content-0\">" + response.items[0].title + "</a></li>";
+          //document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"blog.html#content-0\">" + response.items[0].title + "</a></li>";
           //indicator list
           document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
           //wrapper
-          document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active\"><div class=\"blog-container thumbnail text-center bg-grey\">" + response.items[0].content + "</div><a href=\"blog.html#content-0\"><p><h3>" + response.items[0].title + "</h3></p></a></div>";
-          for( i = 1; i < response.items.length && i < 3; i++){
+          document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active\"><a href=\""+ response.items[0].url + "\"><div class=\"blog-container thumbnail text-center bg-grey\">" + response.items[0].content + "</div></a><a href=\"" + response.items[0].url + "\"><p><h3>" + response.items[0].title + "</h3></p></a></div>";
+          for(i = 1; i < response.items.length && i < 3; i++){
             //update the sidebar list
-  //          document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"content-" + i + "\">" + response.items[i].title + "</a></li>";
+            //document.getElementById("news-sidebar-list").innerHTML += "<li><a href=\"content-" + i + "\">" + response.items[i].title + "</a></li>";
             // update the carousel indicators list
             document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"" + i + "\"></li>";
             //now update the actual content
-            document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item\"><div class=\"blog-container thumbnail text-center bg-grey\">" + response.items[i].content + "</div><a href=\"blog.html#content-" + i + "\"><p><h3>" + response.items[i].title + "</h3></p></a></div>";
+            document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item\"><a href=\""+ response.items[i].url + "\"><div class=\"blog-container thumbnail text-center bg-grey\">" + response.items[i].content + "</div></a><a href=\"" + response.items[i].url + "\"" + i + "\"><p><h3>" + response.items[i].title + "</h3></p></a></div>";
          }
         }
     </script>
