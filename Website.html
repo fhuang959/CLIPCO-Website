@@ -10,38 +10,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="paralax.js"></script>
-  <script type="text/javascript">
-      // SET UP GLOBAL ICONS FOR RS MENU
-      var menuGlobalIcons = [
-          ["Staff Directory", "/Page/5314", "Site Utility/9.png"],
-          ["Calendar", "/Page/58", "Site Utility/3.png"],
-          ["Meals", "http://cusdk8nutrition.com/index.php?sid=1805092039571289&page=menus", "Student Program/15.png"],
-          ["Social Media", "/Page/2078", "Social Media/1.png"],
-          ["Questions", "/Page/369", "Communication/12.png"]
-      ];
-      var menuIconNum = ("5" == "5;4;3;2;1;0") ? 4 : "5";
-
-      for (var i = 0; i < menuIconNum; i++) {
-          var linkCheck = (menuGlobalIcons[i][1] == "[SITECALENDARLINK]") ? "/Page/58" : menuGlobalIcons[i][1];
-          var gbIcon = "";
-          if ($.trim(menuGlobalIcons[i][2]).indexOf("cms") > -1) {
-              gbIcon = "<i class='gb-menu-icon custom'><img src='" + menuGlobalIcons[i][2] + "' alt='" + menuGlobalIcons[i][0] + "' /></i>";
-          } else {
-              var splitSelection = menuGlobalIcons[i][2].split("/");
-              var iconCat = $.trim(splitSelection[0]);
-              iconCat = iconCat.toLowerCase().replace(/\s+/g, "-");
-              var iconChoice = splitSelection[1].split(".");
-              iconChoice = iconChoice[0];
-              var iconSelection = iconCat + "-" + iconChoice;
-              gbIcon = "<i class='gb-menu-icon sw-icon-" + iconSelection + "'></i>";
-          }
-          additionalLinks += "1, " + gbIcon + " " + menuGlobalIcons[i][0] + ", " + linkCheck + ", _self;";
-      }
-
-      if (menuIconNum > 0) {
-          additionalHeaders = "Popular Links";
-      }
-  </script>
   <style>
     table, th, td{
       border: 1px solid rgb(150,150,150);
@@ -185,21 +153,20 @@
       <div id="gb-header-right" class="ui-clear hide768">
         <div id="gb-global-icons"><a class="global-icon" id="icon-set-1-icon-number0"
                                      href="https://www.cusdk8.org/Page/5314" target="_self"><span
-                class="icon site-utility cs-icon-site-utility-9"></span><span class="text"
-                                                                              style="height: 28px;">Staff<br>Directory</span></a><a
+                class="icon site-utility cs-icon-site-utility-4"></span><span class="text"
+                                                                              style="height: 28px;">Contacts</span></a><a
                 class="global-icon" id="icon-set-1-icon-number1" href="https://www.cusdk8.org/Page/58"
-                target="_self"><span class="icon site-utility cs-icon-site-utility-3"></span><span class="text"
+                target="_self"><span class="icon site-utility cs-icon-site-utility-1"></span><span class="text"
                                                                                                    style="height: 28px;">Calendar</span></a><a
-                class="global-icon" id="icon-set-1-icon-number2"
-                href="http://cusdk8nutrition.com/index.php?sid=1805092039571289&amp;page=menus" target="_blank"><span
-                class="icon student-program cs-icon-student-program-15"></span><span class="text"
-                                                                                     style="height: 28px;">Meals</span></a><a
+                class="global-icon" id="icon-set-1-icon-number2" href="https://www.cusdk8.org/Page/2078"
+                target="_self"><span class="icon site-utility cs-icon-site-utility-10"></span><span class="text"
+                                                                                                    style="height: 28px;">Blog/News</span></a><a
                 class="global-icon" id="icon-set-1-icon-number3" href="https://www.cusdk8.org/Page/2078"
-                target="_self"><span class="icon social-media cs-icon-social-media-1"></span><span class="text"
-                                                                                                   style="height: 28px;">Social<br>Media</span></a><a
+                target="_self"><span class="icon student-program cs-icon-student-program-11"></span><span class="text"
+                                                                                                   style="height: 28px;">T-Shirts</span></a><a
                 class="global-icon" id="icon-set-1-icon-number4" href="https://www.cusdk8.org/Page/369"
                 target="_blank"><span class="icon communication cs-icon-communication-12"></span><span
-                class="text" style="height: 28px;">Questions</span></a></div>
+                class="text" style="height: 28px;">FAQ</span></a></div>
       </div>
     </div>
   </div>
