@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<title>test</title>
+</head>
+<body>
+
+	<div id="script-holder" style="text-align: center;">
+		<p><h3>will anything show up?</h3></p>
+	</div>
+	<script type="text/javascript">
+	  function handleResponse(response) {
+	    //when i == 0;
+	    //list
+	    document.getElementById("script-holder").innerHTML += "&lt;li data-target=\"#newsCarousel\" data-slide-to=\"0\" class=\"active\"&gt;&lt;/li&gt;";
+	    //wrapper
+	    document.getElementById("script-holder").innerHTML += "&lt;div class=\"item active\"&gt;&lt;div class=\"blog-container thumbnail\"&gt;" + "response.items[i].content" + "&lt;/div&gt;&lt;a href=\"blog.html#content-0\"&gt;&lt;p&gt;&lt;h3&gt;" + "response.items[i].title" + "&lt;/h3&gt;&lt;/p&gt;&lt;/a&gt;&lt;/div&gt;";
+	    for( i = 1; i < response.items.length && i < 5; i++){
+	      // update the carousel indicators list
+	      document.getElementById("script-holder").innerHTML += "&lt;li data-target=\"#newsCarousel\" data-slide-to=\"" + i + "\"&gt;&lt;/li&gt;";
+	      //now update the actual content
+	      document.getElementById("script-holder").innerHTML += "&lt;div class=\"item\"&gt;&lt;div class=\"blog-container thumbnail\"&gt;" + "response.items[i].content" + "&lt;/div&gt;&lt;a href=\"blog.html#content-" + i + "\"&gt;&lt;p&gt;&lt;h3&gt;" + "response.items[i].title" + "&lt;/h3&gt;&lt;/p&gt;&lt;/a&gt;&lt;/div&gt;";
+	   }
+	  }
+	</script>
+	<script src="https://www.googleapis.com/blogger/v3/blogs/3074791322717866239/posts?callback=handleResponse&key=AIzaSyCCSBFuEhUrdjZanhExXS3w3HSU9Sm6EWA">
+	</script>
+</body>
