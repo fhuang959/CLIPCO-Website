@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>CLIPCO - Social Media</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="paralax.js"></script>
+    <style type="text/css">
+        /* some css can go here */
+    </style>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="navbar-placeholder"></div>
+<script>
+    $(function () {
+        $("#navbar-placeholder").load("subpage_navbar.html");
+    });
+</script>
+<div class="bg"></div>
+
+<div class="jumbotron text-center">
+    <h1>Social Media</h1>
+    <p></p>
+</div>
+<div class="container-fluid bg-grey">
+    <div class="row">
+       <!-- <div class="col-sm-8">
+            <div><a class="twitter-timeline" data-width="450" data-height="800" href="https://twitter.com/CUSDCLIPCO">Tweets
+                by CUSDCLIPCO</a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div> -->
+        <div class="col-md-6">
+            <div class="fb-page" data-href="https://www.facebook.com/cusdclipco/" data-tabs="timeline"
+                 data-width="600"
+                 data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true"
+                 data-show-facepile="false">
+                <blockquote cite="https://www.facebook.com/cusdclipco/" class="fb-xfbml-parse-ignore"><a
+                        href="https://www.facebook.com/cusdclipco/">CUSD Clipco</a></blockquote>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/WMOPfMAkuyE" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+</body>
+</html>
