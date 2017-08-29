@@ -525,7 +525,7 @@ font-variant: normal;     text-transform: none;     line-height: 1;
     font-family: people
 }
 
-.cs-icon-people-1:before {
+.cs-icon-people-1 :before {
     content: "\e600"
 }
 
@@ -2493,6 +2493,22 @@ a.ui-btn-toolbar.rss span {
 .hp.column.two .ui-article-thumb .img {
     margin: 0px;
     padding-bottom: 17px;
+}
+
+ul.ui-articles {
+    padding: 0px;
+}
+
+div.ui-article {
+    padding: 20px 0px;
+}
+
+.ui-articles > li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.ui-articles > li.last {
+    border: none;
 }
 
 .bg {
