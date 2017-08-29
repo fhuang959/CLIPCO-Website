@@ -1703,7 +1703,7 @@ div.sw-special-mode-bar {
 #gb-header {
 
     max-width: 1200px;
-    margin: 100px auto;
+    margin: 30px auto;
     padding: 25px 20px;
     height: 150px;
 }
@@ -2729,6 +2729,10 @@ footer .glyphicon,
     .col-sm-4 {
         text-align: center;
         margin: 25px 0;
+    }
+    .col-sm-5 {
+        text-align: right;
+        margin: 0;
     }
 
     .btn-lg {
