@@ -17,23 +17,32 @@
       border-collapse: collapse;
       padding: 7px;
     }
+
+    #volunteer-iframe{
+      width: 100%;
+      height: 2250px;
+      overflow: visible;
+      display: block;
+    }
   </style>
 </head>
 <body>
   <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <div id="navbar-placeholder"></div>
-    <script>
-      $(function(){
-        $("#navbar-placeholder").load("subpage_navbar.html");
-      });
-    </script>
+  <script>
+    $(function(){
+      $("#navbar-placeholder").load("subpage_navbar.html");
+    });
+  </script>
 
   <div class="bg"></div>
 
@@ -54,7 +63,7 @@
         <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#demo">Volenteer Form</button>
           <div id="demo" class="collapse">
           </br> 
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        <iframe id="volunteer-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
           </div>
       </div>
       <h2>Additional Contacts</h2>
