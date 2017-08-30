@@ -461,7 +461,7 @@ font-variant: normal;     text-transform: none;     line-height: 1;
     font-family: people
 }
 
-.cs-icon-people-1:before {
+.cs-icon-people-1 :before {
     content: "\e600"
 }
 
@@ -1605,7 +1605,7 @@ div.sw-special-mode-bar {
 #gb-header {
 
     max-width: 1200px;
-    margin: 100px auto;
+    margin: 30px auto;
     padding: 25px 20px;
     height: 150px;
 }
@@ -2397,6 +2397,22 @@ a.ui-btn-toolbar.rss span {
     padding-bottom: 17px;
 }
 
+ul.ui-articles {
+    padding: 0px;
+}
+
+div.ui-article {
+    padding: 20px 0px;
+}
+
+.ui-articles > li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.ui-articles > li.last {
+    border: none;
+}
+
 .bg {
     /*background: url('images/miller-rainbow.jpg') no-repeat center center;
     background-size: cover;*/
@@ -2618,6 +2634,10 @@ footer .glyphicon,
     .col-sm-4 {
         text-align: center;
         margin: 25px 0;
+    }
+    .col-sm-5 {
+        text-align: right;
+        margin: 0;
     }
 
     .btn-lg {
