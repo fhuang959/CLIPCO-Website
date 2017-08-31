@@ -2780,3 +2780,10 @@ th:hover, td:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+footer{
+ margin: 20px;
+}
+
+.subpage_image{
+  width: 100%;
+}
