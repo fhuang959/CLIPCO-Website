@@ -2574,17 +2574,6 @@ div.ui-article {
     /*color: #f4511e;*/
 }
 
-.carousel-indicators li {
-    border-color: red;
-    display: inline;
-}
-
-.carousel-indicators li.active {
-    line-height: 2em;
-    /*background-color: #f4511e;*/
-    display: inline;
-}
-
 .item h4 {
     font-size: 19px;
     line-height: 1.375em;
