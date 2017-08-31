@@ -1,286 +1,327 @@
 <!DOCTYPE html>
 <head>
-  <title>CLIPCO - Contact</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css.css">
+    <title>CLIPCO - Contact</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="paralax.js"></script>
 
-  <style type="text/css">
-      table, th, td{
-      border: 1px solid rgb(150,150,150);
-      border-collapse: collapse;
-      padding: 7px;
-    }
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid rgb(150, 150, 150);
+            border-collapse: collapse;
+            padding: 7px;
+        }
 
-    #volunteer-iframe{
-      width: 100%;
-      height: 2250px;
-      overflow: visible;
-      display: block;
-    }
-  </style>
+        #volunteer-iframe {
+            width: 100%;
+            height: 2250px;
+            overflow: visible;
+            display: block;
+        }
+    </style>
 </head>
-<body>
-  <div id="fb-root"></div>
-  <script>
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-      fjs.parentNode.insertBefore(js, fjs);
+<body class="bg-grey">
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+        fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <div id="navbar-placeholder"></div>
-  <script>
-    $(function(){
-      $("#navbar-placeholder").load("subpage_navbar.html");
+</script>
+<div id="navbar-placeholder"></div>
+<script>
+    $(function () {
+        $("#navbar-placeholder").load("subpage_navbar.html");
     });
-  </script>
+</script>
 
-  <div class="bg"></div>
+<div class="jumbotron text-center bg-white">
+    <h1>Contact Us</h1>
+    <p>Apply for Volunteer Oppertunities</p>
+</div>
 
-  <div class="jumbotron text-center">
-      <h1>Contact Us</h1>
-      <p>Apply for Volunteer Oppertunities</p>
-    </div>
 
-  
-  <div class="container-fluid">
+<div class="container-fluid bg-grey">
     <div class="row">
-      <div class="col-sm-8">
-        <h2>Volunteer</h2>
-        <h4>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be an important addition to our extraordinary team. In addition, your employer may have a volunteer reimbursement program.  Please fill the form below to volunteer for some of our exciting events and committees.</h4>
-        <br>
-        <p></p>
-        <div>
-        <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#demo">Volunteer Form</button>
-          <div id="demo" class="collapse">
-          </br> 
-        <iframe id="volunteer-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-         </div>
-      </div>
-      <h2>Contacts</h2>
-      <div>
-          <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#contacts">Board of Directors</button>
-        </div>
+        <div class="col-sm-8">
+            <h2>Volunteer</h2>
+            <h4>We are always looking for new volunteers to join our team. No matter what your strengths are, you'll be
+                an important addition to our extraordinary team. In addition, your employer may have a volunteer
+                reimbursement program. Please fill the form below to volunteer for some of our exciting events and
+                committees.</h4>
+            <br>
+            <p></p>
+            <div>
+                <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#demo">
+                    Volunteer Form
+                </button>
+                <div id="demo" class="collapse">
+                    </br>
+                    <iframe id="volunteer-iframe"
+                            src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true"
+                            frameborder="0" marginheight="0" marginwidth="0">Loading...
+                    </iframe>
+                </div>
+            </div>
+            <h2>Contacts</h2>
+            <div>
+                <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#contacts">
+                    Board of Directors
+                </button>
+            </div>
             <div id="contacts" class="collapse">
-              <div class="row">
-                <div class="col-sm-8">
-                  <p>There are still open positions available. Please contact us to join our team!<br>
-                  <table>
-                    <thead>
-                      <th>
-                        Position
-                      </th>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Email
-                      </th>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>President</td>
-                      <td>Sylvia Leong</td>
-                      <td>sylvia.leong@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td>Vice President</td>
-                      <td>Sukma Sumali</td>
-                      <td>sukma.sumali@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td>Secretary</td>
-                      <td>Jon Campbell</td>
-                      <td>jon.campbell@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">Co-Treasurers</td>
-                      <td>Bin Liao</td>
-                      <td>bin.liao@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td>Sammi Hsu</td>
-                      <td>sammi.hsu@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">Kindergarten</td>
-                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">1st Grade</td>
-                      <td>Alan Fong</td>
-                      <td>alan.fong@cusdclipco.org</td>
-                    </tr>
-                     <tr>
-                       <td>Jasmine Wu</td>
-                       <td>jasmine.wu@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">2nd Grade</td>
-                      <td>Angeline Lim</td>
-                      <td>angeline.lim@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">3rd Grade</td>
-                      <td>Nancy Cheng</td>
-                      <td>ted.cheng@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td>Ted Fong</td>
-                      <td>ted.fong@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">4th Grade</td>
-                      <td>Grace Tsang</td>
-                      <td>grace.tsang@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">5th Grade</td>
-                      <td>Wen-Kai Weng</td>
-                      <td>wen-kai.weng@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td>Aileen Lai</td>
-                      <td>aileen.lai@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">6th Grade</td>
-                      <td>Nobuko Choi</td>
-                      <td>nobuko.choi@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td>Ravi Rajagopalan</td>
-                      <td>ravi.rajagopalan@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">7th Grade</td>
-                      <td>Lijuan Wang</td>
-                      <td>lijuan.wang@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td>Helen Xu</td>
-                      <td>helen.xu@cusdclipco.org</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2">8th Grade</td>
-                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"><center>Open -- <a href="apply.html">Apply now!</a></center></td>
-                    </tr>
-                    </tbody>
-                  </table>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p>There are still open positions available. Please contact us to join our team!<br>
+                        <table>
+                            <thead>
+                            <th>
+                                Position
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>President</td>
+                                <td>Sylvia Leong</td>
+                                <td>sylvia.leong@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td>Vice President</td>
+                                <td>Sukma Sumali</td>
+                                <td>sukma.sumali@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td>Secretary</td>
+                                <td>Jon Campbell</td>
+                                <td>jon.campbell@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Co-Treasurers</td>
+                                <td>Bin Liao</td>
+                                <td>bin.liao@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td>Sammi Hsu</td>
+                                <td>sammi.hsu@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Kindergarten</td>
+                                <td colspan="2">
+                                    <center>Open -- <a href="apply.html">Apply now!</a></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>Open -- <a href="apply.html">Apply now!</a></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">1st Grade</td>
+                                <td>Alan Fong</td>
+                                <td>alan.fong@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td>Jasmine Wu</td>
+                                <td>jasmine.wu@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">2nd Grade</td>
+                                <td>Angeline Lim</td>
+                                <td>angeline.lim@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>Open -- <a href="apply.html">Apply now!</a></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">3rd Grade</td>
+                                <td>Nancy Cheng</td>
+                                <td>ted.cheng@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td>Ted Fong</td>
+                                <td>ted.fong@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">4th Grade</td>
+                                <td>Grace Tsang</td>
+                                <td>grace.tsang@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>Open -- <a href="apply.html">Apply now!</a></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">5th Grade</td>
+                                <td>Wen-Kai Weng</td>
+                                <td>wen-kai.weng@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td>Aileen Lai</td>
+                                <td>aileen.lai@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">6th Grade</td>
+                                <td>Nobuko Choi</td>
+                                <td>nobuko.choi@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td>Ravi Rajagopalan</td>
+                                <td>ravi.rajagopalan@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">7th Grade</td>
+                                <td>Lijuan Wang</td>
+                                <td>lijuan.wang@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td>Helen Xu</td>
+                                <td>helen.xu@cusdclipco.org</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">8th Grade</td>
+                                <td colspan="2">
+                                    <center>Open -- <a href="apply.html">Apply now!</a></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>Open -- <a href="apply.html">Apply now!</a></center>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                </div>
-              </div>
             </div>
             <p> </br> </p>
-      <div>
-        <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#morecontacts">Program Directors</button>
-      </div>
-        <div id="morecontacts" class="collapse">
-          <div class="row">
-            <div class="col-sm-8">
-              <p>There are still open positions available. Please contact us to join our team!<br>
-              <table>
-                <thead>
-                <th>
-                  Program/Committee
-                </th>
-                <th>
-                  Name
-                </th>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Chinese Book Fair</td>
-                  <td colspan="1"><center>Open <br><a href="apply.html">Apply now!</a></td>
-                </tr>
-                <tr>
-                  <td>CLIP Art</td>
-                  <td>Chair: Kathleen Ko</td>
-                </tr>
-                <tr>
-                  <td>CLIP ASEP</td>
-                  <td>Chair: Nikki Tan</td>
-                </tr>
-                <tr>
-                  <td>CLIPCO Board Election</td>
-                  <td>Chair: Ted Fong</td>
-                </tr>
-                <tr>
-                  <td rowspan="2">Community Events</td>
-                  <td colspan="1"><center>Chair: <br><a href="apply.html">Apply now!</a></td>
-                </tr>
-                <tr>
-                  <td colspan="1"><center>Members: <br><a href="apply.html">Apply now!</a></td>
-                </tr>
-                <tr>
-                  <td rowspan="2">CUSD and CAC Outreach</td>
-                  <td colspan="1"><center>Chair: <br><a href="apply.html">Apply now!</a></td>
-                </tr>
-                <tr>
-                  <td colspan="1"><center>Members: <br><a href="apply.html">Apply now!</a></td>
-                </tr>
-                <tr>
-                  <td rowspan="2">Direct Give Campaign</td>
-                  <td>Chair: Margie Tsai</td>
-                </tr>
-                <tr>
-                  <td colspan="1"><center>Members: <br><a href="apply.html">Apply now!</a></td>
-                </tr>
-                <tr>
-                  <td rowspan="1">Graduation Celebration</td>
-                  <td colspan="1"><center>Chair: <br><a href="apply.html">Apply now!</a></td>
-                </tr>
-                <tr>
-                  <td rowspan="1">Technology & Communications</td>
-                  <td>Chair: Jim Ming</td>
-                </tr>
-                </tbody>
-              </table>
+            <div>
+                <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#morecontacts">
+                    Program Directors
+                </button>
             </div>
-            <div class="col-sm-4">
+            <div id="morecontacts" class="collapse">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p>There are still open positions available. Please contact us to join our team!<br>
+                        <table>
+                            <thead>
+                            <th>
+                                Program/Committee
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Chinese Book Fair</td>
+                                <td colspan="1">
+                                    <center>Open <br><a href="apply.html">Apply now!</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CLIP Art</td>
+                                <td>Chair: Kathleen Ko</td>
+                            </tr>
+                            <tr>
+                                <td>CLIP ASEP</td>
+                                <td>Chair: Nikki Tan</td>
+                            </tr>
+                            <tr>
+                                <td>CLIPCO Board Election</td>
+                                <td>Chair: Ted Fong</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Community Events</td>
+                                <td colspan="1">
+                                    <center>Chair: <br><a href="apply.html">Apply now!</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">
+                                    <center>Members: <br><a href="apply.html">Apply now!</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">CUSD and CAC Outreach</td>
+                                <td colspan="1">
+                                    <center>Chair: <br><a href="apply.html">Apply now!</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">
+                                    <center>Members: <br><a href="apply.html">Apply now!</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Direct Give Campaign</td>
+                                <td>Chair: Margie Tsai</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">
+                                    <center>Members: <br><a href="apply.html">Apply now!</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="1">Graduation Celebration</td>
+                                <td colspan="1">
+                                    <center>Chair: <br><a href="apply.html">Apply now!</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="1">Technology & Communications</td>
+                                <td>Chair: Jim Ming</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <p> </br> </p>
-        <div>
-          <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#schools">CLIPCO Schools and Facebook Page</button>
-          </div>
+            <p> </br> </p>
+            <div>
+                <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#schools">
+                    CLIPCO Schools and Facebook Page
+                </button>
+            </div>
             <div id="schools" class="collapse">
-            <a href="http://www.cusdk8.org/meyerholz">Meyerholz Elementry School</a>
-            </br>
-            <a href="https://www.cusdk8.org/miller">Miller Middle School</a>
-            </br>
-            <a href="https://www.facebook.com/cusdclipco/">CLIPCO Facebook Page</a>
+                <a href="http://www.cusdk8.org/meyerholz">Meyerholz Elementry School</a>
+                </br>
+                <a href="https://www.cusdk8.org/miller">Miller Middle School</a>
+                </br>
+                <a href="https://www.facebook.com/cusdclipco/">CLIPCO Facebook Page</a>
+            </div>
+            <p> </br> </p>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcusdclipco%2F&width=112&layout=button_count&action=like&size=small&show_faces=true&share=true&height=46&appId"
+                    width="112" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                    allowTransparency="true"></iframe>
         </div>
-        <p> </br> </p>
-        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcusdclipco%2F&width=112&layout=button_count&action=like&size=small&show_faces=true&share=true&height=46&appId" width="112" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-      </div>
         <div class="col-sm-4">
-        <p><img src="images/volunteers_needed.jpg" alt="Volunteers Needed" style="width:395px;height:347px;"></p>
-      </div>
+            <p><img src="images/volunteers_needed.jpg" alt="Volunteers Needed" style="width:395px;height:347px;"></p>
+        </div>
     </div>
-  </div>
+</div>
 </body>
 </html>

@@ -1,146 +1,159 @@
 <!DOCTYPE html>
 <head>
-  <title>CLIPCO - Donations</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css.css">
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="paralax.js"></script>
+    <title>CLIPCO - Donations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="paralax.js"></script>
 
-<style type="text/css">
-  #donation-table td{
-    border: 1px solid rgba(0,0,0,0.5);
-    padding: 5px;
-    margin: 2px;
-    color: rbga(0,0,0,0.75);
-    text-align: left;
-  }
+    <style type="text/css">
+        #donation-table td {
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            margin: 2px;
+            color: rbga(0, 0, 0, 0.75);
+            text-align: left;
+        }
 
-  .donation-table-item{
-    color: rgba(0,0,0,0.75);
-  }
+        .donation-table-item {
+            color: rgba(0, 0, 0, 0.75);
+        }
 
-  .container-fluid{
-    padding-bottom: 150px;
-  }
-  
-</style>
+        .container-fluid {
+            padding-bottom: 150px;
+        }
+
+    </style>
 </head>
 <body>
-  <div id="navbar-placeholder"></div>
-  <script>
-  $(function(){
-    $("#navbar-placeholder").load("subpage_navbar.html");
-  });
-  </script>
-  <div class="bg"></div>
+<div id="navbar-placeholder"></div>
+<script>
+    $(function () {
+        $("#navbar-placeholder").load("subpage_navbar.html");
+    });
+</script>
+<div class="bg"></div>
 
-  <div class="jumbotron text-center">
-      <h1>Donate To CLIPCO</h1>
-      <p>Thank You For Your Donation</p>
-    </div>
+<div class="jumbotron text-center">
+    <h1>Donate To CLIPCO</h1>
+    <p>Thank You For Your Donation</p>
+</div>
 
-   
-  <div class="container-fluid">
+
+<div class="container-fluid bg-grey">
     <div class="row">
-      <div class="col-sm-8">
-        <h2>Funding CLIPCO</h2>
-        <h4>CLIP depends completely on donations to fund the programs not covered by normal school district funds. These programs include the Mandarin
-          <br>Chinese curriculum, CLIP Art program, and Homework Club to name a few. To support these programs, CLIPCO hosts the <a href="direct_give.html">Direct Give Contest</a>
-          <br>to garner donations.To foster friendly competition and to encourage donations, CLIPCO is offering several <a href="direct_give.html#prizes">prizes</a> to those who donate.
-        </h4>
-          <br>
-        <h2>Online Donation by PayPal</h2>
-        <h4>
-          Please make your online donation below using PayPal's secure and convenient payment system. After making a donation you will receive a receipt detailing your donation information.
-          <br>
-          For questions about your donations, please contact our Treasurer(s) at donate@cusdclipco.org.
-          <br>
-          Thank you for your support in the continuing success of CLIP!
-          <br>
-          <a href="donateFAQ.html">Donations FAQ</a>
-        </h4>
-        <br>
-        <div class="donation-table-div">
-          <form action="https://www.paypal.com/us/cgi-bin/webscr" method="post" name="_xclick" target="paypal">
-            <input name="cmd" type="hidden" value="_cart">
-            <input name="business" type="hidden" value="clipco@cusdclipco.org">
-            <input name="currency_code" type="hidden" value="USD">
-            <input name="currency_code" type="hidden" value="USD">
-            <input name="undefined_quantity" type="hidden" value="1">
-            <input name="add" type="hidden" value="1">
-            <table id="donation-table" border="0" cellpadding="2">
-                <tbody>
-                    <tr>
-                        <td>Amount:</td>
-                        <td>
-                            <input maxlength="10" name="amount" type="text" value="450.00">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" valign="center">Recommended amount:&nbsp;</td>
-                        <td align="left" valign="center">&nbsp;K - 6th grade: $450
-                            <br>&nbsp;7th - 8th grade: $225</td>
-                    </tr>
-                    <tr>
-                        <td>Student Full Name:</td>
-                            <input name="on1" type="hidden" value="Donor Full Name">Donor Full Name:</td>
-                        <td>
-                            <input maxlength="200" name="os1" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="on2" type="hidden" value="Donor Email">Donor Email Address:</td>
-                        <td>
-                            <input maxlength="200" name="os2" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="on3" type="hidden" value="Employer Name">Employer Name (For Corporate Matching):</td>
-                        <td>
-                            <input maxlength="200" name="os3" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input name="on4" type="hidden" value="I want my donation to be anonymous">I want my donation to be anonymous:</td>
-                        <td>
-                            <select name="os4">
-                                <option selected="selected" value="No">No</option>
-                                <option value="Yes">Yes</option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="col-sm-8">
+            <h2>Funding CLIPCO</h2>
+            <h4>CLIP depends completely on donations to fund the programs not covered by normal school district funds.
+                These programs include the Mandarin
+                <br>Chinese curriculum, CLIP Art program, and Homework Club to name a few. To support these programs,
+                CLIPCO hosts the <a href="direct_give.html">Direct Give Contest</a>
+                <br>to garner donations.To foster friendly competition and to encourage donations, CLIPCO is offering
+                several <a href="direct_give.html#prizes">prizes</a> to those who donate.
+            </h4>
             <br>
-            <input alt="Make payments with PayPal - it's fast, free and secure!" name="submit" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" type="image">
-            <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0">
-            <input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" type="image">
-            <span style="font-size: 0.75em; line-height: 1.6;"></span>
-            <img style="font-size: 0.75em; line-height: 1.6;" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif?t=1409295006165?t=1409295446572?t=1409295522138?t=1409295578960?t=1409295608569?t=1409295666444?t=1409295757104?t=1409295794127?t=1409295818115?t=1409295843219?t=1409295868252?t=1409295904311?t=1409295919847?t=1409295941216?t=1409295986447?t=1409296000413?t=1409296020294?t=1409296045416?t=1409296137912?t=1409296171312?t=1409296187461?t=1409296263131" alt="" width="1" height="1" border="0">
-          </form>
+            <h2>Online Donation by PayPal</h2>
+            <h4>
+                Please make your online donation below using PayPal's secure and convenient payment system. After making
+                a donation you will receive a receipt detailing your donation information.
+                <br>
+                For questions about your donations, please contact our Treasurer(s) at donate@cusdclipco.org.
+                <br>
+                Thank you for your support in the continuing success of CLIP!
+                <br>
+                <a href="donateFAQ.html">Donations FAQ</a>
+            </h4>
+            <br>
+            <div class="donation-table-div">
+                <form action="https://www.paypal.com/us/cgi-bin/webscr" method="post" name="_xclick" target="paypal">
+                    <input name="cmd" type="hidden" value="_cart">
+                    <input name="business" type="hidden" value="clipco@cusdclipco.org">
+                    <input name="currency_code" type="hidden" value="USD">
+                    <input name="currency_code" type="hidden" value="USD">
+                    <input name="undefined_quantity" type="hidden" value="1">
+                    <input name="add" type="hidden" value="1">
+                    <table id="donation-table" border="0" cellpadding="2">
+                        <tbody>
+                        <tr>
+                            <td>Amount:</td>
+                            <td>
+                                <input maxlength="10" name="amount" type="text" value="450.00">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="center">Recommended amount:&nbsp;</td>
+                            <td align="left" valign="center">&nbsp;K - 6th grade: $450
+                                <br>&nbsp;7th - 8th grade: $225
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Student Full Name:</td>
+                            <input name="on1" type="hidden" value="Donor Full Name">Donor Full Name:</td>
+                            <td>
+                                <input maxlength="200" name="os1" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="on2" type="hidden" value="Donor Email">Donor Email Address:
+                            </td>
+                            <td>
+                                <input maxlength="200" name="os2" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="on3" type="hidden" value="Employer Name">Employer Name (For Corporate
+                                Matching):
+                            </td>
+                            <td>
+                                <input maxlength="200" name="os3" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="on4" type="hidden" value="I want my donation to be anonymous">I want my
+                                donation to be anonymous:
+                            </td>
+                            <td>
+                                <select name="os4">
+                                    <option selected="selected" value="No">No</option>
+                                    <option value="Yes">Yes</option>
+                                </select>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <input alt="Make payments with PayPal - it's fast, free and secure!" name="submit"
+                           src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" type="image">
+                    <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1"
+                         border="0">
+                    <input alt="PayPal - The safer, easier way to pay online!" name="submit"
+                           src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" type="image">
+                    <span style="font-size: 0.75em; line-height: 1.6;"></span>
+                    <img style="font-size: 0.75em; line-height: 1.6;"
+                         src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif?t=1409295006165?t=1409295446572?t=1409295522138?t=1409295578960?t=1409295608569?t=1409295666444?t=1409295757104?t=1409295794127?t=1409295818115?t=1409295843219?t=1409295868252?t=1409295904311?t=1409295919847?t=1409295941216?t=1409295986447?t=1409296000413?t=1409296020294?t=1409296045416?t=1409296137912?t=1409296171312?t=1409296187461?t=1409296263131"
+                         alt="" width="1" height="1" border="0">
+                </form>
+            </div>
+            <br>
+            <h4>To pay by check, download and fill out the <a href="pledgeform.html">pledge form</a>.</h4>
         </div>
-        <br>
-        <h4>To pay by check, download and fill out the <a href ="pledgeform.html">pledge form</a>.</h4>
-      </div>
-      <div class="col-sm-4">
-        <!--<p><img src="images/image.png" alt="image.png" style="width:400px;"></p>-->
-      </div>
+        <div class="col-sm-4">
+            <!--<p><img src="images/image.png" alt="image.png" style="width:400px;"></p>-->
+        </div>
     </div>
-  </div>
+</div>
 
 
- 
 </body>
-
 
 
 </html>
