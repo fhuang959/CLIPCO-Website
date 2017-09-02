@@ -31,7 +31,7 @@
 
     </style>
 </head>
-<body>
+<body onload="loadImage()">
 <div id="navbar-placeholder"></div>
 <script>
     $(function () {
@@ -145,8 +145,9 @@
             <br>
             <h4>To pay by check, download and fill out the <a href="pledgeform.html">pledge form</a>.</h4>
         </div>
-       <div class="col-sm-4 col-xs-12">
-            <p><img src="images/image.png" alt="image.png" id="faq-image" class="subpage_image"></p>
+       <div class="col-sm-4 col-xs-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+             <script src="imageLoading.js" id="image-laoding-script"></script>
         </div>
     </div>
 </div>

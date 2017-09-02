@@ -15,7 +15,7 @@
         /* some css can go here */
     </style>
 </head>
-<body class="bg-grey">
+<body class="bg-grey" onload="loadImage()">
 <div id="navbar-placeholder"></div>
 <script>
     $(function () {
@@ -37,10 +37,9 @@
         <p>CLIP Art is a language and cultural enrichment class focused on introducing chinese art that connects
             with the CLIP curriculum.</p>
     </div>
-    <div class="col-md-6 col-sm-12">
-        <div class="text-center">
-            <p><img src="images/chinesedance.jpg" alt="chinese dancing" id="chinesedance" class="subpage_image"></p>
-        </div>
+    <div class="col-md-6 col-xs-12" id="stock-image">
+        <!-- scripty mcscriptface will fill this in-->
+        <script src="imageLoading.js" id="image-laoding-script"></script>
     </div>
 </div>
 </body>

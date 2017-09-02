@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="loadImage()">
 
 <div id="navbar-placeholder"></div>
 <script>
@@ -443,8 +443,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-xs-12">
-            <p><img src="images/image.png" alt="image.png" id="faq-image" class="subpage_image"></p>
+        <div class="col-sm-4 col-xs-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+             <script src="imageLoading.js" id="image-laoding-script"></script>
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@
         /* some css can go here */
     </style>
 </head>
-<body id="myPage">
+<body id="myPage" onload="loadImage()">
 <div id="navbar-placeholder"></div>
 <script>
     $(function () {
@@ -31,14 +31,10 @@
 
 <div class="container-fluid bg-grey">
     <div class="row">
-<<<<<<< HEAD
         <div class="col-sm-8 col-xs-12">
-=======
-        <div class="col-sm-8">
             <h2>ASEP</h2>
             <h4>ASEP classes are off to a great start for the 2017-18 school year.  We have over 110 students registered for a variety of classes, which include: Chinese Calligraphy, Brushpainting, Lion Dance, Percussion, Chinese Dance, Wushu, Erhu, Chinese Flute, and Baking. The children are very excited to immerse themselves in the various aspects of Chinese culture and look forward to showcasing what they've learned.  We look forward to seeing the families and parents at our Winter Showcase (December 7, 2016) and our Spring Showcase (Date TBD).<br>
                 We're so proud of all the kids and extremely thankful to the instructors, parent coordinators, and volunteers who help to make this program a success.  Stephanie Wang, our amazing Chinese liaison, has decided to step down so we are looking for someone to fill her position. If anyone is interested in learning more about this position, please contact clipasep@gmail.com.</h4>
->>>>>>> 6838a2a7e66b23c54c8875429703eb3ca20b828a
             <h2>ASEP Mission:</h2>
             <h4>To provide a quality after school enrichment program for Meyerholz Elementary school and the Cupertino Language Immersion Program focusing on Chinese Culture and Language.</h4>
             <br>
@@ -84,8 +80,9 @@
                 <a href="https://www.cusdclipco.org/files/asep/ASEPPolicy.html">ASEP Program Rules and Policy</a>
             </p>
         </div>
-        <div class="col-sm-4 col-xs-12">
-            <p><img src="images/image.png" alt="image.png" id="faq-image" class="subpage_image"></p>
+        <div class="col-sm-4 col-xs-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+             <script src="imageLoading.js" id="image-laoding-script"></script>
         </div>
     </div>
 </div>

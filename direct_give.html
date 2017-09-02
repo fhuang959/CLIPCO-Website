@@ -58,7 +58,7 @@
 
   </style>
 </head>
-<body id="top">
+<body id="top" onload="loadImage()">
 
   <div id="navbar-placeholder"></div>
     <script>
@@ -67,9 +67,9 @@
       });
     </script>
 
-  <div class="jumbotron text-center">
-      <h1>Direct Give Competition</h1>
-      <p>Funding CLIPCO</p>
+    <div class="jumbotron text-center">
+        <h1>Direct Give Competition</h1>
+        <p>Funding CLIPCO</p>
     </div>
 
 
@@ -89,11 +89,11 @@
             <br>
         <p><strong>Contest Rules:</strong>
         <ol>
-              <li> Donations must be received by midnight, <b>November 17, 2017</b> in order to be counted.</li>
-          <li> Only donations of the minimum ask ($450 for K-6, $225 for 7th and 8th) or more will count towards the contest..</li>
-          <li>Target dollar amount is determined by the total number of students per homeroom (or grade if Miller students) multiplied by the requested donation amount.</li>
-          <li>Donors to be recognized in a future publication with an option to remain anonymous.</li>
-          <li>Corporate matching amounts do not count towards the Direct Give Contest.</li>
+            <li> Donations must be received by midnight, <b>November 17, 2017</b> in order to be counted.</li>
+            <li> Only donations of the minimum ask ($450 for K-6, $225 for 7th and 8th) or more will count towards the contest..</li>
+            <li>Target dollar amount is determined by the total number of students per homeroom (or grade if Miller students) multiplied by the requested donation amount.</li>
+            <li>Donors to be recognized in a future publication with an option to remain anonymous.</li>
+            <li>Corporate matching amounts do not count towards the Direct Give Contest.</li>
         </ol>
         </p>
           <br>
@@ -161,8 +161,9 @@
           </tbody>
         </table>
       </div>
-      <div class="col-sm-4">
-        <p><img src="images/image.png" alt="image.png" width="400"></p>
+      <div class="col-sm-4 col-xs-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+            <script src="imageLoading.js" id="image-laoding-script"></script>
       </div>
     </div>
   </div>
