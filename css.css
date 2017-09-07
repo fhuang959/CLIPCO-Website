@@ -2559,6 +2559,9 @@ div.ui-article {
     padding: 0 0 15px 0;
     border: none;
     border-radius: 0;
+    align-items: center;
+    align-content: center;
+    align-self: center;
 }
 
 .thumbnail img {
@@ -2763,11 +2766,7 @@ footer .glyphicon,
   box-shadow: 1px 1px 50px 1px #888888;
 }*/
 
-.thumbnail {
-    align-items: center;
-    align-content: center;
-    align-self: center;
-}
+
 
 .news-image {
     border: 1px solid rgb(150, 150, 150);

@@ -16,7 +16,7 @@
 
     </style>
 </head>
-<body id="myPage" class="bg-grey">
+<body id="myPage" class="bg-grey" onload="loadImage()">
 <div id="navbar-placeholder"></div>
 <script>
     $(function () {
@@ -31,18 +31,41 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-8 col-xs-12">
+        <div class="col-md-8 col-sm-12">
             <h2>Meet The Developers</h2>
             <h4>This website was constructed by 3 CLIP Alumni. All are seniors from various high schools. They used languages like HTML, CSS, Javascript, and more to create this website.</h4>
             <br>
-            <p>Some more text can go here. It's smaller than the paragraph before. Still important though. He may not be
-                as big an showey as the other paragraph but he's trying his hardest. AAAAAAAHHHHHHHH. Why am i alife?
-                一個星期過，我功課多，我還沒有做我的生詞合約，我被老師罵，我想自殺，名字又有九個叉。那是你的問題。</p>
-            <br>
-            <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Call to Action!</button>
+            <div class="container-fluid text-center bg-grey">
+                <h2>The Team</h2>
+                <h4>These Guys built the site.</h4>
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                      <div class="thumbnail">
+                        <img src="paris.jpg" alt="Paris">
+                        <p><strong>Evan</strong></p>
+                        <p>Class of 2018 at Homestead High School</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="thumbnail">
+                        <img src="newyork.jpg" alt="New York">
+                        <p><strong>Jasper</strong></p>
+                        <p>Class of 2018 at Cupertino High School</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="thumbnail">
+                        <img src="sanfran.jpg" alt="San Francisco">
+                        <p><strong>Alex</strong></p>
+                        <p>Class of 2018 at Lynbrook high School</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-4 col-xs-12">
-            <p><img src="images/image.png" alt="image.png" id="faq-image" class="subpage_image"></p>
+        <div class="col-md-4 col-sm-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+             <script src="imageLoading.js" id="image-laoding-script"></script>
         </div>
     </div>
 </div>
