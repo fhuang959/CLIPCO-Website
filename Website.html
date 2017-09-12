@@ -39,7 +39,7 @@
 
     #newsCarousel{
       width: 100%;
-      padding: none;
+      padding: 5px;
     }
 
     #news-carousel-list{
@@ -49,6 +49,10 @@
       width: 100%;
       float: right;
       margin: auto;
+    }
+
+    #news-carousel-wrapper{
+        margin-top: 2px;
     }
 
     .dropdown-menu{
@@ -61,26 +65,14 @@
       display: block;
     }
 
-   .carousel-indicators li{
+   .carousel-indicators li {
        border-color: red;
-       background-color: white;
-       display: inline;
-       padding: 1px 5px;
-    }
+   }
 
    .carousel-indicators li.active {
-     line-height: 2em;
-     display: inline;
+       background-color: red;
    }
 
-   .carousel-indicators li a{
-      text-decoration: none;
-      color:blue;
-   }
-
-    .carousel-indicators li a.active{
-      color:white;
-    }
 
    a.right.carousel-control, a.left.carousel-control{
       padding: 0px !important; 
@@ -118,8 +110,8 @@
       width:80vw;
    }
 
-   #news-carousel-sidebar-list li.active{
-        color:red;
+   #news{
+       position: relative;
    }
 
   </style>
@@ -139,7 +131,6 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-
                     <li class="dropdown">
                         <a href="#news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NEWS<span
                                 class="caret"></span></a>
@@ -162,6 +153,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="Apply.html">Transfer Enrollment</a></li>
                             <li><a href="ASEP.html">ASEP</a></li>
+                            <li><a href="CNYP.html">CNY Parade</a></li>
                             <li><a href="CLIP%20Art.html">Clip Art</a></li>
                         </ul>
                     </li>
@@ -250,9 +242,9 @@
             </div>
         </div>
     </div>
-  <div id="news" class="container-fluid text-center bg-grey">
+  <div id="news" class="container-fluid text-center bg-grey slideanim">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-sm-10 col-xs-12">
             <div id="newsCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox" id="news-carousel-wrapper">
@@ -271,7 +263,12 @@
                 <span class="sr-only">Next</span>
                 </a>
             </div>
-        </div> 
+        </div>
+        <div id="news-carousel-sidebar-div" class="col-sm-2 col-xs-12">
+            <ul id="news-carousel-sidebar">
+                <!--script will fill this in-->
+            </ul>
+        </div>
     </div>     
   </div>
   <footer class="container-fluid text-center">
@@ -466,15 +463,21 @@
   <script type="text/javascript">
       function handleResponse(response) {
           //when i == 0;
+          //sidebar
+          document.getElementById("news-carousel-sidebar").innerHTML += "<li><a href=\""+ response.items[0].url + "\"><h3>" + response.items[0].title + "</h3></a></li>";
           //indicator list
-          document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"0\" class=\"active\">"+ "<a href=\""+ response.items[0].url + "\">" + response.items[0].title + "</a></li>";
+          document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"0\" class=\"active\"></li>";
           //wrapper
-          document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active text-center bg-grey\">" + "<span class=\"blog-title\"><a href=\"" + response.items[0].url + "\">" + response.items[0].title + "</a></span>" + response.items[0].content + "<div class=\"read-more text-center\"><a href=\""+ response.items[0].url + "\">Read More...</a></div>" + "</div>";
+          document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item active text-center bg-grey\">" + "<span class=\"blog-title\"><a href=\"" + response.items[0].url + "\">" + response.items[0].title + "</a></span>" + response.items[0].content + "</div>";
+          
           for(i = 1; i < response.items.length && i < 5; i++){
+                //sidebar list
+                document.getElementById("news-carousel-sidebar").innerHTML += "<li><a href=\""+ response.items[i].url + "\"><h3>" + response.items[i].title + "</h3></a></li>";
               // update the carousel indicators list
-              document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"" + i + "\">"+ "<a href=\"" + response.items[i].url + "\">" + response.items[i].title + "</a></li>";
+              document.getElementById("news-carousel-list").innerHTML += "<li data-target=\"#newsCarousel\" data-slide-to=\"" + i + "\"></li>";
               //now update the actual content
               document.getElementById("news-carousel-wrapper").innerHTML += "<div class=\"item text-center bg-grey\">" + "<span class=\"blog-title\"><a href=\""+ response.items[i].url + "\">" + response.items[i].title + "</a></span>" + response.items[i].content + "<div class=\"read-more text-center\"><a href=\"" + response.items[i].url + "\">Read More...</a></div>" + "</div>";
+             
           }
       }
   </script>

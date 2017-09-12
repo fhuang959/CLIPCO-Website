@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>CLIPCO - CNY Parade</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="paralax.js"></script>
+    <style type="text/css">
+        /* some css can go here */
+    </style>
+</head>
+<body id="myPage" class="bg-grey" onload="loadImage()">
+<div id="navbar-placeholder"></div>
+<script>
+    $(function () {
+        $("#navbar-placeholder").load("subpage_navbar.html");
+    });
+</script>
+
+<div class="jumbotron text-center bg-white">
+    <h1>Chinese New Year Parade</h1>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 col-xs-12">
+            <h2>Chinese New Year Parade</h2>
+            <p>The Meyerholz/CLIP San Francisco Chinese New Year Parade Team was started by CLIP parent volunteers in the fall of 2004.  The next spring, the team made their debut appearance in the 2005 Year of the Rooster parade, dancing in colorful rooster costumes and playing Chinese drums.  The team has since marched proudly through the streets of San Francisco’s Union Square and Chinatown in each subsequent parade.  This past February, the team once again marched in a Year of the Rooster parade, marking the start of the team’s second cycle through the Chinese zodiac.  This time, the students brought to life the Chinese folktale Dragon Borrows Rooster’s Antlers, with marchers portraying roosters and a dragon while percussionists pounded out a dramatic beat on Chinese drums and cymbals.</p>
+            <p>Each journey into San Francisco for the world-famous parade provides an exciting experience for participating students and supporting family members alike. Even teachers, CLIP principals and assistant principals, and dignitaries such as the mayor of Cupertino or CUSD board members and superintendents join in on the fun as banner holders and bus chaperones.  The team marches in front of hundreds of thousands of spectators who line the 1.2 mile parade route and cheer for the team and their dazzling routines.  Over the years, students have performed as lions, tigers, warriors, spirit hunters, villagers, maidens, flag bearers and more.   With their beautiful costumes, brightly-colored spiked hair, and booming drum beats, the team is always a crowd favorite.  Occasionally, we are lucky enough to be featured on the television broadcast and students get the thrill of seeing themselves perform on primetime TV.  The team has been honored multiple times over the years for their performances, garnering several 1st and 2nd place trophies from the panel of parade judges.</p>
+            <p>The parade team is a self-funded and volunteer-run program.  Participation is open to all students at Meyerholz and to CLIP middle school students (previously at Lawson, currently at Miller).  Each fall, a core group of parent volunteers who form the Parade Committee meet to decide on that coming year's theme and performance.  The routines typically highlight Chinese folktales and legends so that the audience can learn more about Chinese culture.  The team has presented classic stories such as The Legend of Madame White Snake, the Ballad of Mulan, the Five Divine Rams, and Monkey Fishes for the Moon.  Once the parade application is submitted and an invitation to perform at the parade is received, all parent volunteers spend the next several months directing every aspect of the team, including dance and drumming instruction, designing costumes and props, managing weekly practices, and taking photos and videos to commemorate the experience.  High schoolers who are parade alumni have come back to volunteer as instructors as well.  Volunteering is critical to the success of the parade team.   Volunteers ensure that practices run smoothly and that all logistical details are handled so that the students can shine during their performance on the big day.</p>
+            <h4>The next San Francisco Chinese New Year Parade will be on Saturday, Feb, 24, 2018 to commemorate the Year of the Dog.  It will mark the team’s 14th appearance in the parade.</h4>
+        </div>
+        <div class="col-sm-4 col-xs-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+             <script src="imageLoading.js" id="image-laoding-script"></script>
+             
+        </div>
+    </div>
+</div>
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+</footer>
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar  footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>
