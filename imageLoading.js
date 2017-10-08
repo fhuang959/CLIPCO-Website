@@ -21,7 +21,7 @@ function loadImage(type){
 
         case 2:
             var i = Math.floor((Math.random()*284));
-            var filePath = "images/clipart/image_" + i + ".jpeg";
+            var filePath = "images/clipart/image_" + i + ".png";
             var x = document.createElement("IMG");
             x.setAttribute("src", filePath);
             x.setAttribute("alt", "Stock Image");
