@@ -31,7 +31,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-8 col-xs-12">
-            <h2>Another title thing idk</h2>
+            <h2><?php echo "some text!!!"?></h2>
             <h4>A bunch of text that is pretty big, but not as big as the title can go here. It's like a little
                 paragraph explaining what the page is about. I like trees because they are green. green is a nice color.
                 Except for cars. Cars should not be green. The green cars are always the evil ones. Don't do drugs.</h4>

@@ -58,7 +58,7 @@
 
   </style>
 </head>
-<body id="top">
+<body id="top" onload="loadImage(0)">
 
   <div id="navbar-placeholder"></div>
     <script>
@@ -67,22 +67,19 @@
       });
     </script>
 
-
-  <div class="bg"></div>
-
-  <div class="jumbotron text-center">
-      <h1>Direct Give Competition</h1>
-      <p>Funding CLIPCO</p>
+    <div class="jumbotron text-center">
+        <h1>Direct Give Competition</h1>
+        <p>Funding CLIPCO</p>
     </div>
 
 
-  <div id="info" class="container-fluid">
+  <div id="info" class="container-fluid bg-grey">
     <div class="row">
 
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-xs-12">
           <h4>CLIP depends completely on donations to fund the programs not covered by normal school district funds. These programs include the Mandarin Chinese curriculum, CLIP Art program, and Homework Club to name a few. Last year, we raised a total of $314,178 ($246,727 from your generous donations, $67,451 in corporate matches.) CLIP’s 2017 - 2018 budget remains relatively flat to last year and is set at $334,867. There are nominal increases due to cost of instructional materials and professional development for teachers. </h4>
           <br>
-          <h4>This year CLIPCO is asking CLIP families to donate $450 for each child in Kindergarten to 6th grade, and $225 for each child in 7th to 8th grade to cover their share of CLIP educational expenses. As with last years, CLIPCO is offering three different prizes to encourage a friendly contest:
+          <h4>This year CLIPCO is asking CLIP families to donate <b>$450</b> for each child in Kindergarten to 6th grade, and <b>$225</b> for each child in 7th to 8th grade to cover their share of CLIP educational expenses. As with last years, CLIPCO is offering three different prizes to encourage a friendly contest:
         <br><br>
             <ul>
               <li>Individual - An individual prize is awarded to those donating at least the minimum ask per student ($450 for K-6th, $225 for 7th and 8th).</li>
@@ -92,16 +89,16 @@
             <br>
         <p><strong>Contest Rules:</strong>
         <ol>
-          <li> Donations must be received by midnight, November 15, 2016 in order to be counted.</li>
-          <li>Only donations of $225 or more will count towards the contest.</li>
-          <li>Target dollar amount is determined by the total number of students per home room (or grade if Miller students) multiplied by the requested donation amount.</li>
-          <li>Donors to be recognized in a future publication with an option to remain anonymous.</li>
-          <li>Corporate matching amounts do not count towards the Direct Give Contest.</li>
+            <li> Donations must be received by midnight, <b>November 17, 2017</b> in order to be counted.</li>
+            <li> Only donations of the minimum ask ($450 for K-6, $225 for 7th and 8th) or more will count towards the contest..</li>
+            <li>Target dollar amount is determined by the total number of students per homeroom (or grade if Miller students) multiplied by the requested donation amount.</li>
+            <li>Donors to be recognized in a future publication with an option to remain anonymous.</li>
+            <li>Corporate matching amounts do not count towards the Direct Give Contest.</li>
         </ol>
         </p>
           <br>
         </h4>
-          <h4>CLIP is grateful for the financial support received from our community. We would like to recognize your generosity by displaying your name on the CLIPCO website throughout the school year and on the December CLIPCO Newsletter after the Direct Give Contest. Donors also have the option to remain anonymous. Tiers of recognition indicated below are per student.</h4>
+          <h4>CLIP is grateful for the financial support received from our community. We would like to recognize your generosity by displaying your name on the CLIPCO website throughout the school year and on the December CLIPCO Newsletter after the Direct Give Contest. Donors also have the option to remain anonymous. Tiers of recognition indicated below are <b>per student </b>.</h4>
         <br>
         <p><h4><strong>Donation Levels:</strong></h4></p>
         <table id="donation-level-table">
@@ -164,24 +161,25 @@
           </tbody>
         </table>
       </div>
-      <div class="col-sm-4">
-        <p><img src="images/image.png" alt="image.png" width="400"></p>
+      <div class="col-sm-4 col-xs-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+            <script src="imageLoading.js" id="image-laoding-script"></script>
       </div>
     </div>
   </div>
 
-  <div id="info" class="container-fluid">
+  <div id="info" class="container-fluid bg-grey">
     <div class="row">
         <a href = "honor_roll.html">Go here to see CLIP honor roll</a>
-        <h4> You may <a href = "donations.html">donate online</a> through PayPal using your credit card, debit card or PayPal account
+      <h4> You may <a href = "donations.html">donate online</a> through PayPal using your credit card, debit card or <b>PayPal</b> account
           or Download the <a href="documents/17-18pledgeform.pdf">Pledge Form</a> to pay by check. Please return this form along with your payment (payable to "CLIPCO") to the Meyerholz office,
           your student's homeroom teacher or your CLIPCO grade.
           <br><br>
-          <b>If you have more questions about the Direct Give Contest, please read our <a href = "faq.html">FAQ</a>. If the information there does not answer your question,
-            please contact your CLIPCO grade representative.</b>
+          <b>If you have more questions about the Direct Give Contest, please read our <a href = "donateFAQ.html">FAQ</a>. If the information there does not answer your question,
+            please contact your <a href="contact.html">CLIPCO grade representative.</a></b>
           <br><br>
           Please don't forget to potentially double your donation by applying for <b>corporate matching</b> through your employer. Corporate matching helps CLIPCO tremendously in making up for donation shortfalls.
-          Every year, the corporate match donations to CLIPCO contribute between 15-25% of our annual budget. Please see <a href="donateFAQ.html">How do I get corporate matching for my donation?</a> for more information.
+          Every year, the corporate match donations to CLIPCO contribute between 15-25% of our annual budget. Please see <a href="donateFAQ.html#corporate-matching">How do I get corporate matching for my donation?</a> for more information.
 
         </h4>
     </div>
@@ -195,10 +193,10 @@
       <div class="col-sm-12">
         <center><h4>As with last years, CLIPCO is offering three different prizes to encourage a friendly contest.</h4>
           <br><br>
-          <p><h4>Prizes:</h4></p>
+          <p><h4>2017-18 Prizes will be announced soon!</h4></p>
         </center>
 
-        <table>
+        <!--<table>
           <thead>
           <th>Individual Prize</th>
           <th>Class Prize</th>
@@ -228,10 +226,17 @@
             </td>
           </tr>
           </tbody>
-        </table>
+        </table>-->
       </div>
     </div>
   </div>
+
+
+  <footer class="container-fluid text-center">
+    <a href="#top" title="To Top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+  </footer>
   
 <script>
     $(document).ready(function() {

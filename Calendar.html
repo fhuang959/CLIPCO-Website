@@ -2,43 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	<title>CLIPCO - Calendar</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="css.css">
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="paralax.js"></script>
-	<style type="text/css">
-	    .bg{
-	        background-color: white!important;
-	    }
-	</style>
+    <title>CLIPCO - Calendar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="paralax.js"></script>
+    <style type="text/css">
+    </style>
 </head>
-<body id="myPage">
+<body id="myPage" class="bg-grey">
 <div id="navbar-placeholder"></div>
 <script>
-    $(function(){
+    $(function () {
         $("#navbar-placeholder").load("subpage_navbar.html");
     });
 </script>
-<div class="bg"></div>
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center bg-white">
     <h1>CLIPCO Calendar</h1>
     <p>Upcoming Events</p>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid bg-gray">
     <div class="row">
         <div class="col-sm-8">
-            <iframe src="https://calendar.google.com/calendar/embed?src=clipco.board%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="1200" height="600" frameborder="0" scrolling="no"></iframe>
-
-            <h4>Click the blue "+" button on the bottom right corner of the calender to subscribe to CLIPCO's calendar</h4>
+            <iframe src="https://calendar.google.com/calendar/embed?src=clipco.board%40gmail.com&ctz=America/Los_Angeles"
+                    style="border: 0" width="1200" height="600" frameborder="0" scrolling="no"></iframe>
+            <h4>Click the blue "+" button on the bottom right corner of the calender to subscribe to CLIPCO's
+                calendar</h4>
             <br>
         </div>
         <div class="col-sm-4">
@@ -46,44 +43,5 @@
         </div>
     </div>
 </div>
-<footer class="container-fluid text-center">
-    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-</footer>
-<script>
-    $(document).ready(function() {
-        // Add smooth scrolling to all links in navbar  footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-                // Store hash
-                var hash = this.hash;
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function() {
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-        $(window).scroll(function() {
-            $(".slideanim").each(function() {
-                var pos = $(this).offset().top;
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
-            });
-        });
-    })
-</script>
-</body>
-</html></title>
-</head>
-<body>
-
 </body>
 </html>
