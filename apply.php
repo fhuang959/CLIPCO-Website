@@ -55,6 +55,7 @@
             $position = test_input($_POST["position"]);
         }
     }
+<<<<<<< HEAD
     if(empty($email) || empty($name) || empty($position)){
 
     } else{
@@ -72,6 +73,20 @@
         $thankyou = "Thank you for applying!";
     }
    
+=======
+
+    /*$file = fopen("application-responses.txt", "a")
+    fwrite($file, "\n");
+    $timeStamp = date("Y-m-d") + " " + date("h:i:sa") + "\n";
+    fwrite($file, $timeStamp);
+    $nameWrite = "Name: " + $name + "\n";
+    fwrite($file, $nameWrite);
+    $emailWrite = "Email: " + $email + "\n";
+    fwrite($file, $emailWrite);
+    $positionWrite = "Position: " + $position + "\n";
+    fwrite($file, $positionWrite);
+    fclose($file);*/
+>>>>>>> Evan
 
 
 
@@ -93,7 +108,10 @@
             <h2>Application Form</h2>
             <h4>Please fill out this form and we will get back to you as soon as possible.</h4>
             <br>
+<<<<<<< HEAD
 
+=======
+>>>>>>> Evan
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <table id="form-table">
                     <tbody>
@@ -125,11 +143,14 @@
                                     <option value="2nd grade">2nd Grade Rep</option>
                                     <option value="4th grade">4th Grade Rep</option>
                                     <option value="8th grade">8th Grade Rep</option>
+<<<<<<< HEAD
                                     <option value="Chinese book fair">Chinese Book Fair</option>
                                     <option value="Community events">Community Events</option>
                                     <option value="CUSD and CAC outreach">CUSD and CAC Outreach</option>
                                     <option value="Direct give c ampaign">Direct Give Campaign</option>
                                     <option value="Graduation celebration">Graduation Celebration</option>
+=======
+>>>>>>> Evan
                                 </select>
                                 <span class="error"><?php echo $positionErr;?></span>
                             </td>     
@@ -142,7 +163,10 @@
                     </tbody>
                 </table>
             </form>
+<<<<<<< HEAD
             <?php echo $thankyou."<br>";?>
+=======
+>>>>>>> Evan
         </div>
         <div class="col-sm-4 col-xs-12" id="stock-image">
             <!-- scripty mcscriptface will fill this in-->
