@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba2fa554-9b34-4615-9bb2-1e54e814b47c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application-responses.tx.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Social_Media.html" afterPath="$PROJECT_DIR$/Social_Media.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Website.html" afterPath="$PROJECT_DIR$/Website.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apply.php" afterPath="$PROJECT_DIR$/apply.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact.html" afterPath="$PROJECT_DIR$/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css.css" afterPath="$PROJECT_DIR$/css.css" />
-    </list>
+    <list default="true" id="ba2fa554-9b34-4615-9bb2-1e54e814b47c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Social_Media.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Social_Media.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Social_Media.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="382">
@@ -56,6 +49,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
               <caret line="2725" column="32" lean-forward="false" selection-start-line="2725" selection-start-column="31" selection-end-line="2725" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subpage_navbar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/subpage_navbar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -165,12 +168,12 @@
       <workItem from="1503633417502" duration="1009000" />
       <workItem from="1503962261946" duration="7172000" />
       <workItem from="1504064102060" duration="1765000" />
-      <workItem from="1507501501733" duration="1005000" />
+      <workItem from="1507501501733" duration="1166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13816000" />
+    <option name="totallyTimeSpent" value="13977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
@@ -477,14 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subpage_navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/donations.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -513,6 +508,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subpage_navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
           <folding />
         </state>
       </provider>
