@@ -12,7 +12,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="paralax.js"></script>
     <style type="text/css">
-        /* some css can go here */
+        #about-video-iframe{
+            margin: 0;
+            padding: 0;
+            border: none;
+            width: 45vw;
+            height: 25.3125vw;
+            
+        }
+
+        @media screen and (max-width:768px){
+            #about-video-iframe{
+                width:100%;
+                height:56.25%;
+            }
+        }
     </style>
 </head>
 <body class="bg-grey">
@@ -45,17 +59,16 @@
                  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
              </div>
          </div> -->
-        <div class="col-md-6">
-            <div class="fb-page" data-href="https://www.facebook.com/cusdclipco/" data-tabs="timeline"
+            <div class="fb-page col-md-6 col-xs-12" data-href="https://www.facebook.com/cusdclipco/" data-tabs="timeline"
                  data-width="600"
                  data-height="800" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true"
                  data-show-facepile="false">
                 <blockquote cite="https://www.facebook.com/cusdclipco/" class="fb-xfbml-parse-ignore"><a
                         href="https://www.facebook.com/cusdclipco/">CUSD Clipco</a></blockquote>
             </div>
-        </div>
-        <div class="col-md-6">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/WMOPfMAkuyE" frameborder="0"
+        <div class="col-md-6 col-xs-12">
+            <h2>YouTube Channel</h2>
+            <iframe  id="about-video-iframe" src="https://www.youtube.com/embed/WMOPfMAkuyE" frameborder="0"
                     allowfullscreen></iframe>
         </div>
     </div>

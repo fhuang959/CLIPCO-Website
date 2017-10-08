@@ -2645,12 +2645,6 @@ div.ui-article {
     color: #000 !important;
 }
 
-.navbar-nav li a:hover,
-.navbar-nav li.active a {
-    /*color: #f4511e !important;*/
-    background-color: #fff !important;
-}
-
 .navbar-default .navbar-toggle {
     border-color: transparent;
     color: #fff !important;
@@ -2778,4 +2772,12 @@ footer{
 
 .subpage_image{
   width: 100%;
+}
+
+@media screen and (min-width:640px) {
+  /* CSS for screens that are 320 pixels or less will be put in this section */
+  #about-video-iframe{
+    width: 560px;
+    height: 315px;
+  }
 }
