@@ -31,7 +31,7 @@
 
     </style>
 </head>
-<body onload="loadImage()">
+<body>
 <div id="navbar-placeholder"></div>
 <script>
     $(function () {
@@ -72,82 +72,97 @@
             <br>
             <div class="donation-table-div">
                 <form action="https://www.paypal.com/us/cgi-bin/webscr" method="post" name="_xclick" target="paypal">
-                    <input name="cmd" type="hidden" value="_cart">
-                    <input name="business" type="hidden" value="clipco@cusdclipco.org">
-                    <input name="currency_code" type="hidden" value="USD">
-                    <input name="currency_code" type="hidden" value="USD">
-                    <input name="undefined_quantity" type="hidden" value="1">
-                    <input name="add" type="hidden" value="1">
-                    <table id="donation-table" border="0" cellpadding="2">
+                    <input name="cmd" type="hidden" value="_cart" />
+                    <input name="business" type="hidden" value="clipco@cusdclipco.org" />
+                    <input name="currency_code" type="hidden" value="USD" />
+                    <input name="currency_code" type="hidden" value="USD" />
+                    <input name="undefined_quantity" type="hidden" value="1" />
+                    <input name="add" type="hidden" value="1" />
+                    <table border="0" cellpadding="2">
                         <tbody>
-                        <tr>
-                            <td>Amount:</td>
-                            <td>
-                                <input maxlength="10" name="amount" type="text" value="450.00">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right" valign="center">Recommended amount:&nbsp;</td>
-                            <td align="left" valign="center">&nbsp;K - 6th grade: $450
-                                <br>&nbsp;7th - 8th grade: $225
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Student Full Name:</td>
-                            <input name="on1" type="hidden" value="Donor Full Name">Donor Full Name:</td>
-                            <td>
-                                <input maxlength="200" name="os1" type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input name="on2" type="hidden" value="Donor Email">Donor Email Address:
-                            </td>
-                            <td>
-                                <input maxlength="200" name="os2" type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input name="on3" type="hidden" value="Employer Name">Employer Name (For Corporate Matching):
-                            </td>
-                            <td>
-                                <input maxlength="200" name="os3" type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input name="on4" type="hidden" value="I want my donation to be anonymous">I want my
-                                donation to be anonymous:
-                            </td>
-                            <td>
-                                <select name="os4">
-                                    <option selected="selected" value="No">No</option>
-                                    <option value="Yes">Yes</option>
-                                </select>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>Amount:</td>
+                                <td>
+                                    <input maxlength="10" name="amount" type="text" value="450.00" />
+                                </td>
+                            </tr>
+                                <td align="left" valign="center">Recommended amount:&nbsp;</td>
+                                <td align="left" valign="center">&nbsp;K - 6th grade: $450
+                                    <br>&nbsp;7th - 8th grade: $225
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Student Full Name:</td>
+                                <td>
+                                    <input maxlength="200" name="item_name" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Grade:</td>
+                                <td>
+                                    <select name="item_number">
+                                        <option selected="selected" value="Kindergarten">Kindergarten</option>
+                                        <option value="1st grade">1st grade</option>
+                                        <option value="2nd grade">2nd grade</option>
+                                        <option value="3rd grade">3rd grade</option>
+                                        <option value="4th grade">4th grade</option>
+                                        <option value="5th grade">5th grade</option>
+                                        <option value="6th grade">6th grade</option>
+                                        <option value="7th grade">7th grade</option>
+                                        <option value="8th grade">8th grade</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input name="on0" type="hidden" value="Room Number" />Room Number:</td>
+                                <td>
+                                    <input maxlength="200" name="os0" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input name="on1" type="hidden" value="Donor Full Name" />Donor Full Name:</td>
+                                <td>
+                                    <input maxlength="200" name="os1" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input name="on2" type="hidden" value="Donor Email" />Donor Email Address:</td>
+                                <td>
+                                    <input maxlength="200" name="os2" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input name="on3" type="hidden" value="Employer Name" />Employer Name (For Corporate Matching):</td>
+                                <td>
+                                    <input maxlength="200" name="os3" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input name="on4" type="hidden" value="I want my donation to be anonymous" />I want my donation to be anonymous:</td>
+                                <td>
+                                    <select name="os4">
+                                        <option selected="selected" value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <br>
-                    <input alt="Make payments with PayPal - it's fast, free and secure!" name="submit"
-                           src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" type="image">
-                    <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1"
-                         border="0">
-                    <input alt="PayPal - The safer, easier way to pay online!" name="submit"
-                           src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" type="image">
-                    <span style="font-size: 0.75em; line-height: 1.6;"></span>
-                    <img style="font-size: 0.75em; line-height: 1.6;"
-                         src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif?t=1409295006165?t=1409295446572?t=1409295522138?t=1409295578960?t=1409295608569?t=1409295666444?t=1409295757104?t=1409295794127?t=1409295818115?t=1409295843219?t=1409295868252?t=1409295904311?t=1409295919847?t=1409295941216?t=1409295986447?t=1409296000413?t=1409296020294?t=1409296045416?t=1409296137912?t=1409296171312?t=1409296187461?t=1409296263131"
-                         alt="" width="1" height="1" border="0">
+                    <input alt="Make payments with PayPal - it's fast, free and secure!" name="submit" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" type="image" /> <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
+                    <input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" type="image" /><span></span><img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif?t=1409295006165?t=1409295446572?t=1409295522138?t=1409295578960?t=1409295608569?t=1409295666444?t=1409295757104?t=1409295794127?t=1409295818115?t=1409295843219?t=1409295868252?t=1409295904311?t=1409295919847?t=1409295941216?t=1409295986447?t=1409296000413?t=1409296020294?t=1409296045416?t=1409296137912?t=1409296171312?t=1409296187461?t=1409296263131" alt="" width="1" height="1" border="0" />
                 </form>
             </div>
             <br>
-            <h4>To pay by check, download and fill out the <a href="pledgeform.html">pledge form</a>.</h4>
+            <h4>To pay by check, download and fill out the <a href="documents/17-18pledgeform.pdf">pledge form</a>.</h4>
         </div>
-       <div class="col-sm-4 col-xs-12" id="stock-image">
-            <!-- scripty mcscriptface will fill this in-->
-             <script src="imageLoading.js" id="image-laoding-script"></script>
+        <div class="col-sm-4 col-xs-12" id="stock-image">
+            <img src="images/donations.JPG" alt="stock-image" class="subpage_image">
         </div>
     </div>
 </div>
