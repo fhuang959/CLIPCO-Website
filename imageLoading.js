@@ -30,7 +30,7 @@ function loadImage(type){
             break;
 
         case 3:
-            var i = Math.floor((Math.random()*52));
+            var i = Math.floor((Math.random()*23));
             var filePath = "images/other/image_" + i + ".png";
             var x = document.createElement("IMG");
             x.setAttribute("src", filePath);
