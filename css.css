@@ -2645,15 +2645,15 @@ div.ui-article {
     color: #000 !important;
 }
 
-<<<<<<< HEAD
-=======
+
+
 .navbar-nav li a:hover,
 .navbar-nav li.active a {
     /*color: #f4511e !important;*/
     background-color: #fff !important;
 }
 
->>>>>>> Evan
+
 .navbar-default .navbar-toggle {
     border-color: transparent;
     color: #fff !important;
@@ -2733,8 +2733,8 @@ footer .glyphicon,
 }
 
 @media screen and (max-width: 768px) {
-<<<<<<< HEAD
-=======
+
+
     .col-sm-6 {
         text-align: center;
         margin: 25px 0;
@@ -2742,7 +2742,7 @@ footer .glyphicon,
 }
 
 @media screen and (max-width: 768px) {
->>>>>>> Evan
+
     .col-sm-4 {
         text-align: center;
         margin: 25px 0;
@@ -2792,7 +2792,10 @@ footer{
 .subpage_image{
   width: 100%;
 }
-<<<<<<< HEAD
+
+#about-video-iframe{
+
+  }
 
 @media screen and (min-width:640px) {
   /* CSS for screens that are 320 pixels or less will be put in this section */
@@ -2801,5 +2804,4 @@ footer{
     height: 315px;
   }
 }
-=======
->>>>>>> Evan
+
