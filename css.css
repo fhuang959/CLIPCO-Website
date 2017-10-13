@@ -2765,6 +2765,15 @@ footer .glyphicon,
     }
 }
 
+@media screen and (max-width: 420px){
+    .row{
+        margin: 5px;
+    }
+    .container-fluid{
+        padding: 2.5px;
+    }
+}
+
 /*.thumbnail:hover{
   box-shadow: 1px 1px 50px 1px #888888;
 }*/
@@ -2804,4 +2813,5 @@ footer{
     height: 315px;
   }
 }
+
 
