@@ -28,7 +28,7 @@
 </script>
 <?php
     $nameErr = $emailErr = $positionErr = "";
-    $name = $email = $position = "";
+    $name = $email = $position = $thankyou = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         if(empty($_POST["name"])){
@@ -121,15 +121,11 @@
                             </td>
                             <td>
                                 <select name="position">
-                                    <option selected="selected" value="Kindergarten">Kindergarten Rep</option>
-                                    <option value="2nd grade">2nd Grade Rep</option>
                                     <option value="4th grade">4th Grade Rep</option>
-                                    <option value="8th grade">8th Grade Rep</option>
-                                    <option value="Chinese book fair">Chinese Book Fair</option>
+                                    <option value="Clip art teacher">Clip Art Teacher</option>
                                     <option value="Community events">Community Events</option>
                                     <option value="CUSD and CAC outreach">CUSD and CAC Outreach</option>
                                     <option value="Direct give c ampaign">Direct Give Campaign</option>
-                                    <option value="Graduation celebration">Graduation Celebration</option>
                                 </select>
                                 <span class="error"><?php echo $positionErr;?></span>
                             </td>     
@@ -142,7 +138,7 @@
                     </tbody>
                 </table>
             </form>
-            <?php echo $thankyou."<br>";?>
+            <?php echo $thankyou . "<br>";?>
         </div>
         <div class="col-sm-4 col-xs-12" id="stock-image">
             <!-- scripty mcscriptface will fill this in-->
