@@ -7,7 +7,7 @@
 	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 		Enter string to hash:<br>
 		<input type="text" name="string"><br>
-		<input type="submit" name="Hash!">
+		<input type="submit" name="Submit">
 	</form>
 	<?php
 	/**

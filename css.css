@@ -2137,7 +2137,7 @@ position: relative
 
 #cs-sw-footer-links {
     /*opacity: .35;
--ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";*/
     line-height: 1;
     margin-top: 4px;
     float: left;
@@ -2535,9 +2535,9 @@ div.ui-article {
 
 .jumbotron {
     margin-bottom: 15px;
-    text-shadow: black 0.1em 0.1em 0.1em;
+    /*text-shadow: black 0.1em 0.1em 0.1em;*/
     background: transparent;
-    padding: 100px 25px;
+    padding: 75px 25px;
     font-family: Montserrat, sans-serif;
 }
 
@@ -2637,15 +2637,16 @@ div.ui-article {
     letter-spacing: 4px;
     border-radius: 0;
     font-family: Montserrat, sans-serif;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);*/
 }
 
-.navbar li a,
-.navbar .navbar-brand {
+.navbar li a, .navbar ul li ul li a{
     color: #000 !important;
 }
 
-
+.navbar .navbar-brand, .navbar ul li a{
+    color: #fff !important;
+}
 
 .navbar-nav li a:hover,
 .navbar-nav li.active a {
@@ -2775,7 +2776,7 @@ footer .glyphicon,
 }
 
 /*.thumbnail:hover{
-  box-shadow: 1px 1px 50px 1px #888888;
+box-shadow: 1px 1px 50px 1px #888888;
 }*/
 
 
@@ -2788,30 +2789,115 @@ table, th, td {
     border: 1px solid rgb(150, 150, 150);
     border-collapse: collapse;
     padding: 7px;
+    transition: background-color 0.25s ease;
 }
 
 th:hover, td:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+th th:hover, td td:hover{
+    background-color: rgba(0,0,0,0);
+}
+
 footer{
- margin: 20px;
+    margin: 20px;
 }
 
 .subpage_image{
-  width: 100%;
+    padding: 2px;
+    width: 100%;
 }
 
 #about-video-iframe{
 
-  }
-
-@media screen and (min-width:640px) {
-  /* CSS for screens that are 320 pixels or less will be put in this section */
-  #about-video-iframe{
-    width: 560px;
-    height: 315px;
-  }
 }
 
+
+.faq-question {
+    color: rgba(0, 0, 0, 0.95);
+    font-size: 1.25em;
+}
+
+.faq-answer {
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 1em;
+    margin-bottom: 30px;
+}
+
+.footer {
+    text-align: center;
+}
+
+@media screen and (max-width:640px) {
+    /* CSS for screens that are 640 pixels or less will be put in this section */
+    #about-video-iframe{
+        width: 560px;
+        height: 315px;
+    }
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+        padding: 0px 5px 0px 8px;
+    }
+    .container-fluid{
+        padding: 0px 2px;
+    }
+    
+    .row {
+        margin: auto;
+    }
+    
+    .bg, .jumbotron {
+        height: 300px; /*change in the paralax.js too!*/
+    }
+
+}
+
+
+
+.indent{
+    text-indent: 2em;
+}
+
+input[type=text], input[type=tel], input[type=email], input[type=date], select {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number]{
+    width: 100%;
+    padding: 4px 16px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 20px;
+    resize: none;
+}
+
+/*button[type=submit] {
+width: 75%;
+background-color: rgb(255,255,255);
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button[type=submit]:hover {
+background-color:rgb(180,180,180);
+}*/
 

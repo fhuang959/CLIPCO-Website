@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<head>
+    <title>CLIPCO - CLIP Art Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://www.cusdclipco.org/css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        /* some css can go here */
+        .container-fluid{
+            padding: 0px;
+        }
+        .row{
+            margin: 0px;
+            padding: 5px 15px;
+        }
+
+        h2{
+            text-transform: none;
+            font-weight: 500;
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body id="myPage" class="bg-grey">
+<div id="navbar-placeholder"></div>
+<script>
+    $(function () {
+        $("#navbar-placeholder").load("http://www.cusdclipco.org/subpage_navbar.html");
+    });
+</script>
+
+<div class="jumbotron text-center bg-white">
+    <h1>GALLERY</h1>
+    <p>A Sample of Our Students’ Artwork</p>
+</div>
+
+<div class="container-fluid" id="main-body"></div>
+
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+</footer>
+<script type="text/javascript">
+
+    var postName;
+    try{
+        postName = getParameterByName("post");
+    } catch (e){
+        //break;
+    }
+    
+
+    
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://www.cusdclipco.org/clipart_posts/"+postName+".json";
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            handleResponse(response);
+        }
+    }
+
+    function handleResponse(response) {
+        //create title row
+        var title_row_div = document.createElement("DIV");
+        //set Attributes
+        title_row_div.setAttribute("class","row bg-grey");
+        
+        //create title column
+        var title_column_div = document.createElement("DIV");
+        //set attributes
+        title_column_div.setAttribute("class","col-sm-12");
+
+        //create Title node
+        var title = document.createElement("H2");
+        title.appendChild(document.createTextNode(response['title']));
+
+        //create Message node
+        var message = document.createElement("H4");
+        message.appendChild(document.createTextNode(response['message']));
+
+        //add message and title nodes to column node
+        title_column_div.appendChild(title);
+        title_column_div.appendChild(message);
+
+        //add column node to row node
+        title_row_div.appendChild(title_column_div);
+
+        //add row to main body
+        document.getElementById('main-body').appendChild(title_row_div);
+
+        //add all the content rows
+        for(var i = 0; i < response['rows'].length; i++){
+
+            //create new row div
+            var row = document.createElement("DIV");
+            //set attributes
+            if(i%2){ //bg grey if i is odd
+                row.setAttribute("class","row text-center bg-grey");
+
+            } else { //white bg if i is even
+                row.setAttribute("class","row text-center bg-white");
+            }
+
+            //create column node
+            var column = document.createElement("DIV");
+            //set attributes
+            column.setAttribute("class","col-sm-12");
+
+            //create container div node
+            var container = document.createElement("DIV");
+            //set Attributes
+            container.setAttribute("class","container-fluid");
+
+            //create heading node
+            var heading = document.createElement("P");
+            var grade = document.createElement("STRONG");
+            grade.appendChild(document.createTextNode(response['rows'][i]['grade']+" "));
+            heading.appendChild(grade);
+            heading.appendChild(document.createTextNode("CLIP Art teacher: "+response['rows'][i]['teacher']));
+            container.appendChild(heading);
+
+
+            //create subrow node
+            var subrow = document.createElement("DIV");
+            //set Attributes
+            subrow.setAttribute("class","row");
+
+            //create subcolumn nodes
+            for (var j = 0; j < response['rows'][i]['columns'].length; j++) {
+                //create subcolumn node
+                var subcolumn = document.createElement("DIV");
+                //set attributes
+                if(response['rows'][i]['columns'].length == 1){
+                    subcolumn.setAttribute("class","col-xs-12");
+
+                } else if (response['rows'][i]['columns'].length == 2) {
+                    subcolumn.setAttribute("class","col-sm-6 col-xs-12");
+                }
+
+                //append title child
+                title = document.createElement("P");
+                title.appendChild(document.createTextNode(response['rows'][i]['columns'][j]['title']));
+                subcolumn.appendChild(title);
+
+                //add images
+                if (response['rows'][i]['columns'][j]['images'].length == 1) {
+                    //create image node
+                    var image = document.createElement("IMG");
+                    //set attributes
+                    image.setAttribute("class","subpage_image");
+                    image.setAttribute("src",response['rows'][i]['columns'][j]['images'][0].slice(26));
+
+                    //add image node to subcolumn node
+                    subcolumn.appendChild(image);
+                } else {
+                    //create subcontainer node
+                    var subcontainer = document.createElement("DIV");
+                    //set attributes
+                    subcontainer.setAttribute("class","container-fluid");
+
+                    //create subsubrow node
+                    var subsubrow = document.createElement("DIV");
+                    //set attributes
+                    subsubrow.setAttribute("class","row");
+                    for (var k = 0; k < response['rows'][i]['columns'][j]['images'].length; k++) {
+                        //create subsubcolumn node
+                        var subsubcolumn = document.createElement("DIV");
+                        //set attributes
+                        subsubcolumn.setAttribute("class","col-sm-6 col-xs-12");
+
+                        //create image node
+                        var image = document.createElement("IMG");
+                        //set attributes
+                        image.setAttribute("class","subpage_image");
+                        image.setAttribute("src",response['rows'][i]['columns'][j]['images'][k].slice(26));
+
+                        //add image node to subsubcolumn node
+                        subsubcolumn.appendChild(image);
+
+                        //add subsubcolumn to subsubrow node
+                        subsubrow.appendChild(subsubcolumn);
+                    }
+
+                    //append subsubrow node to subcontainer node
+                    subcontainer.appendChild(subsubrow);
+
+                    //append subcontainer node to subcolumn node
+                    subcolumn.appendChild(subcontainer);
+
+                    //append the subcolumn node to subrow node
+                    subrow.appendChild(subcolumn);
+                }
+
+                //append description child
+                var description = document.createElement("P");
+                description.appendChild(document.createTextNode(response['rows'][i]['columns'][j]['description']))
+                subcolumn.appendChild(description);
+
+                //add subcolumn node to subrow node
+                subrow.appendChild(subcolumn);
+            }
+
+            //append subrow node to container node
+            container.appendChild(subrow);
+
+            //append container node to column node
+            column.appendChild(container);
+
+            //append column to row node 
+            row.appendChild(column);
+
+            //append row to main-body
+            document.getElementById("main-body").appendChild(row);
+        }
+
+    }
+
+    function getParameterByName(name) {
+        url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) throw "post not found";
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+
+
+    }
+
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar  footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

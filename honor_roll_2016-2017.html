@@ -30,7 +30,7 @@
 
     </style>
 </head>
-<body id="top">
+<body id="top" onload="loadImage(0);">
 
 <div id="navbar-placeholder"></div>
 <script>
@@ -48,12 +48,10 @@
 
 <div class="container-fluid bg-grey">
     <div>
-        <h4>The CLIPCO Board would like to thank the following donors for their support in the
-            continuing success of CLIP. The Honor Roll for 2017-2018 will be updated when the
-            Direct Give Contest begins in October 2017.</h4>
+        <h4>The CLIPCO Board would like to thank the following donors for their support in the continuing success of CLIP.</h4>
     </div>
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-xs-12">
             <h2>K-6 Families</h2>
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
@@ -720,18 +718,23 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-4 col-xs-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+            <script src="imageLoading.js" id="image-laoding-script"></script>
+        </div>
     </div>
+    <footer class="container-fluid text-center bg-grey">
+        <a href="#top" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p>* Donors have the option to remain anonymous. If you previously indicated your choice to be an anonymous donor
+            but would like to have your name published, or if you wish to become anonymous, please e-mail us at
+            clipcotreasurer@gmail.com.</p>
+    </footer>
 </div>
 
 
-<footer class="container-fluid text-center bg-grey">
-    <a href="#top" title="To Top">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-    <p>* Donors have the option to remain anonymous. If you previously indicated your choice to be an anonymous donor
-        but would like to have your name published, or if you wish to become anonymous, please e-mail us at
-        clipcotreasurer@gmail.com.</p>
-</footer>
+
 <script>
     $(document).ready(function () {
         // Add smooth scrolling to all links in navbar  footer link

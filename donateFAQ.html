@@ -16,14 +16,21 @@
             color: red;
         }
 
-        .faq-question {
-            padding: 15px 0px 0px 0px;
-            color: rgba(0, 0, 0, 0.6);
-        }
-
         .faq {
-            padding: 0px 5em 150px 5em;
+            padding: 0px 5em 15px 5em;
             text-align: justify;
+        }
+        
+        @media screen and (max-width:420px){
+            .faq {
+                padding: 2px;
+            }
+            
+            #graph {
+                padding: 15px;
+                max-width: 90%;
+                width: 100% !important;
+            }
         }
 
         #graph {
@@ -34,7 +41,7 @@
 
     </style>
 </head>
-<body id="myPage">
+<body id="top">
 
 <div id="navbar-placeholder"></div>
 <script>
@@ -51,7 +58,7 @@
 
 <div class="container-fluid bg-grey">
     <div class="row">
-        <div class="faq">
+        <div class="faq col-sm-12">
             <h2>Questions About Donating</h2>
             <p><strong class="faq-question">Why should I donate?</strong></p>
             <p class="faq-answer">CLIP depends completely on donations to fund the programs not covered by normal school
@@ -62,8 +69,8 @@
             <p><strong class="faq-question">What does the donation support?</strong></p>
             <p class="faq-answer">Mandarin instructional materials, Mandarin library books, Mandarin homework club,
                 Teacher’s Aides, technology, CLIP Art, student Mandarin assessment tests, and Mandarin curriculum
-                development. Details can be found on the CLIPCO annual budget at <a
-                        href="http://www.edline.net/pages/CLIP/Parents/Ways_to_Get_Involved">http://www.edline.net/pages/CLIP/Parents/Ways_to_Get_Involved</a>.</p>
+                development. Details can be found on the CLIPCO annual budget&nbsp;<a
+                        href="http://www.edline.net/pages/CLIP/Parents/Ways_to_Get_Involved">here</a>.</p>
             <p><strong class="faq-question">What happens if CLIPCO does not get enough donations? </strong></p>
             <p class="faq-answer">CLIP depends on CLIPCO to raise the funds needed to keep the program running. In the
                 event that CLIPCO is unable to raise the target donation amount, services such as Teacher’s Aides, CLIP
@@ -92,7 +99,7 @@
                 Credit card, debit card, or PayPal payment can be made online at <a
                         href="http://www.cusdclipco.org/donate.html">http://www.cusdclipco.org/donate.html</a>.</p>
             <p><strong class="faq-question">When should I donate?</strong></p>
-            <p class="faq-question">To reduce the crunch during the Direct Give Campaign, we are encouraging people to
+            <p class="faq-answer">To reduce the crunch during the Direct Give Campaign, we are encouraging people to
                 donate early! Bring your donation to the CLIP table at Meyerholz Back to School Night (August 23rd) to
                 qualify to receive a CLIP window cling for each student whose family donates the minimum ask in their
                 name. For Miller students, turn in your form and check to your child’s CLIP teacher by Friday Aug 25,
@@ -113,13 +120,13 @@
                 simultaneously raises the funds for the following school year. For this reason, the cash balance does
                 not appear to change significantly through out the school year even though large sums of transactions
                 are taking place. The following graph demonstrates the typical cash flow that takes place during the
-                school year:
+                school year:</p>
                 <br>
                 <div class="text-center">
-                     <img id="graph" src="images/budget-reserves-chart.png" alt="income graph">
+                     <img id="graph" class="subpage_image" src="images/budget-reserves-chart.png" alt="income graph">
                 </div>
                 <br>
-                The graph demonstrates that for the 2012-2013 school year, CLIPCO started with $338,000 and spent
+                <p>The graph demonstrates that for the 2012-2013 school year, CLIPCO started with $338,000 and spent
                 roughly $300,000 on program expenses, leaving it with just $40,000. However, it raised $290,000 during
                 the same period which kept its cash balance at a stable number throughout the year.</p>
             <p><strong class="faq-question" id="corporate-matching">How do I get corporate matching for my donation?</strong></p>
@@ -155,6 +162,15 @@
                 or anyone on the CLIPCO board to learn about your options.
                 <br>
                 The Board of Directors can be found on our <a href="contact.html">contact page</a>.</p>
+        </div>
+    </div>
+    <hr>
+    <footer class="container-fluid text-center bg-grey">
+        <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </footer>
+    
+    <div class="row">
+        <div class="faq col-sm-12">
             <h2>Questions about the Direct Give Competition</h2>
             <p><strong class="faq-question">When is the contest taking place? </strong></p>
             <p class="faq-answer">The Contest kicked off on October 17, and it will end at midnight on November 15th,
@@ -199,42 +215,11 @@
                 that qualify for the tiers below are per student.</p>
         </div>
     </div>
+    <footer class="container-fluid text-center bg-grey">
+        <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </footer>
 </div>
-<footer class="container-fluid text-center bg-grey">
-    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-</footer>
-<script>
-    $(document).ready(function () {
-        // Add smooth scrolling to all links in navbar  footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-                // Store hash
-                var hash = this.hash;
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function () {
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-        $(window).scroll(function () {
-            $(".slideanim").each(function () {
-                var pos = $(this).offset().top;
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
-            });
-        });
-    })
-</script>
+
+<script src="js.js"></script>
 </body>
-
-
 </html>

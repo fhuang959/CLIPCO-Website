@@ -1,7 +1,7 @@
 //scripty mcscriptface
 function loadImage(type){
     //0 = any
-    //1 = cnyp (52)
+    //1 = cnyp (48)
     //2 = clipart (284)
     //3 = other (23)
     switch(type){
@@ -10,8 +10,8 @@ function loadImage(type){
             loadImage(i);
             break;
         case 1:
-            var i = Math.floor((Math.random()*52));
-            var filePath = "images/cnyp/image_" + i + ".jpeg";
+            var i = Math.floor((Math.random()*48));
+            var filePath = "images/cnyp/image_" + i + ".png";
             var x = document.createElement("IMG");
             x.setAttribute("src", filePath);
             x.setAttribute("alt", "Stock Image");

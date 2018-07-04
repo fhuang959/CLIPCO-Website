@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head lang="en">
-    <title>CLIPCO - CLIPCO Honor Roll</title>
+    <title>CLIPCO - Honor Roll</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,9 +28,17 @@
             color: black;
         }
 
+        @media screen and (max-width:768px){
+
+          .jumbotron{
+            height: 300px;
+          }
+
+        }
+
     </style>
 </head>
-<body id="top" onload="loadImage(0);">
+<body id="top" onload="loadImage(0);" class"bg-grey">
 
 <div id="navbar-placeholder"></div>
 <script>
@@ -47,10 +55,7 @@
 </div>
 
 <div class="container-fluid bg-grey">
-    <div>
-        <h4>The CLIPCO Board would like to thank the following donors for their support in the
-            continuing success of CLIP.</h4>
-    </div>
+    <h4>The CLIPCO Board would like to thank the following donors for their support in the continuing success of CLIP.</h4>
     <div class="row">
         <div class="col-sm-8 col-xs-12">
             <h2>K-6 Families</h2>
@@ -72,10 +77,13 @@
                               $filename = "documents/honor roll names/" . strtolower($grades[$i]) . "_platinum_names.txt";
                               $file = fopen($filename, "r");
                               if(filesize($filename) > 0){
-                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>";
+                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>\n";
                                   $empty = false;
                                   while(! feof($file)){
-                                    echo "<span class=\"family-name\">" . fgets($file). "</span><br>";
+                                    $txt = fgets($file);
+                                    if(strlen($txt) > 2){
+                                      echo "<span class=\"family-name\">" . chop($txt) . "</span><br>\n";
+                                      }
                                     }
                                   fclose($file);
                                   }
@@ -105,10 +113,13 @@
                               $filename = "documents/honor roll names/" . strtolower($grades[$i]) . "_gold_names.txt";
                               $file = fopen($filename, "r");
                               if(filesize($filename) > 0){
-                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>";
+                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>\n";
                                   $empty = false;
                                   while(! feof($file)){
-                                    echo "<span class=\"family-name\">" . fgets($file). "</span><br>";
+                                    $txt = fgets($file);
+                                    if(strlen($txt) > 2){
+                                      echo "<span class=\"family-name\">" . chop($txt) . "</span><br>\n";
+                                      }
                                     }
                                   fclose($file);
                                   }
@@ -137,10 +148,13 @@
                               $filename = "documents/honor roll names/" . strtolower($grades[$i]) . "_silver_names.txt";
                               $file = fopen($filename, "r");
                               if(filesize($filename) > 0){
-                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>";
+                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>\n";
                                   $empty = false;
                                   while(! feof($file)){
-                                    echo "<span class=\"family-name\">" . fgets($file). "</span><br>";
+                                    $txt = fgets($file);
+                                    if(strlen($txt) > 2){
+                                      echo "<span class=\"family-name\">" . chop($txt) . "</span><br>\n";
+                                      }
                                     }
                                   fclose($file);
                                   }
@@ -169,10 +183,13 @@
                               $filename = "documents/honor roll names/" . strtolower($grades[$i]) . "_bronze_names.txt";
                               $file = fopen($filename, "r");
                               if(filesize($filename) > 0){
-                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>";
+                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>\n";
                                   $empty = false;
                                   while(! feof($file)){
-                                    echo "<span class=\"family-name\">" . fgets($file). "</span><br>";
+                                    $txt = fgets($file);
+                                    if(strlen($txt) > 2){
+                                      echo "<span class=\"family-name\">" . chop($txt) . "</span><br>\n";
+                                      }
                                     }
                                   fclose($file);
                                   }
@@ -191,7 +208,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
-                                <span class="donation-level-title">Platimun</span><span class="donation-level-range">&nbsp;(Donation of $475 or more)</span>
+                                <span class="donation-level-title">Platinum</span><span class="donation-level-range">&nbsp;(Donation of $475 or more)</span>
                             </a>
                         </h4>
                     </div>
@@ -205,10 +222,13 @@
                               $filename = "documents/honor roll names/" . strtolower($grades[$i]) . "_platinum_names.txt";
                               $file = fopen($filename, "r");
                               if(filesize($filename) > 0){
-                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>";
+                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>\n";
                                   $empty = false;
                                   while(! feof($file)){
-                                    echo "<span class=\"family-name\">" . fgets($file). "</span><br>";
+                                    $txt = fgets($file);
+                                    if(strlen($txt) > 2){
+                                      echo "<span class=\"family-name\">" . chop($txt) . "</span><br>\n";
+                                      }
                                     }
                                   fclose($file);
                                   }
@@ -237,10 +257,13 @@
                               $filename = "documents/honor roll names/" . strtolower($grades[$i]) . "_gold_names.txt";
                               $file = fopen($filename, "r");
                               if(filesize($filename) > 0){
-                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>";
+                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>\n";
                                   $empty = false;
                                   while(! feof($file)){
-                                    echo "<span class=\"family-name\">" . fgets($file). "</span><br>";
+                                    $txt = fgets($file);
+                                    if(strlen($txt) > 2){
+                                      echo "<span class=\"family-name\">" . chop($txt) . "</span><br>\n";
+                                      }
                                     }
                                   fclose($file);
                                   }
@@ -269,10 +292,13 @@
                               $filename = "documents/honor roll names/" . strtolower($grades[$i]) . "_silver_names.txt";
                               $file = fopen($filename, "r");
                               if(filesize($filename) > 0){
-                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>";
+                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>\n";
                                   $empty = false;
                                   while(! feof($file)){
-                                    echo "<span class=\"family-name\">" . fgets($file). "</span><br>";
+                                    $txt = fgets($file);
+                                    if(strlen($txt) > 2){
+                                      echo "<span class=\"family-name\">" . chop($txt) . "</span><br>\n";
+                                      }
                                     }
                                   fclose($file);
                                   }
@@ -301,10 +327,13 @@
                               $filename = "documents/honor roll names/" . strtolower($grades[$i]) . "_bronze_names.txt";
                               $file = fopen($filename, "r");
                               if(filesize($filename) > 0){
-                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>";
+                                  echo "<span class=\"grade-header\">" . $grades[$i] . "</span><br>\n";
                                   $empty = false;
                                   while(! feof($file)){
-                                    echo "<span class=\"family-name\">" . fgets($file). "</span><br>";
+                                    $txt = fgets($file);
+                                    if(strlen($txt) > 2){
+                                      echo "<span class=\"family-name\">" . chop($txt) . "</span><br>\n";
+                                      }
                                     }
                                   fclose($file);
                                   }
@@ -322,6 +351,9 @@
             <!-- scripty mcscriptface will fill this in-->
             <script src="imageLoading.js" id="image-laoding-script"></script>
         </div>
+    </div>
+    <div class="row">
+      <p>View last year's honor roll <a href="honor_roll_2016-2017.html">here.</a></p>
     </div>
 </div>
 

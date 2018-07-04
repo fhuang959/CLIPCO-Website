@@ -1,0 +1,21 @@
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/publish/1132ec45.json): failed to open stream: No such file or directory in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 188
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  filesize(): stat failed for /home/cusdzern/public_html/clipart_posts/publish/1132ec45.json in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 189
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 189
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 190
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  array_unshift() expects parameter 1 to be array, null given in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 192
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/publish/1132ec45.json): failed to open stream: No such file or directory in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 193
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 194
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 195
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/publish/1132ec45.json): failed to open stream: No such file or directory in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 223
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 224
+[04-Apr-2018 21:15:44 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 225
+[04-Apr-2018 21:24:04 America/New_York] PHP Warning:  fread(): Length parameter must be greater than 0 in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 189
+[04-Apr-2018 21:24:04 America/New_York] PHP Warning:  array_unshift() expects parameter 1 to be array, null given in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 192
+[05-Apr-2018 14:37:11 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/abaafed3.json): failed to open stream: File exists in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 184
+[05-Apr-2018 14:50:41 America/New_York] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 230
+[05-Apr-2018 14:50:55 America/New_York] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 230
+[05-Apr-2018 14:51:57 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/21444533.json): failed to open stream: File exists in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 185
+[05-Apr-2018 14:53:10 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/21444533.json): failed to open stream: File exists in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 186
+[05-Apr-2018 14:55:07 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/21444533.json): failed to open stream: File exists in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 186
+[05-Apr-2018 15:09:24 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/abaafed3.json): failed to open stream: File exists in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 186
+[05-Apr-2018 15:56:10 America/New_York] PHP Warning:  fopen(/home/cusdzern/public_html/clipart_posts/abaafed3.json): failed to open stream: File exists in /home/cusdzern/public_html/developer/updateCLIPArt.php on line 186

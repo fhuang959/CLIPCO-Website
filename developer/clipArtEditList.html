@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+    <title>CLIPCO - Edit The Gallery Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://www.cusdclipco.org/css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .post-preview .image{
+            padding: 5px;
+        }
+
+        .container-fluid {
+            padding: 0px 15px;
+        }
+
+        .post-preview {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body id="myPage" class="bg-grey">
+<div id="navbar-placeholder"></div>
+<script>
+    $(function () {
+        $("#navbar-placeholder").load("http://www.cusdclipco.org/subpage_navbar.html");
+    });
+</script>
+
+<div class="jumbotron text-center bg-white">
+    <h1>Gallery Archive</h1>
+    <p>Edit Past Clip Art Galleries</p>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12" id="publish-column">
+            <h2>Public Clip Art Galleries</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-12" id="draft-column">
+            <h2>Draft Clip Art Galleries</h2>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+</footer>
+
+<script type="text/javascript">
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://www.cusdclipco.org/clipart_posts/titles.json";
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            handleResponse(response);
+        }
+    }
+
+    var titlexml = new XMLHttpRequest();
+
+    function handleResponse(response){
+        for (var i = 0; i < response.length; i++) {
+            var url = "http://www.cusdclipco.org/clipart_posts/"+response[i]+".json";
+            titlexml.open("GET",url,false);
+            titlexml.send();
+        }
+        //set background colors
+        for (var i = 1 /*skip the first one, it's the header*/ ; i < document.getElementById("publish-column").childNodes.length; i+=2) {
+            document.getElementById("publish-column").childNodes[i].setAttribute("class",document.getElementById("publish-column").childNodes[i].getAttribute("class")+" bg-grey");
+        }
+        for (var i = 1 /*skip the first one, it's the header*/ ; i < document.getElementById("draft-column").childNodes.length; i+=2) {
+            document.getElementById("draft-column").childNodes[i].setAttribute("class",document.getElementById("draft-column").childNodes[i].getAttribute("class")+" bg-grey");
+        }
+    }
+
+    titlexml.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            handlePost(response);
+        }
+    }
+
+    function handlePost(post){
+        var title = post['title'];
+        console.log(post['hash']);
+        //create the post-preview div node
+        var post_preview = document.createElement("DIV");
+        //set attributes
+        post_preview.setAttribute("class","post-preview container-fluid");
+        //create the text column node
+        var text = document.createElement("DIV");
+        //set attributes
+        text.setAttribute("class","col-sm-8 text");
+        //create link node
+        var link = document.createElement("A");
+        //set Attributes
+        link.setAttribute("href","updateCLIPArt.html?post="+post['hash']);
+        link.appendChild(document.createTextNode(title));
+        var h4 = document.createElement("H4");
+        h4.appendChild(link);
+        var message = document.createElement("P");
+        var message_content = post['message'];
+        var maxLength = 220;
+        if (message_content.length > maxLength) {
+            message_content = message_content.substring(0,maxLength+1) + "...";
+        }
+        message.appendChild(document.createTextNode(message_content));
+        //append link and message to text column node
+        text.appendChild(h4);
+        text.appendChild(message);
+
+        //create the image node
+        var image = document.createElement("IMG");
+        //set attributes
+        try{
+            image.setAttribute("src",post['rows'][0]['columns'][0]['images'][0].slice(26));
+        } catch(e){
+            image.setAttribute("src","http://www.cusdclipco.org/images/Missing image.png");
+        }
+        image.setAttribute("class","subpage_image");
+        //create the image column node
+        var image_column = document.createElement("DIV");
+        //set attributes
+        image_column.setAttribute("class","col-sm-4 image");
+        //append children
+        image_column.appendChild(image);
+        
+        //add link and image to post-preview div
+        post_preview.appendChild(text);
+        post_preview.appendChild(image_column);
+        document.getElementById(post['saveType'] + "-column").appendChild(post_preview);
+
+    }
+
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

@@ -62,11 +62,11 @@
         fwrite($file, "\nNew Response: \n");
         $timeStamp = date("Y-m-d") . " " . date("h:i:sa") . "\n";
         fwrite($file, $timeStamp);
-        $nameWrite = "Name: " . $name . " \n";
+        $nameWrite = "Name: $name\n";
         fwrite($file, $nameWrite);
-        $emailWrite = "Email: " . $email . " \n";
+        $emailWrite = "Email: $email\n";
         fwrite($file, $emailWrite);
-        $positionWrite = "Position: " . $position . " \n";
+        $positionWrite = "Position: $position\n";
         fwrite($file, $positionWrite);
         fclose($file);
         $thankyou = "Thank you for applying!";
@@ -120,12 +120,12 @@
                                 Desired Position:
                             </td>
                             <td>
-                                <select name="position">
-                                    <option value="4th grade">4th Grade Rep</option>
+                                <select name="position" <?php if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["position"])){echo "value=\"".$_GET["position"]."\"";}?>>
+                                    <option value="4th grade rep">4th Grade Rep</option>
                                     <option value="Clip art teacher">Clip Art Teacher</option>
                                     <option value="Community events">Community Events</option>
                                     <option value="CUSD and CAC outreach">CUSD and CAC Outreach</option>
-                                    <option value="Direct give c ampaign">Direct Give Campaign</option>
+                                    <option value="Direct give campaign">Direct Give Campaign</option>
                                 </select>
                                 <span class="error"><?php echo $positionErr;?></span>
                             </td>     

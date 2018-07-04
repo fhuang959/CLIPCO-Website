@@ -6,11 +6,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" type="text/css" href="https://www.cusdclipco.org/css.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="paralax.js"></script>
     <style type="text/css">
         /* some css can go here */
         .error{
@@ -26,7 +25,7 @@
 <div id="navbar-placeholder"></div>
 <script>
     $(function () {
-        $("#navbar-placeholder").load("subpage_navbar.html");
+        $("#navbar-placeholder").load("https://www.cusdclipco.org/subpage_navbar.html");
     });
 </script>
 
@@ -49,7 +48,7 @@
                     $invalid = true;
                     $board_err = "please specify a board member to contact. You can find a list of them <a href=\"contact.html\">here</a>.<br>";
                 }else{
-                    $board = test_input($_POST["board"]);
+                    $board = test_input($_POST["board"])."@cusdclipco.org";
                 }
                 
                 $user = test_input($_POST["user"]);
@@ -71,18 +70,22 @@
                     $body_err = "please enter a message to be sent<br>";
                 }else{
                     $body = test_input($_POST["body"]);
+                    $body = wordwrap($body, 70, "\r\n");
                 }
                 if(!$invalid){
                     if(empty($user)){
                         if(mail($board, $subject, $body)){
                             $sent = "Message sent successfully!<br>";
+                            $board = $user = $subject = $body = "";
                         } else{
                             $sent = "Sorry, there was an error sending your message. Try again later.<br>";
                         }
                     } else{
-                        $headers = "From: " . $user . "\r\n";
+                        $headers = 'From: ' . $user . "\r\n";
+                        $body = $headers . $body;
                         if(mail($board, $subject, $body, $headers)){
                             $sent = "Message sent successfully!<br>";
+                            $board = $user = $subject = $body = "";
                         } else{
                             $sent = "Sorry, there was an error sending your message. Try again later.<br>";
                         }
@@ -106,11 +109,12 @@
                 <table>
                     <tr>
                         <td>
-                            Board Member Email:
+                            Board Member Email:<br>
+                            (Usually the Board member&apos;s firstname@cusdclipco.org)
                         </td>
                         <td>
                             <span class="error"><?php echo $board_err;?></span>
-                            <input type="text" name="board" value="<?php if($_SERVER["REQUEST_METHOD"] == "GET"){echo htmlspecialchars($_GET["board"]);}?>">
+                            <input type="text" name="board" value="<?php if($_SERVER["REQUEST_METHOD"] == "GET"){echo htmlspecialchars($_GET["board"]);}?>"> @cusdclipco.org
                         </td>
                     </tr>
                     <tr>
@@ -118,7 +122,6 @@
                             Your Email:
                         </td>
                         <td>
-                            (Optional, but recommened so we can respond to you in the future)<br>
                             <span class="error"><?php echo $user_err;?></span>
                             <input type="text" name="user" value="<?php echo $user;?>">
                         </td>
@@ -151,43 +154,13 @@
         </div>
         <div class="col-sm-4 col-xs-12" id="stock-image">
             <!-- scripty mcscriptface will fill this in-->
-             <script src="imageLoading.js" id="image-laoding-script"></script>
+             <script src="https://www.cusdclipco.org/imageLoading.js" id="image-laoding-script"></script>
         </div>
     </div>
 </div>
 <footer class="container-fluid text-center">
     <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
 </footer>
-<script>
-    $(document).ready(function () {
-        // Add smooth scrolling to all links in navbar  footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-                // Store hash
-                var hash = this.hash;
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function () {
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-        $(window).scroll(function () {
-            $(".slideanim").each(function () {
-                var pos = $(this).offset().top;
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
-            });
-        });
-    })
-</script>
+<script src="https://www.cusdclipco.org/js.js"></script>
 </body>
 </html>

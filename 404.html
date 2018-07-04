@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>CLIPCO - Error Page Not Found</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://www.cusdclipco.org/css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        /* some css can go here */
+    </style>
+</head>
+<body id="myPage" class="bg-grey" onload="loadImage(0)">
+<div id="navbar-placeholder"></div>
+<script>
+    $(function () {
+        $("#navbar-placeholder").load("http://www.cusdclipco.org/subpage_navbar.html");
+    });
+</script>
+
+<div class="jumbotron text-center bg-white">
+    <h1>Error: 404</h1>
+    <p>Page Not Found</p>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 col-xs-12">
+            <h2>Sorry, the page you requested could not be found.</h2>
+            <h4>Make sure you typed in the url correctly. Click <a href="http://www.cusdclipco.org">here</a> to return to the homepage, or use the navigation links above to go to any other page on the site.
+            <br>
+            <br>
+            If you have any questions you can contact our web team below:</h4>
+            <a href="http://www.cusdclipco.org/email.php?board=web"><button class="btn btn-default btn-lg" id="clickMe">Contact Web Team</button></a>
+        </div>
+        <div class="col-sm-4 col-xs-12" id="stock-image">
+            <!-- scripty mcscriptface will fill this in-->
+             <script src="http://cusdclipco.org/imageLoading.js" id="image-loading-script"></script>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+</footer>
+<script src="http://www.cusdclipco.org/js.js"></script>
+</body>
+</html>

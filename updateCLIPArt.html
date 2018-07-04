@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<head>
+    <title>CLIPCO - Update CLIP art</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://cusdclipco.org/css.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        input,textarea{
+            border: 1px solid #888;
+            margin:5px 0;
+            padding:3px;
+        }
+
+        .bg-grey input, .bg-grey textarea{
+            border: 0;
+        }
+
+
+        textarea{
+            width:100%;
+            resize: vertical;
+            min-height: 2em;
+        }
+
+        input.title{
+            width:100%;
+            font-weight: bold;
+        }
+
+        .container-fluid{
+            padding: 0px;
+        }
+        .row{
+            margin: 0px;
+            padding: 5px 15px;
+        }
+
+        .imageUpload{
+            border: 3px dotted #888;
+            width: 100%;
+            /*height: 170px;*/
+            border-radius: 15px;
+            position: relative;
+        }
+
+        input.imageUploadInput{
+            border: 0;
+            visibility: hidden;
+        }
+
+        button.imageUplaodButton{
+           
+        }
+
+        .col-xs-11 .vertical-align-parent{
+            padding: 5% 0;
+        }
+
+        .col-sm-6 .vertical-align-parent{
+            padding: 25% 0;
+        }
+
+        .col-xs-11 .col-sm-6 .vertical-align-parent{
+            padding: 12.5% 0;
+        }
+
+        .vertical-align-child{  
+            padding: 0;
+        }
+
+        input, select, textarea{
+            line-height: 1em;
+        }
+    </style>
+</head>
+<body id="myPage">
+<div id="navbar-placeholder"></div>
+<script>
+    $(function () {
+        $("#navbar-placeholder").load("http://cusdclipco.org/subpage_navbar.html");
+    });
+</script>
+
+<div class="jumbotron text-center bg-white">
+    <h1>Update the Gallery</h1>
+    <p>Keep the CLIP art gallery up to date</p>
+</div>
+<form action="updateCLIPart.php" method="POST" id="form" onsubmit="setFormSubmitting();">
+    <div class="container-fluid" id="mainBody">
+        <div class="row bg-grey">
+            <div class="col-xs-12">
+                <input type="text" placeholder='Enter title' class="title" name="title" id="title-input"><br><hr>
+                <textarea onkeyup="auto_grow(this)" placeholder='Enter message' name="main-description"></textarea><br><hr>
+            </div>
+        </div>
+        <div class="row text-center" id="row0">
+            <div class="col-sm-12">
+                <div class="container-fluid">
+                    <p>
+                        <select id="row0-gradeSelect" name="row0-grade">
+                            <option value="kindergarten">Kindergarten</option>
+                            <option value="1st grade">1st Grade</option>
+                            <option value="2nd grade">2nd Grade</option>
+                            <option value="3rd grade">3rd Grade</option>
+                            <option value="4th grade">4th Grade</option>
+                            <option value="5th grade">5th Grade</option>
+                            <option value="6th grade">6th Grade</option>
+                            <option value="7th grade">7th Grade</option>
+                            <option value="8th grade">8th Grade</option>
+                        </select>&nbsp;CLIP Art teacher: 
+                        <input id="row0-teacher" type="text" placeholder="Teacher's name" size="30" name="row0-teacher">
+                    </p>
+                    <div class="row" id="row0-subrow">
+                        <div class="col-xs-11" id="row0-subrow-column0">
+                            <p><input type="text" id="row0-subrow-column0-title" name="row0-subrow-column0-title" placeholder="Title of the art" size="30"></p>
+                            <div class="imageUpload vertical-align-parent" id="row0-subrow-column0-singleImage">
+                                <div class="vertical-align-child">
+                                    <label for="row0-subrow-column0-image0" class="btn btn-default btn-lg imageUplaodButton">Select Image</label>
+                                    <button class="btn btn-default btn-lg" id="row0-subrow-column0-addSecondImage" onClick="addSecondImage(0,0)" type="button">Add a second image</button>
+                                    <input class="imageUploadInput" type="file" accept="image/*" name="row0-subrow-column0-image0" id="row0-subrow-column0-image0" onchange="readURL(this);">
+                                </div>
+                            </div>
+                            <p><textarea id="row0-subrow-column0-text" name="row0-subrow-column0-text" onkeyup="auto_grow(this)" placeholder='Enter description'></textarea></p>
+                        </div>
+                        <div class="addColumn col-xs-1" id="row0-subrow-column2">
+                            <button onClick="addColumn(0)" type="button">add column</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="addRow row text-center" id="addRow">
+            <button onClick="addRow()" id="addRowButton" type="button">add row</button>
+        </div>
+        <div class="addRow row text-center" id="addRow">
+            <button onClick="saveAsDraft();" id="saveAsDraftButton" type="button">Save As Draft</button>
+            <button onClick="saveAndPublish();" id="saveAndPublishButton" type="button">Save And Publish</button>
+        </div>
+        <input type="hidden" name="saveType" value="draft" id="saveType">
+        <input type="submit" name="Submit" value="Submit" style="visibility: hidden;" id="submitButton">
+    </div>
+</form>
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+</footer>
+
+<!-- the crazy script that will make this whole thing work hopefully-->
+
+<script type="text/javascript">
+
+    var numRows = 1;
+
+    function addRow(){
+        //get mainBody div
+        var mainBody = document.getElementById("mainBody");
+        //get index of rows
+        
+        //create row div node
+        var row_div = document.createElement("DIV");
+        //set attributes
+        if(numRows % 2){ //if index is odd
+            row_div.setAttribute("class","row text-center bg-grey");
+        } else{
+            row_div.setAttribute("class","row text-center");
+        }
+        
+        row_div.setAttribute("id","row"+numRows);
+        //create new col div node
+        var col_div = document.createElement("DIV");
+        //set attributes
+        col_div.setAttribute("class","col-sm-12");
+        //create new container-fluid div node
+        var container_fluid_div = document.createElement("DIV");
+        //set attributes
+        container_fluid_div.setAttribute("class","container-fluid");
+        //create new p node
+        var p = document.createElement("P");
+        //create new select node
+        var select = document.createElement("select");
+        //set attributes
+        select.setAttribute("id","row"+numRows+"-gradeSelect");
+        select.setAttribute("name","row"+numRows+"-grade");
+        var grades = ["Kindergarten", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade", "6th Grade", "7th Grade", "8th Grade"];
+        for(var i = 0; i < grades.length; i++){
+            //create the option node
+            var temp_option = document.createElement("OPTION");
+            //set attributes
+            temp_option.setAttribute("value",grades[i]);
+            //create new text node and add it to the option node
+            temp_option.appendChild(document.createTextNode(grades[i]));
+            //add option nodes to select node
+            select.appendChild(temp_option);
+        }
+        //add select node to p node
+        p.appendChild(select);
+        //create and add new text node to p node
+        p.appendChild(document.createTextNode(" CLIP Art teacher: "));
+        //create new teacher input node
+        var teacher_input = document.createElement("INPUT");
+        //set attributes
+        teacher_input.setAttribute("type","text");
+        teacher_input.setAttribute("placeholder","Teacher's name");
+        teacher_input.setAttribute("size","30");
+        teacher_input.setAttribute("name","row"+numRows+"-teacher");
+        teacher_input.setAttribute("id","row"+numRows+"-teacher");
+        //add teacher input node to p node
+        p.appendChild(teacher_input);
+        //add a space in between teacher input node and remove button node
+        p.appendChild(document.createTextNode("     "));
+        //create remove row button node
+        var remove_row = document.createElement("BUTTON");
+        //set attributes
+        remove_row.setAttribute("onClick","removeRow("+numRows+")");
+        remove_row.setAttribute("class","removeRowButton");
+        remove_row.setAttribute("type","button");
+        //create new text node and add to remove row button node
+        remove_row.appendChild(document.createTextNode("remove this row"));
+        //add to p node
+        p.appendChild(remove_row);
+        //create new subrow div node
+        var subrow_div = document.createElement("DIV");
+        //set attributes
+        subrow_div.setAttribute("class","row");
+        subrow_div.setAttribute("id","row"+numRows+"-subrow");
+        //add p node container-fluid div node
+        container_fluid_div.appendChild(p);
+
+        //add subrow div node to container-fluid div node
+        container_fluid_div.appendChild(subrow_div);
+        //add container-fluid div node to col div node
+        col_div.appendChild(container_fluid_div);
+        //add col div node to row div node
+        row_div.appendChild(col_div);
+        //add row div node to main body node before addRow node
+        mainBody.insertBefore(row_div,document.getElementById("addRow"));
+
+        //create add column div node and add to subrow node
+        createAddColumnNode(numRows);
+        //create new column and add to subrow node
+        createNewColumn(numRows,0);
+
+        numRows++;
+    }
+
+    function removeRow(index){
+        //remove row specified by index
+        document.getElementById("mainBody").removeChild(document.getElementById("row"+index));
+
+        //re-index the rest of the rows and update background color
+        for (var i = index+1; i < numRows; i++) {
+            var oldId = "row" + i;
+            var newId = "row" + (i-1);
+            
+            //re-index the id's
+            reindexIds(document.getElementById(oldId));
+            //use newId from here on out
+            resetMethodCalls(document.getElementById(newId));
+
+            if((i-1) % 2){ //if new index is odd
+                document.getElementById(newId).setAttribute("class","row text-center bg-grey");
+            } else{
+                document.getElementById(newId).setAttribute("class","row text-center");
+            }
+        }
+        //update numRows
+        numRows--;
+    }
+
+    function reindexIds(element){
+
+        if (element.hasAttribute("id")) {
+            rowIndexIndex = element.getAttribute("id").search(/\d/);
+            rowIndex = parseInt(element.getAttribute("id").substr(rowIndexIndex));
+            rowIndex--;
+            newId = element.getAttribute("id").replace(/\d/,rowIndex);
+            element.setAttribute("id",newId);
+        }
+        if(element.children.length > 0){ // if has the node has children nodes, change their id's too
+            for (var i = element.children.length - 1; i >= 0; i--) {
+                resetMethodCalls(element.children[i]);
+            };
+        }
+    }
+
+    function resetMethodCalls(element){
+
+        if (element.hasAttribute("onClick")) {
+            rowIndexIndex = element.getAttribute("onClick").search(/\d/);
+            rowIndex = parseInt(element.getAttribute("onClick").substr(rowIndexIndex));
+            rowIndex--;
+            newId = element.getAttribute("onClick").replace(/\d/,rowIndex);
+            element.setAttribute("onClick",newId);
+        }
+        if(element.children.length > 0){ // if has the node has children nodes, change their method calls too
+            for (var i = element.children.length - 1; i >= 0; i--) {
+                reindexIds(element.children[i]);
+            };
+        }
+    }
+
+    function createNewColumn(rowIndex,columnIndex){
+
+        //get the appropriate row
+        var subrowId = "row" + rowIndex + "-subrow";
+
+
+        //create the new column div node
+        var column = document.createElement("DIV");
+        //set attributes
+        switch(columnIndex){//set the width based on if it's a first or second column
+            case 0:
+            column.setAttribute("class","col-xs-11");
+            break;
+            case 1:
+            column.setAttribute("class","col-sm-6 col-xs-12");
+            break;
+        }
+        
+        var columnId = subrowId + "-column"+columnIndex;
+        column.setAttribute("id",columnId); 
+        
+        //create p node
+        var p = document.createElement("P");
+        //create title input node
+        var title_input = document.createElement("INPUT");
+        //set attriutes
+        title_input.setAttribute("type","text");
+        title_input.setAttribute("name",columnId+"-title");
+        title_input.setAttribute("id",columnId+"-title");
+        title_input.setAttribute("placeholder","Title of the art");
+        title_input.setAttribute("size","30");
+        //add title input node to p node
+        p.appendChild(title_input);
+        if(columnIndex == 1){//if it's a second column add the remove column button node
+            //create removeColumn button node
+            var removeColumn_button = document.createElement("BUTTON");
+            //set attributes
+            removeColumn_button.setAttribute("class","removeColumn");
+            removeColumn_button.setAttribute("onClick","removeColumn("+rowIndex+")");
+            removeColumn_button.appendChild(document.createTextNode("remove column"));
+            removeColumn_button.setAttribute("type","button");
+            //add remove column button node to p node
+            p.appendChild(removeColumn_button);
+        }
+
+        //add p node to column div
+        column.appendChild(p);
+
+        //create new image upload div node
+        image_upload_div = document.createElement("DIV");
+        //set attributes
+        image_upload_div.setAttribute("class","imageUpload vertical-align-parent");
+        image_upload_div.setAttribute("id","row"+rowIndex+"-subrow-column"+columnIndex+"-singleImage");
+        //create new vertical-align-child div node
+        var vertical_align_center_div = document.createElement("DIV");
+        //set attributes
+        vertical_align_center_div.setAttribute("class","vertical-align-child");
+        //create new image upload label node
+        var image_upload_label = document.createElement("LABEL");
+        //set attributes
+        image_upload_label.setAttribute("for","row"+rowIndex+"-subrow-column"+columnIndex+"-image0");
+        image_upload_label.setAttribute("class","btn btn-default btn-lg imageUplaodButton");
+        //create and add new text node to label node
+        image_upload_label.appendChild(document.createTextNode("Select Image"));
+        //create new add second image button node
+        var add_second_image_button = document.createElement("BUTTON");
+        //set attributes
+        add_second_image_button.setAttribute("class","btn btn-default btn-lg");
+        add_second_image_button.setAttribute("id","row"+rowIndex+"-subrow-column"+columnIndex+"-addSecondImage");
+        add_second_image_button.setAttribute("onClick","addSecondImage("+rowIndex+","+columnIndex+")");
+        add_second_image_button.setAttribute("type","button");
+        //create and add text node to add second image node
+        add_second_image_button.appendChild(document.createTextNode("Add a second image"));
+        //create new image upload input node
+        var image_upload_input = document.createElement("INPUT");
+        //set attributes
+        image_upload_input.setAttribute("class","imageUploadInput");
+        image_upload_input.setAttribute("onchange","readURL(this);");
+        image_upload_input.setAttribute("type","file");
+        image_upload_input.setAttribute("name","row"+rowIndex+"-subrow-column"+columnIndex+"-image0");
+        image_upload_input.setAttribute("id","row"+rowIndex+"-subrow-column"+columnIndex+"-image0");
+        image_upload_input.setAttribute("accept","image/*");
+        //add image upload label, reomve second image uplaod button, and image upload nodes to vertical-align-child div node
+        vertical_align_center_div.appendChild(image_upload_label);
+        vertical_align_center_div.appendChild(add_second_image_button);
+        vertical_align_center_div.appendChild(image_upload_input);
+
+        //add vertical-align-child div node to image upload div node
+        image_upload_div.appendChild(vertical_align_center_div);
+        //add image upload input to image upload div
+        //image_upload_div.appendChild(image_upload_input);
+        //add image uplaod div to column div
+        column.appendChild(image_upload_div);
+
+        //create p node
+        p = document.createElement("P");
+        //create textarea node
+        var textarea = document.createElement("TEXTAREA");
+        //set attributes
+        textarea.setAttribute("onkeyup","auto_grow(this)");
+        textarea.setAttribute("placeholder","Enter description");
+        textarea.setAttribute("name","row"+rowIndex+"-subrow-column"+columnIndex+"-text");
+        textarea.setAttribute("id","row"+rowIndex+"-subrow-column"+columnIndex+"-text");
+        //add textarea node to p node
+        p.appendChild(textarea);
+        //add p node to columns div
+        column.appendChild(p);
+
+        //get subrow div
+        var subrow = document.getElementById(subrowId);
+        //add columns div into subrow div
+        subrow.insertBefore(column,document.getElementById(subrowId+"-column2"));
+    }
+    
+    function addSecondImage(rowIndex,columnIndex){
+
+        //get appropriate column
+        var column = document.getElementById("row"+rowIndex+"-subrow-column"+columnIndex);
+        //create new container-fluid div node
+        var container_fluid_div = document.createElement("DIV");
+        //set attributes
+        container_fluid_div.setAttribute("class","container-fluid");
+        container_fluid_div.setAttribute("id","row"+rowIndex+"-subrow-column"+columnIndex+"-doubleImage")
+        //create new row div node
+        var row_div = document.createElement("DIV");
+        //set attributes
+        row_div.setAttribute("class","row");
+
+        //create new subcolumn0 div node
+        var subcolumn0_div = document.createElement("DIV");
+        //set attributes
+        subcolumn0_div.setAttribute("class","col-sm-6 col-xs-12");
+        //add current column node to subcolumn node
+        subcolumn0_div.appendChild(document.getElementById('row'+rowIndex+'-subrow-column'+columnIndex+'-singleImage'));
+        //add subcolumn- node to row node
+        row_div.appendChild(subcolumn0_div);
+
+        //create new subcolumn1 div node
+        var subcolumn1_div = document.createElement("DIV");
+        //set attributes
+        subcolumn1_div.setAttribute("class","col-sm-6 col-xs-12");
+        //create new image upload div node
+        image_upload_div = document.createElement("DIV");
+        //set attributes
+        image_upload_div.setAttribute("class","imageUpload vertical-align-parent");
+        //create new vertical-align-child div node
+        var vertical_align_center_div = document.createElement("DIV");
+        //set attributes
+        vertical_align_center_div.setAttribute("class","vertical-align-child");
+        //create new image uploadlabel node
+        image_upload_label = document.createElement("LABEL");
+        //set attributes
+        image_upload_label.setAttribute("for","row"+rowIndex+"-subrow-column"+columnIndex+"-image1");
+        image_upload_label.setAttribute("class","btn btn-default btn-lg imageUplaodButton");
+        //create and add new text node to label node
+        image_upload_label.appendChild(document.createTextNode("Select Image"));
+        //create new remove second image button node
+        var remove_second_image_button = document.createElement("BUTTON");
+        //set attributes
+        remove_second_image_button.setAttribute("class","btn btn-default btn-lg");
+        remove_second_image_button.setAttribute("id","row"+rowIndex+"-subrow-column"+columnIndex+"-removeSecondImage");
+        remove_second_image_button.setAttribute("onClick","removeSecondImage("+rowIndex+","+columnIndex+")");
+        remove_second_image_button.setAttribute("type","button");
+        //create and add text node to remove second image node
+        remove_second_image_button.appendChild(document.createTextNode("Remove image"));
+        //create new image upload input node
+        image_upload_input = document.createElement("INPUT");
+        //set attributes
+        image_upload_input.setAttribute("class","imageUploadInput");
+        image_upload_input.setAttribute("type","file");
+        image_upload_input.setAttribute("onchange","readURL(this);");
+        image_upload_input.setAttribute("name","row"+rowIndex+"-subrow-column"+columnIndex+"-image1");
+        image_upload_input.setAttribute("id","row"+rowIndex+"-subrow-column"+columnIndex+"-image1");
+        image_upload_input.setAttribute("accept","image/*");
+        //add image upload label, reomve second image uplaod button, and image upload nodes to vertical-align-child div node
+        vertical_align_center_div.appendChild(image_upload_label);
+        vertical_align_center_div.appendChild(remove_second_image_button);
+        vertical_align_center_div.appendChild(image_upload_input);
+        //add vertical-align-child div node to image upload div node
+        image_upload_div.appendChild(vertical_align_center_div);
+        //add image upload div node to subcolumn1 div node
+        subcolumn1_div.appendChild(image_upload_div);
+        //add subcolumn1 node to row node
+        row_div.appendChild(subcolumn1_div);
+
+        //add row node to container-fluid node
+        container_fluid_div.appendChild(row_div);
+        //add container-fluid node to column node before last element
+        column.insertBefore(container_fluid_div,column.childNodes[column.childElementCount-columnIndex]);
+
+        //remove add second image button
+        document.getElementById('row'+rowIndex+'-subrow-column'+columnIndex+'-addSecondImage').parentNode.removeChild(document.getElementById('row'+rowIndex+'-subrow-column'+columnIndex+'-addSecondImage'));
+
+    }
+
+    function removeSecondImage(rowIndex,columnIndex){
+        //replace singleImage div with doubleImage div
+        document.getElementById("row"+rowIndex+"-subrow-column"+columnIndex).replaceChild(document.getElementById("row"+rowIndex+"-subrow-column"+columnIndex+"-singleImage"), document.getElementById("row"+rowIndex+"-subrow-column"+columnIndex+"-doubleImage"));
+
+        //put back the add second image button
+        //create new add second image button node
+        var add_second_image_button = document.createElement("BUTTON");
+        //set attributes
+        add_second_image_button.setAttribute("class","btn btn-default btn-lg");
+        add_second_image_button.setAttribute("id","row"+rowIndex+"-subrow-column"+columnIndex+"-addSecondImage");
+        add_second_image_button.setAttribute("onClick","addSecondImage("+rowIndex+","+columnIndex+")");
+        add_second_image_button.setAttribute("type","button");
+        //create and add text node to add second image node
+        add_second_image_button.appendChild(document.createTextNode("Add a second image"));
+
+        //add add second image button to single image node
+        document.getElementById("row"+rowIndex+"-subrow-column"+columnIndex+"-singleImage").appendChild(add_second_image_button);
+
+
+
+    }
+
+    function addColumn(rowIndex){
+        
+        //create the new column
+        createNewColumn(rowIndex,1);
+
+        //get the subrow div node
+        var subrowId = "row" + rowIndex + "-subrow";
+        var subrow = document.getElementById(subrowId);
+
+        //remove addColumn div (only two columns max, can just make more rows if needed, no limit on rows.)
+        subrow.removeChild(document.getElementById(subrowId+"-column2"));
+
+        //set attributes for first column
+        document.getElementById(subrowId+"-column0").removeAttribute("class");
+        document.getElementById(subrowId+"-column0").setAttribute("class","col-sm-6 col-xs-12");
+    }
+
+    function removeColumn(index){
+
+        //remove column
+        document.getElementById("row"+index+"-subrow").removeChild(document.getElementById("row"+index+"-subrow-column1"));
+
+        //create add column div node and add to subrow node
+        createAddColumnNode(index);
+    
+        //set column0 attributes
+        document.getElementById("row"+index+"-subrow-column0").removeAttribute("class");
+        document.getElementById("row"+index+"-subrow-column0").setAttribute("class","col-xs-11");
+    }
+
+    function createAddColumnNode(index){
+        //create addColumn div node
+        var addColumn_div = document.createElement("DIV");
+        //set attributes
+        addColumn_div.setAttribute("class","addColumn col-xs-1");
+        addColumn_div.setAttribute("id","row"+index+"-subrow-column2");
+        //create addColumn button node
+        var addColumn_button = document.createElement("BUTTON");
+        //set attributes
+        addColumn_button.setAttribute("onClick","addColumn("+index+")");
+        addColumn_button.setAttribute("type","button");
+        //create addColumn text node and add to addColumn button node
+        addColumn_button.appendChild(document.createTextNode("add column"));
+        //add addColumn button to addColumn div
+        addColumn_div.appendChild(addColumn_button);
+        //add addColumn div to subrow
+        document.getElementById("row"+index+"-subrow").appendChild(addColumn_div);
+    }
+</script>
+
+<!-- submit methods -->
+<script type="text/javascript">
+    function saveAsDraft(){
+        //do some stuff
+        document.getElementById("saveType").setAttribute("value","draft");
+        document.getElementById("submitButton").click();
+
+    }
+
+    function saveAndPublish(){
+        //do some stuff
+        document.getElementById("saveType").setAttribute("value","publish");
+        document.getElementById("submitButton").click();
+    }
+
+</script>
+
+<!-- text area auto expand and image load script-->
+<script type="text/javascript">
+    
+    function readURL(element) {
+        if(element.parentNode.getAttribute('class') == 'vertical-align-child'){
+            var img_child_node = document.createElement("IMG");
+            img_child_node.setAttribute("id",element.getAttribute("id").replace("image","display"));
+            img_child_node.setAttribute("class","subpage_image");
+
+            element.parentNode.parentNode.appendChild(img_child_node);
+
+            if (element.files && element.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    e.target.result.split(";",1)[0].split(":")[1];
+                    document
+                    $('#'+img_child_node.getAttribute('id')).attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(element.files[0]);
+            }
+
+            element.parentNode.parentNode.setAttribute("class","imageUpload");
+
+            //move the buttons out of the vertical align child div
+
+            var image_upload_div = element.parentNode.parentNode;
+            
+            var child_nodes = element.parentNode.children;
+
+            for (var i = child_nodes.length-1; i >=0; i--) {
+                image_upload_div.appendChild(child_nodes[i]);
+            }
+
+            element.parentNode.removeChild(element.parentNode.children[0]);
+        } else {
+            if (element.files && element.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document
+                    $('#'+element.getAttribute('id').replace("image","display")).attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(element.files[0]);
+            }
+        }
+    }
+
+    function auto_grow(element) {
+        element.style.height = "5px";
+        element.style.height = (element.scrollHeight+5)+"px";
+    }
+
+    var formSubmitting = false;
+    var setFormSubmitting = function() { formSubmitting = true; };
+
+    window.onload = function() {
+        window.addEventListener("beforeunload", function (e) {
+            if (formSubmitting) {
+                return undefined;
+            }
+
+            var confirmationMessage = 'If you leave before saving, your changes will be lost.';
+
+            (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+            return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+        });
+    };
+</script>
+
+<!-- scroll script-->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar  footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+
+</body>
+</html>

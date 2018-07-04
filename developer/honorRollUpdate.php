@@ -42,28 +42,43 @@
             $grade = $level = $password_entered = $names = "";
             $password_incorrect = $names_empty = "";
             $names_accepted = "";
+            $fileName = "";
+            $verified = true;
+            $Phase2 = false;
+            try{
+                $Phase2 = $_POST["Phase2"];
+            } catch(Exception $e){
+                $Phase2 = false;
+            }
+            try{
+                $Phase2 = $_GET["Phase2"];
+            } catch (Exception $e){
+                $Phase2 = false;
+            }
+            
             if($_SERVER["REQUEST_METHOD"] == "POST"){
-                $grade = test_input($_POST["grade"]);
-                $level = test_input($_POST["level"]);
+                $grade = test_input($_GET["grade"]);
+                $level = test_input($_GET["level"]);
+                $names = test_input($_POST["names"]);
                 if(empty($_POST["psw"])){
                     $password_incorrect = "please enter the password";
+                    $verified = false;
                 }
                 else{
                     $password_entered = test_input($_POST["psw"]);
                 }
-                
-                if(empty($_POST["names"])){
-                    $names_empty = "Please enter the names you would like to add to the list";
-                } else{
-                    $names = test_input($_POST["names"]);
-                }
+
                 $hash = '$2y$10$4ELKJAacHM8ysAOCJQRN0eCOeMNkrsF/qrlTJqqUohD73ZqVxBrqG';
                 if(!password_verify($password_entered,$hash)){
                     $password_incorrect = "Password is incorrect";
+                    $verified = false;
                 } else{
+                    //do nothing
+                }
+                if($verified && $Phase2){
+                    $Phase2 = false;
                     $fileName = "/home/cusdzern/public_html/documents/honor roll names/" . $grade . "_" . $level . "_names.txt";
-                    $fileToWrite = fopen($fileName, "a+") or die ("Unable to open file!");
-                    $names = "\n" . $names;
+                    $fileToWrite = fopen($fileName, "w") or die ("Unable to open file!");
                     fwrite($fileToWrite,$names);
                     fclose($fileToWrite);
                     $fileToSort = fopen($fileName, "r");
@@ -81,13 +96,32 @@
                         $i++;
                     }
                     fclose($sortedFile);
+                    $message = $grade . "_" . $level . "_names.txt updated"; 
+                    mail("jasper@cusdclipco.org", "Honor Roll Updated", $message);
                     $names_accepted = "Names Accepted!";
-                    $password_incorrect = $names_empty = "";
+                    $password_incorrect = "";
                     $grade = $level = $password_entered = $names = "";
                 }
             }
-
-
+                
+            if($_SERVER["REQUEST_METHOD"] == "GET"){
+                try{
+                    $grade = test_input($_GET["grade"]);
+                    $level = test_input($_GET["level"]);
+                }
+                catch(Exception $e){
+                    //do nothing
+                }
+                if(!empty($grade) && !empty($level)){
+                    $fileName = "/home/cusdzern/public_html/documents/honor roll names/" . $grade . "_" . $level . "_names.txt";
+                    $fileToRead = fopen($fileName, "r");
+                    while(!feof($fileToRead)){
+                        $names = $names . fgets($fileToRead);
+                    }
+                    fclose($fileToRead);
+                    $Phase2 = true;
+                }
+            }
 
             function test_input($data) {
               $data = trim($data);
@@ -97,8 +131,9 @@
             }
 
             ?>
-            <h4><?php echo $names_accepted;?></h4>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+            <form id="GETform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
+                <input type="hidden" name="Phase2" value="true">
+                <h4><?php echo $names_accepted;?></h4>
                 <table>
                     <tr>
                         <td>
@@ -106,15 +141,15 @@
                         </td>
                         <td>
                             <select name="grade" required>
-                                <option value="kindergarten" <?php if ((!empty($grade)) && $grade == "kindergarten") {echo "selected";} ?> >Kindergarten</option>
-                                <option value="1st grade" <?php if ((!empty($grade)) && $grade == "1st grade") {echo "selected";} ?> >1st Grade</option>
-                                <option value="2nd grade" <?php if ((!empty($grade)) && $grade == "2nd grade") {echo "selected";} ?> >2nd Grade</option>
-                                <option value="3rd grade" <?php if ((!empty($grade)) && $grade == "3rd grade") {echo "selected";} ?> >3rd Grade</option>
-                                <option value="4th grade" <?php if ((!empty($grade)) && $grade == "4th grade") {echo "selected";} ?> >4th Grade</option>
-                                <option value="5th grade" <?php if ((!empty($grade)) && $grade == "5th grade") {echo "selected";} ?> >5th Grade</option>
-                                <option value="6th grade" <?php if ((!empty($grade)) && $grade == "6th grade") {echo "selected";} ?> >6th Grade</option>
-                                <option value="7th grade" <?php if ((!empty($grade)) && $grade == "7th grade") {echo "selected";} ?> >7th Grade</option>
-                                <option value="8th grade" <?php if ((!empty($grade)) && $grade == "8th grade") {echo "selected";} ?> >8th Grade</option>
+                                <option value="kindergarten"<?php if(!empty($grade) && $grade=="kindergarten"){echo "selected";}?> >Kindergarten</option>
+                                <option value="1st grade"<?php if(!empty($grade) && $grade=="1st grade"){echo "selected";}?> >1st Grade</option>
+                                <option value="2nd grade"<?php if(!empty($grade) && $grade=="2nd grade"){echo "selected";}?> >2nd Grade</option>
+                                <option value="3rd grade"<?php if(!empty($grade) && $grade=="3rd grade"){echo "selected";}?> >3rd Grade</option>
+                                <option value="4th grade"<?php if(!empty($grade) && $grade=="4th grade"){echo "selected";}?> >4th Grade</option>
+                                <option value="5th grade"<?php if(!empty($grade) && $grade=="5th grade"){echo "selected";}?> >5th Grade</option>
+                                <option value="6th grade"<?php if(!empty($grade) && $grade=="6th grade"){echo "selected";}?> >6th Grade</option>
+                                <option value="7th grade"<?php if(!empty($grade) && $grade=="7th grade"){echo "selected";}?> >7th Grade</option>
+                                <option value="8th grade"<?php if(!empty($grade) && $grade=="8th grade"){echo "selected";}?> >8th Grade</option>
                             </select>
                         </td>
                     </tr>
@@ -124,19 +159,33 @@
                         </td>
                         <td>
                             <select name="level" required>
-                                <option value="bronze" <?php if ((!empty($level)) && $level == "bronze") {echo "selected";} ?> >Bronze</option>
-                                <option value="silver" <?php if ((!empty($level)) && $level == "silver") {echo "selected";} ?> >Silver</option>
-                                <option value="gold" <?php if ((!empty($level)) && $level == "gold") {echo "selected";} ?> >Gold</option>
-                                <option value="platinum" <?php if ((!empty($level)) && $level == "bronze") {echo "selected";} ?> >Platinum</option>
+                                <option value="bronze" <?php if(!empty($level) && $level=="bronze"){echo "selected";}?> >Bronze</option>
+                                <option value="silver" <?php if(!empty($level) && $level=="silver"){echo "selected";}?> >Silver</option>
+                                <option value="gold"<?php if(!empty($level) && $level=="gold"){echo "selected";}?> >Gold </option>
+                                <option value="platinum" <?php if(!empty($level) && $level=="platinum"){echo "selected";}?> >Platinum</option>
                             </select>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" value="Select" form="GETform">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <form id="POSTform" <?php if(!$Phase2){echo "style=\"visibility: hidden\"";}?> action="<?php echo "?grade=" . $grade . "&level=" . $level . "&Phase2=true";?>" method="POST">
+                <input type="hidden" name="Phase2" value="true">
+                <h2>Editing names for: <?php echo $grade?>, <?php echo $level?></h2>
+                <h4>List will auto-alphabetize after submission</h4>
+                <table>
                     <tr>
                         <td valign="top">
                             Names:
                         </td>
                         <td>
-                            <textarea wrap="physical" name="names" rows="20" cols="50"><?php echo $names?></textarea>
+                            <textarea wrap="physical" name="names" rows="20" cols="50">
+                                <?php echo $names;?>
+                            </textarea>
                         </td>
                     </tr>
                     <tr>
@@ -144,7 +193,7 @@
                           password:  
                         </td>
                         <td>
-                            <span class="error"><?php echo $password_incorrect; ?></span>
+                            <span class="error"><?php echo $password_incorrect;?></span>
                             <input type="password" name="psw">
                         </td>
                     </tr>
@@ -152,8 +201,8 @@
                         <td>
                             <!-- blank -->
                         </td>
-                        <td>
-                             <input type="submit" name="Submit">
+                        <td style="text-align: center;">
+                             <input type="submit" value="Submit" form="POSTform">
                         </td>
                     </tr>
                 </table>
@@ -170,7 +219,7 @@
 <script>
     $(document).ready(function () {
         // Add smooth scrolling to all links in navbar  footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+        $(".navbar a, footer a[href='#myPage").on('click', function (event) {
             // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
                 // Prevent default anchor click behavior
