@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CLIPCO - subpage title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            /* some css can go here */
+        </style>
+    </head>
+    <body id="top" class="bg-grey" onload="loadImage(0)">
+        <div id="navbar-placeholder"></div>
+        <script>
+            $(function () {
+                $("#navbar-placeholder").load("subpage_navbar.html");
+            });
+        </script>
+
+        <div class="jumbotron text-center bg-white">
+            <h1>Free Money Generator</h1>
+            <p>The Route to a Life of Luxury</p>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                    <h2>Want an easy life as a billionaire?</h2>
+                    <h4>Every person on the planet wants to live the high life- a celebrity in Hollywood, the respected CEO of a company, or even a wealthy social recluse living in the most expensive property in the world. </h4>
+
+                    <p class="indent">You don't have to work hard for your money- why work when others can take care of that for you? You've worked hard enough, and it's time for you to do what you're supposed to do best- relax. </p>
+
+                    <p class="indent">With this free money generator, you'll be able to join the upper class of society, and the aristocracy of the world. With your new connections, you can not only live your dream life, you'll be able to ensure a better life for your family, friends, and loved ones. </p>
+
+                    <h3>Open up the possiblities to your future!</h3>
+
+                    <br>
+                    <button class="btn btn-default btn-lg" id="clickMe" onclick="doFunction();">Join Now!</button>
+                </div>
+                <div class="col-sm-4 col-xs-12" id="stock-image">
+                    <!-- scripty mcscriptface will fill this in-->
+                    <script src="imageLoading.js" id="image-laoding-script"></script>
+                </div>
+            </div>
+        </div>
+        <footer class="container-fluid text-center">
+            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        </footer>
+        <script src="js.js"></script>
+    </body>
+</html>
