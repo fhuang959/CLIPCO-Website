@@ -19,48 +19,89 @@
                 border: 1px solid black;
                 border-radius: 10px;
                 padding: 20px;
-                margin: auto;
+                margin: 2px;
                 overflow: hidden;
             }
-            
+
             .icon {
                 font-size: 37px;
                 color: #555;
             }
-            
+
             .icon-div p{
                 color: black;
             }
-            
+
             footer{
                 position: fixed;
                 bottom: 50px;
                 right: 50px;
                 transition: background-color 0.25s ease;
             }
-            
+
             footer.container-fluid {
                 margin:2px;
                 padding: 20px 5px 5px 5px;
             }
-            
+
             footer:hover{
                 background-color: rgba(255,255,255,0.75);
                 border-radius: 12px;
             }
-            
+
             #to-top{
                 opacity: 0;
                 transition: opacity 0.25s ease;
             } 
-            
+
             #to-top.show {
                 opacity: 1;
             }
-            
+
+            #categories a{
+                border-radius: 6px;
+                border: 1px solid black;
+                padding: 4px 8px;
+                margin: 1px 1px;
+                display: inline-block;
+            }
+
+            #categories a:hover{
+                color: black;
+                background-color: lightblue;
+                text-decoration: none;
+            }
+
+            #categories {
+                display: table;
+            }
+
+            #categories-list{
+                padding: 1px;
+                list-style: none;
+            } 
+
+            #categories-list li{
+                display: inline-block;
+            } 
+
+            .red {
+                color: red;
+            }
+
+            .big {
+                font-size: 75px;
+            }
+
+            pre {
+                white-space: pre-wrap;
+                text-align: left;
+            }
+
+
         </style>
     </head>
-    <body id="top" class="bg-grey" onload="loadImage(0)">
+    <body id="top" class="bg-grey">
         <div id="navbar-placeholder"></div>
         <script>
             $(function () {
@@ -77,8 +118,65 @@
             <div class="row">
                 <div class="col-sm-12 col-xs-12">
                     <h4>The CLIPCO Icon Catalogue</h4>
-                    <p class="indent">To use these Icons on other pages of the site, include the name of the icon and &quot;icon&quot; in the class of a span tag, and the css should handle the rest. Icons are treated as text so any text color, size, style, etc. adjustments will also affect the icons.</p>
+                    <p class="indent">To use these Icons on other pages of the site, include the name and category of the icon and &quot;icon&quot; in the class of a span tag, and the css should handle the rest. Icons are treated as text so any text color, size, etc. adjustments will also affect the icons.</p>
+                    <div id="programs-button">
+                        <button class="btn btn-default btn-lg" data-target="#tutorial" data-toggle="collapse" type="button">Tutorial</button>
+                    </div>
+                    <div class="collapse container-fluid" id="tutorial">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <p>Example:</p>
+                                HTML: <br>
+                                <pre>
+&lt;span class=&quot;icon education-portal cs-icon-education-portal-3&quot;&gt;&lt;/span&gt;
+                                </pre>
+
+                                result:<br>
+                                <span class="icon education-portal cs-icon-education-portal-3"></span>
+
+
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <p>Example:</p>
+                                HTML: <br>
+                                <pre>
+&lt;span class=&quot;icon education-portal cs-icon-education-portal-3 big <span class="red">red</span>&quot;&gt;&lt;/span&gt;
+                                </pre>
+
+                                CSS:<br>
+                                <pre>
+.red {
+    color: red;
+}
+.big {
+    font-size: 75px;
+}
+                                </pre>
+
+                                result:<br>
+                                <span class="icon education-portal cs-icon-education-portal-3 big red "> </span>
+                            </div>
+                        </div>
+                    </div>
                     <hr>
+                    <h4>Categories:</h4>
+                    <div id="categories">
+                        <ul id="categories-list">
+                            <li><a id="athletics-link" href="#athletics" class="slide-link">Athletics</a></li>
+                            <li><a id="audio-visual-link" href="#audio-visual" class="slide-link">Audio Visual</a></li>
+                            <li><a id="classroom-link" href="#classroom" class="slide-link">Classroom</a></li>
+                            <li><a id="communication-link" href="#communication" class="slide-link">Communication</a></li>
+                            <li><a id="education-portal-link" href="#education-portal" class="slide-link">Education Portal</a></li>
+                            <li><a id="environment-link" href="#environment" class="slide-link">Environment</a></li>
+                            <li><a id="information-technology-link" href="#information-technology" class="slide-link">Information Technology</a></li>
+                            <li><a id="people-link" href="#people" class="slide-link">People</a></li>
+                            <li><a id="site-utility-link" href="#site-utility" class="slide-link">Site Utility</a></li>
+                            <li><a id="social-media-link" href="#social-media" class="slide-link">Social Media</a></li>
+                            <li><a id="student-program-link" href="#student-program" class="slide-link">Student Program</a></li>
+                        </ul>
+                    </div>
+                    <hr id="athletics">
+                    <br>
                     <h2>Athletics</h2>
                     <div class="icon-div text-center">
                         <span class="icon athletics cs-icon-athletics-1"></span>
@@ -116,6 +214,8 @@
                         <span class="icon athletics cs-icon-athletics-9"></span>
                         <p>cs-icon-athletics-9</p>
                     </div>
+                    <hr id="audio-visual">
+                    <br>
                     <h2>Audio Visual</h2>
                     <div class="icon-div text-center">
                         <span class="icon audio-visual cs-icon-audio-visual-1"></span>
@@ -165,6 +265,8 @@
                         <span class="icon audio-visual cs-icon-audio-visual-12"></span>
                         <p>cs-icon-audio-visual-12</p>
                     </div>
+                    <hr id="classroom">
+                    <br>
                     <h2>Classroom</h2>
                     <div class="icon-div text-center">
                         <span class="icon classroom cs-icon-classroom-1"></span>
@@ -234,6 +336,8 @@
                         <span class="icon classroom cs-icon-classroom-17"></span>
                         <p>cs-icon-classroom-17</p>
                     </div>
+                    <hr id="communication">
+                    <br>
                     <h2>Communication</h2>
                     <div class="icon-div text-center">
                         <span class="icon communication cs-icon-communication-1"></span>
@@ -323,6 +427,8 @@
                         <span class="icon communication cs-icon-communication-22"></span>
                         <p>cs-icon-communication-22</p>
                     </div>
+                    <hr id="education-portal">
+                    <br>
                     <h2>Education Portal</h2>
                     <div class="icon-div text-center">
                         <span class="icon education-portal cs-icon-education-portal-1"></span>
@@ -356,6 +462,8 @@
                         <span class="icon education-portal cs-icon-education-portal-8"></span>
                         <p>cs-icon-education-portal-8</p>
                     </div>
+                    <hr id="environment">
+                    <br>
                     <h2>Environment</h2>
                     <div class="icon-div text-center">
                         <span class="icon environment cs-icon-environment-1"></span>
@@ -409,6 +517,8 @@
                         <span class="icon environment cs-icon-environment-13"></span>
                         <p>cs-icon-environment-13</p>
                     </div>
+                    <hr id="information-technology">
+                    <br>
                     <h2>Information Technology</h2>
                     <div class="icon-div text-center">
                         <span class="icon information-technology cs-icon-information-technology-1"></span>
@@ -462,6 +572,8 @@
                         <span class="icon information-technology cs-icon-information-technology-13"></span>
                         <p>cs-icon-information-technology-13</p>
                     </div>
+                    <hr id="people">
+                    <br>
                     <h2>People</h2>
                     <div class="icon-div text-center">
                         <span class="icon people cs-icon-people-1"></span>
@@ -515,6 +627,8 @@
                         <span class="icon people cs-icon-people-13"></span>
                         <p>cs-icon-people-13</p>
                     </div>
+                    <hr id="site-utility">
+                    <br>
                     <h2>Site Utility</h2>
                     <div class="icon-div text-center">
                         <span class="icon site-utility cs-icon-site-utility-1"></span>
@@ -572,6 +686,8 @@
                         <span class="icon site-utility cs-icon-site-utility-14"></span>
                         <p>cs-icon-site-utility-14</p>
                     </div>
+                    <hr id="social-media">
+                    <br>
                     <h2>Social Media</h2>
                     <div class="icon-div text-center">
                         <span class="icon social-media cs-icon-social-media-1"></span>
@@ -733,6 +849,8 @@
                         <span class="icon social-media cs-icon-social-media-40"></span>
                         <p>cs-icon-social-media-40</p>
                     </div>
+                    <hr id="student-program">
+                    <br>
                     <h2>Student Program</h2>
                     <div class="icon-div text-center">
                         <span class="icon student-program cs-icon-student-program-1"></span>
@@ -1528,10 +1646,12 @@
                 </div>
             </div>
         </div>
-        <footer class="container-fluid text-center" onmouseover="document.getElementById('to-top').classList.add('show');" onmouseout="document.getElementById('to-top').classList.remove('show');">
-            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-            <p id="to-top">To Top</p>
-        </footer>
+        <a  href="#top" title="To Top">
+            <footer id="footer" class="container-fluid text-center" onmouseover="document.getElementById('to-top').classList.add('show');" onmouseout="document.getElementById('to-top').classList.remove('show');">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                <p id="to-top">To Top</p>
+            </footer>
+        </a>
         <script src="js.js"></script>
     </body>
 </html>
