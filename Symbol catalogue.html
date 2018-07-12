@@ -59,13 +59,11 @@
             }
 
             #categories a{
-                border-radius: 1px;
+                border-radius: 6px;
+                border: 1px solid black;
                 padding: 4px 8px;
                 margin: 1px 1px;
                 display: inline-block;
-                background-color: #686868;
-                color: white;
- 
             }
 
             #categories a:hover{
@@ -90,9 +88,14 @@
             .red {
                 color: red;
             }
-            
+
+            .big {
+                font-size: 75px;
+            }
+
             pre {
                 white-space: pre-wrap;
+                text-align: left;
             }
 
 
@@ -116,7 +119,10 @@
                 <div class="col-sm-12 col-xs-12">
                     <h4>The CLIPCO Icon Catalogue</h4>
                     <p class="indent">To use these Icons on other pages of the site, include the name and category of the icon and &quot;icon&quot; in the class of a span tag, and the css should handle the rest. Icons are treated as text so any text color, size, etc. adjustments will also affect the icons.</p>
-                    <div class="container-fluid">
+                    <div id="programs-button">
+                        <button class="btn btn-default btn-lg" data-target="#tutorial" data-toggle="collapse" type="button">Tutorial</button>
+                    </div>
+                    <div class="collapse container-fluid" id="tutorial">
                         <div class="row">
                             <div class="col-sm-6 col-xs-12">
                                 <p>Example:</p>
@@ -134,7 +140,7 @@
                                 <p>Example:</p>
                                 HTML: <br>
                                 <pre>
-&lt;span class=&quot;icon education-portal cs-icon-education-portal-3 <span class="red">red</span>&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;icon education-portal cs-icon-education-portal-3 big <span class="red">red</span>&quot;&gt;&lt;/span&gt;
                                 </pre>
 
                                 CSS:<br>
@@ -142,13 +148,17 @@
 .red {
     color: red;
 }
+.big {
+    font-size: 75px;
+}
                                 </pre>
 
                                 result:<br>
-                                <span class="icon education-portal cs-icon-education-portal-3  red "> </span>
+                                <span class="icon education-portal cs-icon-education-portal-3 big red "> </span>
                             </div>
                         </div>
                     </div>
+                    <hr>
                     <h4>Categories:</h4>
                     <div id="categories">
                         <ul id="categories-list">
@@ -165,7 +175,6 @@
                             <li><a id="student-program-link" href="#student-program" class="slide-link">Student Program</a></li>
                         </ul>
                     </div>
-                    <hr>
                     <hr id="athletics">
                     <br>
                     <h2>Athletics</h2>
@@ -1637,10 +1646,12 @@
                 </div>
             </div>
         </div>
-        <footer class="container-fluid text-center" onmouseover="document.getElementById('to-top').classList.add('show');" onmouseout="document.getElementById('to-top').classList.remove('show');">
-            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-            <p id="to-top">To Top</p>
-        </footer>
+        <a  href="#top" title="To Top">
+            <footer id="footer" class="container-fluid text-center" onmouseover="document.getElementById('to-top').classList.add('show');" onmouseout="document.getElementById('to-top').classList.remove('show');">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                <p id="to-top">To Top</p>
+            </footer>
+        </a>
         <script src="js.js"></script>
     </body>
 </html>

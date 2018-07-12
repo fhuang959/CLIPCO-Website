@@ -1,161 +1,162 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>CLIPCO - Contact</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
-		<link href="css.css" rel="stylesheet" type="text/css" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="paralax.js"></script>
-		<style type="text/css">table, th, td {
-	            border: 1px solid rgb(150, 150, 150);
-	            border-collapse: collapse;
-	            padding: 7px;
-	        }
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>CLIPCO - Contact</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+        <link href="css.css" rel="stylesheet" type="text/css" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="paralax.js"></script>
+        <style type="text/css">table, th, td {
+            border: 1px solid rgb(150, 150, 150);
+            border-collapse: collapse;
+            padding: 7px;
+            }
 
-	        #volunteer-iframe {
-	            width: 100%;
-	            height: 2250px;
-	            overflow: visible;
-	            display: block;
-	        }
-            
+            #volunteer-iframe {
+                width: 100%;
+                height: 2250px;
+                overflow: visible;
+                display: block;
+            }
+
             #contacts{
                 overflow-x: auto;
             }
-		</style>
-	</head>
-<body class="bg-grey" id="myPage">
-	<div id="fb-root"></div>
-	<script>
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+        </style>
+    </head>
+    <body class="bg-grey" id="myPage">
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
-	<div id="navbar-placeholder"></div>
-	<script>
-        $(function () {
-            $("#navbar-placeholder").load("subpage_navbar.html");
-        });
-    </script>
-    <script type="text/javascript">
-    	$(function() {
-    		$("#board-directors").load("board_directors.html");
-    	});
-    </script>
-    <script type="text/javascript">
-    	$(function() {
-    		$("#program-directors").load("program_directors.html");
-    	});
-    </script>
+        <div id="navbar-placeholder"></div>
+        <script>
+            $(function () {
+                $("#navbar-placeholder").load("subpage_navbar.html");
+            });
+        </script>
+        <script type="text/javascript">
+            $(function() {
+                $("#board-directors").load("board_directors.html");
+            });
+        </script>
+        <script type="text/javascript">
+            $(function() {
+                $("#program-directors").load("program_directors.html");
+            });
+        </script>
 
-	<div class="jumbotron text-center bg-white">
-		<h1>Contact Us</h1>
-		<p>Apply for Volunteer Opportunities</p>
-	</div>
+        <div class="jumbotron text-center bg-white">
+            <h1>Contact Us</h1>
+            <p>Apply for Volunteer Opportunities</p>
+        </div>
 
-	<div class="container-fluid bg-grey">
-		<div class="row">
-			<div class="col-sm-8 col-xs-12">
-				<div class="container-fluid">
-					<div id="volunteer-row" class="row">
-						<div class="col-xs-12">
-							<h2>Volunteer</h2>
-							<h4>We are always looking for new volunteers to join our team. No matter what your strengths are, you&#39;ll be an important addition to our extraordinary team. In addition, your employer may have a volunteer reimbursement program. Please fill the form below to volunteer for some of our exciting events and committees.</h4>
-							<button class="btn btn-default btn-lg" data-target="#demo" data-toggle="collapse" id="form-button" type="button">Volunteer Form</button>
-							<div class="collapse" id="demo"><br />
-								<iframe frameborder="0" id="volunteer-iframe" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true">Loading...</iframe>
-							</div>
-						</div>
-					</div>
-					<div id="contacts-row" class="row">
-						<div class="col-xs-12">
-							<h2>Contacts</h2>
-							<p>For general inquiries, you may contact us at <a href="/email.php?board=clipco">clipco@cusdclipco.org</a>.  For donation-related questions, please contact <a href="/email.php?board=donate">donate@cusdclipco.org.</a></p>
-							<div><button class="btn btn-default btn-lg" data-target="#contacts" data-toggle="collapse" id="board-button" type="button">Board of Directors</button></div>
-							<div class="collapse" id="contacts">
-								<p>There are still open positions available. Please contact us to join our team!</p>
-								<div id="board-directors"></div>
-							</div>
-							<br>
-							<div id="programs-button"><button class="btn btn-default btn-lg" data-target="#morecontacts" data-toggle="collapse" type="button">Program Directors</button></div>
-							<div class="collapse" id="morecontacts">
-								<p>There are still open positions available. Please contact us to join our team!</p>
-								<div id="program-directors"></div>
-							</div>
-							<br>
-							<div><button class="btn btn-default btn-lg" data-target="#schools" data-toggle="collapse" type="button">CLIPCO Schools and Facebook Page</button></div>
-							<div class="collapse" id="schools">
-								<a href="http://www.cusdk8.org/meyerholz">Meyerholz Elementary School</a><br>
-								<a href="https://www.cusdk8.org/miller">Miller Middle School</a><br>
-								<a href="https://www.facebook.com/cusdclipco/">CLIPCO Facebook Page</a>
-							</div>
-							<br>
-							<iframe allowtransparency="true" frameborder="0" height="46" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcusdclipco%2F&amp;width=112&amp;layout=button_count&amp;action=like&amp;size=small&amp;show_faces=true&amp;share=true&amp;height=46&amp;appId" style="border:none;overflow:hidden" width="112"></iframe>
-						</div>
-					</div>
-				</div>
-				
-			</div>
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                    <div class="container-fluid">
+                        <div id="volunteer-row" class="row">
+                            <div class="col-xs-12">
+                                <h2>Volunteer</h2>
+                                <h4>We are always looking for new volunteers to join our team. No matter what your strengths are, you&#39;ll be an important addition to our extraordinary team. In addition, your employer may have a volunteer reimbursement program. Please fill the form below to volunteer for some of our exciting events and committees.</h4>
+                                <button class="btn btn-default btn-lg" data-target="#demo" data-toggle="collapse" id="form-button" type="button">Volunteer Form</button>
+                                <div class="collapse" id="demo"><br />
+                                    <iframe frameborder="0" id="volunteer-iframe" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLScnpeDmRnZ1zd-x-CVKrj4VW8oxGuPvEZYqVcAcOodKuMJBow/viewform?embedded=true">Loading...</iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="contacts-row" class="row">
+                            <div class="col-xs-12">
+                                <h2>Contacts</h2>
+                                <p>For general inquiries, you may contact us at <a href="/email.php?board=clipco">clipco@cusdclipco.org</a>.  For donation-related questions, please contact <a href="/email.php?board=donate">donate@cusdclipco.org.</a></p>
+                                <div><button class="btn btn-default btn-lg" data-target="#contacts" data-toggle="collapse" id="board-button" type="button">Board of Directors</button></div>
+                                <div class="collapse" id="contacts">
+                                    <p>There are still open positions available. Please contact us to join our team!</p>
+                                    <div id="board-directors"></div>
+                                </div>
+                                <br>
+                                <div id="programs-button">
+                                    <button class="btn btn-default btn-lg" data-target="#morecontacts" data-toggle="collapse" type="button">Program Directors</button>
+                                </div>
+                                <div class="collapse" id="morecontacts">
+                                    <p>There are still open positions available. Please contact us to join our team!</p>
+                                    <div id="program-directors"></div>
+                                </div>
+                                <br>
+                                <div><button class="btn btn-default btn-lg" data-target="#schools" data-toggle="collapse" type="button">CLIPCO Schools and Facebook Page</button></div>
+                                <div class="collapse" id="schools">
+                                    <a href="http://www.cusdk8.org/meyerholz">Meyerholz Elementary School</a><br>
+                                    <a href="https://www.cusdk8.org/miller">Miller Middle School</a><br>
+                                    <a href="https://www.facebook.com/cusdclipco/">CLIPCO Facebook Page</a>
+                                </div>
+                                <br>
+                                <iframe allowtransparency="true" frameborder="0" height="46" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcusdclipco%2F&amp;width=112&amp;layout=button_count&amp;action=like&amp;size=small&amp;show_faces=true&amp;share=true&amp;height=46&amp;appId" style="border:none;overflow:hidden" width="112"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-			<div class="col-sm-4 col-xs-12">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-xs-12">
-							<p><img alt="image.png" class="subpage_image" id="faq-image" src="images/volunteers_needed.jpg"></p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12">
-							<h4>
-								CLIPCO Mailing Address:<br>
-								P.O. Box 1344 <br>
-								Cupertino, CA 95015
-							</h4>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<!--scroll script-->
-	<script>
-      $(document).ready(function() {
-          // Add smooth scrolling to all links in navbar  footer link
-          $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-              // Make sure this.hash has a value before overriding default behavior
-              if (this.hash !== "") {
-                  // Prevent default anchor click behavior
-                  event.preventDefault();
-                  // Store hash
-                  var hash = this.hash;
-                  // Using jQuery's animate() method to add smooth page scroll
-                  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                  $('html, body').animate({
-                      scrollTop: $(hash).offset().top - 60
-                  }, 900, function() {
-                      // Add hash (#) to URL when done scrolling (default click behavior)
-                      window.location.hash = hash;
-                  });
-              } // End if
-          });
-          $(window).scroll(function() {
-              $(".slideanim").each(function() {
-                  var pos = $(this).offset().top;
-                  var winTop = $(window).scrollTop();
-                  if (pos < winTop + 600) {
-                      $(this).addClass("slide");
-                  }
-              });
-          });
-      })
-  	</script>
-</body>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p><img alt="image.png" class="subpage_image" id="faq-image" src="images/volunteers_needed.jpg"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>
+                                    CLIPCO Mailing Address:<br>
+                                    P.O. Box 1344 <br>
+                                    Cupertino, CA 95015
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--scroll script-->
+        <script>
+            $(document).ready(function() {
+                // Add smooth scrolling to all links in navbar  footer link
+                $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+                        // Store hash
+                        var hash = this.hash;
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top - 60
+                        }, 900, function() {
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+                $(window).scroll(function() {
+                    $(".slideanim").each(function() {
+                        var pos = $(this).offset().top;
+                        var winTop = $(window).scrollTop();
+                        if (pos < winTop + 600) {
+                            $(this).addClass("slide");
+                        }
+                    });
+                });
+            })
+        </script>
+    </body>
 </html>
