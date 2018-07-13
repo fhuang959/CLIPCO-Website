@@ -492,7 +492,7 @@
                             <h1>Hall Of Fame</h1>
                         </div>
                         <div class="panel-body">
-                            <h3><a href="honor_roll.html">Honor Roll 2017-2018</a></h3>
+                            <h3><a href="honor_roll_2017-2018.html">Honor Roll 2017-2018</a></h3>
                             <p>Thank you to all our donors</p>
                         </div>
                     </div>
@@ -557,31 +557,7 @@
             function sizeAlert(){
                 console.log("size alert");
                 if($(window).width() <= 375 && !size_alert_dismiss){
-                    /*if(!document.getElementById("screen-size-alert")){
-                        var div = document.createElement("DIV");
-                        div.setAttribute("id","screen-size-alert");
-                        var h2 = document.createElement("H2");
-                        h2.appendChild(document.createTextNode("Your Screen is too narrow."));
-                        div.appendChild(h2);
-                        var p = document.createElement("p");
-                        p.appendChild(document.createTextNode("Our website may look better if you turn your device on its side."));
-                        div.appendChild(p);
-                        var button = document.createElement("BUTTON");
-                        button.setAttribute("class","btn btn-default btn-lg");
-                        button.setAttribute("role","button");
-                        button.setAttribute("onclick","size_alert_dismiss_func();");
-                        button.appendChild(document.createTextNode("Dismiss"));
-                        div.appendChild(button);
-
-                        document.getElementById("top").insertBefore(div,document.getElementById("news"));
-                    }*/
-
-                    /* <div id="screen-size-warning">
-                        <h2>Your Screen is too narrow.</h2>
-                        <p>Our website may look better if you turn your device on its side.</p>
-                        <button class="btn btn-default btn-lg" role="button" onclick="size_alert_dismiss();>Dismiss</button>
-            </div>*/
-
+                    //do nothing
                 } else {
                     if(document.getElementById("screen-size-alert")){
                         document.getElementById("screen-size-alert").parentNode.removeChild(document.getElementById("screen-size-alert"));
