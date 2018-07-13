@@ -2859,7 +2859,7 @@ footer{
     text-indent: 2em;
 }
 
-input[type=text], input[type=tel], input[type=email], input[type=date], select {
+input[type=text], input[type=tel], input[type=email], input[type=date], input[type=password], select {
     width: 100%;
     padding: 8px 20px;
     margin: 4px 0;
