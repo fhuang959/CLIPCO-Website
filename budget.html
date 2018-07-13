@@ -1,209 +1,136 @@
 <!DOCTYPE html>
 <head>
-    <title>CLIPCO - Budget</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="paralax.js"></script>
-    <style type="text/css">
-        #pie-svg {
-            width: 50%;
-        }
+<html lang="en">
+    <head>
+        <title>CLIPCO - Budget</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="paralax.js"></script>
+        <style type="text/css">
+            #pie-svg {
+                width: 50%;
+            }
 
-        .pie-slice {
-            stroke: none;
-            stroke-width: 5px;
-            z-index: 1;
-        }
+            .pie-slice {
+                stroke: none;
+                stroke-width: 5px;
+                z-index: 1;
+            }
 
-        .pie-slice:hover {
-            /*stroke: rgba(0,0,0,0.5);*/
-        }
+            .pie-slice:hover {
+                /*stroke: rgba(0,0,0,0.5);*/
+            }
 
-        .pie-border {
-            fill-opacity: 1;
-        }
+            .pie-border {
+                fill-opacity: 1;
+            }
 
-        .pie-outline {
-            -webkit-transition: 0.25s;
-            -moz-transition: 0.25s;
-            -ms-transition: 0.25s;
-            -o-transition: 0.25s;
-            transition: 0.25s;
-            fill-opacity: 0 !important;
-        }
+            .pie-outline {
+                -webkit-transition: 0.25s;
+                -moz-transition: 0.25s;
+                -ms-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                fill-opacity: 0 !important;
+            }
 
-        .pie-outline.show  {
-            -webkit-transition: 0.25s;
-            -moz-transition: 0.25s;
-            -ms-transition: 0.25s;
-            -o-transition: 0.25s;
-            transition: 0.25s;
-            fill-opacity: 0.5 !important;
-        }
+            .pie-outline.show  {
+                -webkit-transition: 0.25s;
+                -moz-transition: 0.25s;
+                -ms-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                fill-opacity: 0.5 !important;
+            }
 
-        .pie-info-box rect {
-            fill: white;
-            fill-opacity: 0.75;
-            stroke: black;
-            stroke-width: 5px;
-            stroke-opacity: 1;
-        }
+            .pie-info-box rect {
+                fill: white;
+                fill-opacity: 0.75;
+                stroke: black;
+                stroke-width: 5px;
+                stroke-opacity: 1;
+            }
 
-        .pie-info-box .title {
-            fill: black;
-            transform: scale(3, 3);
-        }
+            .pie-info-box .title {
+                fill: black;
+                transform: scale(3, 3);
+            }
 
-        .pie-info-box .body {
-            fill: black;
-            transform: scale(2, 2);
-        }
+            .pie-info-box .body {
+                fill: black;
+                transform: scale(2, 2);
+            }
 
-        .pie-info-box {
-            -webkit-transition: 0.25s;
-            -moz-transition: 0.25s;
-            -ms-transition: 0.25s;
-            -o-transition: 0.25s;
-            transition: 0.25s;
-            opacity: 0 !important;
-        }
+            .pie-info-box {
+                -webkit-transition: 0.25s;
+                -moz-transition: 0.25s;
+                -ms-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                opacity: 0 !important;
+            }
 
-        .pie-info-box.show {
-            -webkit-transition: all 0.25s;
-            -moz-transition: all 0.25s;
-            -ms-transition: all 0.25s;
-            -o-transition: all 0.25s;
-            transition: all 0.25s;
-            opacity: 1 !important;
-        }
+            .pie-info-box.show {
+                -webkit-transition: all 0.25s;
+                -moz-transition: all 0.25s;
+                -ms-transition: all 0.25s;
+                -o-transition: all 0.25s;
+                transition: all 0.25s;
+                opacity: 1 !important;
+            }
 
-        .pie-label {
-            visibility: visible;
-            fill: black;
-        }
-    </style>
-</head>
-<body id="top">
-    <div id="navbar-placeholder"></div>
-    <script>
-        $(function () {
-            $("#navbar-placeholder").load("subpage_navbar.html");
-        });
-    </script>
-    <div class="bg"></div>
+            .pie-label {
+                visibility: visible;
+                fill: black;
+            }
 
-    <div class="jumbotron text-center">
-        <h1>Budget</h1>
-        <p>Information of CLIPCO's budget and spending</p>
-    </div>
+            circle {
+                fill: none;
+                stroke-dasharray: 0 158;
+                stroke-width: 50;
+                transition: stroke-dasharray .3s ease;
+            }
 
-    <div class="container-fluid bg-grey">
-        <div class="row">
-            <div class="col-sm-8">
-                <h2>The Budget</h2>
-                <h4>An overview of the 2017-2018 budget.</h4>
-                <p>The <span id="clip">CLIP</span> Advisory Committee (CAC) was set up by the district to help make
-                    curriculum decisions with parent and teacher involvement. CAC and CLIPCO work hand in hand each year.
-                    The CAC board is composed of teachers, parents, principals, and the director of our program. They
-                    present funding needs to CLIPCO, which in turn raises the money to cover those needs.</p>
-                <h4><span id="device-interface">Mouse over</span> the Pie chart below for more information about each section:</h4>
-            </div>
+            svg {
+                margin: 0 auto;
+                transform: rotate(-90deg);
+                background: none;
+                display: block;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }  
+        </style>
+    </head>
+    <body id="top">
+        <div id="navbar-placeholder"></div>
+        <script>
+            $(function () {
+                $("#navbar-placeholder").load("subpage_navbar.html");
+            });
+        </script>
+        <div class="bg"></div>
+
+        <div class="jumbotron text-center">
+            <h1>Budget</h1>
+            <p>Information of CLIPCO's budget and spending</p>
         </div>
-        <div class="row text-center pie-chart">
-            <svg id="pie-svg" version="1.1" viewBox="0.0 0.0 1280.0 1280.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g clip-path="url(#p.0)">
-                    <!--personnel slice-->
-                    <path id="personnel-outline" class="pie-outline" fill="#4a86e8"
-                          d="m639.23755 90.7853l0 0c235.36499 -0.32561493 444.77246 149.35709 520.6499 372.15607c75.87732 222.79898 1.3543701 469.17825 -185.28638 612.57275c-186.64081 143.39441 -443.9027 151.9226 -639.63025 21.20337l305.02655 -456.72015z"
-                          fill-rule="evenodd"></path>
-                    <path id="personnel-border" class="pie-border" fill="#ffffff"
-                          d="m639.2735 120.559555l0 0c222.60297 -0.30796814 420.65594 141.25859 492.41913 351.97693c71.76306 210.71832 1.2810059 443.7384 -175.23975 579.35767c-176.52075 135.61938 -419.8333 143.68506 -604.9481 20.05371l288.48734 -431.95575z"
-                          fill-rule="evenodd"></path>
-                    <g onmouseover="showSlice('personnel');" onmouseout="hideSlice('personnel');">
-                        <path id="personnel-slice" class="pie-slice" fill="#4a86e8"
-                              d="m639.28754 125.02412l0 0c220.69305 -0.30532074 417.0467 140.04663 488.19415 348.95703c71.14746 208.9104 1.2700195 439.93115 -173.73615 574.3869c-175.00623  134.45569 -416.2312 142.45215 -599.7577 19.881592l286.01212 -428.24963z"
-                              fill-rule="evenodd"></path>
-                        <text id="personnel-label" class="pie-label" x="140" y="130" transform="scale(5,5)">Personnel:
-                            <tspan x="155" y="150">59.4%</tspan>
-                        </text>
-                        <g id="personnel-box" class="pie-info-box" transform=translate(800,150)>
-                            <rect width=405 height=290 rx=20 ry=20></rect>
-                            <text class=title x=33 y=20>Personnel</text>
-                            <text class=body x=25 y=45>The personnel section of</text>
-                            <text class=body x=5 y=60>the budget pays for Instructi-</text>
-                            <text class=body x=5 y=75>onal Assistants, Homework</text>
-                            <text class=body x=5 y=90>Club, CLIP Art teachers, Zero</text>
-                            <text class=body x=5 y=105>Period Staffing, Special Prog-</text>
-                            <text class=body x=5 y=120>ram Coordinators, &amp; Teacher</text>
-                            <text class=body x=5 y=135>Adjunct Hours.</text>
-                        </g>
-                    </g>
-
-                    <!--materials slice-->
-                    <path id="materials-outline" class="pie-outline" fill="#de3811"
-                          d="m334.8766 1096.6562l0 0c-173.01115 -115.602234 -265.83524 -319.0511 -239.75575 -525.489l544.8818 68.83539z"
-                          fill-rule="evenodd"></path>
-                    <path id="materials-border" class="pie-border" fill="#ffffff"
-                          d="m351.4107 1071.885l0 0c-163.63011 -109.334045 -251.42105 -301.75146 -226.75568 -496.99585l515.3371 65.10297z"
-                          fill-rule="evenodd"></path>
-                    <g onmouseover="showSlice('materials');" onmouseout="hideSlice('materials');">
-                        <path id="materials-slice" class="pie-slice" fill="#de3811"
-                              d="m353.8946 1068.1873l0 0c-162.22618 -108.395935 -249.26389 -299.16248 -224.81013 -492.73163l510.91553 64.54437z"
-                              fill-rule="evenodd"></path>
-                        <text id="materials-label" class="pie-label" x="40" y="150" transform="scale(5,5)">Materials:
-                            <tspan x="50" y="165">17.6%</tspan>
-                        </text>
-                        <g id="materials-box" class="pie-info-box" transform=translate(5,900)
-                           onmouseover="document.getElementById(this).style.visibility = 'visible';">
-                            <rect width=420 height=230 rx=20 ry=20></rect>
-                            <text class=title x=33 y=20>Materials</text>
-                            <text class=body x=25 y=45>The materials section of</text>
-                            <text class=body x=5 y=60>the budget pays for Textbooks,</text>
-                            <text class=body x=5 y=75>Workbooks, Library books,</text>
-                            <text class=body x=5 y=90> Level Chinese Curriculum,</text>
-                            <text class=body x=5 y=105> &amp; CLIP Art materials</text>
-                        </g>
-                    </g>
-
-                    <!--professional development slice-->
-                    <path id="profdev-outline" class="pie-outline" fill="#ff9900"
-                          d="m95.12628 571.12415l0 0c24.21811 -191.58194 147.27177 -356.36877 324.08688 -433.99973l220.78946 502.8782z"
-                          fill-rule="evenodd"></path>
-                    <path id="profdev-border" class="pie-border" fill="#ffffff"
-                          d="m124.66019 574.8484l0 0c22.904953 -181.19394 139.28638 -337.04565 306.5142 -410.4673l208.81775 475.61102z"
-                          fill-rule="evenodd"></path>
-                    <g onmouseover="showSlice('profdev');" onmouseout="hideSlice('profdev');">
-                        <path id="profdev-slice" class="pie-slice" fill="#ff9900"
-                              d="m129.08957 575.41516l0 0c22.70842 -179.63928 138.09131 -334.1538 303.8843 -406.9455l207.02612 471.53033z"
-                              fill-rule="evenodd"></path>
-                        <text id="profdev-label" class="pie-label" x="60" y="120" transform="scale(3.5,3.5)">Professional
-                            <tspan x="60" y="135">Development:</tspan>
-                            <tspan x="80" y="150">16.4%</tspan>
-                        </text>
-                        <g id="profdev-box" class="pie-info-box" transform=translate(5,200)>
-                            <rect width=400 height=230 rx=20 ry=20></rect>
-                            <text class=title x=10 y=17>Professional</text>
-                            <text class=title x=10 y=30>Development</text>
-                            <text class=body x=30 y=60>The professional</text>
-                            <text class=body x=10 y=75>development section of the</text>
-                            <text class=body x=10 y=90>budget pays for Teachers'</text>
-                            <text class=body x=10 y=105>training and Conferences</text>
-                        </g>
-                    </g>
 
                     <!--other slice-->
                     <path id="other-outline" class="pie-outline" fill="#66aa00"
-                          d="m418.2164 137.56322l0 0c69.87225 -30.84291 145.40945 -46.773193 221.78622 -46.773193l0 549.2126z"
                           fill-rule="evenodd"></path>
                     <path id="other-border" class="pie-border" fill="#ffffff"
-                          d="m430.23166 164.79611l0 0c66.08359 -29.170547 137.525 -44.23706 209.76047 -44.23706l0 519.4331z"
                           fill-rule="evenodd"></path>
                     <g onmouseover="showSlice('other');" onmouseout="hideSlice('other');">
                         <path id="other-slice" class="pie-slice" fill="#66aa00"
@@ -215,42 +142,87 @@
                         <g id="other-box" class="pie-info-box" transform=translate(350,5)>
                             <rect width=400 height=320 rx=20 ry=20></rect>
                             <text class=title x=50 y=20>Other</text>
-                            <text class=body x=25 y=45>The Other section of the</text>
                             <text class=body x=5 y=60>budget pays for Copies,</text>
                             <text class=body x=5 y=75>License Fees and Apps for</text>
                             <text class=body x=5 y=90> iPads, STAMP Tests fees,</text>
                             <text class=body x=5 y=105> Membership fees, Insurance,</text>
                             <text class=body x=5 y=120>Bank charges, Tax Prep.,</text>
                             <text class=body x=5 y=135>Direct Give Expenses,</text>
-                            <text class=body x=5 y=150>Telephone, &amp; Postage</text>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-            <!-- svg show/hide script -->
-            <script type="text/javascript">
-                function showSlice(slice){
-                    document.getElementById(slice+'-outline').classList.add('show');
-                    document.getElementById(slice+'-box').classList.add('show');
-                }
-                function hideSlice(slice){
-                    document.getElementById(slice+'-outline').classList.remove('show');
-                    document.getElementById(slice+'-box').classList.remove('show');
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>The Budget</h2>
+                    <h4>An overview of the 2017-2018 budget.</h4>
+                    <p>The <span id="clip">CLIP</span> Advisory Committee (CAC) was set up by the district to help make
+                        curriculum decisions with parent and teacher involvement. CAC and CLIPCO work hand in hand each year.
+                        The CAC board is composed of teachers, parents, principals, and the director of our program. They
+                        present funding needs to CLIPCO, which in turn raises the money to cover those needs.</p>
+                    <h4><span id="device-interface">Mouse over</span> the Pie chart below for more information about each section:</h4>
+                </div>
+            </div>
+            <div class="row text-center pie-chart">
 
-                }
+                <svg viewBox="0.0 0.0 150.0 150.0" class="chart" id="pie-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    
+                </svg>
+                <script>
+                    var numSlices = 4;
+                    var names = ["Personnel","Materials","Professional Development","Other"];
+                    var ids = ["pers","mat","profdev","other"];
+                    var values = [59.4,17.6,16.4,6.6];
+                    var colors = ["#4a86e8","#de3811","#ff9900","#66aa00"];
 
-                window.addEventListener('touchstart', function() {
-                    document.getElementById("device-interface").innerHTML = "Tap on";
-                    // we only need to know once that a human touched the screen, so we can stop listening now
-                    window.removeEventListener('touchstart', onFirstTouch, false);
-                }, false);
+                    var svg = document.getElementById("pie-svg");
 
-            </script>
+                    for(var i = 0; i < numSlices; i++){
+                        console.log("creating slice: " + names[i]);
+                        var slice = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                        slice.setAttribute("id",ids[i]);
+                        slice.setAttribute("class","pie");
+                        slice.style.stroke = colors[i];
+                        slice.setAttribute("r","25");
+                        slice.setAttribute("cx","75");
+                        slice.setAttribute("cy","75");
+                        
+                        var dash = (values[i]/100.0) * 158;
+                        slice.style.strokeDasharray = dash + " 158";
+                        var offset = 0;
+                        for(var j = 0; j < i; j++){
+                            offset += values[j];
+                        }
+                        offset = (offset/100.0) * -158;
+                        console.log(offset);
+                        slice.style.strokeDashoffset = offset.toString();
+                        svg.appendChild(slice);
+                    }
+                    
+                    
+
+                </script>
+                <!-- svg show/hide script -->
+                <script type="text/javascript">
+                    function showSlice(slice){
+                        document.getElementById(slice+'-outline').classList.add('show');
+                        document.getElementById(slice+'-box').classList.add('show');
+                    }
+                    function hideSlice(slice){
+                        document.getElementById(slice+'-outline').classList.remove('show');
+                        document.getElementById(slice+'-box').classList.remove('show');
+
+                    }
+
+                    window.addEventListener('touchstart', function() {
+                        document.getElementById("device-interface").innerHTML = "Tap on";
+                        // we only need to know once that a human touched the screen, so we can stop listening now
+                        window.removeEventListener('touchstart', onFirstTouch, false);
+                    }, false);
+
+                </script>
+            </div>
+            <footer class="container-fluid text-center bg-grey">
+                <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            </footer>
         </div>
-        <footer class="container-fluid text-center bg-grey">
-            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-        </footer>
-    </div>
-    <script src="js.js"></script>
-</body>
+        <script src="js.js"></script>
+    </body>
 </html>
