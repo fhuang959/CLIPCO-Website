@@ -258,6 +258,14 @@
             #about-video-iframe{
                 width: 75vw;
                 height: 42.1875vw; /* 42.1875 = 75*(9/16) */
+                max-width: 1280px;
+                max-height: 720px;
+                
+            }
+            
+            a h3 {
+                color: inherit;
+                margin: 2px 0px;
                 
             }
                         
@@ -477,11 +485,11 @@
                             <h1>Donate Now</h1>
                         </div>
                         <div class="panel-body">
-                            <a href="donations.html"><h4>Donate Online</h4></a>
+                            <a href="donations.html"><h3>Donate Online</h3></a>
                             <p>PayPal, Debit, or Credit Card</p>
-                            <a href="documents/17-18pledgeform.pdf"><h4>Donate by check</h4></a>
+                            <a href="documents/17-18pledgeform.pdf"><h3>Donate by check</h3></a>
                             <p>Download the Pledge Form</p>
-                            <a href="donateFAQ.html"><h4>FAQ</h4></a>
+                            <a href="donateFAQ.html"><h3>FAQ</h3></a>
                             <p>Frequently Asked Questions.</p>
                         </div>
                     </div>
@@ -492,7 +500,7 @@
                             <h1>Hall Of Fame</h1>
                         </div>
                         <div class="panel-body">
-                            <h3><a href="honor_roll.html">Honor Roll 2017-2018</a></h3>
+                            <a href="honor_roll.html"><h3>Honor Roll 2017-2018</h3></a>
                             <p>Thank you to all our donors</p>
                         </div>
                     </div>
@@ -555,7 +563,6 @@
                 } 
             }
             function sizeAlert(){
-                console.log("size alert");
                 if($(window).width() <= 375 && !size_alert_dismiss){
                     /*if(!document.getElementById("screen-size-alert")){
                         var div = document.createElement("DIV");
