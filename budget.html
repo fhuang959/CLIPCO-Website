@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<head>
 <html lang="en">
     <head>
         <title>CLIPCO - Budget</title>
@@ -16,18 +15,23 @@
         <style type="text/css">
             #pie-svg {
                 width: 50%;
+                transform: scale(1.1,1.1) rotate(-90deg);
+                margin: 0 auto;
+                background: none;
+                display: block;
             }
 
             .pie-slice {
-                stroke: none;
-                stroke-width: 5px;
+                fill: none;
+                stroke-width: 50;
+                transition: stroke-dasharray .3s ease;
                 z-index: 1;
+                transition: opacity .5s ease;
             }
-
+            
             .pie-slice:hover {
-                /*stroke: rgba(0,0,0,0.5);*/
+                opacity: 0.5;
             }
-
             .pie-border {
                 fill-opacity: 1;
             }
@@ -91,26 +95,29 @@
                 fill: black;
             }
 
-            circle {
-                fill: none;
-                stroke-dasharray: 0 158;
-                stroke-width: 50;
-                transition: stroke-dasharray .3s ease;
-            }
-
-            svg {
-                margin: 0 auto;
-                transform: rotate(-90deg);
-                background: none;
-                display: block;
-            }
-
             body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-            }  
+            }
+            
+            #size-calc{
+                position: absolute;
+                visibility: hidden;
+                height: auto;
+                width: auto;
+                white-space: nowrap;
+            }
+            
+            .pie-label, #size-calc {
+                font-size: 0.65em;
+            }
+            
+            rect {
+                color: red;
+            }
+            
         </style>
     </head>
     <body id="top">
@@ -127,27 +134,6 @@
             <p>Information of CLIPCO's budget and spending</p>
         </div>
 
-                    <!--other slice-->
-                    <path id="other-outline" class="pie-outline" fill="#66aa00"
-                          fill-rule="evenodd"></path>
-                    <path id="other-border" class="pie-border" fill="#ffffff"
-                          fill-rule="evenodd"></path>
-                    <g onmouseover="showSlice('other');" onmouseout="hideSlice('other');">
-                        <path id="other-slice" class="pie-slice" fill="#66aa00"
-                              d="m432.03925 168.88112l0 0c65.51663 -28.920258 136.34503 -43.8575 207.96075 -43.8575l0 514.9764z"
-                              fill-rule="evenodd"></path>
-                        <text id="other-label" class="pie-label" x="115" y="50" transform="scale(4,4)">Other:
-                            <tspan x="125" y="65">6.6%</tspan>
-                        </text>
-                        <g id="other-box" class="pie-info-box" transform=translate(350,5)>
-                            <rect width=400 height=320 rx=20 ry=20></rect>
-                            <text class=title x=50 y=20>Other</text>
-                            <text class=body x=5 y=60>budget pays for Copies,</text>
-                            <text class=body x=5 y=75>License Fees and Apps for</text>
-                            <text class=body x=5 y=90> iPads, STAMP Tests fees,</text>
-                            <text class=body x=5 y=105> Membership fees, Insurance,</text>
-                            <text class=body x=5 y=120>Bank charges, Tax Prep.,</text>
-                            <text class=body x=5 y=135>Direct Give Expenses,</text>
         <div class="container-fluid bg-grey">
             <div class="row">
                 <div class="col-sm-8">
@@ -163,42 +149,131 @@
             <div class="row text-center pie-chart">
 
                 <svg viewBox="0.0 0.0 150.0 150.0" class="chart" id="pie-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    
                 </svg>
+                <!--This div is for calculating the width of text, which is used in the pie display script-->
+                <div id="size-calc">foo</div>
+                
+                <!--Pie display script-->
                 <script>
+                    /*Slice Data*/
                     var numSlices = 4;
                     var names = ["Personnel","Materials","Professional Development","Other"];
                     var ids = ["pers","mat","profdev","other"];
                     var values = [59.4,17.6,16.4,6.6];
                     var colors = ["#4a86e8","#de3811","#ff9900","#66aa00"];
+                    
+                    /*Fine tuning*/
+                    var text_scale = [0.9,0.8,0.6,0.55];
+                    var xoffset = [3,-2,4,3];
+                    var yoffset = [0,0,0,-16];
+                    
+                    /*global parameters*/
+                    var radius = 25;
+                    var center = 75; 
+                    var line_spacing = 9;
 
+                    /*html elements*/
                     var svg = document.getElementById("pie-svg");
+                    var size_calc_div = document.getElementById("size-calc");
 
                     for(var i = 0; i < numSlices; i++){
                         console.log("creating slice: " + names[i]);
+                        
+                        var group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                        
                         var slice = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                        slice.setAttribute("id",ids[i]);
-                        slice.setAttribute("class","pie");
+                        slice.setAttribute("id",ids[i]+"-slice");
+                        slice.setAttribute("class","pie-slice");
                         slice.style.stroke = colors[i];
-                        slice.setAttribute("r","25");
-                        slice.setAttribute("cx","75");
-                        slice.setAttribute("cy","75");
+                        slice.setAttribute("r",radius);
+                        slice.setAttribute("cx",center);
+                        slice.setAttribute("cy",center);
                         
                         var dash = (values[i]/100.0) * 158;
                         slice.style.strokeDasharray = dash + " 158";
+                        
                         var offset = 0;
                         for(var j = 0; j < i; j++){
                             offset += values[j];
                         }
-                        offset = (offset/100.0) * -158;
-                        console.log(offset);
-                        slice.style.strokeDashoffset = offset.toString();
-                        svg.appendChild(slice);
+                        var stroke_offset = (offset/100.0) * -158;
+                        slice.style.strokeDashoffset = stroke_offset.toString();
+                        group.appendChild(slice);
+                        
+                        var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                        text.setAttribute("id",ids[i] + "-label");
+                        text.setAttribute("class","pie-label");
+                        
+                        var rads = ((offset + (values[i]/2.0))/100.0) * 2 * Math.PI
+                        
+                        var x = (radius * Math.cos(rads)) + center - yoffset[i]; 
+                        //x and y are switched and signs bc of 90 degree rotatios
+                        var y = (radius * Math.sin(rads)) + center + xoffset[i];
+                                                
+                        var name = names[i].split(" ");
+
+                        size_calc_div.innerHTML = name.split(",")[0];
+                        var text_size = size_calc_div.clientWidth + 1;
+                        
+                        text.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
+                        
+                        text.setAttribute("y",(y - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
+                        
+                        var transform = "rotate(90 " + x + "," + y + ")" + ",scale(" + text_scale[i] + "," + text_scale[i] + ")";
+                        
+                        /*transform = "rotate(90 " + x + "," + y + ")";*/
+                        
+                        console.log(transform); 
+                        
+                        text.setAttribute("transform",transform);
+ 
+                        if(name.split(",").length > 1){
+                            text.appendChild(document.createTextNode(name.split(",")[0]));
+                            for(var j = 1; j < name.split(",").length; j++){
+                                
+
+                                //create new tspan element and set attributes
+                                var tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+                                tspan.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
+                                tspan.setAttribute("y",(y + (j*line_spacing*text_scale[i]) - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
+
+                                //add the text to the tspan element
+                                tspan.innerHTML = name.split(",")[j];
+                                if(j == (name.split(",").length-1)){tspan.innerHTML += ":"}
+
+                                //append to text element
+                                text.appendChild(tspan);
+                            } 
+                        } else {
+                            text.appendChild(document.createTextNode(name.split(",")[0] + ":"));
+                        }
+                        
+                        //now add on the percentage label
+                        
+                        //get text width
+                        size_calc_div.innerHTML = values[i] + "%";
+                        text_size = size_calc_div.clientWidth + 1;
+                        
+                        //create new tspan element
+                        var tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+                        tspan.setAttribute("x",(x - (text_size/2))*(1.0/text_scale[i]));
+                        tspan.setAttribute("y",(y + (name.split(",").length*line_spacing*text_scale[i]) - (line_spacing*name.split(",").length/2*text_scale[i]))*(1.0/text_scale[i]));
+                        
+                        //add the text in
+                        tspan.innerHTML = size_calc_div.innerHTML;
+                        
+                        //append to text element
+                        text.appendChild(tspan);
+                        
+                        
+                        group.appendChild(text);
+                        
+                        svg.appendChild(group);
                     }
                     
-                    
-
+                    size_calc_div.innerHTML = "";
                 </script>
+                
                 <!-- svg show/hide script -->
                 <script type="text/javascript">
                     function showSlice(slice){
