@@ -2675,6 +2675,11 @@ footer .glyphicon {
 }
 
 /*set the color theme here*/
+:root {
+    --main-color: red;
+}
+
+
 footer .glyphicon,
 .navbar-nav li a:hover,
 .navbar-nav li.active a,
@@ -2684,19 +2689,19 @@ footer .glyphicon,
 .carousel-control.left,
 .panel-footer .btn:hover,
 .jumbotron {
-    color: red !important;
+    color: var(--main-color) !important;
 }
 
 .carousel-indicators li.active,
 .panel-heading,
 .panel-footer .btn,
 .navbar {
-    background-color: red !important;
+    background-color: var(--main-color) !important;
 }
 
 .panel,
 .panel-footer .btn:hover {
-    border: 1px solid red !important;
+    border: 1px solid var(--main-color) !important;
 }
 
 .slideanim {
@@ -2884,6 +2889,10 @@ textarea{
     border-radius: 4px;
     padding: 8px 20px;
     resize: none;
+}
+
+hr.scroll-anchor {
+    border-top: 1px solid rgba(0,0,0,0);
 }
 
 /*button[type=submit] {

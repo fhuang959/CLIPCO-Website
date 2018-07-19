@@ -23,7 +23,7 @@
             
 		</style>
 	</head>
-<body class="bg-grey" id="myPage">
+<body class="bg-grey" id="top">
 	<div id="fb-root"></div>
 	<script>
         (function (d, s, id) {
@@ -34,6 +34,20 @@
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
+        $(document).ready(function () {
+
+        	if(getParameterByName('show') == 'board'){
+        		//show the board
+        		$('#board-button').click();
+        		//scroll to the list
+        		$([document.documentElement, document.body]).animate({
+        		        scrollTop: $("#board-button").offset().top
+        		    }, 900); //millis for scroll time
+        	}
+
+        });
+
     </script>
 
 	<div id="navbar-placeholder"></div>
@@ -122,37 +136,6 @@
 			</div>
 		</div>
 	</div>
-<!--scroll script-->
-	<script>
-      $(document).ready(function() {
-          // Add smooth scrolling to all links in navbar  footer link
-          $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-              // Make sure this.hash has a value before overriding default behavior
-              if (this.hash !== "") {
-                  // Prevent default anchor click behavior
-                  event.preventDefault();
-                  // Store hash
-                  var hash = this.hash;
-                  // Using jQuery's animate() method to add smooth page scroll
-                  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                  $('html, body').animate({
-                      scrollTop: $(hash).offset().top - 60
-                  }, 900, function() {
-                      // Add hash (#) to URL when done scrolling (default click behavior)
-                      window.location.hash = hash;
-                  });
-              } // End if
-          });
-          $(window).scroll(function() {
-              $(".slideanim").each(function() {
-                  var pos = $(this).offset().top;
-                  var winTop = $(window).scrollTop();
-                  if (pos < winTop + 600) {
-                      $(this).addClass("slide");
-                  }
-              });
-          });
-      })
-  	</script>
+	<script src="js.js"></script>
 </body>
 </html>

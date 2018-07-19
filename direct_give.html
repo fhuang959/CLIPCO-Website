@@ -9,12 +9,17 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
         <link href="css.css" rel="stylesheet" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="paralax.js"></script>
-        <style type="text/css">.prize-image{
-            width: 75%
+        <style type="text/css">
+
+            .prize-image{
+                width: 75%;
+                padding: 5px;
             }
-            #prizes{
-                background-color: rgba(0,0,0,0.05);
+
+            .medal-label {
+                padding: 5px;
             }
+
             table, th, td{
                 border: 1px solid rgb(150,150,150);
                 border-collapse: collapse;
@@ -25,9 +30,20 @@
                 color: rgb(75,75,75);
                 text-align: center;
             }
-            .donation-level-range{
+            .donation-level-range {
                 font-weight: normal;
             }
+
+            #donation-level-table {
+                width: 40%;
+            }
+
+            @media screen and (max-width: 768px){
+                #donation-level-table {
+                width: 100%;
+            } 
+            }
+
             #plantimun{
                 color: blue;
             }
@@ -40,6 +56,25 @@
             #bronze{
                 color: brown;
             }
+
+            .row {
+                margin: 0px;
+                padding: 15px;
+            }
+
+            .container-fluid{
+                padding: 0px;
+            }
+
+            li {
+                color: black;
+            }
+
+            hr {
+                width: 85%;
+                border-top: 1px solid rgba(0,0,0,0.15);
+            }
+
         </style>
     </head>
     <body id="top" onload="loadImage(0)">
@@ -53,73 +88,92 @@
             <h1>Direct Give Competition</h1>
             <p>Funding CLIPCO</p>
         </div>
-        <div class="container-fluid bg-grey" id="info">
+        <div class="container-fluid bg-grey">
             <div class="row">
-                <div class="col-sm-8 col-xs-12">
-                    <h4>CLIP depends completely on donations to fund the programs not covered by normal school district funds. These programs include the Mandarin Chinese curriculum, CLIP Art program, and Homework Club to name a few. Last year, we raised a total of $314,178 ($246,727 from your generous donations, $67,451 in corporate matches.) CLIP&rsquo;s 2017 - 2018 budget remains relatively flat to last year and is set at $334,867. There are nominal increases due to cost of instructional materials and professional development for teachers.</h4>
-                    <br>
-                    <h4>This year CLIPCO is asking CLIP families to donate <b>$450</b> for each child in Kindergarten to 6th grade, and <b>$225</b> for each child in 7th to 8th grade to cover their share of CLIP educational expenses. As with last years, CLIPCO is offering three different prizes to encourage a friendly contest:</h4>
-                    <br>
+                <div class="col-sm-8 col-xs-12" id="info">
+                    <h4 class="indent">CLIP depends completely on donations to fund the programs not covered by normal school district funds. These programs include the Mandarin Chinese curriculum, CLIP Art program, and Homework Club to name a few. Last year, we raised a total of $321,560 ($258,996 from your generous donations, $62,564 in corporate matches.) Earlier this year, Cupertino Union School District agreed to contribute ~$70,000 towards staff and curriculum costs and zero period for 6th grade. With this additional support, this year’s CLIP budget has been set at $287,625.</h4>
+
+                    <h4 class="indent">The lower budget target has also allowed us to lower the per student donation amount for this year! This year CLIPCO is asking CLIP families to donate <b>$425</b> for each child in Kindergarten to 5th grade, and <b>$200</b> for each child in 6th to 8th grade to cover their share of CLIP educational expenses. As with last years, CLIPCO is offering three different prizes to encourage a friendly contest:</h4>
+
                     <ul>
-                        <li>Individual - An individual prize is awarded to those donating at least the minimum ask per student ($450 for K-6th, $225 for 7th and 8th).</li>
+                        <li>Individual - An individual prize is awarded to those donating at least the minimum ask per student ($425 for K-5th, $200 for 6th-8th).</li>
                         <li>Class - A Tshirt prize is awarded to the home room (Meyerholz) or grade (Miller) that meets 90% participation rate and 90% target dollar amount.</li>
                         <li>Grand Prize - A Grand Prize awarded to the top 3 home room (Meyerholz) or grade (Miller) with the highest percentage towards the target dollar amount.</li>
                     </ul>
+
                     <br>
-                    <p><strong>Contest Rules:</strong></p>
+                    <h4><strong>Contest Rules:</strong></h4>
                     <ol>
-                        <li>Donations must be received by 11:59pm, <b>November 14, 2017</b> in order to be counted.</li>
-                        <li>Only donations of the minimum ask ($450 for K-6, $225 for 7th and 8th) or more will count towards the contest.</li>
+                        <li>Donations must be received by 11:59pm, <b>DATE TBD</b> in order to be counted.</li>
+                        <li>Only donations of the minimum ask ($425 for K-5, $200 for 6th-8th) or more will count towards the contest.</li>
                         <li>Target dollar amount is determined by the total number of students per home room (or grade if Miller students) multiplied by the requested donation amount.</li>
                         <li>Donors to be recognized in a future publication with an option to remain anonymous.</li>
                         <li>Corporate matching amounts do not count towards the Direct Give Contest.</li>
                     </ol>
                     <p></p>
                     <br>
-                    <h4>CLIP is grateful for the financial support received from our community. We would like to recognize your generosity by displaying your name on the CLIPCO website throughout the school year and on the December CLIPCO Newsletter after the Direct Give Contest. Donors also have the option to remain anonymous. Tiers of recognition indicated below are <b>per student </b>.</h4>
-                    <br>
+                </div>
+                <div class="col-sm-4 col-xs-12" id="stock-image">
+                    <!-- scripty mcscriptface will fill this in--><script src="imageLoading.js" id="image-laoding-script"></script>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4 class="indent">CLIP is grateful for the financial support received from our community. We would like to recognize your generosity by displaying your name on the CLIPCO website throughout the school year and on the December CLIPCO Newsletter after the Direct Give Contest. Donors also have the option to remain anonymous. Tiers of recognition indicated below are <b>per student</b>.</h4>
                     <h4><strong>Donation Levels:</strong></h4>
-                    <p></p>
-                    <table id="donation-level-table">
+                    <table id="donation-level-table" class="auto-scroll">
                         <thead>
                             <tr>
                                 <th>
                                     <!--blank-->
                                 </th>
-                                <th>Kindergarten - 6th grade</th>
-                                <th>7th grade - 8th grade</th>
+                                <th>Kindergarten - 5th grade</th>
+                                <th>6th grade - 8th grade</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img alt="bronze medal" class="medal-image" src="images/bronze-medal.png" /><span class="medal-label" id="bronze">Bronze</span></td>
-                                <td class="donation-level-range">
-                                    <p>donation of $450</p>
+                                <td>
+                                    <img alt="bronze medal" class="medal-image" src="images/bronze-medal.png" />
+                                    <span class="medal-label" id="bronze">Bronze</span>
                                 </td>
                                 <td class="donation-level-range">
-                                    <p>donation of $225</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img alt="silver medal" class="medal-image" src="images/silver-medal.png" /><span class="medal-label" id="silver">Silver</span></td>
-                                <td class="donation-level-range">
-                                    <p>donation of $451 to $699</p>
+                                    <p>donation of $425</p>
                                 </td>
                                 <td class="donation-level-range">
-                                    <p>donation of $226 to $349</p>
+                                    <p>donation of $200</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td><img alt="gold medal" class="medal-image" src="images/gold-medal.png" /><span class="medal-label" id="gold">Gold</span></td>
-                                <td class="donation-level-range">
-                                    <p>donation of $700 - $949</p>
+                                <td>
+                                    <img alt="silver medal" class="medal-image" src="images/silver-medal.png" />
+                                    <span class="medal-label" id="silver">Silver</span>
                                 </td>
                                 <td class="donation-level-range">
-                                    <p>donation of $350 to $474</p>
+                                    <p>donation of $426 to $650</p>
+                                </td>
+                                <td class="donation-level-range">
+                                    <p>donation of $201 to $325</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td><img alt="platinum medal" class="medal-image" src="images/platinum-medal.png" /><span class="medal-label" id="platimun">Platinum</span></td>
+                                <td>
+                                    <img alt="gold medal" class="medal-image" src="images/gold-medal.png" />
+                                    <span class="medal-label" id="gold">Gold</span>
+                                </td>
+                                <td class="donation-level-range">
+                                    <p>donation of $651 - $949</p>
+                                </td>
+                                <td class="donation-level-range">
+                                    <p>donation of $326 to $474</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img alt="platinum medal" class="medal-image" src="images/platinum-medal.png" />
+                                    <span class="medal-label" id="platimun">Platinum</span>
+                                </td>
                                 <td class="donation-level-range">
                                     <p>donation of $950 or more</p>
                                 </td>
@@ -129,89 +183,30 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="col-sm-4 col-xs-12" id="stock-image">
-                    <!-- scripty mcscriptface will fill this in--><script src="imageLoading.js" id="image-laoding-script"></script>
+                    <br>               
+                    <a href="honor_roll.html">Go here to see CLIP honor roll</a>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid bg-grey" id="more-info">
-            <div class="row">
-                <a href="honor_roll.html">Go here to see CLIP honor roll</a>
-                <h4>You may <a href="donations.html">donate online</a> through PayPal using your credit card, debit card or <b>PayPal</b> account or Download the <a href="documents/17-18pledgeform.pdf">Pledge Form</a> to pay by check. Please return this form along with your payment (payable to &quot;CLIPCO&quot;) to the Meyerholz office, your student&#39;s home room teacher or your CLIPCO grade.<br />
-                    <br />
-                    <b>If you have more questions about the Direct Give Contest, please read our <a href="donateFAQ.html">FAQ</a>. If the information there does not answer your question, please contact your <a href="contact.html">CLIPCO grade representative.</a></b><br />
-                    <br />
-                    Please don&#39;t forget to potentially double your donation by applying for <b>corporate matching</b> through your employer. Corporate matching helps CLIPCO tremendously in making up for donation shortfalls. Every year, the corporate match donations to CLIPCO contribute between 15-25% of our annual budget. Please see <a href="donateFAQ.html#corporate-matching">How do I get corporate matching for my donation?</a> for more information.
+            <hr>
+            <div class="row" id="more-info">
+                <h2 class="text-center">How to Donate</h2>
+                <h4 class="indent">You may <a href="donations.html">donate online</a> through PayPal using your credit card, debit card or <b>PayPal</b> account or Download the <a href="documents/17-18pledgeform.pdf">Pledge Form</a> to pay by check. Please return this form along with your payment (payable to &quot;CLIPCO&quot;) to the Meyerholz office, your student&#39;s home room teacher or your CLIPCO grade.</h4>
+                <h4 class="indent"><b>If you have more questions about the Direct Give Contest, please read our <a href="donateFAQ.html">FAQ</a>. If the information there does not answer your question, please contact your <a href="contact.html?show=board">CLIPCO grade representative.</a></b></h4>
+                <h4 class="indent">Please don&#39;t forget to potentially double your donation by applying for <b>corporate matching</b> through your employer. Corporate matching helps CLIPCO tremendously in making up for donation shortfalls. Every year, the corporate match donations to CLIPCO contribute between 15-25% of our annual budget. Please see <a href="donateFAQ.html#corporate-matching-scroll">How do I get corporate matching for my donation?</a> for more information.
                 </h4>
             </div>
-        </div>
-        <div class="container-fluid" id="prizes">
-            <div class="row">
-                <div class="text-center">
+            <hr>
+            <div class="row" id="prizes">
+                <div class="col-sm-12 text-center">
                     <h2>Prizes</h2>
-                </div>
-                <div class="col-sm-12">
-                    <center>
-                        <h4>As with last years, CLIPCO is offering three different prizes to encourage a friendly contest.</h4>
-                    </center>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Individual Prize</th>
-                                <th>Class Prize</th>
-                                <th>Grand Prize</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><img alt="desk accessory" class="prize-image" src="images/DeskAccessory.jpeg" /></td>
-                                <td><img alt="dog shirt" class="prize-image" src="images/2017DogTshirt.png" /></td>
-                                <td><img alt="cooler lunch bag" class="prize-image" src="images/access-kooler-bag-lun16-red.jpg" /></td>
-                            </tr>
-                            <tr>
-                                <td>Desk Accessory</td>
-                                <td>Dog Shirt</td>
-                                <td>Insulated Lunch Bag</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <footer class="container-fluid text-center">
-                        <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-                    </footer>
+                    <h4>As with last years, CLIPCO is offering three different prizes to encourage a friendly contest.</h4>
+                    <h2>Direct Give Contest Prizes for 2018-2019 To Be Announced</h2>
                 </div>
             </div>
         </div>
-        <script>
-            $(document).ready(function() {
-                // Add smooth scrolling to all links in navbar  footer link
-                $(".navbar a, footer a[href='#top']").on('click', function(event) {
-                    // Make sure this.hash has a value before overriding default behavior
-                    if (this.hash !== "") {
-                        // Prevent default anchor click behavior
-                        event.preventDefault();
-                        // Store hash
-                        var hash = this.hash;
-                        // Using jQuery's animate() method to add smooth page scroll
-                        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                        $('html, body').animate({
-                            scrollTop: $(hash).offset().top
-                        }, 900, function() {
-                            // Add hash (#) to URL when done scrolling (default click behavior)
-                            window.location.hash = hash;
-                        });
-                    } // End if
-                });
-                $(window).scroll(function() {
-                    $(".slideanim").each(function() {
-                        var pos = $(this).offset().top;
-                        var winTop = $(window).scrollTop();
-                        if (pos < winTop + 600) {
-                            $(this).addClass("slide");
-                        }
-                    });
-                });
-            })
-        </script>
+        <footer class="text-center">
+            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        </footer>
+        <script type="text/javascript" src="js.js"></script>
     </body>
 </html>
