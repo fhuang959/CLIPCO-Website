@@ -191,8 +191,8 @@
             <div class="row" id="more-info">
                 <h2 class="text-center">How to Donate</h2>
                 <h4 class="indent">You may <a href="donations.html">donate online</a> through PayPal using your credit card, debit card or <b>PayPal</b> account or Download the <a href="documents/17-18pledgeform.pdf">Pledge Form</a> to pay by check. Please return this form along with your payment (payable to &quot;CLIPCO&quot;) to the Meyerholz office, your student&#39;s home room teacher or your CLIPCO grade.</h4>
-                <h4 class="indent"><b>If you have more questions about the Direct Give Contest, please read our <a href="donateFAQ.html">FAQ</a>. If the information there does not answer your question, please contact your <a href="contact.html">CLIPCO grade representative.</a></b></h4>
-                <h4 class="indent">Please don&#39;t forget to potentially double your donation by applying for <b>corporate matching</b> through your employer. Corporate matching helps CLIPCO tremendously in making up for donation shortfalls. Every year, the corporate match donations to CLIPCO contribute between 15-25% of our annual budget. Please see <a href="donateFAQ.html#corporate-matching">How do I get corporate matching for my donation?</a> for more information.
+                <h4 class="indent"><b>If you have more questions about the Direct Give Contest, please read our <a href="donateFAQ.html">FAQ</a>. If the information there does not answer your question, please contact your <a href="contact.html?show=board">CLIPCO grade representative.</a></b></h4>
+                <h4 class="indent">Please don&#39;t forget to potentially double your donation by applying for <b>corporate matching</b> through your employer. Corporate matching helps CLIPCO tremendously in making up for donation shortfalls. Every year, the corporate match donations to CLIPCO contribute between 15-25% of our annual budget. Please see <a href="donateFAQ.html#corporate-matching-scroll">How do I get corporate matching for my donation?</a> for more information.
                 </h4>
             </div>
             <hr>
@@ -205,38 +205,8 @@
             </div>
         </div>
         <footer class="text-center">
-                <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-            </footer>
-        <script>
-            $(document).ready(function() {
-                // Add smooth scrolling to all links in navbar  footer link
-                $(".navbar a, footer a[href='#top']").on('click', function(event) {
-                    // Make sure this.hash has a value before overriding default behavior
-                    if (this.hash !== "") {
-                        // Prevent default anchor click behavior
-                        event.preventDefault();
-                        // Store hash
-                        var hash = this.hash;
-                        // Using jQuery's animate() method to add smooth page scroll
-                        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                        $('html, body').animate({
-                            scrollTop: $(hash).offset().top
-                        }, 900, function() {
-                            // Add hash (#) to URL when done scrolling (default click behavior)
-                            window.location.hash = hash;
-                        });
-                    } // End if
-                });
-                $(window).scroll(function() {
-                    $(".slideanim").each(function() {
-                        var pos = $(this).offset().top;
-                        var winTop = $(window).scrollTop();
-                        if (pos < winTop + 600) {
-                            $(this).addClass("slide");
-                        }
-                    });
-                });
-            })
-        </script>
+            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        </footer>
+        <script type="text/javascript" src="js.js"></script>
     </body>
 </html>
