@@ -36,15 +36,21 @@
         }(document, 'script', 'facebook-jssdk'));
 
         $(document).ready(function () {
-
-        	if(getParameterByName('show') == 'board'){
+        	var param = "";
+        	try {
+        		param = getParameterByName('show');
+        		if(param == 'board'){
         		//show the board
         		$('#board-button').click();
         		//scroll to the list
         		$([document.documentElement, document.body]).animate({
         		        scrollTop: $("#board-button").offset().top
         		    }, 900); //millis for scroll time
+        		}
+        	} catch (err) {
+        		//that's ok
         	}
+        	
 
         });
 
