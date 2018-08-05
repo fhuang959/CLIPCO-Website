@@ -59,7 +59,7 @@
                 fill: white;
                 fill-opacity: 0.75;
                 stroke: black;
-                stroke-width: 1px;
+                stroke-width: 0.5px;
                 stroke-opacity: 1;
             }
 
@@ -114,8 +114,12 @@
                 font-size: 0.65em;
             }
 
+            :root {
+                --info-box-width: 45px;
+            }
+
             #size-calc-small {
-                width: 50px;
+                width: var(--info-box-width);
                 position: absolute;
                 line-height: 6px;
                 visibility: hidden;
@@ -149,12 +153,25 @@
             <div class="row">
                 <div class="col-sm-8">
                     <h2>The Budget</h2>
-                    <h4>An overview of the 2017-2018 budget.</h4>
+                    <h4>An overview of the <span id="year"></span> budget.</h4>
+                    <script type="text/javascript">
+                        //script gets the current school year and places it in the text
+                        var d = new Date();
+                        var text = "";
+                        if(d.getMonth() < 6){ //if the current month is before july (0 indexed)
+                            text = (d.getFullYear()-1) + "-" + d.getFullYear();
+                        } else {
+                            text = d.getFullYear() + "-" + (d.getFullYear()+1);
+                        }
+                        
+                        document.getElementById("year").innerHTML = text;
+                    </script>
                     <p>The <span id="clip">CLIP</span> Advisory Committee (CAC) was set up by the district to help make
                         curriculum decisions with parent and teacher involvement. CAC and CLIPCO work hand in hand each year.
                         The CAC board is composed of teachers, parents, principals, and the director of our program. They
                         present funding needs to CLIPCO, which in turn raises the money to cover those needs.</p>
                     <h4><span id="device-interface">Mouse over</span> the Pie chart below for more information about each section:</h4>
+                    <p>Or, click <a href="current-budget">here</a> for a more detailed report.</p>
                 </div>
             </div>
             <div class="row text-center pie-chart">
@@ -167,25 +184,24 @@
                 <!--Pie display script-->
                 <script>
                     /*Slice Data*/
-                    var numSlices = 4;
-                    var names = ["Personnel","Materials","Professional Development","Other"];
-                    var ids = ["pers","mat","profdev","other"];
-                    var values = [59.4,17.6,16.4,6.6];
-                    var colors = ["#4a86e8","#de3811","#ff9900","#66aa00"];
+                    var numSlices = 3;
+                    var names = ["Personnel","Materials","Other"];
+                    var ids = ["pers","mat","other"];
+                    var values = [73,12,15];
+                    var colors = ["#4a86e8","#de3811","#66aa00"];
                     var info_text = [
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The personnel section of the budget pays for Instructional Assistants, Homework Club, CLIP Art teachers, Zero Period Staffing, Special Program Coordinators, &amp; Teacher Adjunct Hours.",
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The materials section of the budget pays for Textbooks, Workbooks, Library books, Level Chinese Curriculum, &amp; CLIP Art materials.",
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The professional development section of the budget pays for Teachers' training and Conferences.",
-                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Other section of the budget pays for Copies, License Fees and Apps for iPads, STAMP Tests fees, Membership fees, Insurance, Bank charges, Tax Prep., Direct Give Expenses, Telephone, &amp; Postage."
+                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Personnel section of the budget pays for Instructional Assistants, Homework Club CLIP Art teachers, Special Program Coordinators, &amp; Teacher Adjunct Hours.",
+                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Materials section of the budget pays for Textbooks, Workbooks, Library books, Level Chinese Curriculum, &amp; CLIP Art materials.",
+                        "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Other section of the budget pays for Administration(5%), Professional development(5%), Copies(3%), Assessment(1%), Membership(&lt;1%), &amp; Technology costs(&lt;1%)."
                         ];
                     
                     /*Fine tuning*/
-                    var text_scale = [0.9,0.8,0.6,0.55];
-                    var xoffset = [3,-2,4,3];
-                    var yoffset = [0,0,0,-16];
-                    var info_xoffset = [10,-10,-23,0];
-                    var info_yoffset = [30,10,-10,0];
-                    var info_height_offset = [-7,-7,1,-7];
+                    var text_scale = [0.9,0.7,0.75];
+                    var xoffset = [3,-2,0];
+                    var yoffset = [0,1,-6];
+                    var info_xoffset = [10,-25,-5];
+                    var info_yoffset = [30,0,-14];
+                    var info_height_offset = [-8,-4,-8.5];
                     
                     /*global parameters*/
                     var radius = 25;
@@ -305,7 +321,7 @@
                         //make and format the text inside
                         size_calc_small_div.innerHTML = info_text[i];
 
-                        size_calc_small_div.style.width = "50px";
+                        size_calc_small_div.style.width = "var(--info-box-width)";
 
                         var width = size_calc_small_div.clientWidth;
                         var height = size_calc_small_div.clientHeight;
@@ -322,7 +338,7 @@
                         //set attributes
                         rect.setAttribute("width",width);
                         rect.setAttribute("height",height + info_height_offset[i]);
-                        var corner_radius = 5
+                        var corner_radius = 3;
                         rect.setAttribute("rx",corner_radius);
                         rect.setAttribute("ry",corner_radius);
 
@@ -336,8 +352,8 @@
                         var j = 0;
                         var line_count = 0;
                         text_size = 0;
-                        var text_y_offset = 6;
-                        var text_x_offset = 3;
+                        var text_y_offset = 5;
+                        var text_x_offset = 1.5;
                         while (j < text_sep.length) {
 
                             var temp_line = line + text_sep[j] + " ";
