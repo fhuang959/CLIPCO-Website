@@ -120,12 +120,14 @@
                                 Desired Position:
                             </td>
                             <td>
-                                <select name="position" <?php if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["position"])){echo "value=\"".$_GET["position"]."\"";}?>>
-                                    <option value="4th grade rep">4th Grade Rep</option>
-                                    <option value="Clip art teacher">Clip Art Teacher</option>
-                                    <option value="Community events">Community Events</option>
-                                    <option value="CUSD and CAC outreach">CUSD and CAC Outreach</option>
-                                    <option value="Direct give campaign">Direct Give Campaign</option>
+                                <select name="position">
+                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "kindergarten"){echo "selected";} ?> value="kindergarten">Kindergarten grade rep</option>
+                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "5th grade"){echo "selected";} ?> value="5th grade">5th grade rep</option>
+                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "6th grade"){echo "selected";} ?> value="6th grade">6th grade rep</option>
+                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "8th grade"){echo "selected";} ?> value="8th grade">8th grade rep</option>
+                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "Community events"){echo "selected";} ?> value="Community events">Community Events</option>
+                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "CUSD and CAC outreach"){echo "selected";} ?> value="CUSD and CAC outreach">CUSD and CAC Outreach</option>
+                                    <option <?php if(isset($_GET["position"]) && $_GET["position"] == "Direct give campaign"){echo "selected";} ?> value="Direct give campaign">Direct Give Campaign</option>
                                 </select>
                                 <span class="error"><?php echo $positionErr;?></span>
                             </td>     
