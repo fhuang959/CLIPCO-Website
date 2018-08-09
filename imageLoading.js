@@ -2,7 +2,7 @@
 function loadImage(type){
     //0 = any
     //1 = cnyp (48)
-    //2 = clipart (284)
+    //2 = clipart (329)
     //3 = other (23)
     var index = 0;
     switch(type){
@@ -22,7 +22,7 @@ function loadImage(type){
             break;
 
         case 2:
-            index = Math.floor((Math.random()*284));
+            index = Math.floor((Math.random()*329));
             writeImage("https://www.cusdclipco.org/images/clipart/image_" + index + ".png");
             break;
 
