@@ -7,30 +7,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css.css">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
             /* some css can go here */
         </style>
     </head>
     <body id="top" class="bg-grey" onload="loadImage(0)">
-        <noscript id="deferred-styles">
-            <link rel="stylesheet" type="text/css" href="css.css">
-        </noscript>
-        <script>
-            var loadDeferredStyles = function() {
-                var addStylesNode = document.getElementById("deferred-styles");
-                var replacement = document.createElement("div");
-                replacement.innerHTML = addStylesNode.textContent;
-                document.body.appendChild(replacement)
-                addStylesNode.parentElement.removeChild(addStylesNode);
-            };
-            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-            else window.addEventListener('load', loadDeferredStyles);
-        </script>
         <div id="navbar-placeholder"></div>
         <script>
             $(function () {
@@ -65,13 +50,13 @@
                 </div>
                 <div class="col-sm-4 col-xs-12" id="stock-image">
                     <!-- scripty mcscriptface will fill this in-->
-                    <script src="imageLoading.js" id="image-laoding-script"></script>
+                    <script async src="imageLoading.js" id="image-laoding-script"></script>
                 </div>
             </div>
         </div>
         <footer class="container-fluid text-center">
             <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
         </footer>
-        <script src="js.js"></script>
+        <script async src="js.js"></script>
     </body>
 </html>
