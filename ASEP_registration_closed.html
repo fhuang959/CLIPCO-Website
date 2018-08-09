@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CLIPCO - ASEP Registration</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            /* some css can go here */
+            .error{
+                color: red;
+            }
+            b {
+                font-weight: bolder;
+                color: black;
+            }
+            #classes-table, #classes-table th, #classes-table td {
+                border: 0px;
+                border-bottom: 1px solid rgb(150, 150, 150);
+                padding: 2px 3px;
+            }
+
+            #form-table{
+                margin: auto;
+                width: 100%;
+            }
+
+            #closed{
+                color: #222;
+            }
+            
+            #stock-image img{
+                margin: auto;
+                padding: 2px;
+            }
+            
+            hr {
+                border-top: 1.5px solid rgba(0,0,0,0.25);
+            }
+
+        </style>
+    </head>
+    <body id="top" class="bg-grey" onload="onload();">
+        <div id="navbar-placeholder"></div>
+        <script>
+            $(function () {
+                $("#navbar-placeholder").load("subpage_navbar.html");
+            });
+        </script>
+
+        <div class="jumbotron text-center bg-white">
+            <h1>ASEP Registration</h1>
+            <p>Register your child for the After School Enrichment Program</p>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12" id="main-content">
+                    <h2> Meyerholz-CLIP After School Enrichment Program (ASEP) Application </h2>
+                    <p class="indent">Please complete, sign and return confirmation email with checks to the ASEP box in the Meyerholz office between <b>Monday 5/14/18 - Thursday 6/7/18.</b> (Please make sure checks are dropped off no later than 11:30AM on 6/7/18, as this is the last day of school.)  Please print student’s name, grade and class name on each check and attach with <b>paper clip - no staples.  Please make sure you register with the email that you check regularly for email,</b> any updates are notified by email. You are not guaranteed to get into all the classes that you signed up for.</p>
+                    <p class="indent">More information on the ASEP program can be found <a href="/ASEP.html">here</a>.</p>
+                    <h4>Checks payable: CLIPCO </h4>
+                    <h4>Date: 8/1/2018  (Please make separate checks for each class.)</h4>
+                    <h4>Check memo: Child name, Grade (2018-2019), ASEP class</h4>
+                    <h4>Note:  This is not a fund raising activity for CLIPCO. <span class="error">Classes will be canceled when not enough donation is collected</span></h4>
+                </div>
+                <div class="col-sm-4 col-xs-12 xs-hide text-center" id="stock-image">
+                    <!-- scripty mcscriptface will fill this in-->
+                    <!--<img id="stock-image-image" src="https://www.cusdclipco.org/images/other/image_21.png" alt="Stock Image" class="subpage_image">-->
+                    <script src="imageLoading.js" id="image-laoding-script"></script>
+                </div>
+                <script>
+                    function onload() {
+                        loadImage(0);
+                        resize_image();    
+                    }
+                    
+                    $(window).resize(function() {
+                        resize_image();
+                    });
+                    
+                    function resize_image() {
+                        image = document.getElementById("stock-image-image");
+                        image.setAttribute("class","");
+                        image.style.maxHeight = document.getElementById("main-content").clientHeight + "px";
+                        image.style.maxWidth = document.getElementById("main-content").clientWidth/2 + "px"; 
+                    }
+                </script>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <hr>
+                    <h3 id="closed">ASEP Registration for the <span id="year"></span> school year is now closed.</h3>
+                    <script>
+                        //script gets the current school year and places it in the text
+                        var d = new Date();
+                        var text = "";
+                        if(d.getMonth() < 6){ //if the current month is before july (0 indexed)
+                            text = (d.getFullYear()-1) + "-" + d.getFullYear();
+                        } else {
+                            text = d.getFullYear() + "-" + (d.getFullYear()+1);
+                        }
+
+                        document.getElementById("year").innerHTML = text;
+                    </script>
+                </div>
+            </div>
+        </div>
+        <footer class="container-fluid text-center">
+            <a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        </footer>
+        <script src="js.js"></script>
+    </body>
+</html>
