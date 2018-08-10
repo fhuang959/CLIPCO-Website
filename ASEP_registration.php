@@ -168,7 +168,7 @@
                                     Child Last Name:
                                 </td>
                                 <td>
-                                    <input required type="text" name="Child_Last_Name">
+                                    <input disabled required type="text" name="Child_Last_Name">
                                 </td>
                             </tr>
                             <tr>
@@ -176,7 +176,7 @@
                                     Child First Name:
                                 </td>
                                 <td>
-                                    <input required type="text" name="Child_First_Name">
+                                    <input disabled required type="text" name="Child_First_Name">
                                 </td>
                             </tr>
                             <tr>
@@ -184,7 +184,7 @@
                                     Grade  (2018-2019)
                                 </td>
                                 <td>
-                                    <input required type="text" name="Grade__(2018-2019)">
+                                    <input disabled required type="text" name="Grade__(2018-2019)">
                                 </td>
                             </tr>
                             <tr>
@@ -192,7 +192,7 @@
                                     Parent/Guardian First &nbsp;&amp;&nbsp; Last Name
                                 </td>
                                 <td>
-                                    <input required type="text" name="Parent/Guardian_First_&_Last_Name_1">
+                                    <input disabled required type="text" name="Parent/Guardian_First_&_Last_Name_1">
                                 </td>
                             </tr>
                             <tr>
@@ -200,7 +200,7 @@
                                     Parent/Guardian First &nbsp;&amp;&nbsp; Last Name
                                 </td>
                                 <td>
-                                    <input required type="text" name="Parent/Guardian_First_&_Last_Name_2">
+                                    <input disabled required type="text" name="Parent/Guardian_First_&_Last_Name_2">
                                 </td>
                             </tr>
                             <tr>
@@ -208,7 +208,7 @@
                                     Email:
                                 </td>
                                 <td>
-                                    <input required type="email" name="Email">
+                                    <input disabled required type="email" name="Email">
                                 </td>
                             </tr>
                             <tr>
@@ -216,7 +216,7 @@
                                     Cell# please have number in the form of (###)-###-####&nbsp;:
                                 </td>
                                 <td>
-                                    <input required type='tel' pattern='^(\d?[\(]?\d{3}[\)]?[\-]?\d{3}[\-]?\d{4})$' name="Cell#"> <!-- format: 1?(?###)?###-?#### --> 
+                                    <input disabled required type='tel' pattern='^(\d?[\(]?\d{3}[\)]?[\-]?\d{3}[\-]?\d{4})$' name="Cell#"> <!-- format: 1?(?###)?###-?#### --> 
                                 </td>
                             </tr>
                             <tr>
@@ -224,7 +224,7 @@
                                     Emergency# please have number in the form of (###)-###-####&nbsp;:
                                 </td>
                                 <td>
-                                    <input required type='tel' pattern='^(\d?[\(]?\d{3}[\)]?[\-]?\d{3}[\-]?\d{4})$' name="Emergency#"> <!-- format: 1?(?###)?###-?#### -->
+                                    <input disabled required type='tel' pattern='^(\d?[\(]?\d{3}[\)]?[\-]?\d{3}[\-]?\d{4})$' name="Emergency#"> <!-- format: 1?(?###)?###-?#### -->
                                 </td>
                             </tr>
                             <tr>
@@ -232,7 +232,7 @@
                                     Insurance carrier &nbsp;&amp;&nbsp; Group#:
                                 </td>
                                 <td>
-                                    <input required type="text" name="Insurance_carrier_&_Group#">
+                                    <input disabled required type="text" name="Insurance_carrier_&_Group#">
                                 </td>
                             </tr>
                             <tr>
@@ -240,7 +240,7 @@
                                     Performing Art Child’s T-shirt size :
                                 </td>
                                 <td>
-                                    <select name="child_shirt_size">
+                                    <select disabled name="child_shirt_size">
                                         <option value="YS">YS</option>
                                         <option value="YM">YM</option>
                                         <option value="YL">YL</option>
@@ -254,7 +254,7 @@
                                     Performing Art Child’s Pant size (youth):
                                 </td>
                                 <td>
-                                    <select name="child_pant_size">
+                                    <select disabled name="child_pant_size">
                                         <option value="YS">YS</option>
                                         <option value="YM">YM</option>
                                         <option value="YL">YL</option>
@@ -269,7 +269,7 @@
                                     Childcare at YMCA on ASEP class days?
                                 </td>
                                 <td>
-                                    <input required type="radio" name="ymca" value="Yes">&nbsp;Yes&nbsp;&nbsp;&nbsp;<input required type="radio" name="ymca" value="No" checked>&nbsp;No<br>
+                                    <input disabled required type="radio" name="ymca" value="Yes">&nbsp;Yes&nbsp;&nbsp;&nbsp;<input disabled required type="radio" name="ymca" value="No" checked>&nbsp;No<br>
                                 </td>
                             </tr>
                             <tr>
@@ -287,7 +287,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Game - Go (FQ 2018) (English speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Game - Go (FQ 2018) (English speaking)">
                                             </td>
                                             <td>
                                                 Chinese Game - Go (FQ 2018) (English speaking)
@@ -304,7 +304,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Game - Go (SQ 2018) (English Speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Game - Go (SQ 2018) (English Speaking)">
                                             </td>
                                             <td>
                                                 Chinese Game - Go (SQ 2018) (English Speaking)
@@ -321,7 +321,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Dance I (English speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Dance I (English speaking)">
                                             </td>
                                             <td>
                                                 Chinese Dance I (English speaking) - 8 max
@@ -338,7 +338,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Dance I (English speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Dance I (English speaking)">
                                             </td>
                                             <td>
                                                 Chinese Dance I (English speaking) - 8 max
@@ -355,7 +355,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Dance II (English speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Dance II (English speaking)">
                                             </td>
                                             <td>
                                                 Chinese Dance II (English speaking) - 10 max
@@ -372,7 +372,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Dance III (English speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Dance III (English speaking)">
                                             </td>
                                             <td>
                                                 Chinese Dance III (English speaking)- 10 max
@@ -389,7 +389,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Zhongruan (Chinese Speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Zhongruan (Chinese Speaking)">
                                             </td>
                                             <td>
                                                 Zhongruan (Chinese Speaking)
@@ -406,7 +406,7 @@
                                         </tr>       
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Zhongruan (Chinese Speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Zhongruan (Chinese Speaking)">
                                             </td>
                                             <td>
                                                 Zhongruan (Chinese Speaking)
@@ -423,7 +423,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Lion Dance I (English Speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Lion Dance I (English Speaking)">
                                             </td>
                                             <td>
                                                 Lion Dance I (English Speaking)
@@ -440,7 +440,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Lion Dance II (English Speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Lion Dance II (English Speaking)">
                                             </td>
                                             <td>
                                                 Lion Dance II (English Speaking)
@@ -457,7 +457,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Percussion (English Speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Percussion (English Speaking)">
                                             </td>
                                             <td>
                                                 Percussion (English Speaking)
@@ -474,7 +474,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Flute I (English speaking) ">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Flute I (English speaking) ">
                                             </td>
                                             <td>
                                                 Chinese Flute I (English speaking)
@@ -491,7 +491,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Flute I (English Speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Flute I (English Speaking)">
                                             </td>
                                             <td>
                                                 Chinese Flute I (English Speaking)
@@ -508,7 +508,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Flute II (English speaking) ">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Flute II (English speaking) ">
                                             </td>
                                             <td>
                                                 Chinese Flute II (English speaking)
@@ -525,7 +525,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Flute III (English speaking) ">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Flute III (English speaking) ">
                                             </td>
                                             <td>
                                                 Chinese Flute III (English speaking)
@@ -542,7 +542,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Erhu I (Chinese Speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Erhu I (Chinese Speaking)">
                                             </td>
                                             <td>
                                                 Chinese Erhu I (Chinese Speaking)<br><em>Additional deposit for instrument</em>
@@ -559,7 +559,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Erhu I (Chinese speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Erhu I (Chinese speaking)">
                                             </td>
                                             <td>
                                                 Chinese Erhu I (Chinese speaking)<br><em>Additional deposit for instrument</em>
@@ -576,7 +576,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Chinese Erhu II (Chinese speaking)">
+                                                <input disabled type="checkbox" name="classes[]" value="Chinese Erhu II (Chinese speaking)">
                                             </td>
                                             <td>
                                                 Chinese Erhu II (Chinese speaking)<br><em>Additional deposit for instrument</em>
@@ -593,7 +593,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Wushu 1">
+                                                <input disabled type="checkbox" name="classes[]" value="Wushu 1">
                                             </td>
                                             <td>
                                                 Wushu 1
@@ -610,7 +610,7 @@
                                         </tr>   
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Wushu II">
+                                                <input disabled type="checkbox" name="classes[]" value="Wushu II">
                                             </td>
                                             <td>
                                                 Wushu II
@@ -627,7 +627,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input type="checkbox" name="classes[]" value="Student Volunteer">
+                                                <input disabled type="checkbox" name="classes[]" value="Student Volunteer">
                                             </td>
                                             <td>
                                                 Student Volunteer
@@ -647,7 +647,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2" class="text-center">
-                                    <button class="btn btn-default btn-lg" type="Submit">Submit</button>
+                                    <button class="btn btn-default btn-lg" type="Submit" disabled>Submit</button>
                                 </td>
                             </tr>
                         </table>
